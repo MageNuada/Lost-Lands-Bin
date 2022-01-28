@@ -1,2 +1,2 @@
-# Lost-Lands-Bin
+# Lost-Lands-Binary
 Lost Land binary files and content.
