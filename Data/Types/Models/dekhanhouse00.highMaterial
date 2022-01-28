@@ -1,0 +1,9 @@
+highLevelMaterial dekhanhouse00
+{
+template = ShaderBaseMaterial
+alphaRejectFunction = GreaterEqual
+diffuse1Map
+{
+texture = ".\\dekhanhouse00.dds"
+}
+}

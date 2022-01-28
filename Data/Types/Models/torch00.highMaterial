@@ -1,0 +1,9 @@
+highLevelMaterial torch00
+{
+template = ShaderBaseMaterial
+alphaRejectFunction = GreaterEqual
+diffuse1Map
+{
+texture = ".\\torch00.dds"
+}
+}

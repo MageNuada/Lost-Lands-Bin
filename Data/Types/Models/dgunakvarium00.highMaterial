@@ -1,0 +1,9 @@
+highLevelMaterial dgunakvarium00
+{
+template = ShaderBaseMaterial
+alphaRejectFunction = GreaterEqual
+diffuse1Map
+{
+texture = ".\\dgunakvarium00.dds"
+}
+}

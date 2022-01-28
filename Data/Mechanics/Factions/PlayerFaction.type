@@ -1,0 +1,61 @@
+type PlayerFaction
+{
+	class = Faction
+	gamename = "\x0418\x0433\x0440\x043e\x043a"
+	gamedescr = "\x0424\x0440\x0430\x043a\x0446\x0438\x044f \x0418\x0433\x0440\x043e\x043a\x0430"
+	creatableInMapEditor = False
+	newrelation
+	{
+		item
+		{
+			relation = Friend
+			_faction = PlayerFaction
+		}
+		item
+		{
+			relation = Enemy
+			_faction = WildAgro
+		}
+		item
+		{
+			_faction = Kania
+		}
+		item
+		{
+			_faction = GipathVillage
+		}
+		item
+		{
+			_faction = IngosArmy
+		}
+		item
+		{
+			relation = Enemy
+			_faction = Hadagan
+		}
+		item
+		{
+			relation = Enemy
+			_faction = OrcsFootHills
+		}
+		item
+		{
+			_faction = GipathBrigands
+		}
+		item
+		{
+			relation = Enemy
+			_faction = WildPredators
+		}
+		item
+		{
+			relation = Enemy
+			_faction = Monsters
+		}
+		item
+		{
+			relation = Enemy
+			_faction = GoblinsFoothills
+		}
+	}
+}

@@ -1,0 +1,10 @@
+highLevelMaterial BansheeBlue
+{
+	template = ShaderBaseMaterial
+	doubleSided = True
+	alphaRejectFunction = GreaterEqual
+	diffuse1Map
+	{
+		texture = ".\\banshee01.dds"
+	}
+}

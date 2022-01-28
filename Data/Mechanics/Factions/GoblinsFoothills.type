@@ -1,0 +1,39 @@
+type GoblinsFoothills
+{
+	class = Faction
+	gamename = "\x0413\x043e\x0431\x043b\x0438\x043d\x044b"
+	gamedescr = "\x0413\x043e\x0431\x043b\x0438\x043d\x044b \x043f\x0440\x0435\x0434\x0433\x043e\x0440\x0438\x0439"
+	creatableInMapEditor = False
+	newrelation
+	{
+		item
+		{
+			relation = Friend
+			_faction = GoblinsFoothills
+		}
+		item
+		{
+			relation = Friend
+			_faction = OrcsFootHills
+		}
+		item
+		{
+			_faction = WildAgro
+		}
+		item
+		{
+			relation = Enemy
+			_faction = GipathVillage
+		}
+		item
+		{
+			relation = Enemy
+			_faction = Monsters
+		}
+		item
+		{
+			relation = Enemy
+			_faction = PlayerFaction
+		}
+	}
+}

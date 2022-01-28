@@ -1,0 +1,8 @@
+highLevelMaterial Cotton
+{
+	template = ShaderBaseMaterial
+	diffuse1Map
+	{
+		texture = ".\\material0029.dds"
+	}
+}

@@ -1,0 +1,9 @@
+highLevelMaterial golemcenter
+{
+template = ShaderBaseMaterial
+alphaRejectFunction = GreaterEqual
+diffuse1Map
+{
+texture = ".\\golemcenter.dds"
+}
+}

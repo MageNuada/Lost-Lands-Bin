@@ -1,0 +1,9 @@
+highLevelMaterial pool00
+{
+template = ShaderBaseMaterial
+alphaRejectFunction = GreaterEqual
+diffuse1Map
+{
+texture = ".\\pool00.dds"
+}
+}

@@ -1,0 +1,9 @@
+highLevelMaterial dummy00
+{
+template = ShaderBaseMaterial
+alphaRejectFunction = GreaterEqual
+diffuse1Map
+{
+texture = ".\\dummy00.dds"
+}
+}

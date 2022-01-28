@@ -1,0 +1,9 @@
+highLevelMaterial ogrechest00
+{
+template = ShaderBaseMaterial
+alphaRejectFunction = GreaterEqual
+diffuse1Map
+{
+texture = ".\\ogrechest00.dds"
+}
+}

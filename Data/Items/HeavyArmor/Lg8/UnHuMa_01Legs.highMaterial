@@ -1,0 +1,9 @@
+highLevelMaterial UnHuMa_01Legs
+{
+	template = ShaderBaseMaterial
+	alphaRejectFunction = GreaterEqual
+	diffuse1Map
+	{
+		texture = ".\\unhufelg_01.ir.2.dds"
+	}
+}

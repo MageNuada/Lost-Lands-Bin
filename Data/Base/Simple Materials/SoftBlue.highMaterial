@@ -1,0 +1,9 @@
+highLevelMaterial SoftBlue
+{
+	template = ShaderBaseMaterial
+	blending = AlphaBlend
+	softParticles = True
+	softParticlesFadingLength = 0.2
+	halfLambert = True
+	diffuseColor = 0 0 1 0.7843138
+}

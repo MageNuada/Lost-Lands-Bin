@@ -1,0 +1,10 @@
+highLevelMaterial kuv_2
+{
+	template = ShaderBaseMaterial
+	alphaRejectFunction = GreaterEqual
+	diffuseColor = 0.3333333 0.4862745 0.1137255
+	diffuse1Map
+	{
+		texture = ".\\kub2.dds"
+	}
+}

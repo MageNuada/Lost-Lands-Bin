@@ -1,0 +1,17 @@
+highLevelMaterial Pap_Green_1v
+{
+	template = VegetationMaterial
+	doubleSided = True
+	alphaRejectFunction = GreaterEqual
+	alphaToCoverage = True
+	fadingByDistanceRange = 50 60
+	diffuseColor = 0.2431373 0.3568628 0.06666667
+	receiveObjectsPositionsFromVertices = True
+	bendVariation = 0.005
+	detailBending = False
+	diffuse1Map
+	{
+		texture = ".\\pap2.dds"
+		clamp = True
+	}
+}

@@ -1,0 +1,9 @@
+highLevelMaterial brokenplate01
+{
+template = ShaderBaseMaterial
+alphaRejectFunction = GreaterEqual
+diffuse1Map
+{
+texture = ".\\brokenplate01.dds"
+}
+}

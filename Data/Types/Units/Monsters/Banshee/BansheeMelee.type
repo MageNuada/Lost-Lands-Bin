@@ -1,0 +1,138 @@
+type BansheeMelee
+{
+	class = UCreature
+	_viewAngle = 360
+	_walkVelocity = 1.34 1
+	_runVelocity = 1.34 1
+	_faction = Monsters
+	_initialAI = BaseNPCIntellect
+	cdescription = "\x041a\x043e\x0441\x0442\x043b\x044f\x0432\x0430\x044f \x0431\x0430\x043d\x044c\x0448\x0438, \x0432\x043e\x044e\x0449\x0430\x044f \x043d\x0430 \x0431\x043e\x043b\x043e\x0442\x0430\x0445 \x043e\x0431 \x0438\x0441\x043a\x0440\x0430\x0445 \x043f\x043e\x0433\x0438\x0431\x0448\x0438\x0445"
+	cname = "\x0411\x0430\x043d\x044c\x0448\x0438"
+	radius = 0.5
+	height = 1.6
+	_bodyParts
+	{
+		item
+		{
+			_section = Head
+			_lifePoints = 1
+			_sarmor = 0
+			_mainHealthPercent = 1.01
+		}
+		item
+		{
+			_section = Body
+			_lifePoints = 1
+			_sarmor = 0
+			_mainHealthPercent = 1.01
+		}
+	}
+	_unitAppearance
+	{
+		item
+		{
+			_gender = Male
+			_additionalMeshes
+			{
+			}
+			_textures
+			{
+			}
+		}
+		item
+		{
+			_gender = Female
+			_additionalMeshes
+			{
+			}
+			_textures
+			{
+			}
+		}
+	}
+	attachedObjects
+	{
+		mesh
+		{
+			meshName = ".\\BansheeMelee.mesh"
+			castDynamicShadows = True
+			alias = Body
+			position = 0 0 -0.9744059
+			rotation = 0 0 -0.7071068 0.7071068
+			boneSlot Eyes
+			{
+				bone = eyes
+				position = 0 -0.23 0.4
+			}
+		}
+		particle
+		{
+			particleName = EyeFire
+			boneSlot = Eyes
+			position = 0.025 -0.04 -0.025
+			scale = 1 1.5 1
+		}
+		particle
+		{
+			particleName = EyeFire
+			boneSlot = Eyes
+			position = -0.025 -0.04 -0.025
+			scale = 1 1.5 1
+		}
+	}
+	animationTypesNamesDict
+	{
+		MoveWalk
+		{
+			names = "Walk01;"
+		}
+		MoveRun
+		{
+			names = "Run01;"
+		}
+		IdleRest
+		{
+			names = "Idle01;"
+		}
+		IdleStand
+		{
+			names = "Idle01;"
+		}
+		IdleAgressive
+		{
+			names = "Idle01;"
+		}
+		HitStand
+		{
+			names = "Hit01;"
+		}
+		HitRest
+		{
+			names = "Hit01;"
+		}
+		Death
+		{
+			names = "Death01;"
+		}
+		AttackSlash
+		{
+			names = "Attack01;"
+		}
+		AttackPierce
+		{
+			names = "Attack01;"
+		}
+		AttackSlashAndPierce
+		{
+			names = "Attack01;"
+		}
+		CrossStandRest
+		{
+			names = "Idle01;"
+		}
+		CrossRestStand
+		{
+			names = "Idle01;"
+		}
+	}
+}

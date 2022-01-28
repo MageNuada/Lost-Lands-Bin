@@ -1,0 +1,9 @@
+highLevelMaterial warriorstatue00
+{
+template = ShaderBaseMaterial
+alphaRejectFunction = GreaterEqual
+diffuse1Map
+{
+texture = ".\\warriorstatue00.dds"
+}
+}

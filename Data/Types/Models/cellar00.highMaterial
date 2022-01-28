@@ -1,0 +1,9 @@
+highLevelMaterial cellar00
+{
+template = ShaderBaseMaterial
+alphaRejectFunction = GreaterEqual
+diffuse1Map
+{
+texture = ".\\cellar00.dds"
+}
+}

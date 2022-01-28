@@ -1,0 +1,9 @@
+highLevelMaterial humanhouse04
+{
+template = ShaderBaseMaterial
+alphaRejectFunction = GreaterEqual
+diffuse1Map
+{
+texture = ".\\humanhouse04.dds"
+}
+}

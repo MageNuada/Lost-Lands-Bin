@@ -1,0 +1,9 @@
+highLevelMaterial driadidol01
+{
+template = ShaderBaseMaterial
+alphaRejectFunction = GreaterEqual
+diffuse1Map
+{
+texture = ".\\driadidol01.dds"
+}
+}

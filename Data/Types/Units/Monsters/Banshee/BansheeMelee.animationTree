@@ -1,0 +1,460 @@
+blocks
+{
+	block Output
+	{
+		uin = 1
+		in = 108
+	}
+
+
+///////////////////////////////////////////////////////////////
+//
+//
+//
+// Параметры.
+//
+//
+//
+///////////////////////////////////////////////////////////////
+
+
+
+	block Parameter
+	{
+		uin = 30
+		parameterName = InteractionState
+	}
+	block Parameter
+	{
+		uin = 2
+		parameterName = IsDead
+	}
+	block Parameter
+	{
+		uin = 90
+		parameterName = MovingState
+	}
+	block Parameter
+	{
+		uin = 6
+		parameterName = AnimationVariant
+	}
+	block Parameter
+	{
+		uin = 9
+		parameterName = CurrentUnitState
+	}
+	block Parameter
+	{
+		uin = 11
+		parameterName = AnimationSpeed
+	}
+	block Parameter
+	{
+		uin = 92
+		parameterName = IdleMoveVariant
+	}
+	block Parameter
+	{
+		uin = 93
+		parameterName = IdleMoveSpeed
+	}
+	block Parameter
+	{
+		uin = 94
+		parameterName = CrossVariant
+	}
+
+
+///////////////////////////////////////////////////////////////
+//
+//
+//
+// Морфинг(телосложение).
+//
+//
+//
+///////////////////////////////////////////////////////////////
+
+	block Sum
+	{
+		uin = 3
+		animation0 = 108
+		animation1 = 109
+	}
+	block Animation
+	{
+		uin = 109
+		animationName = MorpherAll
+		speed = 0
+		loop = true
+	}
+
+
+
+///////////////////////////////////////////////////////////////
+//
+//
+//
+// Анимации смерти.
+//
+//
+//
+///////////////////////////////////////////////////////////////
+
+
+
+	block Transition
+	{
+		uin = 108
+		selectedIndexSource = 2
+		transitionTime = 0.2
+		animation0 = 5
+		animation1 = 4
+	}
+	block Animation
+	{
+		uin = 91
+		animationName = Death01
+		speed = 1
+		loop = False
+	}
+	block Animation
+	{
+		uin = 33
+		animationName = Death02
+		speed = 1
+		loop = False
+	}
+	block Transition
+	{
+		uin = 4
+		selectedIndexSource = 6
+		transitionTime = 0.2
+		animation0 = 91
+	}
+
+
+///////////////////////////////////////////////////////////////
+//
+//
+//
+// Анимация заклинаний.
+//
+//
+//
+///////////////////////////////////////////////////////////////
+
+
+	block Trigger
+	{
+		uin = 5
+		triggerName = CastSpell
+		off = 8
+		on = 25
+		transitionTime = 0.2
+	}
+	block Animation
+	{
+		uin = 24
+		animationName = Attack01
+		speedSource = 11
+	}
+	block Animation
+	{
+		uin = 26
+		animationName = Attack02
+		speedSource = 11
+	}
+	block Transition
+	{
+		uin = 25
+		selectedIndexSource = 6
+		transitionTime = 0
+		animation0 = 24
+		animation1 = 26
+	}
+
+
+
+///////////////////////////////////////////////////////////////
+//
+//
+//
+// Визуализация атаки.
+//
+//
+//
+///////////////////////////////////////////////////////////////
+
+
+	block Trigger
+	{
+		uin = 8
+		triggerName = Attack
+		off = 80
+		on = 7
+		transitionTime = 0.2
+	}
+	block Transition
+	{
+		uin = 7
+		selectedIndexSource = 6
+		transitionTime = 0.1
+		animation0 = 12
+		animation1 = 13
+		animation2 = 14
+	}
+	block Animation
+	{
+		uin = 12
+		animationName = Attack01
+		speedSource = 11
+	}
+	block Animation
+	{
+		uin = 13
+		animationName = Attack01
+		speedSource = 11
+	}
+	block Animation
+	{
+		uin = 14
+		animationName = Attack01
+		speedSource = 11
+	}
+
+
+///////////////////////////////////////////////////////////////
+//
+//
+//
+// Визуализация получения урона.
+//
+//
+//
+///////////////////////////////////////////////////////////////
+
+
+	block Trigger
+	{
+		uin = 80
+		triggerName = Hit
+		on = 81
+		off = 95
+		transitionTime = 0.1
+	}
+	block Transition
+	{
+		uin = 81
+		selectedIndexSource = 9
+		transitionTime = 0
+		animation0 = 82
+		animation1 = 83
+	}
+	block Animation
+	{
+		uin = 82
+		animationName = Hit01
+		speedSource = 11
+	}
+	block Animation
+	{
+		uin = 83
+		animationName = Hit01
+		speedSource = 11
+	}
+
+///////////////////////////////////////////////////////////////
+//
+//
+//
+// Визуализация взаимодействия с объектами.
+//
+//
+//
+///////////////////////////////////////////////////////////////
+
+	block Trigger
+	{
+		uin = 95
+		triggerName = Interaction
+		on = 96
+		off = 43
+		transitionTime = 0.1
+	}
+	block Transition
+	{
+		uin = 96
+		selectedIndexSource = 30
+		transitionTime = 0
+		animation0 = 100
+		animation1 = 97
+	}
+	block Animation
+	{
+		uin = 100
+		animationName = Attack01
+		speed = 1
+		loop = False
+	}
+	block Animation
+	{
+		uin = 97
+		animationName = Attack01
+		speed = 1
+		loop = False
+	}
+
+
+///////////////////////////////////////////////////////////////
+//
+//
+//
+// Визуализация смены положения тела.
+//
+//
+//
+///////////////////////////////////////////////////////////////
+
+
+	block Transition
+	{
+		uin = 10
+		selectedIndexSource = 94
+		transitionTime = 0
+
+        	//CrossRestStand, 0
+		animation0 = 37
+        	//CrossStandRest, 1
+		animation1 = 38
+
+        	//CrossFlyStand, 2
+		animation2 = 39
+        	//CrossStandFly, 3
+		animation3 = 40
+	}
+	block Animation
+	{
+		uin = 37
+		animationName = Idle01
+		speed = 1
+		loop = False
+	}
+	block Animation
+	{
+		uin = 38
+		animationName = Idle01
+		speed = 1
+		loop = False
+	}
+	block Animation
+	{
+		uin = 39
+		animationName = Idle01
+		speed = 1
+		loop = False
+	}
+	block Animation
+	{
+		uin = 40
+		animationName = Idle01
+		speed = 1
+		loop = False
+	}
+
+
+
+///////////////////////////////////////////////////////////////
+//
+//
+//
+// Движение или состояние Idle
+//
+//
+//
+///////////////////////////////////////////////////////////////
+
+
+	block Transition
+	{
+		uin = 43
+		selectedIndexSource = 90
+		transitionTime = 0.1
+		animation0 = 44 // go to idle
+		animation1 = 45 // go to walk
+		animation2 = 46 // go to run
+		animation3 = 45 // go to slink
+		animation4 = 45 // go to crawl
+		animation5 = 45 // go to fly
+		animation6 = 10 // cross
+	}
+	block Transition
+	{
+		uin = 44
+		selectedIndexSource = 9
+		transitionTime = 0.1
+
+		animation0 = 53 // stand
+		animation1 = 54 // battle
+		animation2 = 54 // slink
+		animation3 = 54 // crawl
+		animation4 = 54 // fly
+		animation5 = 79 // rest
+		animation6 = 10 // cross
+	}
+	block Animation
+	{
+		uin = 79
+		animationName = "Idle01"
+		speed = 1
+	}
+	block Animation
+	{
+//ЗАГЛУШКА
+		uin = 54
+		animationName = "Idle01"
+		speed = 1
+	}
+	block Transition
+	{
+		//Idle animations variants
+		uin = 53
+		selectedIndexSource = 92
+		animation0 = 58
+		animation1 = 59
+		animation2 = 60
+	}
+	block Animation
+	{
+		uin = 58
+		animationName = "Idle01"
+		speed = 1
+	}
+	block Animation
+	{
+		uin = 59
+		animationName = "Idle01"
+		speed = 1
+	}
+	block Animation
+	{
+		uin = 60
+		animationName = "Idle01"
+		speed = 1
+	}
+	block Animation
+	{
+		uin = 45
+		animationName = "Walk01"
+		//speed = 1
+		speedSource= 93
+	}
+	block Animation
+	{
+		uin = 46
+		animationName = "Run01"
+		//speed = 1
+		speedSource= 93
+	}
+}

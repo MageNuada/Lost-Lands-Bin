@@ -1,0 +1,151 @@
+type GoblinMelee
+{
+	class = UGameCharacter
+	_slinkVelocity = 1.2777 1
+	_crawlVelocity = 0.958 1
+	_viewDistance = 8.5
+	_walkVelocity = 1.2 1
+	_runVelocity = 2.6 0.3
+	_faction = GoblinsFoothills
+	_initialAI = BaseNPCIntellect
+	_regenerationHealth = 0.005
+	_regenerationEnergy = 0.05
+	_attackDistance = 0.9
+	cname = "\x0413\x043e\x0431\x043b\x0438\x043d"
+	radius = 0.375
+	height = 0.75
+	_bodyParts
+	{
+		item
+		{
+			_section = Head
+			_lifePoints = 1
+			_sarmor = 0
+			_mainHealthPercent = 1.01
+		}
+		item
+		{
+			_section = Body
+			_lifePoints = 1
+			_sarmor = 0
+			_mainHealthPercent = 1.01
+		}
+		item
+		{
+			_section = Hand
+			_lifePoints = 1
+			_sarmor = 0
+			_mainHealthPercent = 0.34
+		}
+		item
+		{
+			_section = Hand
+			_lifePoints = 1
+			_sarmor = 0
+			_mainHealthPercent = 0.34
+		}
+		item
+		{
+			_section = Leg
+			_lifePoints = 1
+			_sarmor = 0
+			_mainHealthPercent = 0.67
+		}
+		item
+		{
+			_section = Leg
+			_lifePoints = 1
+			_sarmor = 0
+			_mainHealthPercent = 0.67
+		}
+	}
+	_unitAppearance
+	{
+		item
+		{
+			_gender = Male
+			_additionalMeshes
+			{
+			}
+			_textures
+			{
+			}
+		}
+		item
+		{
+			_gender = Female
+			_additionalMeshes
+			{
+			}
+			_textures
+			{
+			}
+		}
+	}
+	attachedObjects
+	{
+		mesh
+		{
+			meshName = ".\\GoblinRange.mesh"
+			castDynamicShadows = True
+			alias = Body
+			position = 0 -0.04626298 -0.3476583
+			rotation = 0 0 -0.7071068 0.7071068
+		}
+	}
+	animationTypesNamesDict
+	{
+		MoveWalk
+		{
+			names = "Walk01;"
+		}
+		MoveRun
+		{
+			names = "Run01;"
+		}
+		IdleRest
+		{
+			names = "Rest01;"
+		}
+		IdleStand
+		{
+			names = "Idle01;Idle02;"
+		}
+		IdleAgressive
+		{
+			names = "Idle01;Idle02;"
+		}
+		HitStand
+		{
+			names = "Hit01;"
+		}
+		HitRest
+		{
+			names = "Hit02;"
+		}
+		Death
+		{
+			names = "Death01;Death02;Death03;"
+		}
+		AttackSlash
+		{
+			names = "Attack01;Attack02;"
+		}
+		AttackPierce
+		{
+			names = "Attack01;Attack02;"
+		}
+		AttackSlashAndPierce
+		{
+			names = "Attack01;Attack02;"
+		}
+		CrossStandRest
+		{
+			names = "Cross01;"
+		}
+		CrossRestStand
+		{
+			names = "Cross02;"
+		}
+	}
+}

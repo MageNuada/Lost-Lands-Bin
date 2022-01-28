@@ -1,0 +1,31 @@
+highLevelMaterial fog2
+{
+	template = ShaderBaseMaterial
+	blending = AlphaBlend
+	lighting = False
+	softParticles = True
+	diffuseColor = 1 1 1 0.4980392
+	diffuse1Map
+	{
+		texture = ".\\fog_base.png"
+		clamp = True
+		transform
+		{
+			animation
+			{
+				rotateSpeed = 0.01
+			}
+		}
+	}
+	diffuse2Map
+	{
+		texture = ".\\fog_fx.jpg"
+		transform
+		{
+			animation
+			{
+				scrollSpeed = 0.01 0.01
+			}
+		}
+	}
+}

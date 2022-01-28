@@ -1,0 +1,8 @@
+highLevelMaterial "Decayed Bones"
+{
+	template = ShaderBaseMaterial
+	diffuse1Map
+	{
+		texture = ".\\material0010.dds"
+	}
+}

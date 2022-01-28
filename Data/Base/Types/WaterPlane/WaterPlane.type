@@ -1,0 +1,63 @@
+type WaterPlane
+{
+	class = WaterPlane
+	allowEmptyName = True
+	networkType = Synchronized
+	splashes
+	{
+		item
+		{
+			splashType = Bullet
+			soundName = "Base\\Types\\WaterPlane\\WaterSplash.ogg"
+			particles
+			{
+				item
+				{
+					particleName = WaterSplash
+					scale = 1
+				}
+				item
+				{
+					particleName = WaterSplashWave
+					scale = 1
+				}
+			}
+		}
+		item
+		{
+			splashType = Body
+			soundName = "Base\\Types\\WaterPlane\\WaterSplash.ogg"
+			particles
+			{
+				item
+				{
+					particleName = WaterSplash
+					scale = 1.7
+				}
+				item
+				{
+					particleName = WaterSplashWave
+					scale = 1.7
+				}
+			}
+		}
+		item
+		{
+			splashType = Explosion
+			soundName = "Base\\Types\\WaterPlane\\WaterSplash.ogg"
+			particles
+			{
+				item
+				{
+					particleName = WaterSplash
+					scale = 3
+				}
+				item
+				{
+					particleName = WaterSplashWave
+					scale = 3
+				}
+			}
+		}
+	}
+}

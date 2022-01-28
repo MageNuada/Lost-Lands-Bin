@@ -1,0 +1,847 @@
+type Human
+{
+	class = UGameCharacter
+	_slinkVelocity = 1.130667 0.8
+	_crawlVelocity = 0.884 1.2
+	_initialAI = BaseNPCIntellect
+	_viewDistance = 8.5
+	_walkVelocity = 1.6 1
+	_runVelocity = 3.58 0.3
+	_noGender = False
+	_footPrintDecal = FootprintDecal
+	_bloodDecal = DeathBlood
+	_soundSetMale = MaleSoundSet1
+	_soundSetFemale = FemaleSoundSet1
+	_regenerationHealth = 0.001
+	_sensesHearing = 4.3
+	cname = "\x0427\x0435\x043b\x043e\x0432\x0435\x043a"
+	radius = 0.3
+	height = 1.72
+	_itemSlot
+	{
+		item
+		{
+			section = Head
+		}
+		item
+		{
+			section = Hand
+		}
+		item
+		{
+			section = WHand
+		}
+		item
+		{
+			section = WHand
+		}
+		item
+		{
+			section = WHand
+		}
+		item
+		{
+			section = WHand
+		}
+		item
+		{
+		}
+		item
+		{
+			section = BodyH
+		}
+		item
+		{
+			section = LegL
+		}
+		item
+		{
+			section = LegH
+		}
+		item
+		{
+			section = Foot
+		}
+		item
+		{
+			section = SpecialSlot
+		}
+		item
+		{
+			section = SpecialSlot
+		}
+		item
+		{
+			section = SpecialSlot
+		}
+		item
+		{
+			section = SpecialSlot
+		}
+		item
+		{
+			section = SpellSlot
+		}
+		item
+		{
+			section = SpellSlot
+		}
+		item
+		{
+			section = SpellSlot
+		}
+		item
+		{
+			section = SpellSlot
+		}
+		item
+		{
+			section = SpellSlot
+		}
+		item
+		{
+			section = SpellSlot
+		}
+		item
+		{
+			section = SpellSlot
+		}
+		item
+		{
+			section = SpellSlot
+		}
+	}
+	_bodyParts
+	{
+		item
+		{
+			_mainHealthPercent = 1.01
+			_section = Head
+		}
+		item
+		{
+			_mainHealthPercent = 0.34
+			_section = Hand
+		}
+		item
+		{
+			_mainHealthPercent = 0.34
+			_section = Hand
+		}
+		item
+		{
+			_mainHealthPercent = 1.01
+		}
+		item
+		{
+			_mainHealthPercent = 0.67
+			_section = Leg
+		}
+		item
+		{
+			_mainHealthPercent = 0.67
+			_section = Leg
+		}
+	}
+	_unitAppearance
+	{
+		item
+		{
+			_gender = Male
+			_relativePath = "Types\\Units\\Characters\\Human\\Skins\\"
+			_mainMesh = "Types\\Units\\Characters\\Human\\UnHuMa.mesh"
+			_additionalMeshes
+			{
+				item
+				{
+					value = Hair00.mesh
+				}
+				item
+				{
+					value = Hair01.mesh
+				}
+				item
+				{
+					value = Hair02.mesh
+				}
+			}
+			_textures
+			{
+				item
+				{
+					value = unhumaskin_00.dds
+				}
+				item
+				{
+					value = unhumaskin_01.dds
+				}
+				item
+				{
+					value = unhumaskin_02.dds
+				}
+				item
+				{
+					value = unhumaskin_03.dds
+				}
+				item
+				{
+					value = unhumaskin_04.dds
+				}
+				item
+				{
+					value = unhumaskin_05.dds
+				}
+				item
+				{
+					value = unhumaskin_06.dds
+				}
+				item
+				{
+					value = unhumaskin_07.dds
+				}
+				item
+				{
+					value = unhumaskin_08.dds
+				}
+				item
+				{
+					value = unhumaskin_09.dds
+				}
+				item
+				{
+					value = unhumaskin_10.dds
+				}
+				item
+				{
+					value = unhumaskin_11.dds
+				}
+				item
+				{
+					value = unhumaskin_12.dds
+				}
+				item
+				{
+					value = unhumaskin_13.dds
+				}
+				item
+				{
+					value = unhumaskin_14.dds
+				}
+				item
+				{
+					value = unhumaskin_15.dds
+				}
+				item
+				{
+					value = unhumaskin_16.dds
+				}
+				item
+				{
+					value = unhumaskin_17.dds
+				}
+				item
+				{
+					value = unhumaskin_18.dds
+				}
+				item
+				{
+					value = unhumaskin_19.dds
+				}
+				item
+				{
+					value = unhumaskin_20.dds
+				}
+				item
+				{
+					value = unhumaskin_21.dds
+				}
+				item
+				{
+					value = unhumaskin_22.dds
+				}
+				item
+				{
+					value = unhumaskin_23.dds
+				}
+				item
+				{
+					value = unhumaskin_24.dds
+				}
+				item
+				{
+					value = unhumaskin_25.dds
+				}
+				item
+				{
+					value = unhumaskin_26.dds
+				}
+				item
+				{
+					value = unhumaskin_27.dds
+				}
+				item
+				{
+					value = unhumaskin_28.dds
+				}
+				item
+				{
+					value = unhumaskin_29.dds
+				}
+				item
+				{
+					value = unhumaskin_30.dds
+				}
+				item
+				{
+					value = unhumaskin_31.dds
+				}
+				item
+				{
+					value = unhumaskin_32.dds
+				}
+				item
+				{
+					value = unhumaskin_33.dds
+				}
+				item
+				{
+					value = unhumaskin_34.dds
+				}
+				item
+				{
+					value = unhumaskin_35.dds
+				}
+				item
+				{
+					value = unhumaskin_36.dds
+				}
+				item
+				{
+					value = unhumaskin_37.dds
+				}
+				item
+				{
+					value = unhumaskin_38.dds
+				}
+				item
+				{
+					value = unhumaskin_39.dds
+				}
+				item
+				{
+					value = unhumaskin_40.dds
+				}
+				item
+				{
+					value = unhumaskin_41.dds
+				}
+				item
+				{
+					value = unhumaskin_42.dds
+				}
+				item
+				{
+					value = unhumaskin_43.dds
+				}
+			}
+		}
+		item
+		{
+			_gender = Female
+			_relativePath = "Types\\Units\\Characters\\Human\\Skins\\"
+			_mainMesh = "Types\\Units\\Characters\\Human\\UnHuFe.mesh"
+			_additionalMeshes
+			{
+				item
+				{
+					value = Hair10.mesh
+				}
+				item
+				{
+					value = Hair11.mesh
+				}
+				item
+				{
+					value = Hair12.mesh
+				}
+				item
+				{
+					value = Hair13.mesh
+				}
+			}
+			_textures
+			{
+				item
+				{
+					value = unhufeskin_00.dds
+				}
+				item
+				{
+					value = unhufeskin_01.dds
+				}
+				item
+				{
+					value = unhufeskin_02.dds
+				}
+				item
+				{
+					value = unhufeskin_03.dds
+				}
+				item
+				{
+					value = unhufeskin_04.dds
+				}
+				item
+				{
+					value = unhufeskin_05.dds
+				}
+				item
+				{
+					value = unhufeskin_06.dds
+				}
+				item
+				{
+					value = unhufeskin_07.dds
+				}
+				item
+				{
+					value = unhufeskin_08.dds
+				}
+				item
+				{
+					value = unhufeskin_09.dds
+				}
+				item
+				{
+					value = unhufeskin_10.dds
+				}
+				item
+				{
+					value = unhufeskin_11.dds
+				}
+				item
+				{
+					value = unhufeskin_12.dds
+				}
+				item
+				{
+					value = unhufeskin_13.dds
+				}
+				item
+				{
+					value = unhufeskin_14.dds
+				}
+			}
+		}
+	}
+	_stepsTypes
+	{
+		item
+		{
+			physicsMaterialName = Grass
+			stepsSounds
+			{
+				item
+				{
+					_sound = "Sounds\\General\\steps\\Human\\Grass\\1.ogg"
+				}
+				item
+				{
+					_sound = "Sounds\\General\\steps\\Human\\Grass\\2.ogg"
+				}
+				item
+				{
+					_sound = "Sounds\\General\\steps\\Human\\Grass\\3.ogg"
+				}
+				item
+				{
+					_sound = "Sounds\\General\\steps\\Human\\Grass\\4.ogg"
+				}
+				item
+				{
+					_sound = "Sounds\\General\\steps\\Human\\Grass\\5.ogg"
+				}
+				item
+				{
+					_sound = "Sounds\\General\\steps\\Human\\Grass\\6.ogg"
+				}
+			}
+		}
+		item
+		{
+			physicsMaterialName = Snow
+			stepsSounds
+			{
+				item
+				{
+					_sound = "Sounds\\General\\steps\\Human\\Snow\\1.ogg"
+				}
+				item
+				{
+					_sound = "Sounds\\General\\steps\\Human\\Snow\\2.ogg"
+				}
+				item
+				{
+					_sound = "Sounds\\General\\steps\\Human\\Snow\\3.ogg"
+				}
+				item
+				{
+					_sound = "Sounds\\General\\steps\\Human\\Snow\\4.ogg"
+				}
+				item
+				{
+					_sound = "Sounds\\General\\steps\\Human\\Snow\\5.ogg"
+				}
+				item
+				{
+					_sound = "Sounds\\General\\steps\\Human\\Snow\\6.ogg"
+				}
+			}
+		}
+		item
+		{
+			physicsMaterialName = Stone
+			stepsSounds
+			{
+				item
+				{
+					_sound = "Sounds\\General\\steps\\Human\\Stone\\1.ogg"
+				}
+				item
+				{
+					_sound = "Sounds\\General\\steps\\Human\\Stone\\2.ogg"
+				}
+				item
+				{
+					_sound = "Sounds\\General\\steps\\Human\\Stone\\3.ogg"
+				}
+				item
+				{
+					_sound = "Sounds\\General\\steps\\Human\\Stone\\4.ogg"
+				}
+				item
+				{
+					_sound = "Sounds\\General\\steps\\Human\\Stone\\5.ogg"
+				}
+				item
+				{
+					_sound = "Sounds\\General\\steps\\Human\\Stone\\6.ogg"
+				}
+			}
+		}
+		item
+		{
+			physicsMaterialName = Ground
+			stepsSounds
+			{
+				item
+				{
+					_sound = "Sounds\\General\\steps\\Human\\Earth\\1.ogg"
+				}
+				item
+				{
+					_sound = "Sounds\\General\\steps\\Human\\Earth\\2.ogg"
+				}
+				item
+				{
+					_sound = "Sounds\\General\\steps\\Human\\Earth\\3.ogg"
+				}
+				item
+				{
+					_sound = "Sounds\\General\\steps\\Human\\Earth\\4.ogg"
+				}
+				item
+				{
+					_sound = "Sounds\\General\\steps\\Human\\Earth\\5.ogg"
+				}
+				item
+				{
+					_sound = "Sounds\\General\\steps\\Human\\Earth\\6.ogg"
+				}
+			}
+		}
+		item
+		{
+			physicsMaterialName = Road
+			stepsSounds
+			{
+				item
+				{
+					_sound = "Sounds\\General\\steps\\Human\\Grass\\1.ogg"
+				}
+				item
+				{
+					_sound = "Sounds\\General\\steps\\Human\\Grass\\2.ogg"
+				}
+				item
+				{
+					_sound = "Sounds\\General\\steps\\Human\\Grass\\3.ogg"
+				}
+				item
+				{
+					_sound = "Sounds\\General\\steps\\Human\\Grass\\4.ogg"
+				}
+				item
+				{
+					_sound = "Sounds\\General\\steps\\Human\\Grass\\5.ogg"
+				}
+				item
+				{
+					_sound = "Sounds\\General\\steps\\Human\\Grass\\6.ogg"
+				}
+			}
+		}
+		item
+		{
+			physicsMaterialName = Dirt
+			stepsSounds
+			{
+				item
+				{
+					_sound = "Sounds\\General\\steps\\Human\\Dirt\\1.ogg"
+				}
+				item
+				{
+					_sound = "Sounds\\General\\steps\\Human\\Dirt\\2.ogg"
+				}
+				item
+				{
+					_sound = "Sounds\\General\\steps\\Human\\Dirt\\3.ogg"
+				}
+				item
+				{
+					_sound = "Sounds\\General\\steps\\Human\\Dirt\\4.ogg"
+				}
+				item
+				{
+					_sound = "Sounds\\General\\steps\\Human\\Dirt\\5.ogg"
+				}
+				item
+				{
+					_sound = "Sounds\\General\\steps\\Human\\Dirt\\6.ogg"
+				}
+			}
+		}
+	}
+	attachedObjects
+	{
+		mesh
+		{
+			meshName = ".\\UnHuMa.mesh"
+			alias = Body
+			position = 0 0 -0.8961363
+			rotation = 0 0 -0.7071068 0.7071068
+			boneSlot WHand
+			{
+				bone = rh3
+				position = -0.07 0 0
+			}
+			boneSlot Head
+			{
+				bone = hd
+			}
+			boneSlot Root
+			{
+				bone = _root
+			}
+			boneSlot MaleAdditionalMesh
+			{
+				bone = hd
+				position = 0 0.01 -0.024
+			}
+			boneSlot LeftFoot
+			{
+				bone = ll3
+			}
+			boneSlot RightFoot
+			{
+				bone = rl3
+			}
+			boneSlot FemaleAdditionalMesh
+			{
+				bone = hd
+				position = 0 -0.025 0
+			}
+		}
+		helper
+		{
+			alias = LeftFoot
+			boneSlot = LeftFoot
+			position = 0.05 -0.08 -0.085
+			scale = 0.22 0.22 0.22
+		}
+		helper
+		{
+			alias = RightFoot
+			boneSlot = RightFoot
+			position = -0.05 -0.08 -0.085
+			scale = 0.22 0.22 0.22
+		}
+	}
+	animationTypesNamesDict
+	{
+		CrossRestStand
+		{
+			names = "Cross28;"
+		}
+		CrossStandRest
+		{
+			names = "Cross29;"
+		}
+		CrossStandAgro
+		{
+			names = "Cross01;"
+		}
+		CrossAgroStand
+		{
+			names = "Cross02;"
+		}
+		CrossStandSlink
+		{
+			names = "Cross09;"
+		}
+		CrossSlinkStand
+		{
+			names = "Cross10;"
+		}
+		CrossStandCrawl
+		{
+			names = "Cross04;"
+		}
+		CrossCrawlStand
+		{
+			names = "Cross06;"
+		}
+		CrossAgroSlink
+		{
+			names = "Cross03;"
+		}
+		CrossSlinkAgro
+		{
+			names = "Cross05;"
+		}
+		CrossAgroCrawl
+		{
+			names = "Cross07;"
+		}
+		CrossCrawlAgro
+		{
+			names = "Cross08;"
+		}
+		CrossSlinkCrawl
+		{
+			names = "Cross11;"
+		}
+		CrossCrawlSlink
+		{
+			names = "Cross12;"
+		}
+		Death
+		{
+			names = "Death01;"
+		}
+		AttackSlash
+		{
+			names = "Attack04;Attack05;Attack10;Attack11;Attack12;"
+		}
+		AttackPierce
+		{
+			names = "Attack06;Attack07;Attack08;Attack09;Attack13;"
+		}
+		AttackSlashAndPierce
+		{
+			names = "Attack04;Attack05;Attack07;Attack08;Attack09;Attack10;Attack12;Attack13;"
+		}
+		RangeAttackBow
+		{
+			names = "Attack01;Attack02;Attack03;"
+		}
+		RangeAttackCrBow
+		{
+			names = "Attack14;Attack15;Attack16;"
+		}
+		CastStand
+		{
+			names = "Cast01;Cast02;Cast03;Cast04;"
+		}
+		CastSlink
+		{
+			names = "Cast05;"
+		}
+		UseStand
+		{
+			names = "Special22;Special23;"
+		}
+		UseSlink
+		{
+			names = "Special24;Special07;Special04;Special27;Special26;Special05;Special06;"
+		}
+		IdleStand
+		{
+			names = "Idle02;Idle07;Idle09;Idle10;Idle11;Idle12;Idle13;Idle14;Idle15;Idle16;Idle18;Idle19;Idle20;Idle21;Idle22;"
+		}
+		IdleSlink
+		{
+			names = "Idle04;Idle05;"
+		}
+		IdleCrawl
+		{
+			names = "Idle03;"
+		}
+		IdleAgressive
+		{
+			names = "Idle01;Idle08;"
+		}
+		IdleRest
+		{
+			names = "Rest01;"
+		}
+		MoveWalk
+		{
+			names = "Walk01;Walk02;Walk04;Walk05;Walk07;"
+		}
+		MoveRun
+		{
+			names = "Run01;"
+		}
+		MoveSlink
+		{
+			names = "Walk03;"
+		}
+		MoveCrawl
+		{
+			names = "Crawl01;"
+		}
+		HitRest
+		{
+			names = "Hit21;"
+		}
+		HitSlink
+		{
+			names = "Hit18;Hit20;"
+		}
+		HitCrawl
+		{
+			names = "Hit06;"
+		}
+		HitStand
+		{
+			names = "Hit01;Hit02;"
+		}
+		HitRun
+		{
+			names = "Hit13;"
+		}
+		HitWalk
+		{
+			names = "Hit14;"
+		}
+		SpecialAnimation
+		{
+			names = "Special01;Special02;Special03;Special08;Special09;Special10;Special11;Special12;Special13;Special14;Special15;Special16;Special17;Special18;Special19;Special20;Special25;Special28;"
+		}
+	}
+	inventory
+	{
+	}
+}

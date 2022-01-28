@@ -1,0 +1,9 @@
+highLevelMaterial bridge00
+{
+template = ShaderBaseMaterial
+alphaRejectFunction = GreaterEqual
+diffuse1Map
+{
+texture = ".\\bridge00.dds"
+}
+}

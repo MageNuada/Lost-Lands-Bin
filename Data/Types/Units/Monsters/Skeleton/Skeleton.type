@@ -1,0 +1,115 @@
+type Skeleton
+{
+	class = UCreature
+	_viewDistance = 8.5
+	_walkVelocity = 0.1932 1
+	_runVelocity = 0.754533 1
+	_regenerationHealth = 0.005
+	cname = "\x0421\x043a\x0435\x043b\x0435\x0442"
+	height = 1.575
+	_bodyParts
+	{
+		item
+		{
+			_section = Head
+			_lifePoints = 1
+			_sarmor = 0
+			_mainHealthPercent = 1.01
+		}
+		item
+		{
+			_section = Body
+			_lifePoints = 1
+			_sarmor = 0
+			_mainHealthPercent = 1.01
+		}
+		item
+		{
+			_section = Hand
+			_lifePoints = 1
+			_sarmor = 0
+			_mainHealthPercent = 0.34
+		}
+		item
+		{
+			_section = Hand
+			_lifePoints = 1
+			_sarmor = 0
+			_mainHealthPercent = 0.34
+		}
+		item
+		{
+			_section = Leg
+			_lifePoints = 1
+			_sarmor = 0
+			_mainHealthPercent = 0.67
+		}
+		item
+		{
+			_section = Leg
+			_lifePoints = 1
+			_sarmor = 0
+			_mainHealthPercent = 0.67
+		}
+	}
+	_unitAppearance
+	{
+		item
+		{
+			_gender = Male
+			_additionalMeshes
+			{
+			}
+			_textures
+			{
+			}
+		}
+		item
+		{
+			_gender = Female
+			_additionalMeshes
+			{
+			}
+			_textures
+			{
+			}
+		}
+	}
+	attachedObjects
+	{
+		mesh
+		{
+			meshName = ".\\Skeleton.mesh"
+			alias = Body
+			position = 0 0 -0.7738588
+			scale = 0.04800564 0.04800564 0.04800564
+			boneSlot rh
+			{
+				bone = rh3
+			}
+		}
+		ribbonTrail
+		{
+			trailLength = 5
+			maxChainElements = 100
+			materialName = NewMaterial
+			lifeTimeAfterDestroy = 5
+			castShadows = True
+			boneSlot = rh
+			position = 0.8361566 1.385195 0.5593655
+			chains
+			{
+				chain
+				{
+					initialColor = 0 0 0 0
+					initialWidth = 0.1
+					changeColor = 0.5058824 0.7176471 0.4588236 0.654902
+					changeWidth = 1
+				}
+			}
+		}
+	}
+	animationTypesNamesDict
+	{
+	}
+}

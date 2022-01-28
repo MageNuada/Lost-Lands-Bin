@@ -1,0 +1,1172 @@
+type = GameMap
+uin = 2
+classPrompt = GameMap
+gameMusic = "Sounds\\Music\\Game.ogg"
+resetYCoordinateForDynamicBodies = False
+destroyObjectsBelowHeight = -500
+_baseAllod = Gipath
+windDirection = 0
+windSpeed = 1
+ambientIntensity = 1
+ambientSkyColor = 0.5058824 0.5294118 0.4901961
+ambientEquatorColor = 0.5058824 0.5294118 0.4901961
+ambientGroundColor = 0.5058824 0.5294118 0.4901961
+editorCameraPosition = -27.73622 6.436231 16.21207
+editorCameraDirection = 0.159084 -0.587704
+shadowColor = 1 1 1
+shadowPSSMSplitFactors = 0.1 0.4
+fov = 45
+logicSystemManager = 3
+staticBatchingRenderingEnabled = True
+staticBatchingPhysicsEnabledInMapEditor = True
+staticBatchingPhysicsEnabledInSimulation = True
+staticBatchingGridCellSize = 30 30 30
+staticBatchingFilterByMaxTriangleCount = 512
+name = "Maps\\TestPerf\\Map.map"
+shadowTechnique = ShadowmapMedium
+dataForEditor
+{
+	loadSaveSelection1 = 19 20 17 18 23 24 28 29 31 32 21 22 25 26 27 30 37 38 40 41 47 48 33 34 35 36 39 46 44 45 42 43
+	loadSaveSelection2 = 53 54 49 52 56 57 60 61 63 64 50 51 55 58 59 62 71 72 67 68 79 80 65 66 69 70 77 78 75 76 73 74
+}
+sceneGraphSettings
+{
+	amountOfObjectsOutsideOctreeBoundsToRebuld = 30
+	octreeBoundsRebuildExpand = 50 50 50
+	minNodeSize = 10 10 10
+	objectCountThresholdToCreateChildNodes = 10
+	maxNodeCount = 300000
+}
+tags
+{
+}
+rootEditorLayer
+{
+	name = Root Layer
+}
+entity
+{
+	type = LogicSystemManager
+	uin = 3
+	referencesToCompileDLL = "System.dll\r\nSystem.Drawing.dll\r\n\r\nEngineApp.dll\r\nUISystem.dll\r\nFileSystem.dll\r\nLog.dll\r\nMathEx.dll\r\nRenderer.dll\r\nPhysicsSystem.dll\r\nSoundSystem.dll\r\nEntitySystem.dll\r\nMapSystem.dll\r\nUtils.dll\r\nHeightmapTerrain.dll\r\nDecorativeObjectManager.dll\r\n\r\nProjectCommon.dll\r\nProjectEntities.dll"
+	usingNamespacesToCodeGeneration = "using System;\r\nusing System.Collections.Generic;\r\nusing System.Text;\r\n\r\nusing Engine;\r\nusing Engine.FileSystem;\r\nusing Engine.MathEx;\r\nusing Engine.Utils;\r\nusing Engine.Renderer;\r\nusing Engine.PhysicsSystem;\r\nusing Engine.SoundSystem;\r\nusing Engine.UISystem;\r\nusing Engine.EntitySystem;\r\nusing Engine.MapSystem;\r\n\r\nusing ProjectCommon;\r\nusing ProjectEntities;"
+	mapClassManager = 4
+	tags
+	{
+	}
+	entity
+	{
+		type = LogicClassManager
+		uin = 4
+		tags
+		{
+		}
+		entity
+		{
+			type = LogicEntityClass
+			uin = 5
+			subscriptionsToDeletionEvent = 17
+			entityClassName = SpawnPoint
+			className = SpawnPoint_0
+			customScriptCodeCreated = False
+			tags
+			{
+			}
+			entity
+			{
+				type = LogicVariable
+				uin = 6
+				variableType = System.Int32
+				variableName = Time
+				supportSerialization = True
+				tags
+				{
+				}
+			}
+			entity
+			{
+				type = LogicVariable
+				uin = 7
+				variableType = System.Int32
+				variableName = Count
+				supportSerialization = True
+				tags
+				{
+				}
+			}
+			entity
+			{
+				type = LogicScriptMethod
+				uin = 8
+				code = "Time = 90;\r\nCount = 5;\r\nMaxTime = 150;"
+				methodName = PostCreated
+				returnType = System.Void
+				parameters = 9
+				isEntityEventMethod = True
+				tags
+				{
+				}
+				entity
+				{
+					type = LogicParameter
+					uin = 9
+					parameterType = System.Boolean
+					parameterName = loaded
+					tags
+					{
+					}
+				}
+			}
+			entity
+			{
+				type = LogicScriptMethod
+				uin = 10
+				code = "Time--;\r\n\r\nif(Time == 0)\r\n{\r\n\tTime = MaxTime;\r\n\tif(Count > 0)\r\n\t{\r\n\t\tCount--;\r\n\t\tList <Entity> sp = new List<Entity>();\r\n\t\tforeach(Entity e in Entities.Instance.EntitiesCollection)\r\n\t\t{\r\n\t\t\tif(e is SpawnPoint)\r\n\t\t\tsp.Add(e);\r\n\t\t}\r\n\t\tint k = 0;\r\n\t\tforeach(Entity e in sp)\r\n\t\t{\r\n\t\t\tUnitPrototype u = (UnitPrototype)Entities.Instance.Create(\"Human\", Map.Instance);\r\n\t\t\tif(u as IIntellectControlledCharacter != null)\r\n\t\t\t{\r\n\t\t\t\tu.Position = (e as MapObject).Position + new Vec3(Count*2, Count, 0);\r\n\t\t\t\tu.InitialAI = (BaseIntellectType)EntityTypes.Instance.GetByName(\"BaseNPCIntellect\");\r\n\t\t\t\tu.PostCreate();\r\n\t\t\t\t//u.AlwaysVisible = true;\r\n\t\t\t\tUnitPrototype.Task task = new UnitPrototype.Task();\r\n\t\t\t\ttask.RepeatTask = true;\r\n\t\t\t\ttask.ScriptName = \"Idle\";\r\n\t\t\t\t(u as IIntellectControlledCharacter).Tasks.Add(task);\r\n\t\t\t\t//u.AlwaysVisible = true;\r\n\t\t\t\tk++;\r\n\t\t\t\t//if(k%2 == 0)\r\n\t\t\t\t//u.Faction = (FactionType)EntityTypes.Instance.GetByName(\"Hagadan\");\r\n\t\t\t}\r\n\t\t}\r\n\t}\r\n}\r\n\r\nif(Time%30 == 0)\r\n{\r\n\tLog.Info(\"Time = \"+PerformanceCounter.Counters[5].CalculatedValue*1000.0f);\r\n\tint i = 0;\r\n\tforeach(Entity e in Entities.Instance.EntitiesCollection)\r\n\t\tif(e is UnitPrototype)\r\n\t\t\ti++;\r\n\tLog.Info(\"Units = \"+i);\r\n}"
+				methodName = Tick
+				returnType = System.Void
+				parameters = 
+				isEntityEventMethod = True
+				tags
+				{
+				}
+			}
+			entity
+			{
+				type = LogicVariable
+				uin = 11
+				variableType = System.Int32
+				variableName = MaxTime
+				supportSerialization = False
+				tags
+				{
+				}
+			}
+		}
+	}
+}
+entity
+{
+	type = EnvironmentManager
+	uin = 12
+	classPrompt = EnvironmentManager
+	_sun = 14
+	_sky = 15
+	_nextChangeWeather = 8707
+	_windtransition = 180
+	_fogTransition = 60
+	time = 30
+	name = EnvironmentManager_0
+	_weather
+	{
+		nPowerCheck = 0
+		fpWeatherStartTime = 0
+		fpWeatherTransformTime = 0
+		curWeather = Nothing
+		nextWeather = Nothing
+	}
+	tags
+	{
+	}
+}
+entity
+{
+	type = HeightmapTerrain
+	uin = 13
+	classPrompt = HeightmapTerrain
+	enabled = True
+	position = 0 0 0
+	horizontalSize = 1000
+	dataDirectory = HeightmapTerrain
+	masksSize = 2048
+	detailMapsDistance = 50
+	renderQueueGroup = WorldGeometry1
+	collision = True
+	collisionMaterialName = Default
+	collisionHeightfieldThickness = 2
+	castDynamicShadows = False
+	receiveStaticShadows = True
+	simpleRendering = False
+	tileSize = 64
+	visible = True
+	allowVertexTextureFetchOptimization = True
+	useFloat16BitHeightTexture = False
+	heightMultiplier = 1
+	heightmapTerrainManagerIndex = 0 0
+	ambientOcclusion
+	{
+		enabled = False
+		size = 1024
+		rayLength = 1
+		iterationCount = 100
+		blur = True
+		power = 1
+	}
+	lodSettings
+	{
+		enabled = True
+		maxCount = 99
+		lodLevelDistances = 100 + level * 200
+		morphAreaPercent = 0.3
+		showLevels = False
+	}
+	tags
+	{
+	}
+	layers
+	{
+		item
+		{
+			name = base
+			baseMap = "Base\\Types\\HeightmapTerrain\\DefaultLayer0Base.jpg"
+			baseScale = 10
+			detailMap = "Base\\Types\\HeightmapTerrain\\DefaultLayer0Detail.jpg"
+			detailScale = 2
+		}
+		item
+		{
+			name = second
+			baseMap = "Base\\Types\\HeightmapTerrain\\DefaultLayer1Base.jpg"
+			baseScale = 10
+			detailMap = "Base\\Types\\HeightmapTerrain\\DefaultLayer1Detail.jpg"
+			detailScale = 2
+		}
+	}
+}
+entity
+{
+	type = Sun
+	uin = 14
+	classPrompt = Sun
+	subscriptionsToDeletionEvent = 12 12 12 12 12 12 12 12 12 12
+	billboardTexture = "Base\\Types\\Sun\\SunDefault.png"
+	billboardColor = 1 1 1
+	billboardPower = 1
+	billboardSize = 1
+	billboardRenderQueueGroup = Main
+	billboardOverridePosition = 0 0 0
+	enabled = True
+	lightType = Directional
+	diffuseColor = 1 1 1
+	diffusePower = 1
+	specularColor = 1 1 1
+	specularPower = 1
+	attenuationNear = 0
+	attenuationFar = 10
+	attenuationPower = 2
+	ffpAttenuationConstant = 1
+	ffpAttenuationLinear = 0
+	ffpAttenuationQuadric = 0
+	spotlightInnerAngle = 30
+	spotlightOuterAngle = 40
+	spotlightFalloff = 1
+	castShadows = True
+	allowStaticLighting = False
+	allowDynamicLighting = True
+	customShaderParameter = 0 0 0 0
+	position = -71.43361 -58.65734 7
+	rotation = 0.1227878 -0.6963642 0.1227878 -0.6963642
+	name = Sun_1
+	tags
+	{
+	}
+}
+entity
+{
+	type = SkyBox
+	uin = 15
+	classPrompt = SkyBox
+	subscriptionsToDeletionEvent = 12 12 12 12 12 12 12 12 12 12
+	enabled = True
+	color = 0.1803922 0.7098039 0.8509805
+	power = 1
+	tags
+	{
+	}
+}
+entity
+{
+	type = Fog
+	uin = 16
+	classPrompt = Fog
+	enabled = False
+	mode = Linear
+	color = 0.1803922 0.7098039 0.8509805
+	expDensity = 0.004
+	linearStart = 53.33334
+	linearEnd = 110
+	tags
+	{
+	}
+}
+entity
+{
+	type = SpawnPoint
+	uin = 17
+	classPrompt = SpawnPoint
+	subscriptionsToDeletionEvent = 5
+	defaultPoint = False
+	position = -51.09569 106.5956 0
+	name = SpawnPoint_0
+	logicClass = 5
+	tags
+	{
+	}
+}
+entity
+{
+	type = SpawnPoint
+	uin = 18
+	classPrompt = SpawnPoint
+	defaultPoint = False
+	position = -51.09569 51.56216 0
+	name = SpawnPoint_1
+	tags
+	{
+	}
+}
+entity
+{
+	type = SpawnPoint
+	uin = 19
+	classPrompt = SpawnPoint
+	defaultPoint = False
+	position = -51.09569 -14.57472 0
+	name = SpawnPoint_2
+	tags
+	{
+	}
+}
+entity
+{
+	type = SpawnPoint
+	uin = 20
+	classPrompt = SpawnPoint
+	defaultPoint = False
+	position = -51.09569 -100.5798 0
+	name = SpawnPoint_3
+	tags
+	{
+	}
+}
+entity
+{
+	type = SpawnPoint
+	uin = 21
+	classPrompt = SpawnPoint
+	defaultPoint = False
+	position = -9.048737 106.5956 0
+	name = SpawnPoint_4
+	tags
+	{
+	}
+}
+entity
+{
+	type = SpawnPoint
+	uin = 22
+	classPrompt = SpawnPoint
+	defaultPoint = False
+	position = -9.048737 51.56216 0
+	name = SpawnPoint_5
+	tags
+	{
+	}
+}
+entity
+{
+	type = SpawnPoint
+	uin = 23
+	classPrompt = SpawnPoint
+	defaultPoint = False
+	position = -9.048737 -100.5798 0
+	name = SpawnPoint_6
+	tags
+	{
+	}
+}
+entity
+{
+	type = SpawnPoint
+	uin = 24
+	classPrompt = SpawnPoint
+	defaultPoint = False
+	position = -9.048737 -14.57472 0
+	name = SpawnPoint_7
+	tags
+	{
+	}
+}
+entity
+{
+	type = SpawnPoint
+	uin = 25
+	classPrompt = SpawnPoint
+	defaultPoint = False
+	position = 32.14096 106.5956 0
+	name = SpawnPoint_8
+	tags
+	{
+	}
+}
+entity
+{
+	type = SpawnPoint
+	uin = 26
+	classPrompt = SpawnPoint
+	defaultPoint = False
+	position = 64.21329 106.5956 0
+	name = SpawnPoint_9
+	tags
+	{
+	}
+}
+entity
+{
+	type = SpawnPoint
+	uin = 27
+	classPrompt = SpawnPoint
+	defaultPoint = False
+	position = 32.14096 51.56216 0
+	name = SpawnPoint_10
+	tags
+	{
+	}
+}
+entity
+{
+	type = SpawnPoint
+	uin = 28
+	classPrompt = SpawnPoint
+	defaultPoint = False
+	position = 32.14096 -100.5798 0
+	name = SpawnPoint_11
+	tags
+	{
+	}
+}
+entity
+{
+	type = SpawnPoint
+	uin = 29
+	classPrompt = SpawnPoint
+	defaultPoint = False
+	position = 32.14096 -14.57472 0
+	name = SpawnPoint_12
+	tags
+	{
+	}
+}
+entity
+{
+	type = SpawnPoint
+	uin = 30
+	classPrompt = SpawnPoint
+	defaultPoint = False
+	position = 64.21329 51.56216 0
+	name = SpawnPoint_13
+	tags
+	{
+	}
+}
+entity
+{
+	type = SpawnPoint
+	uin = 31
+	classPrompt = SpawnPoint
+	defaultPoint = False
+	position = 64.21329 -100.5798 0
+	name = SpawnPoint_14
+	tags
+	{
+	}
+}
+entity
+{
+	type = SpawnPoint
+	uin = 32
+	classPrompt = SpawnPoint
+	defaultPoint = False
+	position = 64.21329 -14.57472 0
+	name = SpawnPoint_15
+	tags
+	{
+	}
+}
+entity
+{
+	type = SpawnPoint
+	uin = 33
+	classPrompt = SpawnPoint
+	defaultPoint = False
+	position = 98.35436 106.5956 0
+	name = SpawnPoint_16
+	tags
+	{
+	}
+}
+entity
+{
+	type = SpawnPoint
+	uin = 34
+	classPrompt = SpawnPoint
+	defaultPoint = False
+	position = 143.386 106.5956 0
+	name = SpawnPoint_17
+	tags
+	{
+	}
+}
+entity
+{
+	type = SpawnPoint
+	uin = 35
+	classPrompt = SpawnPoint
+	defaultPoint = False
+	position = 185.5808 106.5956 0
+	name = SpawnPoint_18
+	tags
+	{
+	}
+}
+entity
+{
+	type = SpawnPoint
+	uin = 36
+	classPrompt = SpawnPoint
+	defaultPoint = False
+	position = 98.35436 51.56216 0
+	name = SpawnPoint_19
+	tags
+	{
+	}
+}
+entity
+{
+	type = SpawnPoint
+	uin = 37
+	classPrompt = SpawnPoint
+	defaultPoint = False
+	position = 98.35436 -100.5798 0
+	name = SpawnPoint_20
+	tags
+	{
+	}
+}
+entity
+{
+	type = SpawnPoint
+	uin = 38
+	classPrompt = SpawnPoint
+	defaultPoint = False
+	position = 98.35436 -14.57472 0
+	name = SpawnPoint_21
+	tags
+	{
+	}
+}
+entity
+{
+	type = SpawnPoint
+	uin = 39
+	classPrompt = SpawnPoint
+	defaultPoint = False
+	position = 143.386 51.56216 0
+	name = SpawnPoint_22
+	tags
+	{
+	}
+}
+entity
+{
+	type = SpawnPoint
+	uin = 40
+	classPrompt = SpawnPoint
+	defaultPoint = False
+	position = 143.386 -100.5798 0
+	name = SpawnPoint_23
+	tags
+	{
+	}
+}
+entity
+{
+	type = SpawnPoint
+	uin = 41
+	classPrompt = SpawnPoint
+	defaultPoint = False
+	position = 143.386 -14.57472 0
+	name = SpawnPoint_24
+	tags
+	{
+	}
+}
+entity
+{
+	type = SpawnPoint
+	uin = 42
+	classPrompt = SpawnPoint
+	defaultPoint = False
+	position = 234.0243 106.5956 0
+	name = SpawnPoint_25
+	tags
+	{
+	}
+}
+entity
+{
+	type = SpawnPoint
+	uin = 43
+	classPrompt = SpawnPoint
+	defaultPoint = False
+	position = 234.0243 51.56216 0
+	name = SpawnPoint_26
+	tags
+	{
+	}
+}
+entity
+{
+	type = SpawnPoint
+	uin = 44
+	classPrompt = SpawnPoint
+	defaultPoint = False
+	position = 234.0243 -100.5798 0
+	name = SpawnPoint_27
+	tags
+	{
+	}
+}
+entity
+{
+	type = SpawnPoint
+	uin = 45
+	classPrompt = SpawnPoint
+	defaultPoint = False
+	position = 234.0243 -14.57472 0
+	name = SpawnPoint_28
+	tags
+	{
+	}
+}
+entity
+{
+	type = SpawnPoint
+	uin = 46
+	classPrompt = SpawnPoint
+	defaultPoint = False
+	position = 185.5808 51.56216 0
+	name = SpawnPoint_29
+	tags
+	{
+	}
+}
+entity
+{
+	type = SpawnPoint
+	uin = 47
+	classPrompt = SpawnPoint
+	defaultPoint = False
+	position = 185.5808 -100.5798 0
+	name = SpawnPoint_30
+	tags
+	{
+	}
+}
+entity
+{
+	type = SpawnPoint
+	uin = 48
+	classPrompt = SpawnPoint
+	defaultPoint = False
+	position = 185.5808 -14.57472 0
+	name = SpawnPoint_31
+	tags
+	{
+	}
+}
+entity
+{
+	type = SpawnPoint
+	uin = 49
+	classPrompt = SpawnPoint
+	defaultPoint = False
+	position = -51.09569 158.9754 0
+	name = SpawnPoint_32
+	tags
+	{
+	}
+}
+entity
+{
+	type = SpawnPoint
+	uin = 50
+	classPrompt = SpawnPoint
+	defaultPoint = False
+	position = -9.048737 158.9754 0
+	name = SpawnPoint_33
+	tags
+	{
+	}
+}
+entity
+{
+	type = SpawnPoint
+	uin = 51
+	classPrompt = SpawnPoint
+	defaultPoint = False
+	position = 32.14096 158.9754 0
+	name = SpawnPoint_34
+	tags
+	{
+	}
+}
+entity
+{
+	type = SpawnPoint
+	uin = 52
+	classPrompt = SpawnPoint
+	defaultPoint = False
+	position = -51.09569 94.3822 0
+	name = SpawnPoint_35
+	tags
+	{
+	}
+}
+entity
+{
+	type = SpawnPoint
+	uin = 53
+	classPrompt = SpawnPoint
+	defaultPoint = False
+	position = -51.09569 -82.17513 0
+	name = SpawnPoint_36
+	tags
+	{
+	}
+}
+entity
+{
+	type = SpawnPoint
+	uin = 54
+	classPrompt = SpawnPoint
+	defaultPoint = False
+	position = -51.09569 3.830032 0
+	name = SpawnPoint_37
+	tags
+	{
+	}
+}
+entity
+{
+	type = SpawnPoint
+	uin = 55
+	classPrompt = SpawnPoint
+	defaultPoint = False
+	position = -9.048737 94.3822 0
+	name = SpawnPoint_38
+	tags
+	{
+	}
+}
+entity
+{
+	type = SpawnPoint
+	uin = 56
+	classPrompt = SpawnPoint
+	defaultPoint = False
+	position = -9.048737 -82.17513 0
+	name = SpawnPoint_39
+	tags
+	{
+	}
+}
+entity
+{
+	type = SpawnPoint
+	uin = 57
+	classPrompt = SpawnPoint
+	defaultPoint = False
+	position = -9.048737 3.830032 0
+	name = SpawnPoint_40
+	tags
+	{
+	}
+}
+entity
+{
+	type = SpawnPoint
+	uin = 58
+	classPrompt = SpawnPoint
+	defaultPoint = False
+	position = 64.21329 158.9754 0
+	name = SpawnPoint_41
+	tags
+	{
+	}
+}
+entity
+{
+	type = SpawnPoint
+	uin = 59
+	classPrompt = SpawnPoint
+	defaultPoint = False
+	position = 64.21329 94.3822 0
+	name = SpawnPoint_42
+	tags
+	{
+	}
+}
+entity
+{
+	type = SpawnPoint
+	uin = 60
+	classPrompt = SpawnPoint
+	defaultPoint = False
+	position = 64.21329 -82.17513 0
+	name = SpawnPoint_43
+	tags
+	{
+	}
+}
+entity
+{
+	type = SpawnPoint
+	uin = 61
+	classPrompt = SpawnPoint
+	defaultPoint = False
+	position = 64.21329 3.830032 0
+	name = SpawnPoint_44
+	tags
+	{
+	}
+}
+entity
+{
+	type = SpawnPoint
+	uin = 62
+	classPrompt = SpawnPoint
+	defaultPoint = False
+	position = 32.14096 94.3822 0
+	name = SpawnPoint_45
+	tags
+	{
+	}
+}
+entity
+{
+	type = SpawnPoint
+	uin = 63
+	classPrompt = SpawnPoint
+	defaultPoint = False
+	position = 32.14096 -82.17513 0
+	name = SpawnPoint_46
+	tags
+	{
+	}
+}
+entity
+{
+	type = SpawnPoint
+	uin = 64
+	classPrompt = SpawnPoint
+	defaultPoint = False
+	position = 32.14096 3.830032 0
+	name = SpawnPoint_47
+	tags
+	{
+	}
+}
+entity
+{
+	type = SpawnPoint
+	uin = 65
+	classPrompt = SpawnPoint
+	defaultPoint = False
+	position = 185.5808 158.9754 0
+	name = SpawnPoint_48
+	tags
+	{
+	}
+}
+entity
+{
+	type = SpawnPoint
+	uin = 66
+	classPrompt = SpawnPoint
+	defaultPoint = False
+	position = 185.5808 94.3822 0
+	name = SpawnPoint_49
+	tags
+	{
+	}
+}
+entity
+{
+	type = SpawnPoint
+	uin = 67
+	classPrompt = SpawnPoint
+	defaultPoint = False
+	position = 185.5808 -26.35633 0
+	name = SpawnPoint_50
+	tags
+	{
+	}
+}
+entity
+{
+	type = SpawnPoint
+	uin = 68
+	classPrompt = SpawnPoint
+	defaultPoint = False
+	position = 185.5808 -6.778133 0
+	name = SpawnPoint_51
+	tags
+	{
+	}
+}
+entity
+{
+	type = SpawnPoint
+	uin = 69
+	classPrompt = SpawnPoint
+	defaultPoint = False
+	position = 98.35436 158.9754 0
+	name = SpawnPoint_52
+	tags
+	{
+	}
+}
+entity
+{
+	type = SpawnPoint
+	uin = 70
+	classPrompt = SpawnPoint
+	defaultPoint = False
+	position = 98.35436 94.3822 0
+	name = SpawnPoint_53
+	tags
+	{
+	}
+}
+entity
+{
+	type = SpawnPoint
+	uin = 71
+	classPrompt = SpawnPoint
+	defaultPoint = False
+	position = 98.35436 -82.17513 0
+	name = SpawnPoint_54
+	tags
+	{
+	}
+}
+entity
+{
+	type = SpawnPoint
+	uin = 72
+	classPrompt = SpawnPoint
+	defaultPoint = False
+	position = 98.35436 38.07206 0
+	name = SpawnPoint_55
+	tags
+	{
+	}
+}
+entity
+{
+	type = SpawnPoint
+	uin = 73
+	classPrompt = SpawnPoint
+	defaultPoint = False
+	position = 234.0243 158.9754 0
+	name = SpawnPoint_56
+	tags
+	{
+	}
+}
+entity
+{
+	type = SpawnPoint
+	uin = 74
+	classPrompt = SpawnPoint
+	defaultPoint = False
+	position = 234.0243 94.3822 0
+	name = SpawnPoint_57
+	tags
+	{
+	}
+}
+entity
+{
+	type = SpawnPoint
+	uin = 75
+	classPrompt = SpawnPoint
+	defaultPoint = False
+	position = 234.0243 -26.35633 0
+	name = SpawnPoint_58
+	tags
+	{
+	}
+}
+entity
+{
+	type = SpawnPoint
+	uin = 76
+	classPrompt = SpawnPoint
+	defaultPoint = False
+	position = 234.0243 38.07206 0
+	name = SpawnPoint_59
+	tags
+	{
+	}
+}
+entity
+{
+	type = SpawnPoint
+	uin = 77
+	classPrompt = SpawnPoint
+	defaultPoint = False
+	position = 143.386 158.9754 0
+	name = SpawnPoint_60
+	tags
+	{
+	}
+}
+entity
+{
+	type = SpawnPoint
+	uin = 78
+	classPrompt = SpawnPoint
+	defaultPoint = False
+	position = 143.386 94.3822 0
+	name = SpawnPoint_61
+	tags
+	{
+	}
+}
+entity
+{
+	type = SpawnPoint
+	uin = 79
+	classPrompt = SpawnPoint
+	defaultPoint = False
+	position = 143.386 -26.35633 0
+	name = SpawnPoint_62
+	tags
+	{
+	}
+}
+entity
+{
+	type = SpawnPoint
+	uin = 80
+	classPrompt = SpawnPoint
+	defaultPoint = False
+	position = 143.386 -6.778133 0
+	name = SpawnPoint_63
+	tags
+	{
+	}
+}
+entity
+{
+	type = GridBasedNavigationSystem
+	uin = 81
+	classPrompt = GridBasedNavigationSystem
+	gridBounds = -500 -500 500 500
+	gridCellSize = 1
+	agentHeight = 2
+	agentMaxSlope = 30
+	heightByTerrainOnly = True
+	alwaysDrawGrid = False
+	drawGridDistance = 100
+	name = RPGPathFind_0
+	tags
+	{
+	}
+}
+entity
+{
+	type = QuestsManager
+	uin = 82
+	classPrompt = QuestsManager
+	name = QuestsManager_0
+	tags
+	{
+	}
+}
+entity
+{
+	type = TextOnScreenManager
+	uin = 83
+	classPrompt = TextOnScreenManager
+	name = TextOnScreenManager_0
+	_txt
+	{
+	}
+	tags
+	{
+	}
+}
+entity
+{
+	type = Wolf
+	uin = 84
+	classPrompt = UCreature
+	regenerationHealth = 0.001
+	_initialai = BasePlayerIntellect
+	_faction = WildAgro
+	_handinv = False
+	_spellPosition = 0 0 0
+	_personalEnemies = 
+	_deadAlly = 
+	_money = 1
+	_gameDescription = "\x041b\x0435\x0441\x043d\x043e\x0439 \x0432\x043e\x043b\x043a"
+	_gameName = "\x0412\x043e\x043b\x043a"
+	position = 8.003639 23.51084 1.137093
+	name = Wolf_0
+	bodyParts
+	{
+		item
+		{
+			_mainHealthPercent = 1.01
+			_section = Head
+		}
+		item
+		{
+			_mainHealthPercent = 1.01
+		}
+		item
+		{
+			_mainHealthPercent = 0.51
+			_section = Leg
+		}
+		item
+		{
+			_mainHealthPercent = 0.51
+			_section = Leg
+		}
+		item
+		{
+			_mainHealthPercent = 0.51
+			_section = Leg
+		}
+		item
+		{
+			_mainHealthPercent = 0.51
+			_section = Leg
+		}
+	}
+	_tasks
+	{
+	}
+	tags
+	{
+	}
+	inventory
+	{
+	}
+	equipment
+	{
+	}
+}

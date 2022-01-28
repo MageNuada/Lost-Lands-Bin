@@ -1,0 +1,25 @@
+type FireLight
+{
+	class = MapObject
+	attachedObjects
+	{
+		particle
+		{
+			particleName = FireParticle3
+			updateWhenItNotInView = False
+			renderingDistanceForShadows = 50
+		}
+		light
+		{
+			diffuseColor = 1 0.1803922 0
+			specularColor = 1 0.04705883 0
+			attenuationNear = 1.5
+			attenuationFar = 3
+		}
+		particle
+		{
+			particleName = SmokeParticleFire
+			position = 0 0 0.5
+		}
+	}
+}

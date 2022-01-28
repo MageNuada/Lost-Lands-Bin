@@ -1,0 +1,929 @@
+// Copyright (C) NeoAxis Group Ltd. This is part of NeoAxis 3D Engine SDK.
+#include "Base/Shaders/General.cg_hlsl"
+
+//Fog
+#ifdef FOG_ENABLED
+	#include "Base/Shaders/getFogValue.cg_hlsl"
+#endif
+
+//Shadows
+#if LIGHT_COUNT >= 1
+	#ifdef SHADOW_MAP
+		#include "Base/Shaders/ShadowReceiverFunctions.cg_hlsl"
+	#endif
+#endif
+
+/////////////////////////////////////////////////////////////////////////////////////////
+
+struct A2V
+{
+	float4 position : POSITION;
+#ifdef LOD_ENABLED
+	#ifdef SHARED_VERTEX_BUFFERS
+		float2 morphOffset : TEXCOORD0;
+	#else
+		float3 morphOffset : TEXCOORD0;
+	#endif
+#endif
+};
+
+/////////////////////////////////////////////////////////////////////////////////////////
+
+struct V2F
+{
+	float4 position : POSITION;
+	float4 worldPositionAndCameraDistance : TEXCOORD0;
+	float4 masksAndNormalsUV : TEXCOORD1;
+#if defined(HOLE_MAP) || defined(AMBIENT_OCCLUSION)
+	float4 holeAndAmbientOcclusionUV : TEXCOORD2;
+#endif
+#ifdef LIGHTMAP
+	//float2 lightmapUV : TEXCOORD3;
+#endif
+#ifdef ALLOW_DETAIL
+	float detailCoefficient : TEXCOORD4;
+#endif
+	float depth : TEXCOORD5;
+
+#if LIGHT_COUNT >= 1
+	#ifdef SHADOW_MAP
+		//float4 shadowUV0 : TEXCOORD6;
+		#ifdef SHADOW_PSSM
+			//float4 shadowUV1 : TEXCOORD7;
+			//float4 shadowUV2 : TEXCOORD8;
+		#endif
+	#endif
+#endif
+
+	float3 rotMatrix1 : TEXCOORD3; // first row of the 3x3 transform from tangent to obj space
+	float3 rotMatrix2 : TEXCOORD6; // second row of the 3x3 transform from tangent to obj space
+	float3 rotMatrix3 : TEXCOORD7; // third row of the 3x3 transform from tangent to obj space
+
+	float3 bumpCoord0 : TEXCOORD8;
+	float3 bumpCoord1 : TEXCOORD9;
+	
+	//float4 position : TEXCOORD10;
+
+#ifdef REFLECTION_MAP
+	float4 projectionCoord : TEXCOORD10;
+#endif
+};
+
+/////////////////////////////////////////////////////////////////////////////////////////
+
+struct F2O
+{
+	half4 color : COLOR;
+#if defined(DEPTH_WRITE) && defined(DIRECT3D)
+	float4 depth : COLOR1;
+#endif
+};
+
+//wave functions
+struct Wave {
+  float freq;  // 2*PI / wavelength
+  float amp;   // amplitude
+  float phase; // speed * 2*PI / wavelength
+  float2 dir;
+};
+
+/////////////////////////////////////////////////////////////////////////////////////////
+
+V2F main_vp(
+	uniform float4x4 worldViewProjMatrix,
+	uniform float3 cameraPosition,
+
+	uniform float time0X,
+	
+#if LIGHT_COUNT >= 1
+	uniform float4 lightPositionArray[LIGHT_COUNT],
+	uniform float4 lightDirectionArray[LIGHT_COUNT],
+	uniform float4 spotLightParamsArray[LIGHT_COUNT],
+	uniform float4 lightCustomShaderParameterArray[LIGHT_COUNT],
+#endif
+
+#ifdef LOD_ENABLED
+	uniform float2 morphParameters,
+	uniform float3 morphCameraPosition,
+#endif
+
+	uniform float2 detailMapsDistanceRange,
+	uniform float2 tileMinVertexPosition,
+	uniform float4 masksUVTransform,
+	uniform float4 normalsUVTransform,
+#ifdef SHARED_VERTEX_BUFFERS
+	uniform sampler2D heightMap : register(s0),
+#endif
+#ifdef HOLE_MAP
+	uniform float4 holeUVTransform,
+#endif
+#ifdef AMBIENT_OCCLUSION
+	uniform float4 ambientOcclusionUVTransform,
+#endif
+
+#if LIGHT_COUNT >= 1
+	#ifdef SHADOW_MAP
+		uniform float3 shadowFarDistance,
+		uniform float3 shadowTextureSizes,
+		uniform float4x4 textureViewProjMatrix0,
+		uniform float4x4 textureViewProjMatrix1,
+		uniform float4x4 textureViewProjMatrix2,
+		#ifdef SHADOW_PSSM
+			uniform float4 shadowDirectionalLightSplitDistances,
+		#endif
+	#endif
+#endif
+
+#ifdef LIGHTMAP
+	uniform float4 lightmapTransform,
+#endif
+
+#ifdef REFLECTION_MAP
+	uniform float renderTargetFlipping,
+#endif
+
+	A2V input
+)
+{
+	V2F output;
+
+	float bumpScale = 0.7; // amount bump on waves
+	float2 textureScale = float2(20, 20); // scaling of normal texture
+	float2 bumpSpeed = float2(0.025, 0.025); // speed of normalmap waves
+	float2 waveDirection0 = float2(-1, 0); // direction of wave 0
+	float2 waveDirection1 = float2(-0.7, 0.7); // direction of wave 1
+	float waveFrequency = 0.28;
+	float waveAmplitude = 0;//0.3;
+	
+	#define WAVE_COUNT 2
+	Wave wave[WAVE_COUNT] =
+	{
+		{ 1.0, 1.0, 0.5, waveDirection0 },
+		{ 2.0, 0.5, 1.7, waveDirection1 }
+	};
+
+	wave[0].freq = waveFrequency;
+	wave[0].amp = waveAmplitude;
+	wave[1].freq = waveFrequency * 3.0;
+	wave[1].amp = waveAmplitude * 0.33;
+	
+	//get "position" and "normal" in world coordinates
+	float4 worldPosition = input.position;
+	
+	float2 heightUV = normalsUVTransform.xy + worldPosition.xy * normalsUVTransform.zw;
+
+#ifdef SHARED_VERTEX_BUFFERS
+	//shared vertex buffers mode
+
+	float3 worldPosition1;
+	worldPosition1.xy = worldPosition.xy + tileMinVertexPosition.xy;
+	worldPosition1.z = tex2Dlod(heightMap, float4(heightUV, 0, 0)).r;
+	worldPosition.xyz = worldPosition1;
+	
+#else
+	//non shared vertex buffers mode
+	#ifdef LOD_ENABLED
+		float morphCameraDistance = length(worldPosition.xy - morphCameraPosition.xy);
+		float morphFactor = 1.0f - saturate( morphParameters.x - morphCameraDistance * morphParameters.y );
+		worldPosition.xyz += input.morphOffset * morphFactor;
+	#endif
+#endif
+
+	float2 localPosition = worldPosition.xy - tileMinVertexPosition.xy;
+	
+	//General
+	output.position = mul(worldViewProjMatrix, worldPosition);
+	float cameraDistance = length(cameraPosition.xyz - worldPosition.xyz);
+	output.worldPositionAndCameraDistance.xyz = worldPosition.xyz;
+	output.worldPositionAndCameraDistance.w = cameraDistance;
+	
+	// sum waves
+	float ddx = 0.0, ddy = 0.0;
+	float deriv;
+	float angle;
+
+	float2 texCoord = worldPosition / 1000.0;
+	
+	// wave synthesis using two sine waves at different frequencies and phase shift
+	for(int i = 0; i < WAVE_COUNT; i++)
+	{
+		angle = dot(wave[i].dir, worldPosition.xy) * wave[i].freq + time0X * wave[i].phase;
+		worldPosition.z += wave[i].amp * sin(angle);
+		// calculate derivate of wave function
+		deriv = wave[i].freq * wave[i].amp * cos(angle);
+		ddx -= deriv * wave[i].dir.x;
+		ddy -= deriv * wave[i].dir.y;
+	}
+	
+	//hole and AO uv
+#if defined(HOLE_MAP) || defined(AMBIENT_OCCLUSION)
+	output.holeAndAmbientOcclusionUV = float4(0,0,0,0);
+	#ifdef HOLE_MAP
+		output.holeAndAmbientOcclusionUV.xy = holeUVTransform.xy + localPosition * holeUVTransform.zw;
+	#endif
+	#ifdef AMBIENT_OCCLUSION
+		output.holeAndAmbientOcclusionUV.zw = ambientOcclusionUVTransform.xy + localPosition * ambientOcclusionUVTransform.zw;
+	#endif
+#endif
+
+	//lightmap uv
+#ifdef LIGHTMAP
+	//output.lightmapUV = lightmapTransform.xy + localPosition * lightmapTransform.zw;
+#endif
+
+#ifdef ALLOW_DETAIL
+	output.detailCoefficient = 1.0f - saturate((cameraDistance - detailMapsDistanceRange.x) * detailMapsDistanceRange.y);
+#endif
+
+#if LIGHT_COUNT >= 1
+	#ifdef SHADOW_MAP
+		#if defined(LIGHTTYPE_SPOT) || defined(LIGHTTYPE_DIRECTIONAL)
+			float4 position4 = float4(worldPosition.xyz, 1);
+			//output.shadowUV0 = mul(textureViewProjMatrix0, position4);	
+			#ifdef SHADOW_PSSM
+				//output.shadowUV1 = mul(textureViewProjMatrix1, position4);
+				//output.shadowUV2 = mul(textureViewProjMatrix2, position4);
+			#endif
+		#else
+			//output.shadowUV0 = float4(0,0,0,0);
+		#endif
+	#endif
+#endif
+
+	// compute the 3x3 tranform from tangent space to object space
+	// first rows are the tangent and binormal scaled by the bump scale
+	output.rotMatrix1.xyz = bumpScale * normalize(float3(1, ddy, 0)); // Binormal
+	output.rotMatrix2.xyz = bumpScale * normalize(float3(0, ddx, 1)); // Tangent
+	output.rotMatrix3.xyz = normalize(float3(ddx, 1, ddy)); // Normal
+
+	// calculate texture coordinates for normal map lookup
+	output.bumpCoord0.xy = texCoord * textureScale + time0X * bumpSpeed;
+	//invert bumpSpeed for opposite wave directions
+	output.bumpCoord1.xy = texCoord * textureScale * 2.0 + time0X * (-bumpSpeed) * 2.0;
+
+	output.bumpCoord0.z = input.position.x;
+	output.bumpCoord1.z = input.position.y;
+
+
+	//masks and normals uv
+	output.masksAndNormalsUV.xy = masksUVTransform.xy + localPosition * masksUVTransform.zw;
+	output.masksAndNormalsUV.zw = normalsUVTransform.xy + localPosition * normalsUVTransform.zw;
+
+	output.depth = output.position.z;
+	//output.position2 = output.position;
+	
+#ifdef REFLECTION_MAP
+
+	float4 projectionCoord = output.position;
+	projectionCoord.xy /= projectionCoord.w;
+
+	//small offset for correct rendering at border of water and not water.
+	if(renderTargetFlipping > 0)
+		projectionCoord.y -= .01;
+	else
+		projectionCoord.y += .01;
+		
+	projectionCoord.xy *= float2(.5,.5);
+	projectionCoord.xy += float2(.5,.5);
+
+	if(renderTargetFlipping > 0)
+		projectionCoord.y = 1 - projectionCoord.y;
+	
+	output.projectionCoord = float4(projectionCoord.x * projectionCoord.w,
+		projectionCoord.y * projectionCoord.w, projectionCoord.z, projectionCoord.w);
+		
+#endif
+	
+	return output;
+}
+
+/////////////////////////////////////////////////////////////////////////////////////////
+
+F2O main_fp(
+	uniform float3 cameraPosition,
+	uniform float farClipDistance,
+
+	uniform float time0X,
+	
+#ifdef AMBIENT_PASS
+	uniform half4 ambientLightColor,
+	uniform half4 ambientLightColor2,
+	uniform half4 ambientLightColor3,
+#endif
+
+#if LIGHT_COUNT >= 1
+	uniform float4 lightPositionArray[LIGHT_COUNT],
+	uniform float4 lightDirectionArray[LIGHT_COUNT],
+	uniform half4 lightAttenuationArray[LIGHT_COUNT],
+	uniform half4 lightDiffuseColorPowerScaledArray[LIGHT_COUNT],
+	uniform half4 lightSpecularColorPowerScaledArray[LIGHT_COUNT],
+#ifdef LIGHTTYPE_SPOT
+	uniform half4 spotLightParamsArray[LIGHT_COUNT],
+#endif
+	uniform half lightCastShadowsArray[LIGHT_COUNT],
+	uniform float4 lightCustomShaderParameterArray[LIGHT_COUNT],
+#endif
+
+	//Fog
+#ifdef FOG_ENABLED
+	uniform half4 fogColor,
+	uniform half4 fogParams,
+#endif
+
+	uniform sampler2D masksMap : register(s0),
+	uniform sampler2D normalsMap : register(s1),
+#ifdef HOLE_MAP
+	uniform sampler2D holeMap : register(s2),
+#endif
+
+#ifdef AMBIENT_OCCLUSION
+	uniform sampler2D ambientOcclusionMap : register(AMBIENT_OCCLUSION_MAP_REGISTER),
+#endif
+
+#ifdef LIGHTMAP
+	uniform sampler2D lightmap : register(LIGHTMAP_REGISTER),
+#endif
+
+#if LIGHT_COUNT >= 1
+	#ifdef SHADOW_MAP
+		#ifdef LIGHTTYPE_POINT
+			uniform samplerCUBE shadowMap0 : register(SHADOW_MAP0_REGISTER),
+		#else
+			uniform sampler2D shadowMap0 : register(SHADOW_MAP0_REGISTER),
+		#endif		
+		#ifdef SHADOW_PSSM
+			uniform sampler2D shadowMap1 : register(SHADOW_MAP1_REGISTER),
+			uniform sampler2D shadowMap2 : register(SHADOW_MAP2_REGISTER),
+		#endif
+		uniform float lightShadowFarClipDistance,
+		uniform half3 shadowFarDistance,
+		uniform float3 shadowTextureSizes,
+		uniform half shadowColorIntensity,
+		#ifdef SHADOW_PSSM
+			uniform float4 shadowDirectionalLightSplitDistances,
+			uniform half drawShadowDebugging,
+		#endif
+	#endif
+#endif
+
+	//Texturing
+#if LAYERS >= 1
+	uniform half4 deepColor0,
+	uniform half4 shallowColor0,
+	uniform half4 reflectionColor0,
+
+	uniform float4 layer0BaseDetailMultipliers,
+	uniform sampler2D layer0BaseMap : register(LAYER0_BASE_MAP_REGISTER),
+	#ifdef LAYER0_DETAIL_MAP
+		uniform sampler2D layer0DetailMap : register(LAYER0_DETAIL_MAP_REGISTER),
+	#endif
+	#ifdef LAYER0_SPECULAR
+		uniform half4 layer0SpecularColorAndShininess,
+		#ifdef LAYER0_BASE_SPECULAR_MAP
+			uniform sampler2D layer0BaseSpecularMap : register(LAYER0_BASE_SPECULAR_MAP_REGISTER),
+		#endif
+		#ifdef LAYER0_DETAIL_SPECULAR_MAP
+			uniform sampler2D layer0DetailSpecularMap : register(LAYER0_DETAIL_SPECULAR_MAP_REGISTER),
+		#endif
+	#endif
+	#ifdef LAYER0_BASE_NORMAL_MAP
+		uniform sampler2D layer0BaseNormalMap : register(LAYER0_BASE_NORMAL_MAP_REGISTER),
+	#endif
+	#ifdef LAYER0_DETAIL_NORMAL_MAP
+		uniform sampler2D layer0DetailNormalMap : register(LAYER0_DETAIL_NORMAL_MAP_REGISTER),
+	#endif
+#endif
+
+#if LAYERS >= 2
+	uniform half4 deepColor1,
+	uniform half4 shallowColor1,
+	uniform half4 reflectionColor1,
+
+	uniform float4 layer1BaseDetailMultipliers,
+	uniform sampler2D layer1BaseMap : register(LAYER1_BASE_MAP_REGISTER),
+	#ifdef LAYER1_DETAIL_MAP
+		uniform sampler2D layer1DetailMap : register(LAYER1_DETAIL_MAP_REGISTER),
+	#endif
+	#ifdef LAYER1_SPECULAR
+		uniform half4 layer1SpecularColorAndShininess,
+		#ifdef LAYER1_BASE_SPECULAR_MAP
+			uniform sampler2D layer1BaseSpecularMap : register(LAYER1_BASE_SPECULAR_MAP_REGISTER),
+		#endif
+		#ifdef LAYER1_DETAIL_SPECULAR_MAP
+			uniform sampler2D layer1DetailSpecularMap : register(LAYER1_DETAIL_SPECULAR_MAP_REGISTER),
+		#endif
+	#endif
+	#ifdef LAYER1_BASE_NORMAL_MAP
+		uniform sampler2D layer1BaseNormalMap : register(LAYER1_BASE_NORMAL_MAP_REGISTER),
+	#endif
+	#ifdef LAYER1_DETAIL_NORMAL_MAP
+		uniform sampler2D layer1DetailNormalMap : register(LAYER1_DETAIL_NORMAL_MAP_REGISTER),
+	#endif
+#endif
+
+#if LAYERS >= 3
+	uniform half4 deepColor2,
+	uniform half4 shallowColor2,
+	uniform half4 reflectionColor2,
+
+	uniform float4 layer2BaseDetailMultipliers,
+	uniform sampler2D layer2BaseMap : register(LAYER2_BASE_MAP_REGISTER),
+	#ifdef LAYER2_DETAIL_MAP
+		uniform sampler2D layer2DetailMap : register(LAYER2_DETAIL_MAP_REGISTER),
+	#endif
+	#ifdef LAYER2_SPECULAR
+		uniform half4 layer2SpecularColorAndShininess,
+		#ifdef LAYER2_BASE_SPECULAR_MAP
+			uniform sampler2D layer2BaseSpecularMap : register(LAYER2_BASE_SPECULAR_MAP_REGISTER),
+		#endif
+		#ifdef LAYER2_DETAIL_SPECULAR_MAP
+			uniform sampler2D layer2DetailSpecularMap : register(LAYER2_DETAIL_SPECULAR_MAP_REGISTER),
+		#endif
+	#endif
+	#ifdef LAYER2_BASE_NORMAL_MAP
+		uniform sampler2D layer2BaseNormalMap : register(LAYER2_BASE_NORMAL_MAP_REGISTER),
+	#endif
+	#ifdef LAYER2_DETAIL_NORMAL_MAP
+		uniform sampler2D layer2DetailNormalMap : register(LAYER2_DETAIL_NORMAL_MAP_REGISTER),
+	#endif
+#endif
+
+	uniform float3 terrainPosition,
+
+#ifdef OPENGL
+	uniform float4 clipPlane0,
+	uniform float4 clipPlane1,
+	uniform float4 clipPlane2,
+	uniform float4 clipPlane3,
+	uniform float4 clipPlane4,
+	uniform float4 clipPlane5,
+#endif
+
+#ifdef LOD_ENABLED
+	uniform half3 showLODLevelColor,
+#endif
+
+#ifdef SOFT_PARTICLES
+	uniform sampler2D depthMap : register(DEPTH_MAP_REGISTER),
+	//uniform float softParticlesFadingLength,
+	uniform half4 viewportSize,
+	#if defined(DIRECT3D)
+		float4 vPos : VPOS,
+	#else
+		float4 vPos : WPOS,
+	#endif
+#endif
+
+#ifdef REFLECTION_MAP
+	uniform sampler2D reflectionMap : register(REFLECTION_REGISTER),
+#endif
+
+	V2F input
+)
+{
+	F2O output;
+
+	//clip holes
+#ifdef HOLE_MAP
+	clip((half)tex2D(holeMap, input.holeAndAmbientOcclusionUV.xy).r - .5h);
+#endif
+
+	float3 worldPosition = input.worldPositionAndCameraDistance.xyz;
+	float cameraDistance = input.worldPositionAndCameraDistance.w;
+	float3 worldPositionMinusTerrainPosition = worldPosition - terrainPosition;
+
+	//OpenGL clip plane support. Direct3D is already support clip planes without this code.
+#ifdef OPENGL
+	clip(dot(clipPlane0, float4(worldPosition, 1)));
+	//uncomment it for support more than 1 clip plane
+	//clip(dot(clipPlane1, float4(worldPosition, 1)));
+	//clip(dot(clipPlane2, float4(worldPosition, 1)));
+	//clip(dot(clipPlane3, float4(worldPosition, 1)));
+	//clip(dot(clipPlane4, float4(worldPosition, 1)));
+	//clip(dot(clipPlane5, float4(worldPosition, 1)));
+#endif
+
+#ifdef ALLOW_DETAIL
+	half detailCoefficientReverse = 1.0h - (half)input.detailCoefficient;
+	half detailCoefficientMul2 = (half)input.detailCoefficient * 2;
+#endif
+
+	//get normal from normals map (swizzle X and Y)
+	half3 normal = (half3)normalize(expand((half3)tex2D(normalsMap, input.masksAndNormalsUV.zw).yxz));
+
+	float3 lightDirection = float3(0,0,0);
+	float lightDistance = 0;
+#if LIGHT_COUNT >= 1
+	{
+		float3 lightVector;
+		#ifdef LIGHTTYPE_DIRECTIONAL
+			lightVector = lightPositionArray[0].xyz;
+		#else
+			lightVector = lightPositionArray[0].xyz - worldPosition.xyz;
+		#endif
+
+		lightDistance = length(lightVector);
+		lightDirection = lightVector / lightDistance;
+	}
+#endif
+
+	//normal mapping and specular
+	half3 tangent = half3(normal.z, normal.y, -normal.x);
+	half3 binormal = half3(normal.x, -normal.z, normal.y);
+	half3x3 rotation = half3x3(tangent, binormal, normal);
+	//in tangent space
+	half3 lightDirectionTangentSpace = mul(rotation, (half3)lightDirection);
+	half3 eyeDirection = (half3)normalize(cameraPosition - worldPosition);
+	half3 halfAngleForSpecular = (half3)normalize((half3)lightDirection + eyeDirection);
+	half3 halfAngleForSpecularTangentSpace = mul(rotation, halfAngleForSpecular);
+
+	//calculate masks values
+	half mask0;
+	half mask1;
+	half mask2;
+	{
+		half4 masks = (half4)tex2D(masksMap, input.masksAndNormalsUV.xy/*masksUV*/);
+		half realMasks[5];
+		realMasks[0] = masks.a;
+		realMasks[1] = masks.r;
+		realMasks[2] = masks.g;
+		realMasks[3] = masks.b;
+		realMasks[4] = 1 - (masks.a + masks.r + masks.g + masks.b);
+
+		mask0 = realMasks[LAYER0_REAL_INDEX];
+		#if LAYERS >= 2
+			mask1 = realMasks[LAYER1_REAL_INDEX];
+		#endif
+		#if LAYERS >= 3
+			mask2 = realMasks[LAYER2_REAL_INDEX];
+		#endif
+	}
+
+	half3 lightDiffuseColor = half3(0,0,0);
+	half3 lightSpecularColor = half3(0,0,0);
+	half lightAttenuationMultiplier = 0;
+	half shadowMultiplier = 1;
+
+#if LIGHT_COUNT >= 1
+	lightDiffuseColor = lightDiffuseColorPowerScaledArray[0].xyz;
+	lightSpecularColor = lightSpecularColorPowerScaledArray[0].xyz;
+	lightAttenuationMultiplier = 1;
+
+	#if defined(LIGHTTYPE_SPOT) || defined(LIGHTTYPE_POINT)
+		lightAttenuationMultiplier *= getLightAttenuation(lightAttenuationArray[0], (half)lightDistance);
+	#endif
+
+	#ifdef LIGHTTYPE_SPOT
+		// factor in spotlight angle
+		half rho0 = saturate(dot(-lightDirectionArray[0].xyz, lightDirection));
+		// factor = (rho - cos(outer/2)) / (cos(inner/2) - cos(outer/2)) ^ falloff 
+		half spotFactor0 = saturate(pow(saturate(rho0 - spotLightParamsArray[0].y) / 
+			(spotLightParamsArray[0].x - spotLightParamsArray[0].y), spotLightParamsArray[0].z));
+		lightAttenuationMultiplier *= spotFactor0;
+	#endif
+
+	//Shadows
+	#ifdef SHADOW_MAP
+		#ifdef LIGHTTYPE_POINT
+			//shadowMultiplier = getShadowmapReceiveValue( shadowMap0, cameraDistance, 
+			//	lightCastShadowsArray[0], lightShadowFarClipDistance, shadowFarDistance,
+			//	shadowTextureSizes, shadowColorIntensity, worldPosition.xyz, lightPositionArray[0].xyz);
+		#else
+			#ifdef SHADOW_PSSM
+				//shadowMultiplier = getShadowmapReceiveValue( input.shadowUV0, input.shadowUV1, input.shadowUV2,
+				//	shadowMap0, shadowMap1, shadowMap2, cameraDistance, lightCastShadowsArray[0], 
+				//	lightShadowFarClipDistance, shadowFarDistance, shadowTextureSizes, 
+				//	shadowColorIntensity, shadowDirectionalLightSplitDistances, input.depth, 
+				//	drawShadowDebugging);
+			#else
+				//shadowMultiplier = getShadowmapReceiveValue( input.shadowUV0, shadowMap0, cameraDistance, 
+				//	lightCastShadowsArray[0], lightShadowFarClipDistance, shadowFarDistance,
+				//	shadowTextureSizes, shadowColorIntensity);
+			#endif
+		#endif
+	#endif
+
+#endif
+
+	half3 ambientColor = half3(0,0,0);
+#ifdef AMBIENT_PASS
+	if( normal.z > 0 )
+		ambientColor = lerp(ambientLightColor2, ambientLightColor, normal.z);
+	else
+		ambientColor = lerp(ambientLightColor2, ambientLightColor3, -normal.z);
+#endif
+	half lightAttenuationShadowMultiplier = lightAttenuationMultiplier * shadowMultiplier;
+	half3 lightDiffuseMultiplier = lightDiffuseColor * lightAttenuationShadowMultiplier;
+	half3 lightSpecularMultiplier = lightSpecularColor * lightAttenuationShadowMultiplier;
+
+#ifdef LIGHTMAP
+//	half3 lightmapColor = (half3)tex2D(lightmap, input.lightmapUV).rgb;
+	#ifdef SHADOW_MAP
+//		lightmapColor = min(lightmapColor, 1.0h - sqrt(1.0h - shadowMultiplier));
+	#endif
+#endif
+
+	half4 color = half4(0,0,0,0);
+
+	half4 generalreflection = half4(1,1,1,1);
+
+	//Layer0
+#if LAYERS >= 1
+	{
+		
+		half reflectionAmount = 1; // reflection factor
+		half waterAmount = 0.3; // "Amount of water color"
+		float fresnelPower = 5; // fresnel fresnel effect
+		float fresnelBias = 0.328; // fresnel coefficient
+
+		// sum 3 normals
+		float3 t0 = expand(tex2D(layer0BaseMap, input.bumpCoord0.xy).xyz); //noisemap
+		float3 t1 = expand(tex2D(layer0BaseMap, input.bumpCoord1.xy).xyz); //noisemap
+		float3 normal = t0 + t1;
+
+		float3x3 m; // tangent to world matrix
+		m[0] = input.rotMatrix1;
+		m[1] = input.rotMatrix2;
+		m[2] = input.rotMatrix3;
+
+		//normal = normalize( mul( normal, m ) ).xzy; // flip z and y - why?
+
+		#ifdef REFLECTION_MAP
+			float4 prjcoord = input.projectionCoord;
+			prjcoord.xy += normal.xy;
+			generalreflection = (half4)tex2Dproj(reflectionMap, prjcoord);
+			
+			float2 screenPosition;
+			#if defined(DIRECT3D)
+				screenPosition = (half2)(vPos.xy + float2(.5f, .5f)) * viewportSize.zw;
+			#endif
+			generalreflection = (half4)tex2D(reflectionMap, screenPosition);
+
+		#endif
+		
+		half4 reflection = generalreflection;
+		
+		float facing = 1.0 - max(dot(eyeDirection, normal), 0);
+		float fresnel = saturate(fresnelBias + pow(facing, fresnelPower));
+
+		half4 waterColor = lerp(shallowColor0, deepColor0, (half)facing) * waterAmount;
+		reflection = lerp(waterColor, reflection * reflectionColor0, (half)fresnel) * reflectionAmount;
+
+		color += (waterColor + reflection) * mask0;
+		
+		if(false)
+		{
+		
+	float4 time_density_clipplane = float4(time0X, 0.4f, 0.1f, 100.0f);// содержит в себе время, степень непрозрачности воды и значения для ближней и дальней плоскостей отсечения. Они нужны нам для расчета линейной глубины сцены. Для этого служит функция calculate_linear_depth. 
+	//vec3 light_source и view_position – это соответственно положение источника света и наблюдателя в мировой системе координат. 
+	float4 water_color = float4(waterColor.xyz, 1);// – содержит в первых трех компонентах непосредственно цвет воды, а в 4-ой компоненте масштабный коэффициент для HDR картинки. Его можно получить как сумму яркостей diffuse и ambient составляющих источника света. 
+	float3 specular_color = reflectionColor0.xyz;
+			
+			// нормаль уже есть!
+
+			// введем переменную для обозначения
+			// масштабного коэффициента HDR изображения
+			float fHDRscale = water_color.w;
+			// вычислим нормированное положение источника света
+			float3 lpnorm = float3(0,0,1); //   = normalize(light_source);
+			// вычислим нормированный вектор взгляда
+			float3 vpnorm   = normalize(eyeDirection);
+			// вычислим проективные координаты
+			float4 pos2 = input.position;
+			float3 proj_tc  = 0.5 * pos2.xyz / pos2.w + 0.5;
+			// вычислим коэффициент Френеля для смешивания отражения и преломления
+			fresnel = 1.0 - dot(vpnorm, normal);
+
+
+			// вычисляем расстояние от камеры до точки 
+			float fOwnDepth = input.depth;
+			// считываем глубину сцены
+			float2 screenPosition;
+			#if defined(DIRECT3D)
+				screenPosition = (half2)(vPos.xy + float2(.5f, .5f)) * viewportSize.zw;
+			#else
+				//!!!!!not true
+				screenPosition = (half2)vPos.xy * viewportSize.zw;
+			#endif
+			float sceneDepth = tex2D(depthMap, screenPosition).r * farClipDistance;
+
+
+			float fLinearDepth  = (sceneDepth - fOwnDepth) / farClipDistance;
+			
+			float fExpDepth = 1.0 - exp( -time_density_clipplane.y * fLinearDepth);
+			float fExpDepthHIGH = 1.0 - exp( -0.95 * fLinearDepth );
+			
+			//float3 shadow_tc = shadow_proj_coords.xyz / shadow_proj_coords.w + 0.06 * float3(normal.x, normal.z, 0.0);
+			// вычисляем текстурные координаты со смещением
+
+			float fShadow = 0;// SampleShadow(shadow_tc); // получаем непосредственную тень
+			
+			float fSurfaceShadow = 0.25 * fShadow + 0.75; // осветляем её
+			//Для бликов на воде можно использовать модель Фонга, а чтобы избавиться от возведения в степень, используем аппроксимацию Шлика.
+
+			float3 ref_vec = reflect(-lpnorm, normal); // вычисляем отраженный вектор
+			// получаем скалярное произведение 
+			// отраженного вектора на вектор взгляда
+			float VdotR = max( dot(ref_vec, vpnorm), 0.0 );  
+			// аппроксимация Шлика a^b = a / (b – a*b + a) для a от нуля до единицы
+			VdotR /= 1024.0 - VdotR * 1024.0 + VdotR;
+			float3 specular = specular_color * float3(VdotR, VdotR, VdotR) * fExpDepthHIGH * fShadow; 
+			// вычисляем отраженный свет, с учетом затенения и глубины воды в данной точке.
+			
+			// величина искажения – чем глубже, тем искажения больше
+			float fDistortScale = 0.1 * fExpDepth;
+			float2 vDistort = normal.zx * fDistortScale; // смещение текстурных координат
+			// читаем глубину в искаженных координатах
+			float fDistortedDepth = tex2D(depthMap, proj_tc.xy + vDistort).x;
+			// преобразуем её в линейную
+			fDistortedDepth //= calculate_linear_depth(fDistortedDepth);
+					= time_density_clipplane.w * time_density_clipplane.z / 
+			( time_density_clipplane.w - fDistortedDepth * 
+			(time_density_clipplane.w - time_density_clipplane.z) );
+
+			float fDistortedExpDepth = 
+			1.0 - exp( -time_density_clipplane.y * (fDistortedDepth - fOwnDepth) );
+			// вычисляем экспоненциальную глубину в искаженных координатах
+			// теперь сравниваем расстояния – если расстояние до воды больше,
+			// чем до прочитанной то пренебрегаем искажением
+			if (fOwnDepth > fDistortedDepth) 
+			{
+				vDistort = float2(0, 0);
+				fDistortedExpDepth = fExpDepth;
+			}
+			// теперь читаем из текстуры преломлений цвет
+			//float3 refraction = tex2D(refract_texture, proj_tc + vDistort).xyz;
+			float3 refraction = float3(0,0,0);
+			// и закрашиваем его цветом воды, в зависимости от глубины
+			refraction = lerp(refraction, water_color * fHDRscale, fDistortedExpDepth);
+			
+			// коэффициент можно подобрать под свои нужды
+			vDistort = normal.xz * 0.025;
+			//float3 reflection2 = tex2D(reflect_texture, proj_tc.st + vDistort).xyz;
+			//Теперь осталось смешать отражения и преломления и добавить отраженный свет.
+			float3 reflection2 = reflectionColor0.xyz;
+
+			float fMix = fresnel * fExpDepthHIGH; 
+			// вычисляем коэффициент смешивания
+			// как коэффициент Френеля плюс вычисленная глубина
+			// для плавного перехода из «берега» в воду
+			// смешиваем и умножаем на осветленную тень
+			float3 result_color = lerp(refraction, reflection2, fMix) * fSurfaceShadow;
+			result_color += specular; // добавляем отраженный свет
+			
+			color += float4(result_color, 1.0);
+			// ура! записываем значение
+			
+			color = float4(fLinearDepth.xxx, 1);
+			color = float4(result_color, 1.0);
+			
+			output.color = color;
+		#if defined(DEPTH_WRITE) && defined(DIRECT3D)
+			output.depth = float4(input.depth / farClipDistance, 0, 0, 0);
+			//output.depth = float4(packNormalized3(input.depth / farClipDistance), 0);
+		#endif
+			return output;
+		}
+		
+	}
+#endif
+
+	//Layer1
+#if LAYERS >= 2
+	{
+
+		half reflectionAmount = 1; // reflection factor
+		half waterAmount = 0.3; // "Amount of water color"
+		float fresnelPower = 5; // fresnel fresnel effect
+		float fresnelBias = 0.328; // fresnel coefficient
+
+		// sum 3 normals
+		float3 t0 = expand(tex2D(layer1BaseMap, input.bumpCoord0.xy).xyz); //noisemap
+		float3 t1 = expand(tex2D(layer1BaseMap, input.bumpCoord1.xy).xyz); //noisemap
+		float3 normal = t0 + t1;
+
+		float3x3 m; // tangent to world matrix
+		m[0] = input.rotMatrix1;
+		m[1] = input.rotMatrix2;
+		m[2] = input.rotMatrix3;
+
+		normal = normalize( mul( normal, m ) ).xzy; // flip z and y - why?
+
+		#ifdef REFLECTION_MAP
+			float4 prjcoord = input.projectionCoord;
+			prjcoord.xy += normal.xy;
+			generalreflection = (half4)tex2Dproj(reflectionMap, prjcoord);
+		#endif
+		
+		half4 reflection = generalreflection;
+		
+		float facing = 1.0 - max(dot(eyeDirection, normal), 0);
+		float fresnel = saturate(fresnelBias + pow(facing, fresnelPower));
+
+		half4 waterColor = lerp(shallowColor1, deepColor1, (half)facing) * waterAmount;
+		reflection = lerp(waterColor, reflection * reflectionColor1, (half)fresnel) * reflectionAmount;
+
+		color += (waterColor + reflection) * mask1;
+
+	}
+#endif
+
+	//Layer2
+#if LAYERS >= 3
+	{
+
+		half reflectionAmount = 1; // reflection factor
+		half waterAmount = 0.3; // "Amount of water color"
+		float fresnelPower = 5; // fresnel fresnel effect
+		float fresnelBias = 0.328; // fresnel coefficient
+
+		// sum 3 normals
+		float3 t0 = expand(tex2D(layer2BaseMap, input.bumpCoord0.xy).xyz); //noisemap
+		float3 t1 = expand(tex2D(layer2BaseMap, input.bumpCoord1.xy).xyz); //noisemap
+		float3 normal = t0 + t1;
+
+		float3x3 m; // tangent to world matrix
+		m[0] = input.rotMatrix1;
+		m[1] = input.rotMatrix2;
+		m[2] = input.rotMatrix3;
+
+		normal = normalize( mul( normal, m ) ).xzy; // flip z and y - why?
+
+		#ifdef REFLECTION_MAP
+			float4 prjcoord = input.projectionCoord;
+			prjcoord.xy += normal.xy;
+			generalreflection = (half4)tex2Dproj(reflectionMap, prjcoord);
+		#endif
+
+		half4 reflection = generalreflection;
+		
+		float facing = 1.0 - max(dot(eyeDirection, normal), 0);
+		float fresnel = saturate(fresnelBias + pow(facing, fresnelPower));
+
+		half4 waterColor = lerp(shallowColor2, deepColor2, (half)facing) * waterAmount;
+		reflection = lerp(waterColor, reflection * reflectionColor2, (half)fresnel) * reflectionAmount;
+
+		color += (waterColor + reflection) * mask2;
+
+	}
+#endif
+	
+#ifdef TRANSPARENT
+	color.a = saturate(color.a);
+#endif
+
+	
+#ifdef AMBIENT_OCCLUSION
+	color *= (half)tex2D(ambientOcclusionMap, input.holeAndAmbientOcclusionUV.zw).x;
+#endif
+
+	//Fog
+#ifdef FOG_ENABLED
+	half fog = getFogValue(cameraDistance, fogParams);
+	color *= fog;
+	#ifdef ADD_FOG_COLOR
+		color += half4(fogColor.rgb * (1.0h - fog),0);
+	#endif
+#endif
+
+#if defined(LOD_ENABLED)
+	if(showLODLevelColor.x >= 0)
+		color = half4(showLODLevelColor,1);
+#endif
+
+#ifdef SOFT_PARTICLES
+	{
+		float softParticlesFadingLength = 0.25f;
+		
+		float2 screenPosition;
+		#if defined(DIRECT3D)
+			screenPosition = (half2)(vPos.xy + float2(.5f, .5f)) * viewportSize.zw;
+		#else
+			//!!!!!not true
+			screenPosition = (half2)vPos.xy * viewportSize.zw;
+		#endif
+		float sceneDepth = tex2D(depthMap, screenPosition).r * farClipDistance;
+
+		float coef = saturate((sceneDepth - input.depth) / softParticlesFadingLength);
+		//#ifdef BLENDING_ALPHAADD
+		//	color.rgb *= coef;
+		//#endif
+		//#ifdef BLENDING_ALPHABLEND
+			color.a *= coef;
+		//#endif
+		
+		//coef = (sceneDepth - input.depth) / farClipDistance;
+		
+		//color.a = 1;
+		//color.rgb = coef.xxx;
+	}
+#endif
+
+
+	//Result
+	output.color = color;
+#if defined(DEPTH_WRITE) && defined(DIRECT3D)
+	output.depth = float4(input.depth / farClipDistance, 0, 0, 0);
+#endif
+	return output;
+}

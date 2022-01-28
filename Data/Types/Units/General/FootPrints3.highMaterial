@@ -1,0 +1,16 @@
+highLevelMaterial FootPrints3
+{
+	template = ShaderBaseMaterial
+	blending = AlphaBlend
+	lighting = False
+	doubleSided = True
+	receiveShadows = False
+	depthWrite = False
+	diffuseColor = 1 1 1 0.6745098
+	diffuseScaleDynamic = True
+	diffuse1Map
+	{
+		texture = ".\\footprints3.dds"
+		clamp = True
+	}
+}

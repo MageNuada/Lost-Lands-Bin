@@ -1,0 +1,9 @@
+highLevelMaterial taroven00
+{
+template = ShaderBaseMaterial
+alphaRejectFunction = GreaterEqual
+diffuse1Map
+{
+texture = ".\\taroven00.dds"
+}
+}

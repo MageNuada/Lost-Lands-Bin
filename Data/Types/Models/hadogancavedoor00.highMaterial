@@ -1,0 +1,9 @@
+highLevelMaterial hadogancavedoor00
+{
+template = ShaderBaseMaterial
+alphaRejectFunction = GreaterEqual
+diffuse1Map
+{
+texture = ".\\hadogancavedoor00.dds"
+}
+}

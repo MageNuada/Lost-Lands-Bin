@@ -1,0 +1,9 @@
+highLevelMaterial basket01
+{
+template = ShaderBaseMaterial
+alphaRejectFunction = GreaterEqual
+diffuse1Map
+{
+texture = ".\\basket01.dds"
+}
+}

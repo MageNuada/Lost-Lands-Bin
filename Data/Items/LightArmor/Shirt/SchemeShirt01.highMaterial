@@ -1,0 +1,9 @@
+highLevelMaterial SchemeShirt01
+{
+	template = ShaderBaseMaterial
+	alphaRejectFunction = GreaterEqual
+	diffuse1Map
+	{
+		texture = ".\\sh_01.0.dds"
+	}
+}

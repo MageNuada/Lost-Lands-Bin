@@ -1,0 +1,9 @@
+highLevelMaterial altar00
+{
+template = ShaderBaseMaterial
+alphaRejectFunction = GreaterEqual
+diffuse1Map
+{
+texture = ".\\altar00.dds"
+}
+}

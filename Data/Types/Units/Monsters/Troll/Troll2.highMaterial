@@ -1,0 +1,22 @@
+highLevelMaterial Troll2
+{
+	template = ShaderBaseMaterial
+	specularColor = 0.509804 0.4784314 0.2941177
+	heightFromNormalMapAlpha = True
+	diffuse1Map
+	{
+		texture = ".\\Troll_Diff2.dds"
+	}
+	diffuse2Map
+	{
+		texture = ".\\Troll_AO.dds"
+	}
+	specularMap
+	{
+		texture = ".\\Troll_Spec.dds"
+	}
+	normalMap
+	{
+		texture = ".\\Troll_Norm.dds"
+	}
+}

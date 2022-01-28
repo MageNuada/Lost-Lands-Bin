@@ -1,0 +1,740 @@
+type = GameMap
+uin = 3
+classPrompt = GameMap
+gameMusic = "Sounds\\Music\\Game.ogg"
+resetYCoordinateForDynamicBodies = False
+destroyObjectsBelowHeight = -500
+_baseAllod = Jigran
+windDirection = 0
+windSpeed = 1
+ambientIntensity = 0.4
+ambientSkyColor = 0.5058824 0.5294118 0.4901961
+ambientEquatorColor = 0.5058824 0.5294118 0.4901961
+ambientGroundColor = 0.5058824 0.5294118 0.4901961
+editorCameraPosition = -0.01440406 -13.634 18.87236
+editorCameraDirection = 1.56267 -0.9899815
+shadowColor = 1 1 1
+shadowPSSMSplitFactors = 0.1 0.4
+logicSystemManager = 7
+staticBatchingRenderingEnabled = False
+staticBatchingPhysicsEnabledInMapEditor = False
+staticBatchingPhysicsEnabledInSimulation = False
+staticBatchingGridCellSize = 30 30 30
+staticBatchingFilterByMaxTriangleCount = 512
+name = "Maps\\MemTest1\\Map.map"
+shadowTechnique = ShadowmapMedium
+dataForEditor
+{
+}
+sceneGraphSettings
+{
+	amountOfObjectsOutsideOctreeBoundsToRebuld = 30
+	octreeBoundsRebuildExpand = 50 50 50
+	minNodeSize = 10 10 10
+	objectCountThresholdToCreateChildNodes = 10
+	maxNodeCount = 300000
+}
+tags
+{
+}
+rootEditorLayer
+{
+	name = Root Layer
+}
+entity
+{
+	type = EnvironmentManager
+	uin = 4
+	classPrompt = EnvironmentManager
+	_sun = 11
+	_moon = 15
+	_sky = 10
+	_nextChangeWeather = 6360
+	_windtransition = 180
+	_fogTransition = 90
+	time = 180
+	name = EnvironmentManager_0
+	_weather
+	{
+		nPowerCheck = 0
+		fpWeatherStartTime = 0
+		fpWeatherTransformTime = 0
+		curWeather = Nothing
+		nextWeather = Nothing
+	}
+	tags
+	{
+	}
+}
+entity
+{
+	type = TextOnScreenManager
+	uin = 5
+	classPrompt = TextOnScreenManager
+	name = TextOnScreenManager_0
+	_txt
+	{
+	}
+	tags
+	{
+	}
+}
+entity
+{
+	type = QuestsManager
+	uin = 6
+	classPrompt = QuestsManager
+	name = QuestsManager_0
+	tags
+	{
+	}
+}
+entity
+{
+	type = LogicSystemManager
+	uin = 7
+	referencesToCompileDLL = "System.dll\r\nSystem.Drawing.dll\r\n\r\nEngineApp.dll\r\nUISystem.dll\r\nFileSystem.dll\r\nLog.dll\r\nMathEx.dll\r\nRenderer.dll\r\nPhysicsSystem.dll\r\nSoundSystem.dll\r\nEntitySystem.dll\r\nMapSystem.dll\r\nUtils.dll\r\nHeightmapTerrain.dll\r\nDecorativeObjectManager.dll\r\n\r\nProjectCommon.dll\r\nProjectEntities.dll"
+	usingNamespacesToCodeGeneration = "using System;\r\nusing System.Collections.Generic;\r\nusing System.Text;\r\n\r\nusing Engine;\r\nusing Engine.FileSystem;\r\nusing Engine.MathEx;\r\nusing Engine.Utils;\r\nusing Engine.Renderer;\r\nusing Engine.PhysicsSystem;\r\nusing Engine.SoundSystem;\r\nusing Engine.UISystem;\r\nusing Engine.EntitySystem;\r\nusing Engine.MapSystem;\r\n\r\nusing ProjectCommon;\r\nusing ProjectEntities;"
+	mapClassManager = 8
+	tags
+	{
+	}
+	entity
+	{
+		type = LogicClassManager
+		uin = 8
+		tags
+		{
+		}
+	}
+}
+entity
+{
+	type = HeightmapTerrain
+	uin = 9
+	classPrompt = HeightmapTerrain
+	enabled = True
+	position = 0 0 0
+	horizontalSize = 50
+	dataDirectory = HeightmapTerrain
+	masksSize = 256
+	detailMapsDistance = 50
+	renderQueueGroup = WorldGeometry1
+	collision = True
+	collisionMaterialName = Default
+	collisionHeightfieldThickness = 2
+	castDynamicShadows = False
+	receiveStaticShadows = True
+	simpleRendering = False
+	tileSize = 16
+	visible = True
+	allowVertexTextureFetchOptimization = True
+	useFloat16BitHeightTexture = False
+	heightMultiplier = 1
+	heightmapTerrainManagerIndex = 0 0
+	ambientOcclusion
+	{
+		enabled = False
+		size = 1024
+		rayLength = 1
+		iterationCount = 100
+		blur = True
+		power = 1
+	}
+	lodSettings
+	{
+		enabled = True
+		maxCount = 99
+		lodLevelDistances = 100 + level * 200
+		morphAreaPercent = 0.3
+		showLevels = False
+	}
+	tags
+	{
+	}
+	layers
+	{
+		item
+		{
+			name = base
+			baseMap = "Base\\Types\\HeightmapTerrain\\Grass1\\originalDetail.png"
+			baseScale = 10
+			detailMap = "Base\\Types\\HeightmapTerrain\\Grass1\\Grass01Detail.png"
+			detailScale = 1
+			baseNormalMap = "Base\\Types\\HeightmapTerrain\\Grass1\\Grass01DetailNormal.png"
+			detailNormalMap = "Base\\Types\\HeightmapTerrain\\Grass1\\Grass01DetailNormal.png"
+			baseSpecularMap = "Base\\Types\\HeightmapTerrain\\Grass1\\Grass01DetailSpecular.png"
+			detailSpecularMap = "Base\\Types\\HeightmapTerrain\\Grass1\\Grass01DetailSpecular.png"
+		}
+		item
+		{
+			name = second
+			baseMap = "Base\\Types\\HeightmapTerrain\\Dirt2\\TT_GD_Dirt_04_c.dds"
+			baseScale = 10
+			detailMap = "Base\\Types\\HeightmapTerrain\\Dirt2\\TT_GD_Dirt_04.dds"
+			detailScale = 2
+			baseNormalMap = "Base\\Types\\HeightmapTerrain\\Dirt2\\TT_GD_Dirt_04_n.dds"
+			detailNormalMap = "Base\\Types\\HeightmapTerrain\\Dirt2\\TT_GD_Dirt_04_n.dds"
+		}
+	}
+}
+entity
+{
+	type = SkyBox
+	uin = 10
+	classPrompt = SkyBox
+	subscriptionsToDeletionEvent = 4 4 4
+	enabled = True
+	textureName = "Base\\Types\\Basic\\SkyBox\\SkyBoxClear.jpg"
+	color = 0.1803922 0.7098039 0.8509805
+	power = 1
+	tags
+	{
+	}
+}
+entity
+{
+	type = Sun
+	uin = 11
+	classPrompt = Sun
+	subscriptionsToDeletionEvent = 4 4 4 4
+	billboardTexture = "Base\\Types\\Lighting\\Sun\\SunDefault.png"
+	billboardColor = 1 1 1
+	billboardPower = 1
+	billboardSize = 1
+	billboardRenderQueueGroup = Main
+	billboardOverridePosition = 0 0 0
+	enabled = True
+	lightType = Directional
+	diffuseColor = 1 1 1
+	diffusePower = 1
+	specularColor = 1 1 1
+	specularPower = 1
+	attenuationNear = 0
+	attenuationFar = 10
+	attenuationPower = 2
+	ffpAttenuationConstant = 1
+	ffpAttenuationLinear = 0
+	ffpAttenuationQuadric = 0
+	spotlightInnerAngle = 30
+	spotlightOuterAngle = 40
+	spotlightFalloff = 1
+	castShadows = True
+	allowStaticLighting = False
+	allowDynamicLighting = True
+	customShaderParameter = 0 0 0 0
+	position = 0 0 0
+	rotation = 0.1227878 -0.6963642 0.1227878 -0.6963642
+	name = Sun_0
+	tags
+	{
+	}
+}
+entity
+{
+	type = GridBasedNavigationSystem
+	uin = 12
+	classPrompt = GridBasedNavigationSystem
+	gridBounds = -25 -25 25 25
+	gridCellSize = 1
+	agentHeight = 2
+	agentMaxSlope = 30
+	heightByTerrainOnly = False
+	alwaysDrawGrid = False
+	drawGridDistance = 100
+	name = RPGPathFind_0
+	tags
+	{
+	}
+}
+entity
+{
+	type = MapTeleporter
+	uin = 13
+	classPrompt = MapTeleporter
+	active = True
+	changeMapName = "Maps\\KanianSettlement\\Map.map"
+	changeMapSpawnObjectName = MapTeleporter_0
+	_teleportedUnits = 
+	_gameDescription = "\x041f\x0440\x043e\x0445\x043e\x0434 \x0432 \x0434\x0440\x0443\x0433\x0443\x044e \x043c\x0435\x0441\x0442\x043d\x043e\x0441\x0442\x044c"
+	_gameName = "\x041f\x0440\x043e\x0445\x043e\x0434"
+	position = 8.765429 7.221378 0.003346541
+	name = MapTeleporter_0
+	_questSystemAlias
+	{
+	}
+	tags
+	{
+	}
+}
+entity
+{
+	type = Human
+	uin = 14
+	classPrompt = UGameCharacter
+	_initialai = BasePlayerIntellect
+	_moveShift = 0 0 0
+	_experienceReward = 0
+	regenerationHealth = 0.001
+	_face = 5
+	_hair = 1
+	_faction = Kania
+	_isHandBroken = False
+	_boredCounter = 0
+	_soundSet = MaleSoundSet1
+	_spellPosition = 0 0 0
+	_personalEnemies = 
+	_deadAlly = 
+	_activeWeaponIndex = 5
+	_money = 1
+	_gameName = "\x0427\x0435\x043b\x043e\x0432\x0435\x043a"
+	position = -17.01547 -2.03677 0.8472681
+	name = Human_0
+	equipment
+	{
+		item
+		{
+			Section = BodyH
+			LootChance = 50
+			DataBaseID = 14
+			ItemType = AllodsArmor
+			_energy = 1
+			_solidity = 1
+			_itemSkills
+			{
+			}
+		}
+		item
+		{
+			Section = LegH
+			LootChance = 50
+			DataBaseID = 16
+			ItemType = AllodsArmor
+			_energy = 1
+			_solidity = 1
+			_itemSkills
+			{
+			}
+		}
+		item
+		{
+			Section = WHand
+			LootChance = 50
+			DataBaseID = 196
+			ItemType = AllodsWeapon
+			_energy = 1
+			_solidity = 1
+			_itemSkills
+			{
+			}
+		}
+		item
+		{
+			Section = WHand
+			LootChance = 50
+			DataBaseID = 9
+			ItemType = AllodsWeapon
+			_energy = 1
+			_solidity = 1
+			_itemSkills
+			{
+			}
+		}
+		item
+		{
+			Section = WHand
+			LootChance = 50
+			DataBaseID = 197
+			ItemType = AllodsWeapon
+			_energy = 1
+			_solidity = 1
+			_itemSkills
+			{
+			}
+		}
+		item
+		{
+			Section = WHand
+			LootChance = 50
+			DataBaseID = 198
+			ItemType = AllodsWeapon
+			_energy = 1
+			_solidity = 1
+			_itemSkills
+			{
+			}
+		}
+		item
+		{
+			Section = BodyL
+			LootChance = 50
+		}
+		item
+		{
+			Section = LegL
+			LootChance = 50
+		}
+		item
+		{
+			Section = Head
+			LootChance = 50
+		}
+		item
+		{
+			Section = Hand
+			LootChance = 50
+		}
+	}
+	LearnedSkills
+	{
+	}
+	_tasks
+	{
+	}
+	_unitTasksForSave
+	{
+	}
+	bodyParts
+	{
+		item
+		{
+			_mainHealthPercent = 1.01
+			_section = Head
+		}
+		item
+		{
+			_mainHealthPercent = 1.01
+		}
+		item
+		{
+			_mainHealthPercent = 0.34
+			_section = Hand
+		}
+		item
+		{
+			_mainHealthPercent = 0.34
+			_section = Hand
+		}
+		item
+		{
+			_mainHealthPercent = 0.67
+			_section = Leg
+		}
+		item
+		{
+			_mainHealthPercent = 0.67
+			_section = Leg
+		}
+	}
+	_questSystemAlias
+	{
+	}
+	tags
+	{
+	}
+	inventory
+	{
+		item
+		{
+			LootChance = 50
+			DataBaseID = 14
+			ItemType = AllodsArmor
+			_energy = 1
+			_solidity = 1
+			_itemSkills
+			{
+			}
+		}
+		item
+		{
+			LootChance = 50
+			DataBaseID = 170
+			ItemType = AllodsMaterial
+		}
+		item
+		{
+			LootChance = 50
+			DataBaseID = 162
+			ItemType = AllodsMaterial
+		}
+		item
+		{
+			LootChance = 50
+			DataBaseID = 180
+			ItemType = AllodsMaterial
+		}
+		item
+		{
+			LootChance = 50
+			DataBaseID = 175
+			ItemType = AllodsMaterial
+		}
+		item
+		{
+			LootChance = 50
+			DataBaseID = 184
+			ItemType = AllodsMaterial
+		}
+		item
+		{
+			LootChance = 50
+			DataBaseID = 187
+			ItemType = AllodsMaterial
+		}
+		item
+		{
+			LootChance = 50
+			DataBaseID = 14
+			ItemType = AllodsArmor
+			_energy = 1
+			_solidity = 1
+			_itemSkills
+			{
+			}
+		}
+		item
+		{
+			LootChance = 50
+			DataBaseID = 9
+			ItemType = AllodsWeapon
+			_energy = 1
+			_solidity = 1
+			_itemSkills
+			{
+			}
+		}
+		item
+		{
+			LootChance = 50
+			DataBaseID = 18
+			ItemType = AllodsArmor
+			_energy = 1
+			_solidity = 1
+			_itemSkills
+			{
+			}
+		}
+	}
+}
+entity
+{
+	type = Sun
+	uin = 15
+	classPrompt = Sun
+	subscriptionsToDeletionEvent = 4 4 4 4
+	billboardTexture = "Base\\Types\\Lighting\\Sun\\SunDefault.png"
+	billboardColor = 1 1 1
+	billboardPower = 1
+	billboardSize = 1
+	billboardRenderQueueGroup = Main
+	billboardOverridePosition = 0 0 0
+	enabled = False
+	lightType = Directional
+	diffuseColor = 1 1 1
+	diffusePower = 0
+	specularColor = 1 1 1
+	specularPower = 0
+	attenuationNear = 0
+	attenuationFar = 10
+	attenuationPower = 2
+	ffpAttenuationConstant = 1
+	ffpAttenuationLinear = 0
+	ffpAttenuationQuadric = 0
+	spotlightInnerAngle = 30
+	spotlightOuterAngle = 40
+	spotlightFalloff = 1
+	castShadows = False
+	allowStaticLighting = False
+	allowDynamicLighting = False
+	customShaderParameter = 0 0 0 0
+	position = 0 0 0
+	rotation = 0.1227878 0.6963642 -0.1227878 -0.6963643
+	name = Sun_1
+	tags
+	{
+	}
+}
+entity
+{
+	type = Dummy
+	uin = 16
+	classPrompt = Dummy
+	position = -16.24402 -5.232022 0.04246172
+	name = Dummy_0
+	tags
+	{
+	}
+}
+entity
+{
+	type = Obelisk
+	uin = 17
+	classPrompt = Lever
+	_state = False
+	_disposable = False
+	_inTransition = False
+	_gameName = "\x041e\x0431\x0435\x043b\x0438\x0441\x043a"
+	position = -10.51363 -1.395205 1.5
+	name = Obelisk_0
+	_objectsList
+	{
+		item
+		{
+			_ticksCount = 60
+			_translation = 0 0 2.2
+			_aliasName = Stella
+			_rotationAngle
+			{
+			}
+		}
+	}
+	_questSystemAlias
+	{
+		item
+		{
+			value = 1ee928cb-3301-464c-99d8-3b9637c886cd
+		}
+	}
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 18
+	classPrompt = StaticMesh
+	position = -11.17308 14.73337 0.008834171
+	name = StaticMesh_Selection_0
+	meshName = "Base\\Simple Models\\Selection.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 19
+	classPrompt = StaticMesh
+	position = 5 0 0
+	rotation = 0 -0.7071068 0 0.7071068
+	scale = 0.1 0.1 10
+	name = StaticMesh_Cylinder_0
+	meshName = "Base\\Simple Models\\Cylinder.mesh"
+	collision = False
+	castDynamicShadows = False
+	castStaticShadows = False
+	tags
+	{
+		item
+		{
+			name = minimap
+		}
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 20
+	classPrompt = StaticMesh
+	position = 0 5 0
+	rotation = -0.7071068 0 0 0.7071068
+	scale = 0.1 0.1 10
+	name = StaticMesh_0
+	meshName = "Base\\Simple Models\\Cylinder.mesh"
+	collision = False
+	castDynamicShadows = False
+	castStaticShadows = False
+	tags
+	{
+		item
+		{
+			name = minimap
+		}
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 21
+	classPrompt = StaticMesh
+	position = 9.61786 1.003765 0
+	rotation = -0.6792529 0.1965083 -0.1965083 0.6792529
+	scale = 0.1 0.1 1
+	name = StaticMesh_1
+	meshName = "Base\\Simple Models\\Cylinder.mesh"
+	collision = False
+	castDynamicShadows = False
+	castStaticShadows = False
+	tags
+	{
+		item
+		{
+			name = minimap
+		}
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 22
+	classPrompt = StaticMesh
+	position = 9.61786 1.003765 0
+	rotation = -0.6774749 -0.2025531 0.2025531 0.6774749
+	scale = 0.1 0.1 1
+	name = StaticMesh_2
+	meshName = "Base\\Simple Models\\Cylinder.mesh"
+	collision = False
+	castDynamicShadows = False
+	castStaticShadows = False
+	tags
+	{
+		item
+		{
+			name = minimap
+		}
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 23
+	classPrompt = StaticMesh
+	position = 0.6741199 9.385851 0
+	rotation = -0.6792529 0.1965083 -0.1965083 0.6792529
+	scale = 0.1 0.1 1
+	name = StaticMesh_3
+	meshName = "Base\\Simple Models\\Cylinder.mesh"
+	collision = False
+	castDynamicShadows = False
+	castStaticShadows = False
+	tags
+	{
+		item
+		{
+			name = minimap
+		}
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 24
+	classPrompt = StaticMesh
+	position = 0.5355408 9.635851 0
+	rotation = -0.6774749 -0.2025531 0.2025531 0.6774749
+	scale = 0.1 0.1 0.5
+	name = StaticMesh_4
+	meshName = "Base\\Simple Models\\Cylinder.mesh"
+	collision = False
+	castDynamicShadows = False
+	castStaticShadows = False
+	tags
+	{
+		item
+		{
+			name = minimap
+		}
+	}
+}

@@ -1,0 +1,9 @@
+highLevelMaterial Sword03Mithril
+{
+	template = ShaderBaseMaterial
+	alphaRejectFunction = GreaterEqual
+	diffuse1Map
+	{
+		texture = ".\\unhufesw_03.mt.0.dds"
+	}
+}

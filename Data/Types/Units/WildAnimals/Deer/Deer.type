@@ -1,0 +1,388 @@
+type Deer
+{
+	class = UCreature
+	_initialAI = BaseFleeIntellect
+	_viewDistance = 8.5
+	_walkVelocity = 0.704 1
+	_runVelocity = 4.249 0.3
+	_footPrintDecal = FootprintDecal
+	_bloodDecal = DeathBlood
+	_soundSetMale = DeerSoundSet
+	_faction = WildPeaceful
+	_regenerationHealth = 0.005
+	cdescription = "\x041b\x0435\x0441\x043d\x043e\x0439 \x043e\x043b\x0435\x043d\x044c"
+	cname = "\x041e\x043b\x0435\x043d\x044c"
+	radius = 0.75
+	height = 1.7
+	_bodyParts
+	{
+		item
+		{
+			_mainHealthPercent = 1.01
+			_section = Head
+		}
+		item
+		{
+			_mainHealthPercent = 1.01
+		}
+		item
+		{
+			_mainHealthPercent = 0.51
+			_section = Leg
+		}
+		item
+		{
+			_mainHealthPercent = 0.51
+			_section = Leg
+		}
+		item
+		{
+			_mainHealthPercent = 0.51
+			_section = Leg
+		}
+		item
+		{
+			_mainHealthPercent = 0.51
+			_section = Leg
+		}
+	}
+	_unitAppearance
+	{
+		item
+		{
+			_gender = Male
+			_relativePath = ".\\"
+			_additionalMeshes
+			{
+			}
+			_textures
+			{
+				item
+				{
+					value = DeerBrown.dds
+				}
+				item
+				{
+					value = DeerGrey.dds
+				}
+			}
+		}
+		item
+		{
+			_gender = Female
+			_relativePath = "Types\\Units\\WildAnimals\\"
+			_additionalMeshes
+			{
+			}
+			_textures
+			{
+			}
+		}
+	}
+	_stepsTypes
+	{
+		item
+		{
+			physicsMaterialName = Grass
+			stepsSounds
+			{
+				item
+				{
+					_sound = "Sounds\\General\\steps\\Horse\\Grass\\1.ogg"
+				}
+				item
+				{
+					_sound = "Sounds\\General\\steps\\Horse\\Grass\\2.ogg"
+				}
+				item
+				{
+					_sound = "Sounds\\General\\steps\\Horse\\Grass\\3.ogg"
+				}
+				item
+				{
+					_sound = "Sounds\\General\\steps\\Horse\\Grass\\4.ogg"
+				}
+				item
+				{
+					_sound = "Sounds\\General\\steps\\Horse\\Grass\\5.ogg"
+				}
+				item
+				{
+					_sound = "Sounds\\General\\steps\\Horse\\Grass\\6.ogg"
+				}
+			}
+		}
+		item
+		{
+			physicsMaterialName = Snow
+			stepsSounds
+			{
+				item
+				{
+					_sound = "Sounds\\General\\steps\\Horse\\Snow\\1.ogg"
+				}
+				item
+				{
+					_sound = "Sounds\\General\\steps\\Horse\\Snow\\2.ogg"
+				}
+				item
+				{
+					_sound = "Sounds\\General\\steps\\Horse\\Snow\\3.ogg"
+				}
+				item
+				{
+					_sound = "Sounds\\General\\steps\\Horse\\Snow\\4.ogg"
+				}
+				item
+				{
+					_sound = "Sounds\\General\\steps\\Horse\\Snow\\5.ogg"
+				}
+				item
+				{
+					_sound = "Sounds\\General\\steps\\Horse\\Snow\\6.ogg"
+				}
+			}
+		}
+		item
+		{
+			physicsMaterialName = Water
+			stepsSounds
+			{
+				item
+				{
+					_sound = "Sounds\\General\\steps\\Human\\Water\\1.ogg"
+				}
+				item
+				{
+					_sound = "Sounds\\General\\steps\\Human\\Water\\2.ogg"
+				}
+				item
+				{
+					_sound = "Sounds\\General\\steps\\Human\\Water\\3.ogg"
+				}
+				item
+				{
+					_sound = "Sounds\\General\\steps\\Human\\Water\\4.ogg"
+				}
+				item
+				{
+					_sound = "Sounds\\General\\steps\\Human\\Water\\5.ogg"
+				}
+				item
+				{
+					_sound = "Sounds\\General\\steps\\Human\\Water\\6.ogg"
+				}
+			}
+		}
+		item
+		{
+			physicsMaterialName = Sand
+			stepsSounds
+			{
+				item
+				{
+					_sound = "Sounds\\General\\steps\\Horse\\Sand\\1.ogg"
+				}
+				item
+				{
+					_sound = "Sounds\\General\\steps\\Horse\\Sand\\2.ogg"
+				}
+				item
+				{
+					_sound = "Sounds\\General\\steps\\Horse\\Sand\\3.ogg"
+				}
+				item
+				{
+					_sound = "Sounds\\General\\steps\\Horse\\Sand\\4.ogg"
+				}
+				item
+				{
+					_sound = "Sounds\\General\\steps\\Horse\\Sand\\5.ogg"
+				}
+				item
+				{
+					_sound = "Sounds\\General\\steps\\Horse\\Sand\\6.ogg"
+				}
+			}
+		}
+		item
+		{
+			physicsMaterialName = Stone
+			stepsSounds
+			{
+				item
+				{
+					_sound = "Sounds\\General\\steps\\Horse\\Stone\\1.ogg"
+				}
+				item
+				{
+					_sound = "Sounds\\General\\steps\\Horse\\Stone\\2.ogg"
+				}
+				item
+				{
+					_sound = "Sounds\\General\\steps\\Horse\\Stone\\3.ogg"
+				}
+				item
+				{
+					_sound = "Sounds\\General\\steps\\Horse\\Stone\\4.ogg"
+				}
+				item
+				{
+					_sound = "Sounds\\General\\steps\\Horse\\Stone\\5.ogg"
+				}
+				item
+				{
+					_sound = "Sounds\\General\\steps\\Horse\\Stone\\6.ogg"
+				}
+			}
+		}
+		item
+		{
+			physicsMaterialName = Rock
+			stepsSounds
+			{
+				item
+				{
+					_sound = "Sounds\\General\\steps\\Human\\Stone\\1.ogg"
+				}
+				item
+				{
+					_sound = "Sounds\\General\\steps\\Human\\Stone\\2.ogg"
+				}
+				item
+				{
+					_sound = "Sounds\\General\\steps\\Human\\Stone\\3.ogg"
+				}
+				item
+				{
+					_sound = "Sounds\\General\\steps\\Human\\Stone\\4.ogg"
+				}
+				item
+				{
+					_sound = "Sounds\\General\\steps\\Human\\Stone\\5.ogg"
+				}
+				item
+				{
+					_sound = "Sounds\\General\\steps\\Human\\Stone\\6.ogg"
+				}
+			}
+		}
+	}
+	attachedObjects
+	{
+		mesh
+		{
+			meshName = ".\\Deer.mesh"
+			alias = Body
+			position = -0.7741165 0 0.2505848
+			boneSlot RH3
+			{
+				bone = rh3
+			}
+			boneSlot LH3
+			{
+				bone = lh3
+			}
+			boneSlot RL4
+			{
+				bone = rl4
+			}
+			boneSlot LL4
+			{
+				bone = ll4
+			}
+		}
+		helper
+		{
+			alias = RightFoot
+			boneSlot = RH3
+			position = -0.1552201 -0.06870256 -0.1850263
+			scale = 0.2 0.2 0.2
+		}
+		helper
+		{
+			alias = LeftFoot
+			boneSlot = LH3
+			position = 0.1515037 -0.06870259 -0.1850263
+			scale = 0.2 0.2 0.2
+		}
+		helper
+		{
+			alias = RightFoot
+			boneSlot = RL4
+			position = -0.15 -0.03014335 -0.2232244
+			scale = 0.2 0.2 0.2
+		}
+		helper
+		{
+			alias = LeftFoot
+			boneSlot = LL4
+			position = 0.15 -0.03014341 -0.2232244
+			scale = 0.2 0.2 0.2
+		}
+	}
+	animationTypesNamesDict
+	{
+		MoveWalk
+		{
+			names = "Walk01;"
+		}
+		MoveRun
+		{
+			names = "Run01;"
+		}
+		IdleRest
+		{
+			names = "Idle01;"
+		}
+		IdleStand
+		{
+			names = "Idle01;"
+		}
+		IdleAgressive
+		{
+			names = "Idle01;"
+		}
+		HitStand
+		{
+			names = "Hit01;"
+		}
+		HitRest
+		{
+			names = "Hit01;"
+		}
+		Death
+		{
+			names = "Death01;"
+		}
+		CrossStandRest
+		{
+			names = "Idle01;"
+		}
+		CrossRestStand
+		{
+			names = "Idle01;"
+		}
+		AttackSlash
+		{
+			names = "Attack01;"
+		}
+		AttackPierce
+		{
+			names = "Attack01;"
+		}
+		AttackSlashAndPierce
+		{
+			names = "Attack01;"
+		}
+	}
+	inventory
+	{
+		item
+		{
+			LootChance = 100
+			DataBaseID = 165
+			ItemType = AllodsMaterial
+		}
+	}
+}

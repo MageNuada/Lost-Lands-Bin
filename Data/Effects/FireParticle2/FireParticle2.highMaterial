@@ -1,0 +1,15 @@
+highLevelMaterial FireParticle2
+{
+	template = ShaderBaseMaterial
+	blending = AlphaAdd
+	lighting = False
+	doubleSided = True
+	depthWrite = False
+	softParticles = True
+	diffuseVertexColor = True
+	diffuse1Map
+	{
+		texture = ".\\fire2.png"
+		clamp = True
+	}
+}

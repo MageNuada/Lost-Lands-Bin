@@ -1,0 +1,5 @@
+type AdvancedStaticMesh
+{
+	class = AdvancedStaticMesh
+	allowEditorCreate = True
+}

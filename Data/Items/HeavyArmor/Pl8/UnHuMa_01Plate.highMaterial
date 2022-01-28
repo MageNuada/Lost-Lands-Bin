@@ -1,0 +1,10 @@
+highLevelMaterial UnHuMa_01Plate
+{
+	template = ShaderBaseMaterial
+	doubleSided = True
+	alphaRejectFunction = GreaterEqual
+	diffuse1Map
+	{
+		texture = "Items\\HeavyArmor\\Pl8\\unhufepl_01.ir.1.dds"
+	}
+}

@@ -1,0 +1,9 @@
+highLevelMaterial campfire00
+{
+template = ShaderBaseMaterial
+alphaRejectFunction = GreaterEqual
+diffuse1Map
+{
+texture = ".\\campfire00.dds"
+}
+}

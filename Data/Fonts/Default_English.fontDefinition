@@ -1,0 +1,28 @@
+fontDefinition
+{
+	type = TrueType
+	trueTypeFontName = "Fonts\\Times.ttf"
+	inGame3DGuiHeightInPixels = 32
+	textureSize = 512
+	textureIndentBetweenCharacters = 8
+	advanceMultiplier = 0.95
+	drawOffsetY = -0.15
+	charactersRanges
+	{
+		item
+		{
+			begin = 0
+			end = 0
+		}
+		item
+		{
+			begin = 32
+			end = 127
+		}
+		item
+		{
+			begin = 160
+			end = 191
+		}
+	}
+}

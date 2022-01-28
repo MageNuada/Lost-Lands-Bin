@@ -1,0 +1,8 @@
+highLevelMaterial Tipy
+{
+	template = ShaderBaseMaterial
+	diffuse1Map
+	{
+		texture = "Types\\Vegetation\\tipy00.dds"
+	}
+}

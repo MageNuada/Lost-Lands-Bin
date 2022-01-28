@@ -1,0 +1,15 @@
+highLevelMaterial Teleport
+{
+	template = ShaderBaseMaterial
+	blending = AlphaBlend
+	softParticles = True
+	diffusePower = 5
+	diffuse1Map
+	{
+		texture = ".\\zoneexit.dds"
+		transform
+		{
+			scale = 0.25 0.25
+		}
+	}
+}

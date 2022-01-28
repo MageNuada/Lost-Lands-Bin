@@ -1,0 +1,8 @@
+highLevelMaterial "Dragon Green Bones"
+{
+	template = ShaderBaseMaterial
+	diffuse1Map
+	{
+		texture = ".\\material0015.dds"
+	}
+}

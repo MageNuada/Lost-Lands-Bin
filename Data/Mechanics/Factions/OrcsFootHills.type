@@ -1,0 +1,50 @@
+type OrcsFootHills
+{
+	class = Faction
+	gamename = "\x041e\x0440\x043a\x0438"
+	gamedescr = "\x041e\x0440\x043a\x0438 \x043f\x0440\x0435\x0434\x0433\x043e\x0440\x0438\x0439"
+	creatableInMapEditor = False
+	newrelation
+	{
+		item
+		{
+			relation = Friend
+			_faction = OrcsFootHills
+		}
+		item
+		{
+			relation = Friend
+			_faction = GoblinsFoothills
+		}
+		item
+		{
+			relation = Enemy
+			_faction = GipathVillage
+		}
+		item
+		{
+			relation = Enemy
+			_faction = PlayerFaction
+		}
+		item
+		{
+			relation = Friend
+			_faction = GipathBrigands
+		}
+		item
+		{
+			relation = Enemy
+			_faction = Kania
+		}
+		item
+		{
+			relation = Enemy
+			_faction = IngosArmy
+		}
+		item
+		{
+			relation = Enemy
+			_faction = WildPredators
+		}
+	}
+}

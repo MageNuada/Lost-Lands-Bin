@@ -1,0 +1,8 @@
+highLevelMaterial Wool
+{
+	template = ShaderBaseMaterial
+	diffuse1Map
+	{
+		texture = ".\\material0028.dds"
+	}
+}

@@ -1,0 +1,9 @@
+highLevelMaterial cave01
+{
+template = ShaderBaseMaterial
+alphaRejectFunction = GreaterEqual
+diffuse1Map
+{
+texture = ".\\cave01.dds"
+}
+}

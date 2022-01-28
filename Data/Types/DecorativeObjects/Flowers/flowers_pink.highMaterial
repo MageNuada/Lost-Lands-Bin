@@ -1,0 +1,13 @@
+highLevelMaterial flowers_pink
+{
+	template = ShaderBaseMaterial
+	receiveShadows = False
+	alphaRejectFunction = Greater
+	fadingByDistanceRange = 100 120
+	diffuseColor = 0.5647059 0 1
+	diffuse1Map
+	{
+		texture = ".\\mini_3.png"
+		clamp = True
+	}
+}

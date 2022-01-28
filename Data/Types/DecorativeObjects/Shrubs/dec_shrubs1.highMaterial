@@ -1,0 +1,11 @@
+highLevelMaterial dec_shrubs1
+{
+	template = ShaderBaseMaterial
+	doubleSided = True
+	alphaRejectFunction = GreaterEqual
+	diffuseColor = 0.2941177 0.4078432 0.07843138
+	diffuse1Map
+	{
+		texture = ".\\2225704.dds"
+	}
+}

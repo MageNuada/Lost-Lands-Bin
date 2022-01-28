@@ -1,0 +1,4 @@
+type QuestsManager
+{
+	class = QuestsManager
+}

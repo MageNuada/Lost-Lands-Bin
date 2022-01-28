@@ -1,0 +1,20 @@
+highLevelMaterial Grass_Green_1v
+{
+	template = VegetationMaterial
+	doubleSided = True
+	useNormals = False
+	alphaRejectFunction = GreaterEqual
+	alphaToCoverage = True
+	fadingByDistanceRange = 100 120
+	softParticles = True
+	diffuseColor = 0.2509804 0.4470589 0.01176471
+	receiveObjectsPositionsFromVertices = True
+	windEffectFactor = 2
+	bendVariation = 0.005
+	detailBending = False
+	diffuse1Map
+	{
+		texture = ".\\trava57_base_low.png"
+		clamp = True
+	}
+}

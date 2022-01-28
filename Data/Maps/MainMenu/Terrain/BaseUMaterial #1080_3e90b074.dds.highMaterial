@@ -1,0 +1,10 @@
+highLevelMaterial "BaseUMaterial #1080_3e90b074.dds222"
+{
+	template = ShaderBaseMaterial
+	doubleSided = True
+	specularShininess = 10
+	diffuse1Map
+	{
+		texture = "./3e90b074.dds"
+	}
+}

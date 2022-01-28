@@ -1,0 +1,9 @@
+highLevelMaterial GoblinLeader
+{
+	template = ShaderBaseMaterial
+	doubleSided = True
+	diffuse1Map
+	{
+		texture = ".\\goblin00l.dds"
+	}
+}

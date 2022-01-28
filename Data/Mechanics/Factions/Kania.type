@@ -1,0 +1,54 @@
+type Kania
+{
+	class = Faction
+	gamename = "\x041a\x0430\x043d\x0438\x044f"
+	gamedescr = "\x041a\x0430\x043d\x0438\x0439\x0441\x043a\x0430\x044f \x0418\x043c\x043f\x0435\x0440\x0438\x044f"
+	creatableInMapEditor = False
+	newrelation
+	{
+		item
+		{
+			_faction = PlayerFaction
+		}
+		item
+		{
+			relation = Friend
+			_faction = Kania
+		}
+		item
+		{
+			relation = Enemy
+			_faction = Hadagan
+		}
+		item
+		{
+			relation = Friend
+			_faction = IngosArmy
+		}
+		item
+		{
+			relation = Enemy
+			_faction = WildAgro
+		}
+		item
+		{
+			relation = Friend
+			_faction = GipathVillage
+		}
+		item
+		{
+			relation = Enemy
+			_faction = OrcsFootHills
+		}
+		item
+		{
+			relation = Enemy
+			_faction = WildPredators
+		}
+		item
+		{
+			relation = Enemy
+			_faction = Monsters
+		}
+	}
+}

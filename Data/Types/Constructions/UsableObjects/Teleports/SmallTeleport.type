@@ -1,0 +1,24 @@
+type SmallTeleport
+{
+	class = MapTeleporter
+	sendParticleName = GreenyNimbusParticle
+	receiveParticleName = BackRedNimbusParticle
+	radius = 0.5
+	height = 2
+	physicsModel = ".\\SmallTeleport.physics"
+	attachedObjects
+	{
+		mesh
+		{
+			meshName = ".\\Box.mesh"
+			collision = True
+			position = 0 0 -0.15
+			scale = 2.350358 2.350358 0.3
+		}
+		mapObject
+		{
+			type = Region
+			alias = region
+		}
+	}
+}

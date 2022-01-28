@@ -1,0 +1,9 @@
+highLevelMaterial DeerBrown
+{
+	template = ShaderBaseMaterial
+	doubleSided = True
+	diffuse1Map
+	{
+		texture = ".\\DeerBrown.dds"
+	}
+}

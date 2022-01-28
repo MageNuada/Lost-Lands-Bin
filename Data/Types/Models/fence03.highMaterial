@@ -1,0 +1,9 @@
+highLevelMaterial fence03
+{
+template = ShaderBaseMaterial
+alphaRejectFunction = GreaterEqual
+diffuse1Map
+{
+texture = ".\\fence03.dds"
+}
+}

@@ -1,0 +1,9 @@
+highLevelMaterial paneltent00
+{
+template = ShaderBaseMaterial
+alphaRejectFunction = GreaterEqual
+diffuse1Map
+{
+texture = ".\\paneltent00.dds"
+}
+}

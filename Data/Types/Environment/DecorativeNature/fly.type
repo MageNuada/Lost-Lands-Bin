@@ -1,0 +1,17 @@
+type fly
+{
+	class = MapObject
+	attachedObjects
+	{
+		mesh
+		{
+			meshName = "Base\\Types\\InvisiblePoint.mesh"
+			onlyForEditor = True
+		}
+		particle
+		{
+			particleName = fly_part
+			position = 0 0 1.327701
+		}
+	}
+}

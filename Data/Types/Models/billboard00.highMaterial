@@ -1,0 +1,9 @@
+highLevelMaterial billboard00
+{
+template = ShaderBaseMaterial
+alphaRejectFunction = GreaterEqual
+diffuse1Map
+{
+texture = ".\\billboard00.dds"
+}
+}

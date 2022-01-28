@@ -1,0 +1,9 @@
+highLevelMaterial shoppertent00
+{
+template = ShaderBaseMaterial
+alphaRejectFunction = GreaterEqual
+diffuse1Map
+{
+texture = ".\\shoppertent00.dds"
+}
+}

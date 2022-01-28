@@ -1,0 +1,10 @@
+highLevelMaterial Helm01Bronze
+{
+	template = ShaderBaseMaterial
+	alphaRejectFunction = GreaterEqual
+	specularColor = 0.4705883 0.4705883 0.4705883
+	diffuse1Map
+	{
+		texture = ".\\unhufehl_08.br.0.dds"
+	}
+}

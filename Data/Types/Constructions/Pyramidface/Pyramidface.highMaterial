@@ -1,0 +1,8 @@
+highLevelMaterial Pyramidface
+{
+	template = ShaderBaseMaterial
+	diffuse1Map
+	{
+		texture = "Types\\Constructions\\Pyramidface\\Pyramidface.dds"
+	}
+}

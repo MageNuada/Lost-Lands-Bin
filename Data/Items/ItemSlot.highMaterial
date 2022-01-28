@@ -1,0 +1,15 @@
+highLevelMaterial ItemSlot
+{
+	template = ShaderBaseMaterial
+	doubleSided = True
+	receiveShadows = False
+	diffuse1Map
+	{
+		texture = "GUI\\Textures\\campslots.dds"
+		transform
+		{
+			scroll = 0 0.5
+			scale = 0.5 0.5
+		}
+	}
+}

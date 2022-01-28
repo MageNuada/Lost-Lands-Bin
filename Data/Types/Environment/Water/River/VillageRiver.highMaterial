@@ -1,0 +1,65 @@
+highLevelMaterial VillageRiver
+{
+	template = ShaderBaseMaterial
+	blending = AlphaAdd
+	receiveShadows = False
+	depthWrite = False
+	diffuseColor = 0.7450981 0.7450981 1 0.7450981
+	reflectionColor = 1 1 1
+	reflectionSpecificCubemap = "Base\\Types\\SkyBox\\SkyBoxClear.jpg"
+	specularColor = 0.427451 0.427451 0.427451
+	diffuse1Map
+	{
+		texture = ".\\WaterPlain0017_6_S_COLOR.dds"
+		transform
+		{
+			animation
+			{
+				scrollSpeed = 0.1 0
+			}
+		}
+	}
+	diffuse2Map
+	{
+		transform
+		{
+			animation
+			{
+				scrollSpeed = 0.1 0
+			}
+		}
+	}
+	reflectionMap
+	{
+		transform
+		{
+			animation
+			{
+				scrollSpeed = 0.05 0
+			}
+		}
+	}
+	specularMap
+	{
+		texture = ".\\WaterPlain0017_6_S_SPEC.dds"
+		transform
+		{
+			dynamicParameters = True
+			animation
+			{
+				scrollSpeed = 0.12 0
+			}
+		}
+	}
+	normalMap
+	{
+		texture = ".\\WaterPlain0017_6_S_NRM.dds"
+		transform
+		{
+			animation
+			{
+				scrollSpeed = 0.12 0
+			}
+		}
+	}
+}

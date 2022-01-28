@@ -1,0 +1,9 @@
+highLevelMaterial VegetationWinter
+{
+	template = ShaderBaseMaterial
+	alphaRejectFunction = GreaterEqual
+	diffuse1Map
+	{
+		texture = ".\\tree03.dds"
+	}
+}

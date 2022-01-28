@@ -1,0 +1,9 @@
+highLevelMaterial dgunface02
+{
+template = ShaderBaseMaterial
+alphaRejectFunction = GreaterEqual
+diffuse1Map
+{
+texture = ".\\dgunface02.dds"
+}
+}

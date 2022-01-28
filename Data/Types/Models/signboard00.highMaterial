@@ -1,0 +1,9 @@
+highLevelMaterial signboard00
+{
+template = ShaderBaseMaterial
+alphaRejectFunction = GreaterEqual
+diffuse1Map
+{
+texture = ".\\signboard00.dds"
+}
+}

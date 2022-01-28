@@ -1,0 +1,8 @@
+highLevelMaterial "Tiger Hide"
+{
+	template = ShaderBaseMaterial
+	diffuse1Map
+	{
+		texture = ".\\material0009.dds"
+	}
+}

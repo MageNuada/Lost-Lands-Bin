@@ -1,0 +1,9 @@
+highLevelMaterial Helm01
+{
+	template = ShaderBaseMaterial
+	alphaRejectFunction = GreaterEqual
+	diffuse1Map
+	{
+		texture = ".\\Helm01Adamant.dds"
+	}
+}

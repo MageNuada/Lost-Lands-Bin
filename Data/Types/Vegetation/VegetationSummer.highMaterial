@@ -1,0 +1,9 @@
+highLevelMaterial VegetationSummer
+{
+	template = ShaderBaseMaterial
+	alphaRejectFunction = GreaterEqual
+	diffuse1Map
+	{
+		texture = ".\\VegetationSummer.dds"
+	}
+}

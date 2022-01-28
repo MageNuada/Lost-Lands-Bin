@@ -1,0 +1,9 @@
+highLevelMaterial witchstuff00
+{
+template = ShaderBaseMaterial
+alphaRejectFunction = GreaterEqual
+diffuse1Map
+{
+texture = ".\\witchstuff00.dds"
+}
+}

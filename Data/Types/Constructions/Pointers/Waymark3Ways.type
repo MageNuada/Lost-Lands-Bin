@@ -1,0 +1,14 @@
+type Waymark3Ways
+{
+	class = Dynamic
+	cname = "\x0414\x043e\x0440\x043e\x0436\x043d\x044b\x0439 \x0443\x043a\x0430\x0437\x0430\x0442\x0435\x043b\x044c"
+	radius = 1
+	attachedObjects
+	{
+		mesh
+		{
+			meshName = ".\\stst149.mesh"
+			collision = True
+		}
+	}
+}

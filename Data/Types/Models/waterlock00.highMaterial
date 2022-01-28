@@ -1,0 +1,9 @@
+highLevelMaterial waterlock00
+{
+template = ShaderBaseMaterial
+alphaRejectFunction = GreaterEqual
+diffuse1Map
+{
+texture = ".\\waterlock00.dds"
+}
+}

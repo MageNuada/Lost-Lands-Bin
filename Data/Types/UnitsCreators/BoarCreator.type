@@ -1,0 +1,16 @@
+type BoarCreator
+{
+	class = MapUnitCreator
+	_unitRace = Boar
+	_faction = WildAgro
+	_intellect = BaseNPCIntellect
+	_resultUnits
+	{
+		item
+		{
+			_level = 0
+			_skinsIndexes = 0 0
+			_meshesIndexes = 
+		}
+	}
+}

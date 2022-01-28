@@ -1,0 +1,19 @@
+highLevelMaterial Rain
+{
+	template = ShaderBaseMaterial
+	blending = AlphaBlend
+	doubleSided = True
+	receiveShadows = False
+	softParticles = True
+	halfLambert = True
+	diffusePower = 5
+	diffuse1Map
+	{
+		texture = "Effects\\Textures\\rainsnow.dds"
+		transform
+		{
+			scroll = 0 0.75
+			scale = 0.25 0.25
+		}
+	}
+}

@@ -1,0 +1,9 @@
+highLevelMaterial dgunpyramid00
+{
+template = ShaderBaseMaterial
+alphaRejectFunction = GreaterEqual
+diffuse1Map
+{
+texture = ".\\dgunpyramid00.dds"
+}
+}

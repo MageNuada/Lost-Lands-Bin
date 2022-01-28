@@ -1,0 +1,38 @@
+type Obelisk
+{
+	class = Lever
+	_activationSound = "Sounds\\General\\Tools\\StoneG.ogg"
+	cname = "\x041e\x0431\x0435\x043b\x0438\x0441\x043a"
+	radius = 0.5
+	height = 2.5
+	networkType = Synchronized
+	_changingObjects
+	{
+		item
+		{
+			_ticksCount = 60
+			_translation = 0 0 2.2
+			_aliasName = Stella
+			_rotationAngle
+			{
+			}
+		}
+	}
+	attachedObjects
+	{
+		mesh
+		{
+			meshName = ".\\ObeliskPart01.mesh"
+			collision = True
+			position = 0 0 -1.513699
+			scale = 0.8 0.8 0.8
+		}
+		mesh
+		{
+			meshName = ".\\ObeliskPart02.mesh"
+			alias = Stella
+			position = 0 0 -1.513699
+			scale = 0.8 0.8 0.8
+		}
+	}
+}

@@ -1,0 +1,9 @@
+highLevelMaterial ShroudRed
+{
+	template = ShaderBaseMaterial
+	blending = AlphaBlend
+	useNormals = False
+	receiveShadows = False
+	diffuseColor = 0.254902 0.1294118 0.1294118 0.3921569
+	diffusePower = 2
+}

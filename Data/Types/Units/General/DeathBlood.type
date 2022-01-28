@@ -1,0 +1,77 @@
+type DeathBlood
+{
+	class = BloodCreator
+	_maxGrowTicks = 100
+	_maximumIndex = 4
+	size = 4
+	omniMaxDistance = 2.5
+	lifeTime = 20
+	lifeTimeInt = 599
+	depthRenderOffset = 0.025
+	fadeTime = 4
+	fadeTimeInt = 119
+	applyToMapObjects = True
+	rayCheckDistance = 2.5
+	creatableInMapEditor = False
+	racesIndexes
+	{
+		item
+		{
+			_raceName = Human
+			_index = 5
+			_size = 2.5
+		}
+		item
+		{
+			_raceName = Wolf
+			_index = 5
+			_size = 2.5
+		}
+		item
+		{
+			_raceName = Hare
+			_index = 5
+			_size = 1.5
+		}
+		item
+		{
+			_raceName = Boar
+			_index = 5
+			_size = 2.5
+		}
+		item
+		{
+			_raceName = Deer
+			_index = 5
+			_size = 2.5
+		}
+		item
+		{
+			_raceName = GoblinMelee
+			_index = 5
+			_size = 2
+		}
+		item
+		{
+			_raceName = Rat
+			_index = 5
+			_size = 1
+		}
+	}
+	materials
+	{
+		item
+		{
+			materialName = Blood
+		}
+	}
+	attachedObjects
+	{
+		mesh
+		{
+			meshName = "Base\\Simple Models\\Box.mesh"
+			forceMaterial = Blood
+			onlyForEditor = True
+		}
+	}
+}

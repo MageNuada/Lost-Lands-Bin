@@ -1,0 +1,13 @@
+type Arrow
+{
+	class = Missile
+	attachedObjects
+	{
+		mesh
+		{
+			meshName = "Base\\Simple Models\\Cylinder.mesh"
+			rotation = 0 -0.7071068 0 0.7071068
+			scale = 0.2 0.2 1
+		}
+	}
+}

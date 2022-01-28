@@ -1,0 +1,9 @@
+highLevelMaterial Obelisk
+{
+	template = ShaderBaseMaterial
+	specularColor = 0.03921569 0.03921569 0.03921569
+	diffuse1Map
+	{
+		texture = ".\\level01.dds"
+	}
+}

@@ -1,0 +1,8 @@
+highLevelMaterial "Dragon Black Hide"
+{
+	template = ShaderBaseMaterial
+	diffuse1Map
+	{
+		texture = ".\\material0008.dds"
+	}
+}

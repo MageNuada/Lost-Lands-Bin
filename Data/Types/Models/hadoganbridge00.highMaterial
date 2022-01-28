@@ -1,0 +1,9 @@
+highLevelMaterial hadoganbridge00
+{
+template = ShaderBaseMaterial
+alphaRejectFunction = GreaterEqual
+diffuse1Map
+{
+texture = ".\\hadoganbridge00.dds"
+}
+}

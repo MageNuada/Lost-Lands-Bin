@@ -1,0 +1,16 @@
+type Svetlaki
+{
+	class = MapObject
+	attachedObjects
+	{
+		mesh
+		{
+			meshName = "Base\\Types\\InvisiblePoint.mesh"
+			onlyForEditor = True
+		}
+		particle
+		{
+			particleName = Fireflies
+		}
+	}
+}

@@ -1,0 +1,8 @@
+highLevelMaterial Goblinhouse02
+{
+	template = ShaderBaseMaterial
+	diffuse1Map
+	{
+		texture = "Types\\Vegetation\\goblinhouse01.dds"
+	}
+}

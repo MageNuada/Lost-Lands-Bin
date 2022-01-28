@@ -1,0 +1,39 @@
+type WolfCreator
+{
+	class = MapUnitCreator
+	_unitRace = Wolf
+	_faction = WildAgro
+	_intellect = BaseNPCIntellect
+	_resultUnits
+	{
+		item
+		{
+			_level = 0
+			_skinsIndexes = 0 0
+			_meshesIndexes = 
+			_melee = 10 14
+			_experience = 3 4
+			_money = 1 1
+			_gameName = "\x041c\x043e\x043b\x043e\x0434\x043e\x0439 \x0432\x043e\x043b\x043a"
+		}
+		item
+		{
+			_level = 1
+			_skinsIndexes = 1 1
+			_meshesIndexes = 
+			_strengthRange = 2 3
+			_agilityRange = 2 3
+			_experience = 8 9
+			_money = 0 0
+			_gameName = "\x041c\x043e\x043b\x043e\x0434\x043e\x0439 \x0431\x0435\x043b\x044b\x0439 \x0432\x043e\x043b\x043a"
+		}
+	}
+	attachedObjects
+	{
+		mesh
+		{
+			meshName = "Base\\Types\\InvisiblePoint.mesh"
+			onlyForEditor = True
+		}
+	}
+}

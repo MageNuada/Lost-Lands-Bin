@@ -1,0 +1,9 @@
+highLevelMaterial HareBrown
+{
+	template = ShaderBaseMaterial
+	doubleSided = True
+	diffuse1Map
+	{
+		texture = ".\\HareBrown.dds"
+	}
+}

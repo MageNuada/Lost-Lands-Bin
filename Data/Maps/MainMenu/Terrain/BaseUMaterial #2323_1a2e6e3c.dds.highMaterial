@@ -1,0 +1,11 @@
+highLevelMaterial "BaseUMaterial #2323_1a2e6e3c.dds222"
+{
+	template = ShaderBaseMaterial
+	doubleSided = True
+	alphaRejectFunction = GreaterEqual
+	specularShininess = 10
+	diffuse1Map
+	{
+		texture = "./1a2e6e3c.dds"
+	}
+}

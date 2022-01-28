@@ -1,0 +1,9 @@
+highLevelMaterial Sword03Bronze
+{
+	template = ShaderBaseMaterial
+	alphaRejectFunction = GreaterEqual
+	diffuse1Map
+	{
+		texture = ".\\unhufesw_03.br.0.dds"
+	}
+}

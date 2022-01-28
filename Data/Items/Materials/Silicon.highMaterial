@@ -1,0 +1,8 @@
+highLevelMaterial Silicon
+{
+	template = ShaderBaseMaterial
+	diffuse1Map
+	{
+		texture = ".\\material0019.dds"
+	}
+}

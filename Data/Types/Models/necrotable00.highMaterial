@@ -1,0 +1,9 @@
+highLevelMaterial necrotable00
+{
+template = ShaderBaseMaterial
+alphaRejectFunction = GreaterEqual
+diffuse1Map
+{
+texture = ".\\necrotable00.dds"
+}
+}

@@ -1,0 +1,9 @@
+highLevelMaterial hadogangates00
+{
+template = ShaderBaseMaterial
+alphaRejectFunction = GreaterEqual
+diffuse1Map
+{
+texture = ".\\hadogangates00.dds"
+}
+}

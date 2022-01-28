@@ -1,0 +1,10 @@
+highLevelMaterial Material01
+{
+	dataSource = "Types\\Vegetation\\Shrubs\\Paparotnik\\pap.modelImport"
+	template = ShaderBaseMaterial
+	diffuseColor = 0.6 0.6 0.6
+	diffuse1Map
+	{
+		texture = ".\\4KMIcdza9e2.png"
+	}
+}

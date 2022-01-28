@@ -1,0 +1,28 @@
+type EnvironmentManager
+{
+	class = EnvironmentManager
+	uniqueEntityInstance = True
+	networkType = Synchronized
+	_weatherEntityList
+	{
+		item
+		{
+			_weatherEvent = Rain
+			_weatherSound
+			{
+				item
+				{
+					value = "Sounds\\General\\nature\\rain\\start.ogg"
+				}
+				item
+				{
+					value = "Sounds\\General\\nature\\rain\\circle.ogg"
+				}
+				item
+				{
+					value = "Sounds\\General\\nature\\rain\\end.ogg"
+				}
+			}
+		}
+	}
+}

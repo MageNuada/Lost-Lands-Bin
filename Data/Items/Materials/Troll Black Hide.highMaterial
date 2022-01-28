@@ -1,0 +1,8 @@
+highLevelMaterial "Troll Black Hide"
+{
+	template = ShaderBaseMaterial
+	diffuse1Map
+	{
+		texture = ".\\material0005.dds"
+	}
+}

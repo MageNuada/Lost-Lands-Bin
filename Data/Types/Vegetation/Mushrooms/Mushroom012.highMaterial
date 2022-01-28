@@ -1,0 +1,8 @@
+highLevelMaterial Mushroom012
+{
+	template = ShaderBaseMaterial
+	diffuse1Map
+	{
+		texture = ".\\mushroom02_2.dds"
+	}
+}

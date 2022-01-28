@@ -1,0 +1,9 @@
+highLevelMaterial Steel
+{
+	template = ShaderBaseMaterial
+	specularColor = 0.07843138 0.07843138 0.07843138
+	diffuse1Map
+	{
+		texture = ".\\material0023.dds"
+	}
+}

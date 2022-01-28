@@ -1,0 +1,20 @@
+highLevelMaterial RedEye
+{
+	template = ShaderBaseMaterial
+	blending = AlphaBlend
+	doubleSided = True
+	receiveShadows = False
+	softParticles = True
+	softParticlesFadingLength = 0.2
+	diffuseColor = 1 0 0
+	emissionColor = 1 0 0
+	emissionPower = 2
+	diffuse1Map
+	{
+		texture = "Effects\\ExplosionParticle\\fire.png"
+	}
+	emissionMap
+	{
+		texture = "Effects\\ExplosionParticle\\fire.png"
+	}
+}

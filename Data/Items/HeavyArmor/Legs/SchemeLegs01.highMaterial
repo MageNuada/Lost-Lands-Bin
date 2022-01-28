@@ -1,0 +1,10 @@
+highLevelMaterial SchemeLegs01
+{
+	template = ShaderBaseMaterial
+	doubleSided = True
+	alphaRejectFunction = GreaterEqual
+	diffuse1Map
+	{
+		texture = ".\\lg_04.0.dds"
+	}
+}

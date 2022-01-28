@@ -1,0 +1,9 @@
+highLevelMaterial potfire00
+{
+template = ShaderBaseMaterial
+alphaRejectFunction = GreaterEqual
+diffuse1Map
+{
+texture = ".\\potfire00.dds"
+}
+}

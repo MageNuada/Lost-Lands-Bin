@@ -1,0 +1,9 @@
+highLevelMaterial Boots01_3
+{
+	template = ShaderBaseMaterial
+	alphaRejectFunction = GreaterEqual
+	diffuse1Map
+	{
+		texture = ".\\Boots01_3.dds"
+	}
+}

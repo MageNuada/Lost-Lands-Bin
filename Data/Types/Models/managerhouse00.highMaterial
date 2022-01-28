@@ -1,0 +1,9 @@
+highLevelMaterial managerhouse00
+{
+template = ShaderBaseMaterial
+alphaRejectFunction = GreaterEqual
+diffuse1Map
+{
+texture = ".\\managerhouse00.dds"
+}
+}

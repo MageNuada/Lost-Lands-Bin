@@ -1,0 +1,8 @@
+highLevelMaterial Mithril
+{
+	template = ShaderBaseMaterial
+	diffuse1Map
+	{
+		texture = ".\\material0024.dds"
+	}
+}

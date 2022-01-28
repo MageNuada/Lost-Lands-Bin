@@ -1,0 +1,9 @@
+highLevelMaterial SchemeBoots01
+{
+	template = ShaderBaseMaterial
+	alphaRejectFunction = GreaterEqual
+	diffuse1Map
+	{
+		texture = ".\\bt_00.0.dds"
+	}
+}

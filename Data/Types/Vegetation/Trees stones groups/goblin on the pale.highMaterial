@@ -1,0 +1,8 @@
+highLevelMaterial "goblin on the pale"
+{
+	template = ShaderBaseMaterial
+	diffuse1Map
+	{
+		texture = "Types\\Vegetation\\goblin00l.dds"
+	}
+}

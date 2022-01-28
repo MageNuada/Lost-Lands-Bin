@@ -1,0 +1,9 @@
+highLevelMaterial dgunbird01
+{
+template = ShaderBaseMaterial
+alphaRejectFunction = GreaterEqual
+diffuse1Map
+{
+texture = ".\\dgunbird01.dds"
+}
+}

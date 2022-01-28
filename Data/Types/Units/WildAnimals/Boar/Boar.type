@@ -1,0 +1,200 @@
+type Boar
+{
+	class = UCreature
+	_initialAI = BaseNPCIntellect
+	_viewDistance = 8.5
+	_walkVelocity = 0.353 1
+	_runVelocity = 2.01 0.3
+	_footPrintDecal = FootprintDecal
+	_bloodDecal = DeathBlood
+	_soundSetMale = BoarSoundSet
+	_faction = WildAgro
+	_regenerationHealth = 0.01
+	_attackDistance = 1.7
+	cname = "\x041a\x0430\x0431\x0430\x043d"
+	radius = 0.5
+	height = 1.4
+	_bodyParts
+	{
+		item
+		{
+			_mainHealthPercent = 1.01
+			_section = Head
+		}
+		item
+		{
+			_mainHealthPercent = 1.01
+		}
+		item
+		{
+			_mainHealthPercent = 0.51
+			_section = Leg
+		}
+		item
+		{
+			_mainHealthPercent = 0.51
+			_section = Leg
+		}
+		item
+		{
+			_mainHealthPercent = 0.51
+			_section = Leg
+		}
+		item
+		{
+			_mainHealthPercent = 0.51
+			_section = Leg
+		}
+	}
+	_unitAppearance
+	{
+		item
+		{
+			_gender = Male
+			_relativePath = ".\\"
+			_additionalMeshes
+			{
+			}
+			_textures
+			{
+				item
+				{
+					value = Boar_Diff0.dds
+				}
+				item
+				{
+					value = Boar_Diff1.dds
+				}
+			}
+		}
+		item
+		{
+			_gender = Female
+			_relativePath = "Types\\Units\\WildAnimals\\"
+			_additionalMeshes
+			{
+			}
+			_textures
+			{
+			}
+		}
+	}
+	attachedObjects
+	{
+		mesh
+		{
+			meshName = ".\\Boar.mesh"
+			alias = Body
+			position = -0.7719327 0 -0.715412
+			rotation = 0 0 -0.7071068 0.7071068
+			boneSlot RH3
+			{
+				bone = rh3
+			}
+			boneSlot LH3
+			{
+				bone = lh3
+			}
+			boneSlot LL4
+			{
+				bone = ll4
+			}
+			boneSlot RL4
+			{
+				bone = rl4
+			}
+		}
+		helper
+		{
+			alias = LeftFoot
+			boneSlot = LH3
+			position = 0.1044521 -1.577183E-08 -0.1161159
+			scale = 0.2 0.2 0.2
+		}
+		helper
+		{
+			alias = RightFoot
+			boneSlot = RH3
+			position = -0.09718415 1.46744E-08 -0.1161159
+			scale = 0.2 0.2 0.2
+		}
+		helper
+		{
+			alias = RightFoot
+			boneSlot = RL4
+			position = -0.07570688 -0.03044616 -0.07854974
+			scale = 0.2 0.2 0.2
+		}
+		helper
+		{
+			alias = LeftFoot
+			boneSlot = LL4
+			position = 0.08651232 -0.03044618 -0.08115494
+			scale = 0.2 0.2 0.2
+		}
+	}
+	animationTypesNamesDict
+	{
+		MoveWalk
+		{
+			names = "Walk01;"
+		}
+		MoveRun
+		{
+			names = "Run01;"
+		}
+		IdleRest
+		{
+			names = "Idle01;"
+		}
+		IdleStand
+		{
+			names = "Idle01;"
+		}
+		IdleAgressive
+		{
+			names = "Idle01;"
+		}
+		HitStand
+		{
+			names = "Hit01;"
+		}
+		HitRest
+		{
+			names = "Hit01;"
+		}
+		Death
+		{
+			names = "Death01;Death02;"
+		}
+		AttackSlash
+		{
+			names = "Attack01;Attack02;Attack03;"
+		}
+		AttackPierce
+		{
+			names = "Attack01;Attack02;Attack03;"
+		}
+		AttackSlashAndPierce
+		{
+			names = "Attack01;Attack02;Attack03;"
+		}
+		CrossStandRest
+		{
+			names = "Idle01;"
+		}
+		CrossRestStand
+		{
+			names = "Idle01;"
+		}
+	}
+	inventory
+	{
+		item
+		{
+			LootChance = 100
+			DataBaseID = 165
+			ItemType = AllodsMaterial
+		}
+	}
+}

@@ -1,0 +1,37 @@
+type HumanCreator
+{
+	class = MapUnitCreator
+	_unitRace = Human
+	_intellect = BaseNPCIntellect
+	_resultUnits
+	{
+		item
+		{
+			_level = 0
+			_skinsIndexes = "0 6;7 9;11 12"
+			_meshesIndexes = -1 4
+			_strengthRange = 8 12
+			_agilityRange = 8 12
+			_intelligenceRange = 8 12
+			_baseDamage = 4 5
+			_rollDamage = 1 2
+			_melee = 10 15
+			_experience = 10 20
+			_money = 20 30
+			_gameName = "\x041b\x0435\x0439\x0442\x0435\x043d\x0430\x043d\x0442"
+			_gameDescription = "\x041c\x043b\x0430\x0434\x0448\x0438\x0439 \x043e\x0444\x0438\x0446\x0435\x0440 \x043a\x0430\x043d\x0438\x0439\x0441\x043a\x043e\x0439 \x0430\x0440\x043c\x0438\x0438"
+			_gameName2 = "\x041b\x0435\x0439\x0442\x0435\x043d\x0430\x043d\x0442"
+			_gameDescription2 = "\x041c\x043b\x0430\x0434\x0448\x0438\x0439 \x043e\x0444\x0438\x0446\x0435\x0440 \x043a\x0430\x043d\x0438\x0439\x0441\x043a\x043e\x0439 \x0430\x0440\x043c\x0438\x0438"
+			_soundSetMa = MaleSoundSet1
+			_soundSetFe = FemaleSoundSet1
+		}
+	}
+	attachedObjects
+	{
+		mesh
+		{
+			meshName = "Base\\Types\\InvisiblePoint.mesh"
+			onlyForEditor = True
+		}
+	}
+}

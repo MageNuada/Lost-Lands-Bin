@@ -1,0 +1,19 @@
+type fog_plane
+{
+	class = MapObject
+	attachedObjects
+	{
+		mesh
+		{
+			meshName = "Base\\Simple Models\\Plane.mesh"
+			forceMaterial = fog2
+			position = 0 0 0.2567558
+			scale = 6.960001 6.960001 1
+		}
+		mesh
+		{
+			meshName = "Base\\Types\\InvisiblePoint.mesh"
+			onlyForEditor = True
+		}
+	}
+}

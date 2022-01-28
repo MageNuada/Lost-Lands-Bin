@@ -1,0 +1,11 @@
+highLevelMaterial Wolf
+{
+	template = ShaderBaseMaterial
+	doubleSided = True
+	alphaRejectFunction = GreaterEqual
+	diffuseColor = 0.8627452 0.8627452 0.8627452
+	diffuse1Map
+	{
+		texture = ".\\WolfWhite.dds"
+	}
+}

@@ -1,0 +1,9 @@
+highLevelMaterial tree04
+{
+template = ShaderBaseMaterial
+alphaRejectFunction = GreaterEqual
+diffuse1Map
+{
+texture = ".\\tree04.dds"
+}
+}

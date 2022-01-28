@@ -1,0 +1,9 @@
+highLevelMaterial stone05
+{
+template = ShaderBaseMaterial
+alphaRejectFunction = GreaterEqual
+diffuse1Map
+{
+texture = ".\\stone05.dds"
+}
+}

@@ -1,0 +1,15 @@
+highLevelMaterial Blood
+{
+	template = ShaderBaseMaterial
+	blending = AlphaBlend
+	lighting = False
+	doubleSided = True
+	receiveShadows = False
+	depthWrite = False
+	diffuseScaleDynamic = True
+	diffuse1Map
+	{
+		texture = ".\\bloodprints.dds"
+		clamp = True
+	}
+}

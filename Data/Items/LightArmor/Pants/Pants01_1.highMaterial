@@ -1,0 +1,9 @@
+highLevelMaterial Pants01_1
+{
+	template = ShaderBaseMaterial
+	alphaRejectFunction = GreaterEqual
+	diffuse1Map
+	{
+		texture = ".\\Pants01_1.dds"
+	}
+}

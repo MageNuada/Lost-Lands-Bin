@@ -1,0 +1,13 @@
+highLevelMaterial VegetationSummerAnimated
+{
+	template = VegetationMaterial
+	alphaRejectFunction = GreaterEqual
+	receiveObjectsPositionsFromVertices = True
+	windEffectFactor = 0.8
+	bendVariation = 0.005
+	detailBending = False
+	diffuse1Map
+	{
+		texture = ".\\VegetationSummer.dds"
+	}
+}

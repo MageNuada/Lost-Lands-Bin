@@ -1,0 +1,320 @@
+type RatSoundSet
+{
+	class = UnitSoundSet
+	creatableInMapEditor = False
+	uniqueEntityInstance = True
+	TypedSound
+	{
+		item
+		{
+			_soundType = Speech
+			UnitSound
+			{
+			}
+		}
+		item
+		{
+			_soundType = ArmHitted
+			UnitSound
+			{
+			}
+		}
+		item
+		{
+			_soundType = LegHitted
+			UnitSound
+			{
+			}
+		}
+		item
+		{
+			_soundType = ArmorDestroyed
+			UnitSound
+			{
+			}
+		}
+		item
+		{
+			_soundType = WeaponDestroyed
+			UnitSound
+			{
+			}
+		}
+		item
+		{
+			_soundType = AckAttack
+			UnitSound
+			{
+			}
+		}
+		item
+		{
+			_soundType = DangerAttack
+			UnitSound
+			{
+			}
+		}
+		item
+		{
+			_soundType = Move
+			UnitSound
+			{
+			}
+		}
+		item
+		{
+			_soundType = ChangeMoveDest
+			UnitSound
+			{
+			}
+		}
+		item
+		{
+			_soundType = CastSpell
+			UnitSound
+			{
+			}
+		}
+		item
+		{
+			_soundType = Kill
+			UnitSound
+			{
+			}
+		}
+		item
+		{
+			_soundType = Follow
+			UnitSound
+			{
+			}
+		}
+		item
+		{
+			_soundType = NoPath
+			UnitSound
+			{
+			}
+		}
+		item
+		{
+			_soundType = NoChangePath
+			UnitSound
+			{
+			}
+		}
+		item
+		{
+			_soundType = NoCastSpell
+			UnitSound
+			{
+			}
+		}
+		item
+		{
+			_soundType = NoTarget
+			UnitSound
+			{
+			}
+		}
+		item
+		{
+			_soundType = NoRunInjured
+			UnitSound
+			{
+			}
+		}
+		item
+		{
+			_soundType = NoRunEnergy
+			UnitSound
+			{
+			}
+		}
+		item
+		{
+			_soundType = NoRunOverload
+			UnitSound
+			{
+			}
+		}
+		item
+		{
+			_soundType = Loot
+			UnitSound
+			{
+			}
+		}
+		item
+		{
+			_soundType = InteractionObj
+			UnitSound
+			{
+			}
+		}
+		item
+		{
+			_soundType = InteractionObjFail
+			UnitSound
+			{
+			}
+		}
+		item
+		{
+			_soundType = CastFail
+			UnitSound
+			{
+			}
+		}
+		item
+		{
+			_soundType = Selected
+			UnitSound
+			{
+			}
+		}
+		item
+		{
+			_soundType = Steal
+			UnitSound
+			{
+			}
+		}
+		item
+		{
+			_soundType = StealFail
+			UnitSound
+			{
+			}
+		}
+		item
+		{
+			_soundType = UsePotion
+			UnitSound
+			{
+			}
+		}
+		item
+		{
+			_soundType = Reserved1
+			UnitSound
+			{
+			}
+		}
+		item
+		{
+			_soundType = Reserved2
+			UnitSound
+			{
+			}
+		}
+		item
+		{
+			_soundType = Reserved3
+			UnitSound
+			{
+			}
+		}
+		item
+		{
+			_soundType = Reserved4
+			UnitSound
+			{
+			}
+		}
+		item
+		{
+			_soundType = Reserved5
+			UnitSound
+			{
+			}
+		}
+		item
+		{
+			_soundType = Reserved6
+			UnitSound
+			{
+			}
+		}
+		item
+		{
+			_soundType = Scenario
+			UnitSound
+			{
+			}
+		}
+		item
+		{
+			_soundType = ShopNo
+			UnitSound
+			{
+			}
+		}
+		item
+		{
+			_soundType = ShopYes
+			UnitSound
+			{
+			}
+		}
+		item
+		{
+			_soundType = Attack
+			UnitSound
+			{
+				item
+				{
+					_sound = "Sounds\\General\\animals\\Rat\\Attack\\1.ogg"
+				}
+				item
+				{
+					_sound = "Sounds\\General\\animals\\Rat\\Attack\\2.ogg"
+				}
+			}
+		}
+		item
+		{
+			_soundType = Idle
+			UnitSound
+			{
+			}
+		}
+		item
+		{
+			_soundType = Death
+			UnitSound
+			{
+				item
+				{
+					_sound = "Sounds\\General\\animals\\Rat\\Death\\1.ogg"
+				}
+				item
+				{
+					_sound = "Sounds\\General\\animals\\Rat\\Death\\2.ogg"
+				}
+			}
+		}
+		item
+		{
+			_soundType = Hit
+			UnitSound
+			{
+				item
+				{
+					_sound = "Sounds\\General\\animals\\Rat\\Hit\\1.ogg"
+				}
+				item
+				{
+					_sound = "Sounds\\General\\animals\\Rat\\Hit\\2.ogg"
+				}
+			}
+		}
+		item
+		{
+			_soundType = Bored
+			UnitSound
+			{
+			}
+		}
+	}
+}

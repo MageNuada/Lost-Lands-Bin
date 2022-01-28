@@ -1,0 +1,8 @@
+highLevelMaterial BrownRat
+{
+	template = ShaderBaseMaterial
+	diffuse1Map
+	{
+		texture = ".\\BrownRat.jpg"
+	}
+}

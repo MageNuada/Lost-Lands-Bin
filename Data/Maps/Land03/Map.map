@@ -1,0 +1,637 @@
+type = GameMap
+uin = 3
+classPrompt = GameMap
+gameMusic = "Sounds\\Music\\Game.ogg"
+resetYCoordinateForDynamicBodies = False
+destroyObjectsBelowHeight = -500
+_baseAllod = Jigran
+windDirection = 0
+windSpeed = 1
+ambientIntensity = 0.4
+ambientSkyColor = 0.5058824 0.5294118 0.4901961
+ambientEquatorColor = 0.5058824 0.5294118 0.4901961
+ambientGroundColor = 0.5058824 0.5294118 0.4901961
+editorCameraPosition = 101.0929 -23.42337 1.734551
+editorCameraDirection = 3.807177 -0.6953053
+shadowColor = 1 1 1
+shadowPSSMSplitFactors = 0.1 0.4
+cameraOrthoWindowHeight = 400
+logicSystemManager = 4
+staticBatchingRenderingEnabled = True
+staticBatchingPhysicsEnabledInMapEditor = False
+staticBatchingPhysicsEnabledInSimulation = False
+staticBatchingGridCellSize = 30 30 30
+staticBatchingFilterByMaxTriangleCount = 512
+name = "Maps\\Land03\\Map.map"
+shadowTechnique = ShadowmapMedium
+dataForEditor
+{
+}
+sceneGraphSettings
+{
+	amountOfObjectsOutsideOctreeBoundsToRebuld = 30
+	octreeBoundsRebuildExpand = 50 50 50
+	minNodeSize = 10 10 10
+	objectCountThresholdToCreateChildNodes = 10
+	maxNodeCount = 300000
+}
+tags
+{
+}
+rootEditorLayer
+{
+	name = Root Layer
+	layer
+	{
+		name = Test_Creatures
+	}
+}
+entity
+{
+	type = LogicSystemManager
+	uin = 4
+	referencesToCompileDLL = "System.dll\r\nSystem.Drawing.dll\r\n\r\nEngineApp.dll\r\nUISystem.dll\r\nFileSystem.dll\r\nLog.dll\r\nMathEx.dll\r\nRenderer.dll\r\nPhysicsSystem.dll\r\nSoundSystem.dll\r\nEntitySystem.dll\r\nMapSystem.dll\r\nUtils.dll\r\nHeightmapTerrain.dll\r\nDecorativeObjectManager.dll\r\n\r\nProjectCommon.dll\r\nProjectEntities.dll"
+	usingNamespacesToCodeGeneration = "using System;\r\nusing System.Collections.Generic;\r\nusing System.Text;\r\n\r\nusing Engine;\r\nusing Engine.FileSystem;\r\nusing Engine.MathEx;\r\nusing Engine.Utils;\r\nusing Engine.Renderer;\r\nusing Engine.PhysicsSystem;\r\nusing Engine.SoundSystem;\r\nusing Engine.UISystem;\r\nusing Engine.EntitySystem;\r\nusing Engine.MapSystem;\r\n\r\nusing ProjectCommon;\r\nusing ProjectEntities;"
+	mapClassManager = 5
+	tags
+	{
+	}
+	entity
+	{
+		type = LogicClassManager
+		uin = 5
+		tags
+		{
+		}
+	}
+}
+entity
+{
+	type = EnvironmentManager
+	uin = 6
+	classPrompt = EnvironmentManager
+	_sun = 13
+	_sky = 9
+	_nextChangeWeather = 5131
+	_windtransition = 180
+	_fogTransition = 53
+	time = 180
+	name = EnvironmentManager_0
+	_weather
+	{
+		nPowerCheck = 0
+		fpWeatherStartTime = 0
+		fpWeatherTransformTime = 0
+		curWeather = Nothing
+		nextWeather = Nothing
+	}
+	tags
+	{
+	}
+}
+entity
+{
+	type = TextOnScreenManager
+	uin = 7
+	classPrompt = TextOnScreenManager
+	name = TextOnScreenManager_0
+	_txt
+	{
+	}
+	tags
+	{
+	}
+}
+entity
+{
+	type = HeightmapTerrain
+	uin = 8
+	classPrompt = HeightmapTerrain
+	enabled = True
+	position = 0 0 -20
+	horizontalSize = 225
+	dataDirectory = HeightmapTerrain
+	masksSize = 2048
+	detailMapsDistance = 10
+	renderQueueGroup = WorldGeometry1
+	collision = True
+	collisionMaterialName = Default
+	collisionHeightfieldThickness = 2
+	castDynamicShadows = False
+	receiveStaticShadows = True
+	simpleRendering = False
+	tileSize = 16
+	visible = True
+	allowVertexTextureFetchOptimization = True
+	useFloat16BitHeightTexture = False
+	heightMultiplier = 1
+	heightmapTerrainManagerIndex = 0 0
+	name = ZoneStartJigran
+	ambientOcclusion
+	{
+		enabled = False
+		size = 1024
+		rayLength = 1
+		iterationCount = 100
+		blur = True
+		power = 1
+	}
+	lodSettings
+	{
+		enabled = True
+		maxCount = 99
+		lodLevelDistances = 100 + level * 200
+		morphAreaPercent = 0.3
+		showLevels = False
+	}
+	tags
+	{
+	}
+	layers
+	{
+		item
+		{
+			name = GrassDefault
+			baseMap = "Base\\Types\\HeightmapTerrain\\DefaultLayer0Base.jpg"
+			baseScale = 4
+			detailMap = "Base\\Types\\HeightmapTerrain\\DefaultLayer0Detail.jpg"
+			detailScale = 2
+		}
+		item
+		{
+			name = GroundDefault
+			baseMap = "Base\\Types\\HeightmapTerrain\\DefaultLayer1Base.jpg"
+			baseScale = 4
+			detailMap = "Base\\Types\\HeightmapTerrain\\DefaultLayer1Detail.jpg"
+			detailScale = 2
+		}
+		item
+		{
+			name = MossDark
+			baseMap = "Base\\Types\\HeightmapTerrain\\Grass2\\Grass02Base2.dds"
+			baseScale = 4
+			detailMap = "Base\\Types\\HeightmapTerrain\\Grass2\\Grass02Detail.tga"
+			detailScale = 2
+			detailNormalMap = "Base\\Types\\HeightmapTerrain\\Grass2\\Grass02DetailDOT3.tga"
+		}
+		item
+		{
+			name = MudGrass
+			baseMap = "Base\\Types\\HeightmapTerrain\\Grass3\\TT_GG_Grass_09_c.dds"
+			baseScale = 4
+			detailScale = 2
+			baseNormalMap = "Base\\Types\\HeightmapTerrain\\Grass3\\TT_GG_Grass_09_n.dds"
+			specularShininess = 800
+		}
+		item
+		{
+			name = SwampGrass
+			baseMap = "Base\\Types\\HeightmapTerrain\\Grass4\\TT_GG_Grass_12_c.dds"
+			baseScale = 4
+			detailScale = 2
+			baseNormalMap = "Base\\Types\\HeightmapTerrain\\Grass4\\TT_GG_Grass_12_n.dds"
+			specularColor = 1 1 1
+			specularShininess = 200
+		}
+		item
+		{
+			name = GrassBig
+			baseMap = "Base\\Types\\HeightmapTerrain\\Grass5\\TT_GG_Grass_30_c.dds"
+			baseScale = 4
+			detailMap = "Base\\Types\\HeightmapTerrain\\Grass1\\Grass01Detail.png"
+			detailScale = 2
+			baseNormalMap = "Base\\Types\\HeightmapTerrain\\Grass5\\TT_GG_Grass_30_n.dds"
+			detailNormalMap = "Base\\Types\\HeightmapTerrain\\Grass1\\Grass01DetailDOT3.png"
+			specularColor = 1 1 1
+			baseSpecularMap = "Base\\Types\\HeightmapTerrain\\Grass1\\Grass01DetailSpecular.png"
+			detailSpecularMap = "Base\\Types\\HeightmapTerrain\\Grass1\\Grass01DetailSpecular.png"
+		}
+		item
+		{
+			name = GrassSmall
+			baseMap = "Base\\Types\\HeightmapTerrain\\Grass5\\TT_GG_Grass_30_c.dds"
+			baseScale = 4
+			detailMap = "Base\\Types\\HeightmapTerrain\\Grass2\\Grass02Detail.tga"
+			detailScale = 2
+			baseNormalMap = "Base\\Types\\HeightmapTerrain\\Grass5\\TT_GG_Grass_30_n.dds"
+			detailNormalMap = "Base\\Types\\HeightmapTerrain\\Grass2\\Grass02DetailDOT3.tga"
+		}
+		item
+		{
+			name = Moss
+			baseMap = "Base\\Types\\HeightmapTerrain\\Grass5\\TT_GG_Grass_30_c.dds"
+			baseScale = 4
+			detailScale = 2
+			baseNormalMap = "Base\\Types\\HeightmapTerrain\\Grass5\\TT_GG_Grass_30_n.dds"
+		}
+		item
+		{
+			name = ClayDry
+			baseMap = "Maps\\MainMenu\\DryClay_Diff.tga"
+			baseScale = 4
+			detailScale = 2
+			baseNormalMap = "Maps\\MainMenu\\DryClay_Norm.tga"
+			specularColor = 0.08627451 0.06666667 0.01568628
+			baseSpecularMap = "Maps\\MainMenu\\DryClay_AO.tga"
+		}
+		item
+		{
+			name = ClayCracked
+			baseMap = "Maps\\Textures\\ClayCracked.png"
+			baseScale = 4
+			detailScale = 2
+		}
+	}
+}
+entity
+{
+	type = SkyBox
+	uin = 9
+	classPrompt = SkyBox
+	subscriptionsToDeletionEvent = 6 6 6
+	enabled = True
+	color = 0.1803922 0.7098039 0.8509805
+	power = 1
+	tags
+	{
+	}
+}
+entity
+{
+	type = Fog
+	uin = 10
+	classPrompt = Fog
+	enabled = False
+	mode = Exp2
+	color = 0.1803922 0.7098039 0.8509805
+	expDensity = 0.008
+	linearStart = 57.79167
+	linearEnd = 114.1111
+	tags
+	{
+	}
+}
+entity
+{
+	type = GridBasedNavigationSystem
+	uin = 11
+	classPrompt = GridBasedNavigationSystem
+	gridBounds = -150 -150 250 150
+	gridCellSize = 0.5
+	agentHeight = 2
+	agentMaxSlope = 30
+	heightByTerrainOnly = False
+	alwaysDrawGrid = False
+	drawGridDistance = 100
+	name = RPGPathFind_0
+	tags
+	{
+	}
+}
+entity
+{
+	type = WaterPlane
+	uin = 12
+	classPrompt = WaterPlane
+	size = 400 300
+	position = 156 0 -12
+	segments = 20 20
+	renderQueueGroup = Queue3
+	reflectionLevel = ReflectAll
+	physicsHeight = 2
+	deepColor = 0 0.3 0.5
+	shallowColor = 0 1 1
+	reflectionColor = 1 1 1
+	reflectionTextureSize = HalfOfFrameBuffer
+	visible = True
+	fixedPipelineMap = "Base\\Types\\Special\\WaterPlane\\WaterFixedPipeline.jpg"
+	fixedPipelineMapTiling = 10
+	fixedPipelineColor = 0 0.3 0.5
+	useHDRTexture = False
+	allowFog = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = Sun
+	uin = 13
+	classPrompt = Sun
+	subscriptionsToDeletionEvent = 6 6 6
+	billboardTexture = "Base\\Types\\Lighting\\Sun\\SunDefault.png"
+	billboardColor = 1 0.937255 0.6588235
+	billboardPower = 1
+	billboardSize = 0.6
+	billboardRenderQueueGroup = Main
+	billboardOverridePosition = 0 0 0
+	enabled = True
+	lightType = Directional
+	diffuseColor = 1 1 1
+	diffusePower = 1
+	specularColor = 1 1 1
+	specularPower = 1
+	attenuationNear = 0
+	attenuationFar = 10
+	attenuationPower = 2
+	ffpAttenuationConstant = 1
+	ffpAttenuationLinear = 0
+	ffpAttenuationQuadric = 0
+	spotlightInnerAngle = 30
+	spotlightOuterAngle = 40
+	spotlightFalloff = 1
+	castShadows = True
+	allowStaticLighting = False
+	allowDynamicLighting = True
+	customShaderParameter = 0 0 0 0
+	position = 65.80228 -29.59867 0.2042189
+	rotation = 0.1227878 -0.6963642 0.1227878 -0.6963642
+	name = Sun_0
+	tags
+	{
+	}
+}
+entity
+{
+	type = QuestsManager
+	uin = 14
+	classPrompt = QuestsManager
+	name = QuestsManager_0
+	tags
+	{
+	}
+}
+entity
+{
+	type = Light
+	uin = 15
+	classPrompt = Light
+	enabled = True
+	lightType = Point
+	diffuseColor = 1 0.9921569 0.627451
+	diffusePower = 1
+	specularColor = 1 0.9803922 0.6588235
+	specularPower = 0.3
+	attenuationNear = 2
+	attenuationFar = 4
+	attenuationPower = 2
+	ffpAttenuationConstant = 1
+	ffpAttenuationLinear = 0
+	ffpAttenuationQuadric = 0
+	spotlightInnerAngle = 30
+	spotlightOuterAngle = 40
+	spotlightFalloff = 1
+	castShadows = True
+	allowStaticLighting = False
+	allowDynamicLighting = True
+	customShaderParameter = 0 0 0 0
+	position = 91.57092 -32.14547 -9.280383
+	name = Light_0
+	tags
+	{
+	}
+}
+entity
+{
+	type = FireLight
+	uin = 16
+	classPrompt = MapObject
+	position = 90.56326 -37.81795 -9.644695
+	scale = 0.1545109 0.1545109 0.1545109
+	name = FireLight_0
+	tags
+	{
+	}
+}
+entity
+{
+	type = Human
+	uin = 17
+	classPrompt = UGameCharacter
+	_initialai = BaseNPCIntellect
+	_moveShift = 0 0 0
+	regenerationHealth = 0.001
+	_handinv = False
+	_soundSet = MaleSoundSet1
+	_spellPosition = 0 0 0
+	_personalEnemies = 
+	_deadAlly = 
+	_money = 1
+	_gameName = "\x0427\x0435\x043b\x043e\x0432\x0435\x043a"
+	position = 90.44076 -33.94764 -8.917483
+	name = Human_0
+	editorLayer = "Root Layer\\Test_Creatures"
+	LearnedSkills
+	{
+	}
+	_tasks
+	{
+	}
+	_unitTasksForSave
+	{
+	}
+	bodyParts
+	{
+		item
+		{
+			_mainHealthPercent = 1.01
+			_section = Head
+		}
+		item
+		{
+			_mainHealthPercent = 1.01
+		}
+		item
+		{
+			_mainHealthPercent = 0.34
+			_section = Hand
+		}
+		item
+		{
+			_mainHealthPercent = 0.34
+			_section = Hand
+		}
+		item
+		{
+			_mainHealthPercent = 0.67
+			_section = Leg
+		}
+		item
+		{
+			_mainHealthPercent = 0.67
+			_section = Leg
+		}
+	}
+	_questSystemAlias
+	{
+	}
+	tags
+	{
+	}
+	inventory
+	{
+	}
+	equipment
+	{
+		item
+		{
+			Section = Head
+			LootChance = 50
+		}
+		item
+		{
+			Section = BodyL
+			LootChance = 50
+		}
+		item
+		{
+			Section = BodyH
+			LootChance = 50
+		}
+		item
+		{
+			Section = LegL
+			LootChance = 50
+		}
+		item
+		{
+			Section = LegH
+			LootChance = 50
+		}
+		item
+		{
+			Section = Hand
+			LootChance = 50
+		}
+		item
+		{
+			Section = Foot
+			LootChance = 50
+		}
+		item
+		{
+			Section = WHand
+			LootChance = 50
+		}
+		item
+		{
+			Section = WHand
+			LootChance = 50
+		}
+		item
+		{
+			Section = WHand
+			LootChance = 50
+		}
+		item
+		{
+			Section = WHand
+			LootChance = 50
+		}
+		item
+		{
+			Section = SpellSlot
+			LootChance = 50
+		}
+		item
+		{
+			Section = SpellSlot
+			LootChance = 50
+		}
+		item
+		{
+			Section = SpellSlot
+			LootChance = 50
+		}
+		item
+		{
+			Section = SpellSlot
+			LootChance = 50
+		}
+	}
+}
+entity
+{
+	type = Boar
+	uin = 18
+	classPrompt = UCreature
+	_initialai = BaseNPCIntellect
+	_moveShift = 0 0 0
+	regenerationHealth = 0.01
+	_hair = -1
+	_faction = WildAgro
+	_handinv = False
+	_spellPosition = 0 0 0
+	_personalEnemies = 
+	_deadAlly = 
+	_money = 1
+	_gameName = "\x041a\x0430\x0431\x0430\x043d"
+	position = 93.11179 -31.18766 -9.050167
+	rotation = 0 0 -0.6343303 0.7730621
+	name = Boar_0
+	editorLayer = "Root Layer\\Test_Creatures"
+	_tasks
+	{
+	}
+	_unitTasksForSave
+	{
+	}
+	bodyParts
+	{
+		item
+		{
+			_mainHealthPercent = 1.01
+			_section = Head
+		}
+		item
+		{
+			_mainHealthPercent = 1.01
+		}
+		item
+		{
+			_mainHealthPercent = 0.51
+			_section = Leg
+		}
+		item
+		{
+			_mainHealthPercent = 0.51
+			_section = Leg
+		}
+		item
+		{
+			_mainHealthPercent = 0.51
+			_section = Leg
+		}
+		item
+		{
+			_mainHealthPercent = 0.51
+			_section = Leg
+		}
+	}
+	_questSystemAlias
+	{
+	}
+	tags
+	{
+	}
+	inventory
+	{
+	}
+	equipment
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 19
+	classPrompt = StaticMesh
+	position = 90.5 -31.8 -9
+	rotation = 0 0 -0.9396926 0.3420202
+	name = StaticMesh_Troll_0
+	meshName = "Types\\Units\\Monsters\\Troll\\Troll.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}

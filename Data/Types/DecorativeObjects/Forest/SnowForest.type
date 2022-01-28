@@ -1,0 +1,14 @@
+type SnowForest
+{
+	class = DecorativeObject
+	castShadows = True
+	scaleRange = 0.9 1.1
+	items
+	{
+		item
+		{
+			meshName = ".\\Tree01.mesh"
+			createPhysics = True
+		}
+	}
+}

@@ -1,0 +1,15 @@
+highLevelMaterial RainSnow
+{
+	template = ShaderBaseMaterial
+	blending = AlphaAdd
+	lighting = False
+	ambientLighting = False
+	doubleSided = True
+	receiveShadows = False
+	softParticles = True
+	diffusePower = 2
+	diffuse1Map
+	{
+		texture = "Effects\\Textures\\rainsnow.dds"
+	}
+}

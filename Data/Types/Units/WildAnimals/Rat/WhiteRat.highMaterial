@@ -1,0 +1,8 @@
+highLevelMaterial WhiteRat
+{
+	template = ShaderBaseMaterial
+	diffuse1Map
+	{
+		texture = ".\\WhiteRat.jpg"
+	}
+}

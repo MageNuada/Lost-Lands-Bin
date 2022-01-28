@@ -1,0 +1,9 @@
+highLevelMaterial lizardcage00
+{
+template = ShaderBaseMaterial
+alphaRejectFunction = GreaterEqual
+diffuse1Map
+{
+texture = ".\\lizardcage00.dds"
+}
+}

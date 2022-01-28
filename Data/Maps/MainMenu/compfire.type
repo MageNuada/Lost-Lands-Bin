@@ -1,0 +1,16 @@
+type compfire
+{
+	class = MapObject
+	attachedObjects
+	{
+		particle
+		{
+			particleName = SmokeParticleFire
+			position = 0 0 1.66963
+		}
+		particle
+		{
+			particleName = FireParticle
+		}
+	}
+}

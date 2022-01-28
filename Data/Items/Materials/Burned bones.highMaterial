@@ -1,0 +1,8 @@
+highLevelMaterial "Burned Bones"
+{
+	template = ShaderBaseMaterial
+	diffuse1Map
+	{
+		texture = ".\\material0012.dds"
+	}
+}

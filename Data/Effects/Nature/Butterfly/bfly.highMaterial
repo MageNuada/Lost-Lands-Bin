@@ -1,0 +1,23 @@
+highLevelMaterial bfly
+{
+	template = ShaderBaseMaterial
+	blending = AlphaBlend
+	lighting = False
+	useNormals = False
+	receiveShadows = False
+	diffuseVertexColor = True
+	diffuse1Map
+	{
+		texture = ".\\bfly.png"
+		clamp = True
+		transform
+		{
+			scale = 0.5 1
+			animation
+			{
+				scrollSpeed = 2 0
+				scrollRound = 0.5 0
+			}
+		}
+	}
+}

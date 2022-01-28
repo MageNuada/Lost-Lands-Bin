@@ -1,0 +1,10 @@
+highLevelMaterial Helmet01_3
+{
+	template = ShaderBaseMaterial
+	doubleSided = True
+	alphaRejectFunction = GreaterEqual
+	diffuse1Map
+	{
+		texture = ".\\Helmet01_3.dds"
+	}
+}

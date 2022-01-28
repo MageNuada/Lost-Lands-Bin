@@ -1,0 +1,8 @@
+highLevelMaterial "Dry Bones"
+{
+	template = ShaderBaseMaterial
+	diffuse1Map
+	{
+		texture = ".\\material0011.dds"
+	}
+}

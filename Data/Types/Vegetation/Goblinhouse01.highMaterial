@@ -1,0 +1,9 @@
+highLevelMaterial Goblinhouse01
+{
+	template = ShaderBaseMaterial
+	alphaRejectFunction = GreaterEqual
+	diffuse1Map
+	{
+		texture = "Types\\Vegetation\\goblinhouse00.dds"
+	}
+}

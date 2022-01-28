@@ -1,0 +1,9 @@
+highLevelMaterial skeleton00
+{
+template = ShaderBaseMaterial
+alphaRejectFunction = GreaterEqual
+diffuse1Map
+{
+texture = ".\\skeleton00.dds"
+}
+}

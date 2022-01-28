@@ -1,0 +1,19 @@
+type WildPeaceful
+{
+	class = Faction
+	gamename = "\x0414\x0438\x043a\x0438\x0435 \x0436\x0438\x0432\x043e\x0442\x043d\x044b\x0435"
+	gamedescr = "\x041c\x0438\x0440\x043d\x044b\x0435 \x0442\x0440\x0430\x0432\x043e\x044f\x0434\x043d\x044b\x0435 \x0436\x0438\x0432\x043e\x0442\x043d\x044b\x0435"
+	creatableInMapEditor = False
+	newrelation
+	{
+		item
+		{
+			relation = Friend
+			_faction = WildPeaceful
+		}
+		item
+		{
+			_faction = WildAgro
+		}
+	}
+}

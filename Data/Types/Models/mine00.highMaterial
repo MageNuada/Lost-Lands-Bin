@@ -1,0 +1,9 @@
+highLevelMaterial mine00
+{
+template = ShaderBaseMaterial
+alphaRejectFunction = GreaterEqual
+diffuse1Map
+{
+texture = ".\\mine00.dds"
+}
+}

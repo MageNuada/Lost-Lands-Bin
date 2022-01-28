@@ -1,0 +1,8 @@
+highLevelMaterial Rock
+{
+	template = ShaderBaseMaterial
+	diffuse1Map
+	{
+		texture = ".\\material0017.dds"
+	}
+}

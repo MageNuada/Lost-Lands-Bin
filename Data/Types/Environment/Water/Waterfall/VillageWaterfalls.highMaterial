@@ -1,0 +1,64 @@
+highLevelMaterial VillageWaterfalls
+{
+	template = ShaderBaseMaterial
+	blending = AlphaAdd
+	doubleSided = True
+	receiveShadows = False
+	depthWrite = False
+	diffuseColor = 0.5058824 0.5686275 0.6588235
+	reflectionSpecificCubemap = "Base\\Types\\SkyBox\\SkyBoxClear.jpg"
+	diffuse1Map
+	{
+		texture = ".\\Waterfalls.dds"
+		transform
+		{
+			animation
+			{
+				scrollSpeed = 0 -0.4
+			}
+		}
+	}
+	diffuse2Map
+	{
+		transform
+		{
+			animation
+			{
+				scrollSpeed = 0 -0.24
+			}
+		}
+	}
+	reflectionMap
+	{
+		transform
+		{
+			animation
+			{
+				scrollSpeed = 0.05 0
+			}
+		}
+	}
+	specularMap
+	{
+		texture = ".\\Waterfalls_SPEC.dds"
+		transform
+		{
+			dynamicParameters = True
+			animation
+			{
+				scrollSpeed = 0 -0.32
+			}
+		}
+	}
+	normalMap
+	{
+		texture = ".\\Waterfalls_NRM.dds"
+		transform
+		{
+			animation
+			{
+				scrollSpeed = 0 -0.4
+			}
+		}
+	}
+}

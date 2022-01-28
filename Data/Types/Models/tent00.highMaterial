@@ -1,0 +1,9 @@
+highLevelMaterial tent00
+{
+template = ShaderBaseMaterial
+alphaRejectFunction = GreaterEqual
+diffuse1Map
+{
+texture = ".\\tent00.dds"
+}
+}

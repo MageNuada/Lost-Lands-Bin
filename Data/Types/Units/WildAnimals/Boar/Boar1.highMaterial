@@ -1,0 +1,23 @@
+highLevelMaterial Boar1
+{
+	template = ShaderBaseMaterial
+	specularColor = 0.5686275 0.8705883 1
+	specularShininess = 32.64213
+	heightFromNormalMapAlpha = True
+	diffuse1Map
+	{
+		texture = ".\\Boar_Diff1.dds"
+	}
+	diffuse2Map
+	{
+		texture = ".\\Boar_AO.dds"
+	}
+	specularMap
+	{
+		texture = ".\\Boar_Spec.dds"
+	}
+	normalMap
+	{
+		texture = ".\\Boar_Norm.dds"
+	}
+}

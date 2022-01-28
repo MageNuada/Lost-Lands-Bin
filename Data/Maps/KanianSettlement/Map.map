@@ -1,0 +1,7843 @@
+type = GameMap
+uin = 3
+classPrompt = GameMap
+resetYCoordinateForDynamicBodies = False
+destroyObjectsBelowHeight = -500
+_baseAllod = Ingos
+windDirection = 0
+windSpeed = 1
+ambientIntensity = 0.4
+ambientSkyColor = 0.4352942 0.4745098 0.5921569
+ambientEquatorColor = 0.4352942 0.4745098 0.5921569
+ambientGroundColor = 0.4352942 0.4745098 0.5921569
+editorCameraPosition = 32.65724 3.231176 17.48662
+editorCameraDirection = 2.866836 -0.58762
+shadowColor = 1 1 1
+shadowPSSMSplitFactors = 0.1 0.4
+fov = 50
+nearFarClipDistance = 0.1 2000
+logicSystemManager = 6
+staticBatchingRenderingEnabled = True
+staticBatchingPhysicsEnabledInMapEditor = False
+staticBatchingPhysicsEnabledInSimulation = False
+staticBatchingGridCellSize = 30 30 30
+staticBatchingFilterByMaxTriangleCount = 512
+name = "Maps\\KanianSettlement\\Map.map"
+shadowTechnique = None
+dataForEditor
+{
+}
+sceneGraphSettings
+{
+	amountOfObjectsOutsideOctreeBoundsToRebuld = 30
+	octreeBoundsRebuildExpand = 50 50 50
+	minNodeSize = 10 10 10
+	objectCountThresholdToCreateChildNodes = 10
+	maxNodeCount = 300000
+}
+tags
+{
+}
+rootEditorLayer
+{
+	name = Root Layer
+	layer
+	{
+		name = Vegetation
+	}
+	layer
+	{
+		name = Static
+	}
+	layer
+	{
+		name = Regions
+		allowSelect = False
+	}
+	layer
+	{
+		name = Units
+	}
+}
+entity
+{
+	type = GridBasedNavigationSystem
+	uin = 4
+	classPrompt = GridBasedNavigationSystem
+	gridBounds = -100 -100 100 100
+	gridCellSize = 0.6
+	agentHeight = 1.5
+	agentMaxSlope = 31
+	heightByTerrainOnly = False
+	alwaysDrawGrid = False
+	drawGridDistance = 100
+	name = RPGPathFind_0
+	tags
+	{
+	}
+}
+entity
+{
+	type = QuestsManager
+	uin = 5
+	classPrompt = QuestsManager
+	name = QuestsManager_0
+	tags
+	{
+	}
+}
+entity
+{
+	type = LogicSystemManager
+	uin = 6
+	referencesToCompileDLL = "System.dll\r\nSystem.Drawing.dll\r\n\r\nEngineApp.dll\r\nUISystem.dll\r\nFileSystem.dll\r\nLog.dll\r\nMathEx.dll\r\nRenderer.dll\r\nPhysicsSystem.dll\r\nSoundSystem.dll\r\nEntitySystem.dll\r\nMapSystem.dll\r\nUtils.dll\r\nHeightmapTerrain.dll\r\nDecorativeObjectManager.dll\r\n\r\nProjectCommon.dll\r\nProjectEntities.dll\r\n\r\nXilium.CefGlue.dll\r\nWebBrowserControl.dll"
+	usingNamespacesToCodeGeneration = "using System;\r\nusing System.Collections.Generic;\r\nusing System.Text;\r\n\r\nusing Engine;\r\nusing Engine.FileSystem;\r\nusing Engine.MathEx;\r\nusing Engine.Utils;\r\nusing Engine.Renderer;\r\nusing Engine.PhysicsSystem;\r\nusing Engine.SoundSystem;\r\nusing Engine.UISystem;\r\nusing Engine.EntitySystem;\r\nusing Engine.MapSystem;\r\n\r\nusing ProjectCommon;\r\nusing ProjectEntities;"
+	mapClassManager = 7
+	tags
+	{
+	}
+	entity
+	{
+		type = LogicClassManager
+		uin = 7
+		tags
+		{
+		}
+	}
+}
+entity
+{
+	type = Sun
+	uin = 8
+	classPrompt = Sun
+	billboardTexture = "Base\\Types\\Lighting\\Sun\\SunDefault.png"
+	billboardColor = 1 1 1
+	billboardPower = 1
+	billboardSize = 1
+	billboardRenderQueueGroup = Main
+	billboardOverridePosition = 0 0 0
+	enabled = True
+	lightType = Directional
+	diffuseColor = 1 1 1
+	diffusePower = 1
+	specularColor = 1 1 1
+	specularPower = 1
+	attenuationNear = 0
+	attenuationFar = 10
+	attenuationPower = 2
+	ffpAttenuationConstant = 1
+	ffpAttenuationLinear = 0
+	ffpAttenuationQuadric = 0
+	spotlightInnerAngle = 30
+	spotlightOuterAngle = 40
+	spotlightFalloff = 1
+	castShadows = True
+	allowStaticLighting = False
+	allowDynamicLighting = True
+	customShaderParameter = 0 0 0 0
+	position = -198.5994 18 7
+	rotation = 0.1227878 -0.6963642 0.1227878 -0.6963642
+	name = Sun_0
+	tags
+	{
+	}
+}
+entity
+{
+	type = SkyBox
+	uin = 9
+	classPrompt = SkyBox
+	enabled = True
+	textureName = "Base\\Types\\Basic\\SkyBox\\SkyBoxClear.jpg"
+	color = 0.1803922 0.5176471 0.8509805
+	power = 1
+	tags
+	{
+	}
+}
+entity
+{
+	type = Fog
+	uin = 10
+	classPrompt = Fog
+	enabled = True
+	mode = Linear
+	color = 0.1803922 0.5176471 0.8509805
+	expDensity = 0.004
+	linearStart = 48.58333
+	linearEnd = 107.6389
+	tags
+	{
+	}
+}
+entity
+{
+	type = EnvironmentManager
+	uin = 11
+	classPrompt = EnvironmentManager
+	_sun = 8
+	_moon = 14
+	_sky = 9
+	_nextChangeWeather = 9453
+	_currentWeatherLength = 4842
+	_nextSpecialEvent = 1654
+	_windtransition = 360
+	_fogTransition = 17
+	time = 180
+	name = EnvironmentManager_0
+	_weather
+	{
+		nPowerCheck = 0
+		fpWeatherStartTime = 0
+		fpWeatherTransformTime = 0
+		curWeather = Nothing
+		nextWeather = Rain
+	}
+	tags
+	{
+	}
+}
+entity
+{
+	type = WaterPlane
+	uin = 12
+	classPrompt = WaterPlane
+	size = 196 196
+	position = 0 0 7
+	segments = 20 20
+	renderQueueGroup = Queue3
+	reflectionLevel = ReflectAll
+	physicsHeight = 0
+	deepColor = 0.2431373 0.3529412 0.5294118 0.7843138
+	shallowColor = 0.003921569 0.007843138 0.007843138 0.7843138
+	reflectionColor = 1 1 1
+	reflectionTextureSize = HalfOfFrameBuffer
+	visible = False
+	fixedPipelineMap = "Base\\Types\\WaterPlane\\WaterFixedPipeline.jpg"
+	fixedPipelineMapTiling = 10
+	fixedPipelineColor = 0 0.3 0.5
+	useHDRTexture = False
+	allowFog = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = HeightmapTerrain
+	uin = 13
+	classPrompt = HeightmapTerrain
+	subscriptionsToDeletionEvent = 372
+	enabled = True
+	position = 0 0 0
+	horizontalSize = 196
+	dataDirectory = HeightmapTerrain2
+	masksSize = 512
+	detailMapsDistance = 50
+	renderQueueGroup = WorldGeometry1
+	collision = True
+	collisionMaterialName = Default
+	collisionHeightfieldThickness = 2
+	castDynamicShadows = True
+	receiveStaticShadows = True
+	simpleRendering = False
+	tileSize = 128
+	visible = True
+	allowVertexTextureFetchOptimization = True
+	useFloat16BitHeightTexture = False
+	heightMultiplier = 55
+	heightmapTerrainManagerIndex = 0 0
+	name = VillageTerrain
+	ambientOcclusion
+	{
+		enabled = False
+		size = 1024
+		rayLength = 1
+		iterationCount = 100
+		blur = True
+		power = 1
+	}
+	lodSettings
+	{
+		enabled = True
+		maxCount = 99
+		lodLevelDistances = 100 + level * 200
+		morphAreaPercent = 0.3
+		showLevels = False
+	}
+	tags
+	{
+	}
+	layers
+	{
+		item
+		{
+			name = Snow
+			baseMap = "Base\\Types\\HeightmapTerrain\\Snow1\\TT_GR_Snow_04_c.dds"
+			baseScale = 5
+			detailScale = 2
+			overrideCollisionMaterial = Snow
+		}
+	}
+}
+entity
+{
+	type = Sun
+	uin = 14
+	classPrompt = Sun
+	billboardTexture = "Base\\Types\\Lighting\\Sun\\MoonDefault.png"
+	billboardColor = 1 1 1
+	billboardPower = 1
+	billboardSize = 0.25
+	billboardRenderQueueGroup = Main
+	billboardOverridePosition = 0 0 0
+	enabled = False
+	lightType = Directional
+	diffuseColor = 1 1 1
+	diffusePower = 0
+	specularColor = 1 1 1
+	specularPower = 0
+	attenuationNear = 0
+	attenuationFar = 10
+	attenuationPower = 2
+	ffpAttenuationConstant = 1
+	ffpAttenuationLinear = 0
+	ffpAttenuationQuadric = 0
+	spotlightInnerAngle = 30
+	spotlightOuterAngle = 40
+	spotlightFalloff = 1
+	castShadows = False
+	allowStaticLighting = False
+	allowDynamicLighting = False
+	customShaderParameter = 0 0 0 0
+	position = -170.3843 23.71746 20.46603
+	rotation = 0.1227878 0.6963642 -0.1227878 -0.6963643
+	name = Moon
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 15
+	classPrompt = StaticMesh
+	position = -61.692 24.49258 8.702942
+	rotation = 0 0 -0.414693 0.909961
+	scale = 0.75 0.75 0.607928
+	name = FarmColoumn00-1481_59
+	editorLayer = "Root Layer\\Static"
+	meshName = "Types\\Models\\stst69.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 16
+	classPrompt = StaticMesh
+	position = -54.60342 21.18528 8.552942
+	rotation = 0 0 0.350207 0.936672
+	scale = 0.51119 0.75 0.75
+	name = FarmFence00-1482_61
+	editorLayer = "Root Layer\\Static"
+	meshName = "Types\\Models\\stwa5.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 17
+	classPrompt = StaticMesh
+	position = -44.61347 29.7412 8.592782
+	rotation = 0 0 0.350207 0.936672
+	scale = 0.789364 0.75 0.75
+	name = FarmFence00-1482_64
+	editorLayer = "Root Layer\\Static"
+	meshName = "Types\\Models\\stwa5.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 18
+	classPrompt = StaticMesh
+	position = -50.25932 24.88575 8.630789
+	rotation = 0 0 0.34202 0.939693
+	scale = 0.578038 0.75 0.558328
+	name = FarmGate00-3822_70
+	editorLayer = "Root Layer\\Static"
+	meshName = "Types\\Models\\stga5.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 19
+	classPrompt = StaticMesh
+	position = -51.54908 34.72359 8.752942
+	rotation = 0 0 0.350207 0.936671
+	scale = 0.75 0.75 0.607928
+	name = FarmColoumn00-1481_72
+	editorLayer = "Root Layer\\Static"
+	meshName = "Types\\Models\\stst69.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 20
+	classPrompt = StaticMesh
+	position = -60.43235 34.63673 8.880484
+	rotation = 0 0 0.34202 0.939692
+	scale = 0.75 0.75 0.607928
+	name = FarmColoumn00-1481_74
+	editorLayer = "Root Layer\\Static"
+	meshName = "Types\\Models\\stst69.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 21
+	classPrompt = StaticMesh
+	position = -57.72473 36.91963 8.813246
+	rotation = 0 0 0.34202 0.939692
+	scale = 0.618786 0.75 0.75
+	name = FarmFence00-1482_76
+	editorLayer = "Root Layer\\Static"
+	meshName = "Types\\Models\\stwa5.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 22
+	classPrompt = StaticMesh
+	position = -55.17683 39.07642 8.767901
+	rotation = 0 0 -0.422618 0.906307
+	scale = 0.75 0.75 0.607928
+	name = FarmColoumn00-1481_78
+	editorLayer = "Root Layer\\Static"
+	meshName = "Types\\Models\\stst69.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 23
+	classPrompt = StaticMesh
+	position = -53.3419 36.90852 8.573559
+	rotation = 0 0 -0.422618 0.906307
+	scale = 0.540057 0.75 0.75
+	name = FarmFence00-1482_80
+	editorLayer = "Root Layer\\Static"
+	meshName = "Types\\Models\\stwa5.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 24
+	classPrompt = StaticMesh
+	position = -63.14529 32.37245 8.751802
+	rotation = 0 0 0.34202 0.939692
+	scale = 0.618786 0.75 0.75
+	name = FarmFence00-1482_82
+	editorLayer = "Root Layer\\Static"
+	meshName = "Types\\Models\\stwa5.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 25
+	classPrompt = StaticMesh
+	position = -59.25122 21.60999 8.752801
+	rotation = 0 0 0.906307 0.422618
+	scale = 0.618786 0.75 0.75
+	name = FarmFence00-1482_84
+	editorLayer = "Root Layer\\Static"
+	meshName = "Types\\Models\\stwa5.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 26
+	classPrompt = StaticMesh
+	position = -64.03575 27.28511 8.751481
+	rotation = 0 0 0.906307 0.422618
+	scale = 0.618786 0.75 0.75
+	name = FarmFence00-1482_88
+	editorLayer = "Root Layer\\Static"
+	meshName = "Types\\Models\\stwa5.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 27
+	classPrompt = StaticMesh
+	position = -49.49722 37.50018 8.753292
+	rotation = 0 0 -0.430511 0.902585
+	scale = 0.666667 0.351111 0.666667
+	name = Storage00-1485_89
+	editorLayer = "Root Layer\\Static"
+	meshName = "Types\\Models\\stbuho20.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 28
+	classPrompt = StaticMesh
+	position = -43.09597 34.87167 8.752942
+	rotation = 0 0 -0.422618 0.906307
+	scale = 0.540057 0.75 0.75
+	name = FarmFence00-1482_91
+	editorLayer = "Root Layer\\Static"
+	meshName = "Types\\Models\\stwa5.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 29
+	classPrompt = StaticMesh
+	position = -44.92915 37.05374 8.752942
+	rotation = 0 0 -0.422618 0.906307
+	scale = 0.75 0.75 0.607928
+	name = FarmColoumn00-1481_93
+	editorLayer = "Root Layer\\Static"
+	meshName = "Types\\Models\\stst69.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 30
+	classPrompt = StaticMesh
+	position = -41.26971 32.63321 8.752942
+	rotation = 0 0 0.350207 0.936671
+	scale = 0.75 0.75 0.607928
+	name = FarmColoumn00-1481_95
+	editorLayer = "Root Layer\\Static"
+	meshName = "Types\\Models\\stst69.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 31
+	classPrompt = StaticMesh
+	position = -33.08003 39.93477 8.752942
+	rotation = 0 0 -0.945518 0.325568
+	scale = 1 1 0.759588
+	name = LogStack00-9_97
+	editorLayer = "Root Layer\\Static"
+	meshName = "Types\\Models\\stbuho13.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 32
+	classPrompt = StaticMesh
+	position = -8.612534 88.82695 15.86025
+	rotation = 0 0 -0.507538 -0.861629
+	scale = 1.610113 1.610113 1.131037
+	name = WinterFirTree00-1084_98
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr59.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 33
+	classPrompt = StaticMesh
+	position = -6.075752 99.888 8.352942
+	rotation = 0 0 -0.976296 -0.21644
+	scale = 1.454287 1.454287 0.97276
+	name = WinterFirTree00-1084_99
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr59.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 34
+	classPrompt = StaticMesh
+	position = -66.15004 29.8429 8.752942
+	rotation = 0 0 0.34202 0.939692
+	scale = 0.75 0.75 0.607928
+	name = FarmColoumn00-1481_126
+	editorLayer = "Root Layer\\Static"
+	meshName = "Types\\Models\\stst69.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 35
+	classPrompt = StaticMesh
+	position = -57.08693 19.0281 8.638465
+	rotation = 0 0 -0.414693 0.909961
+	scale = 0.75 0.75 0.607928
+	name = FarmColoumn00-1481_134
+	editorLayer = "Root Layer\\Static"
+	meshName = "Types\\Models\\stst69.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 36
+	classPrompt = StaticMesh
+	position = 26.43803 59.15152 8.710142
+	rotation = 0 0 0.930418 0.366501
+	scale = 0.475 0.475 0.475
+	name = Barrack00-6_161
+	editorLayer = "Root Layer\\Static"
+	meshName = "Types\\Models\\stbuho19.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 37
+	classPrompt = StaticMesh
+	position = -37.43073 16.20564 8.753935
+	rotation = 0 0 -0.406736 0.913546
+	scale = 0.75 0.75 0.607928
+	name = FarmColoumn00-1481_183
+	editorLayer = "Root Layer\\Static"
+	meshName = "Types\\Models\\stst69.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 38
+	classPrompt = StaticMesh
+	position = -32.1951 10.3587 9.103681
+	rotation = 0 0 -0.350207 -0.936672
+	scale = 0.75 0.75 0.607928
+	name = FarmColoumn00-1481_184
+	editorLayer = "Root Layer\\Static"
+	meshName = "Types\\Models\\stst69.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 39
+	classPrompt = StaticMesh
+	position = -25.86021 26.12666 8.753223
+	rotation = 0 0 -0.350207 -0.936672
+	scale = 0.75 0.75 0.607928
+	name = FarmColoumn00-1481_185
+	editorLayer = "Root Layer\\Static"
+	meshName = "Types\\Models\\stst69.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 40
+	classPrompt = StaticMesh
+	position = -26.39491 15.3659 8.83653
+	rotation = 0 0 -0.350207 -0.936672
+	scale = 0.75 0.75 0.607928
+	name = FarmColoumn00-1481_186
+	editorLayer = "Root Layer\\Static"
+	meshName = "Types\\Models\\stst69.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 41
+	classPrompt = StaticMesh
+	position = -20.66531 20.35281 8.652942
+	rotation = 0 0 -0.350207 -0.936672
+	scale = 0.75 0.75 0.607928
+	name = FarmColoumn00-1481_187
+	editorLayer = "Root Layer\\Static"
+	meshName = "Types\\Models\\stst69.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 42
+	classPrompt = StaticMesh
+	position = -34.80325 13.2977 8.602942
+	rotation = 0 0 -0.406736 0.913546
+	scale = 0.618786 0.75 0.75
+	name = FarmFence00-1482_201
+	editorLayer = "Root Layer\\Static"
+	meshName = "Types\\Models\\stwa5.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 43
+	classPrompt = StaticMesh
+	position = -29.21423 13.01311 8.768089
+	rotation = 0 0 -0.936672 0.350207
+	scale = 0.618786 0.75 0.75
+	name = FarmFence00-1482_202
+	editorLayer = "Root Layer\\Static"
+	meshName = "Types\\Models\\stwa5.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 44
+	classPrompt = StaticMesh
+	position = -23.56873 17.85877 8.639924
+	rotation = 0 0 -0.936672 0.350207
+	scale = 0.618786 0.75 0.75
+	name = FarmFence00-1482_203
+	editorLayer = "Root Layer\\Static"
+	meshName = "Types\\Models\\stwa5.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 45
+	classPrompt = StaticMesh
+	position = -23.25625 23.2793 8.602942
+	rotation = 0 0 -0.406736 0.913546
+	scale = 0.618786 0.75 0.75
+	name = FarmFence00-1482_204
+	editorLayer = "Root Layer\\Static"
+	meshName = "Types\\Models\\stwa5.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 46
+	classPrompt = StaticMesh
+	position = -26.97366 25.09293 8.652942
+	rotation = 0 0 -0.936672 0.350207
+	scale = 0.225142 0.75 0.75
+	name = FarmFence00-1482_205
+	editorLayer = "Root Layer\\Static"
+	meshName = "Types\\Models\\stwa5.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 47
+	classPrompt = StaticMesh
+	position = -34.75392 18.51242 8.652942
+	rotation = 0 0 -0.936672 0.350207
+	scale = 0.618786 0.75 0.75
+	name = FarmFence00-1482_206
+	editorLayer = "Root Layer\\Static"
+	meshName = "Types\\Models\\stwa5.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 48
+	classPrompt = StaticMesh
+	position = -26.93956 25.19764 8.252942
+	rotation = 0 0 -0.936672 0.350207
+	scale = 0.225142 0.75 0.75
+	name = FarmFence00-1482_207
+	editorLayer = "Root Layer\\Static"
+	meshName = "Types\\Models\\stwa5.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 49
+	classPrompt = StaticMesh
+	position = -34.79768 13.29086 8.202942
+	rotation = 0 0 -0.406736 0.913546
+	scale = 0.618786 0.75 0.75
+	name = FarmFence00-1482_208
+	editorLayer = "Root Layer\\Static"
+	meshName = "Types\\Models\\stwa5.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 50
+	classPrompt = StaticMesh
+	position = -29.24611 12.94183 8.370418
+	rotation = 0 0 -0.936672 0.350207
+	scale = 0.618786 0.75 0.75
+	name = FarmFence00-1482_209
+	editorLayer = "Root Layer\\Static"
+	meshName = "Types\\Models\\stwa5.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 51
+	classPrompt = StaticMesh
+	position = -34.67216 18.60944 8.252942
+	rotation = 0 0 -0.936672 0.350207
+	scale = 0.618786 0.75 0.75
+	name = FarmFence00-1482_210
+	editorLayer = "Root Layer\\Static"
+	meshName = "Types\\Models\\stwa5.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 52
+	classPrompt = StaticMesh
+	position = -23.44589 17.94904 8.235155
+	rotation = 0 0 -0.936672 0.350207
+	scale = 0.618786 0.75 0.75
+	name = FarmFence00-1482_211
+	editorLayer = "Root Layer\\Static"
+	meshName = "Types\\Models\\stwa5.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 53
+	classPrompt = StaticMesh
+	position = -23.22112 23.19596 8.202942
+	rotation = 0 0 -0.406736 0.913546
+	scale = 0.618786 0.75 0.75
+	name = FarmFence00-1482_212
+	editorLayer = "Root Layer\\Static"
+	meshName = "Types\\Models\\stwa5.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 54
+	classPrompt = StaticMesh
+	subscriptionsToDeletionEvent = 372
+	position = 8.227325 -5.699387 9.161865
+	rotation = -0.014473 0.031757 0.41444 0.909407
+	scale = 0.386667 0.666667 0.368889
+	name = KanianBridge00-1630_230
+	editorLayer = "Root Layer\\Static"
+	meshName = "Types\\Models\\stbr11.mesh"
+	collisionMaterialName = Stone
+	allowDecals = All
+	castDynamicShadows = True
+	tags
+	{
+		item
+		{
+			name = AllowMovementPass
+			value = true
+		}
+		item
+		{
+			name = minimap
+		}
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 55
+	classPrompt = StaticMesh
+	subscriptionsToDeletionEvent = 372
+	position = 6.800949 -4.195602 6.99809
+	rotation = -0.018089 0.039692 0.414298 0.909095
+	scale = 0.404444 0.613333 0.666667
+	name = KanianBridgeWall00-1631_234
+	editorLayer = "Root Layer\\Static"
+	meshName = "Types\\Models\\stbr12.mesh"
+	collisionMaterialName = Stone
+	castDynamicShadows = True
+	tags
+	{
+		item
+		{
+			name = minimap
+		}
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 56
+	classPrompt = StaticMesh
+	subscriptionsToDeletionEvent = 372
+	position = 9.908012 -6.800781 6.944516
+	rotation = -0.018089 0.039692 0.414298 0.909095
+	scale = 0.404444 0.613333 0.666667
+	name = KanianBridgeWall00-1631_235
+	editorLayer = "Root Layer\\Static"
+	meshName = "Types\\Models\\stbr12.mesh"
+	collisionMaterialName = Stone
+	castDynamicShadows = True
+	tags
+	{
+		item
+		{
+			name = minimap
+		}
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 57
+	classPrompt = StaticMesh
+	position = 12.02647 19.74485 8.752942
+	rotation = 0 0 -0.406737 0.913546
+	scale = 0.46 0.36064 0.46
+	name = KanianHouse00-8_244
+	editorLayer = "Root Layer\\Static"
+	meshName = "Types\\Models\\stbuho14.mesh"
+	castDynamicShadows = True
+	tags
+	{
+		item
+		{
+			name = AllowMovementPass
+			value = true
+		}
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 58
+	classPrompt = StaticMesh
+	position = -11.6342 40.55701 8.752942
+	rotation = 0 0 -0.85264 0.522499
+	scale = 0.466667 0.315467 0.5
+	name = KanianHouse00-8_245
+	editorLayer = "Root Layer\\Static"
+	meshName = "Types\\Models\\stbuho14.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 59
+	classPrompt = StaticMesh
+	position = -38.00247 41.86713 8.752942
+	rotation = 0 0 -0.438371 0.898794
+	scale = 0.533333 0.381867 0.533333
+	name = KanianHouse00-8_246
+	editorLayer = "Root Layer\\Static"
+	meshName = "Types\\Models\\stbuho14.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 60
+	classPrompt = StaticMesh
+	position = 24.42422 62.21597 8.752942
+	rotation = 0 0 -0.913546 0.406737
+	scale = 1 1 0.759588
+	name = LogStack00-9_278
+	editorLayer = "Root Layer\\Static"
+	meshName = "Types\\Models\\stbuho13.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 61
+	classPrompt = StaticMesh
+	position = 13.81068 25.42375 8.76465
+	rotation = 0 0 -0.406737 0.913545
+	scale = 1 1 0.759588
+	name = LogStack00-9_279
+	editorLayer = "Root Layer\\Static"
+	meshName = "Types\\Models\\stbuho13.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 62
+	classPrompt = StaticMesh
+	position = 15.10744 23.98327 8.758336
+	rotation = 0 0 -0.406737 0.913545
+	scale = 1 1 0.759588
+	name = LogStack00-9_280
+	editorLayer = "Root Layer\\Static"
+	meshName = "Types\\Models\\stbuho13.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 63
+	classPrompt = StaticMesh
+	position = -14.31319 45.45102 8.752942
+	rotation = 0 0 -0.85264 0.522498
+	scale = 1 1 0.759588
+	name = LogStack00-9_281
+	editorLayer = "Root Layer\\Static"
+	meshName = "Types\\Models\\stbuho13.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 64
+	classPrompt = StaticMesh
+	position = -37.30507 36.61758 8.752942
+	rotation = 0 0 -0.945518 0.325568
+	scale = 1 1 0.759588
+	name = LogStack00-9_282
+	editorLayer = "Root Layer\\Static"
+	meshName = "Types\\Models\\stbuho13.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 65
+	classPrompt = StaticMesh
+	position = 53.87582 79.5659 8.542249
+	rotation = 0 0 -0.165048 0.986285
+	scale = 0.5 0.5 0.5
+	name = MineEntrance01-1607_305
+	editorLayer = "Root Layer\\Static"
+	meshName = "Types\\Models\\stbuho33.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 66
+	classPrompt = StaticMesh
+	position = 22.18356 59.00586 8.646064
+	rotation = 0 0 0.930418 0.366501
+	scale = 0.75 0.75 0.569691
+	name = Urn00-10_349
+	editorLayer = "Root Layer\\Static"
+	meshName = "Types\\Models\\stbuho13.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 67
+	classPrompt = StaticMesh
+	position = 26.27409 63.36359 8.752942
+	rotation = 0 0 0.930418 0.366501
+	scale = 0.75 0.75 0.569691
+	name = Urn00-10_350
+	editorLayer = "Root Layer\\Static"
+	meshName = "Types\\Models\\stbuho13.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 68
+	classPrompt = StaticMesh
+	position = 28.06485 53.49814 8.729875
+	rotation = 0 0 0.930418 0.366501
+	scale = 0.75 0.75 0.569691
+	name = Urn00-10_351
+	editorLayer = "Root Layer\\Static"
+	meshName = "Types\\Models\\stbuho13.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 69
+	classPrompt = StaticMesh
+	position = 32.1554 57.85574 8.78527
+	rotation = 0 0 0.930418 0.366501
+	scale = 0.75 0.75 0.569691
+	name = Urn00-10_352
+	editorLayer = "Root Layer\\Static"
+	meshName = "Types\\Models\\stbuho13.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 70
+	classPrompt = StaticMesh
+	position = 2.856834 23.32236 8.798317
+	rotation = 0 0 -0.406737 0.913546
+	scale = 0.75 0.75 0.569691
+	name = Urn00-10_353
+	editorLayer = "Root Layer\\Static"
+	meshName = "Types\\Models\\stbuho13.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 71
+	classPrompt = StaticMesh
+	position = 9.392395 29.29181 8.762588
+	rotation = 0 0 -0.406737 0.913546
+	scale = 0.75 0.75 0.569691
+	name = Urn00-10_354
+	editorLayer = "Root Layer\\Static"
+	meshName = "Types\\Models\\stbuho13.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 72
+	classPrompt = StaticMesh
+	position = 18.05289 19.73289 8.834852
+	rotation = 0 0 -0.406737 0.913546
+	scale = 0.75 0.75 0.569691
+	name = Urn00-10_355
+	editorLayer = "Root Layer\\Static"
+	meshName = "Types\\Models\\stbuho13.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 73
+	classPrompt = StaticMesh
+	position = 11.51734 13.76343 8.85163
+	rotation = 0 0 -0.406737 0.913546
+	scale = 0.75 0.75 0.569691
+	name = Urn00-10_356
+	editorLayer = "Root Layer\\Static"
+	meshName = "Types\\Models\\stbuho13.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 74
+	classPrompt = StaticMesh
+	position = -11.21996 49.29456 8.940714
+	rotation = 0 0 -0.85264 0.522499
+	scale = 0.75 0.75 0.569691
+	name = Urn00-10_357
+	editorLayer = "Root Layer\\Static"
+	meshName = "Types\\Models\\stbuho13.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 75
+	classPrompt = StaticMesh
+	position = -4.884407 45.87637 8.99105
+	rotation = 0 0 -0.85264 0.522499
+	scale = 0.75 0.75 0.569691
+	name = Urn00-10_358
+	editorLayer = "Root Layer\\Static"
+	meshName = "Types\\Models\\stbuho13.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 76
+	classPrompt = StaticMesh
+	position = -10.13682 35.65364 8.750311
+	rotation = 0 0 -0.85264 0.522499
+	scale = 0.75 0.75 0.569691
+	name = Urn00-10_359
+	editorLayer = "Root Layer\\Static"
+	meshName = "Types\\Models\\stbuho13.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 77
+	classPrompt = StaticMesh
+	position = -16.53343 39.13129 8.753171
+	rotation = 0 0 -0.85264 0.522499
+	scale = 0.75 0.75 0.569691
+	name = Urn00-10_360
+	editorLayer = "Root Layer\\Static"
+	meshName = "Types\\Models\\stbuho13.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 78
+	classPrompt = StaticMesh
+	position = -39.96384 51.57486 8.752942
+	rotation = 0 0 -0.438371 0.898794
+	scale = 0.75 0.75 0.569691
+	name = Urn00-10_361
+	editorLayer = "Root Layer\\Static"
+	meshName = "Types\\Models\\stbuho13.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 79
+	classPrompt = StaticMesh
+	position = -31.99124 41.43509 8.810619
+	rotation = 0 0 -0.438371 0.898794
+	scale = 0.75 0.75 0.569691
+	name = Urn00-10_362
+	editorLayer = "Root Layer\\Static"
+	meshName = "Types\\Models\\stbuho13.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 80
+	classPrompt = StaticMesh
+	position = -46.89989 46.07584 8.752942
+	rotation = 0 0 -0.438371 0.898794
+	scale = 0.75 0.75 0.569691
+	name = Urn00-10_363
+	editorLayer = "Root Layer\\Static"
+	meshName = "Types\\Models\\stbuho13.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 81
+	classPrompt = StaticMesh
+	position = -38.92727 35.93607 8.788285
+	rotation = 0 0 -0.438371 0.898794
+	scale = 0.75 0.75 0.569691
+	name = Urn00-10_364
+	editorLayer = "Root Layer\\Static"
+	meshName = "Types\\Models\\stbuho13.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 82
+	classPrompt = StaticMesh
+	position = -24.82145 82.56004 9.252363
+	rotation = 0 0 -0.992546 -0.121869
+	scale = 1.454287 1.454287 0.97276
+	name = WinterFirTree00-1084_429
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr59.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 83
+	classPrompt = StaticMesh
+	position = -11.60735 82.05899 9.144051
+	rotation = 0 0 -0.766044 0.642788
+	scale = 1.454287 1.454287 0.97276
+	name = WinterFirTree00-1084_430
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr59.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 84
+	classPrompt = StaticMesh
+	position = -9.33931 68.35503 9.81763
+	rotation = 0 0 -0.951056 0.309017
+	scale = 1.454287 1.454287 0.97276
+	name = WinterFirTree00-1084_431
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr59.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 85
+	classPrompt = StaticMesh
+	position = -24.18228 69.81664 10.67466
+	rotation = 0 0 -0.951056 0.309017
+	scale = 1.454287 1.454287 0.97276
+	name = WinterFirTree00-1084_432
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr59.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 86
+	classPrompt = StaticMesh
+	position = -34.79607 56.95552 9.321384
+	rotation = 0 0 -0.992546 -0.121869
+	scale = 1.454287 1.454287 0.97276
+	name = WinterFirTree00-1084_433
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr59.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 87
+	classPrompt = StaticMesh
+	position = -38.83289 64.6586 8.941039
+	rotation = 0 0 -0.766044 0.642788
+	scale = 1.999767 1.999767 1.530771
+	name = WinterFirTree00-1084_434
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr59.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 88
+	classPrompt = StaticMesh
+	position = 30.25757 24.98798 17.9997
+	rotation = 0 0 -0.992546 -0.121869
+	scale = 1.454287 1.454287 0.97276
+	name = WinterFirTree00-1084_435
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr59.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 89
+	classPrompt = StaticMesh
+	position = 27.84772 29.83746 16.21635
+	rotation = 0 0 -0.766044 0.642788
+	scale = 1.454287 1.454287 0.97276
+	name = WinterFirTree00-1084_436
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr59.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 90
+	classPrompt = StaticMesh
+	position = 69.56914 6.348259 9.36697
+	rotation = 0 0 -0.951056 0.309017
+	scale = 1.454287 1.454287 0.97276
+	name = WinterFirTree00-1084_437
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr59.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 91
+	classPrompt = StaticMesh
+	position = 94.11931 24.55548 9.294968
+	rotation = 0 0 -0.951056 0.309017
+	scale = 1.454287 1.454287 0.97276
+	name = WinterFirTree00-1084_438
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr59.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 92
+	classPrompt = StaticMesh
+	position = 88.25063 24.65979 9.343066
+	rotation = 0 0 -0.992546 -0.121869
+	scale = 1.454287 1.454287 0.97276
+	name = WinterFirTree00-1084_439
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr59.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 93
+	classPrompt = StaticMesh
+	position = 21.86349 -1.083908 10.19143
+	rotation = 0 0 -0.766044 0.642788
+	scale = 1.999767 1.999767 1.530771
+	name = WinterFirTree00-1084_440
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr59.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 94
+	classPrompt = StaticMesh
+	position = -13.6173 56.43674 9.807579
+	rotation = 0 0 -0.992546 -0.121869
+	scale = 1.454287 1.454287 0.97276
+	name = WinterFirTree00-1084_441
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr59.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 95
+	classPrompt = StaticMesh
+	position = -7.27346 59.6813 10.20031
+	rotation = 0 0 -0.766044 0.642788
+	scale = 1.454287 1.454287 0.97276
+	name = WinterFirTree00-1084_442
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr59.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 96
+	classPrompt = StaticMesh
+	position = 39.76224 44.40735 9.214931
+	rotation = 0 0 -0.991445 -0.130526
+	scale = 1.454287 1.454287 0.97276
+	name = WinterFirTree00-1084_443
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr59.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 97
+	classPrompt = StaticMesh
+	position = 9.828377 60.88612 9.062578
+	rotation = 0 0 -0.991445 -0.130526
+	scale = 1.454287 1.454287 0.97276
+	name = WinterFirTree00-1084_444
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr59.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 98
+	classPrompt = StaticMesh
+	position = 5.577309 61.11183 9.504414
+	rotation = 0 0 -0.843392 -0.537299
+	scale = 1.454287 1.454287 0.97276
+	name = WinterFirTree00-1084_445
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr59.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 99
+	classPrompt = StaticMesh
+	position = -28.78466 8.892441 9.717438
+	rotation = 0 0 -0.766044 0.642788
+	scale = 1.999767 1.999767 1.530771
+	name = WinterFirTree00-1084_446
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr59.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 100
+	classPrompt = StaticMesh
+	position = 59.4855 -76.19509 15.39725
+	rotation = 0 0 -0.992546 -0.121869
+	scale = 1.454287 1.454287 0.97276
+	name = WinterFirTree00-1084_447
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr59.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 101
+	classPrompt = StaticMesh
+	position = 60.87686 -64.45969 14.1053
+	rotation = 0 0 -0.766044 0.642788
+	scale = 1.454287 1.454287 0.97276
+	name = WinterFirTree00-1084_448
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr59.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 102
+	classPrompt = StaticMesh
+	position = 63.7746 -75.43308 14.2855
+	rotation = 0 0 -0.951056 0.309017
+	scale = 1.454287 1.454287 0.97276
+	name = WinterFirTree00-1084_449
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr59.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 103
+	classPrompt = StaticMesh
+	position = 46.79811 -83.26761 22.11303
+	rotation = 0 0 -0.951056 0.309017
+	scale = 1.454287 1.454287 0.97276
+	name = WinterFirTree00-1084_450
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr59.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 104
+	classPrompt = StaticMesh
+	position = 28.5825 -71.71624 21.52839
+	rotation = 0 0 -0.992546 -0.121869
+	scale = 1.454287 1.454287 0.97276
+	name = WinterFirTree00-1084_451
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr59.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 105
+	classPrompt = StaticMesh
+	position = 25.19147 -73.27927 21.31581
+	rotation = 0 0 -0.766044 0.642788
+	scale = 1.999767 1.999767 1.530771
+	name = WinterFirTree00-1084_452
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr59.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 106
+	classPrompt = StaticMesh
+	position = 82.3958 51.89598 19.42915
+	rotation = 0 0 -0.956305 0.292372
+	scale = 1.454287 1.454287 0.97276
+	name = WinterFirTree00-1084_465
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr59.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 107
+	classPrompt = StaticMesh
+	position = 82.09618 62.1548 20.12754
+	rotation = 0 0 -0.956305 0.292372
+	scale = 1.454287 1.454287 0.97276
+	name = WinterFirTree00-1084_466
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr59.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 108
+	classPrompt = StaticMesh
+	position = 87.83479 48.63213 19.59608
+	rotation = 0 0 -0.956305 0.292372
+	scale = 1.454287 1.454287 0.97276
+	name = WinterFirTree00-1084_467
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr59.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 109
+	classPrompt = StaticMesh
+	position = 92.26564 62.83983 20.0169
+	rotation = 0 0 -0.956305 0.292372
+	scale = 1.454287 1.454287 0.97276
+	name = WinterFirTree00-1084_468
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr59.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 110
+	classPrompt = StaticMesh
+	position = -76.98684 45.30266 18.08994
+	rotation = 0 0 -0.043619 0.999048
+	scale = 1.454287 1.454287 0.97276
+	name = WinterFirTree00-1084_496
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr59.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 111
+	classPrompt = StaticMesh
+	position = -84.37558 7.670052 20.62071
+	rotation = 0 0 -0.043619 0.999048
+	scale = 1.454287 1.454287 0.97276
+	name = WinterFirTree00-1084_497
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr59.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 112
+	classPrompt = StaticMesh
+	position = -52.5622 -54.12657 26.73288
+	rotation = 0 0 -0.043619 0.999048
+	scale = 1.454287 1.454287 0.97276
+	name = WinterFirTree00-1084_498
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr59.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 113
+	classPrompt = StaticMesh
+	position = -47.80919 -52.12214 26.01459
+	rotation = 0 0 -0.043619 0.999048
+	scale = 1.454287 1.454287 0.97276
+	name = WinterFirTree00-1084_499
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr59.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 114
+	classPrompt = StaticMesh
+	position = -58.18564 -20.7775 21.02533
+	rotation = 0 0 -0.043619 0.999048
+	scale = 1.999767 1.999767 1.530771
+	name = WinterFirTree00-1084_500
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr59.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 115
+	classPrompt = StaticMesh
+	position = -60.57025 -26.98177 22.53601
+	rotation = 0 0 -0.760406 0.649448
+	scale = 1.454287 1.454287 0.97276
+	name = WinterFirTree00-1084_501
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr59.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 116
+	classPrompt = StaticMesh
+	position = -61.1237 -31.41672 23.41231
+	rotation = 0 0 -0.043619 0.999048
+	scale = 1.735311 1.735311 1.396727
+	name = WinterFirTree00-1084_502
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr59.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 117
+	classPrompt = StaticMesh
+	position = -50.19684 -69.46933 26.57249
+	rotation = 0 0 -0.043619 0.999048
+	scale = 1.454287 1.454287 0.97276
+	name = WinterFirTree00-1084_503
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr59.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 118
+	classPrompt = StaticMesh
+	position = -56.01537 -33.88956 21.42567
+	rotation = -0.042946 -0.067437 -0.035384 0.99617
+	scale = 1.999767 1.999767 1.530771
+	name = WinterFirTree00-1084_504
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr59.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 119
+	classPrompt = StaticMesh
+	position = -34.05901 -88.0223 25.8821
+	rotation = 0 0 -0.760406 0.649448
+	scale = 1.454287 1.454287 0.97276
+	name = WinterFirTree00-1084_505
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr59.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 120
+	classPrompt = StaticMesh
+	position = -19.26611 -62.17004 22.05329
+	rotation = 0 0 -0.043619 0.999048
+	scale = 1.454287 1.454287 0.97276
+	name = WinterFirTree00-1084_506
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr59.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 121
+	classPrompt = StaticMesh
+	position = -42.64315 -35.1745 21.56586
+	rotation = 0 0 -0.760406 0.649448
+	scale = 1.454287 1.454287 0.97276
+	name = WinterFirTree00-1084_507
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr59.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 122
+	classPrompt = StaticMesh
+	position = -45.19092 -81.41603 26.67717
+	rotation = 0.061319 -0.000529 -0.039827 0.997323
+	scale = 1.999767 1.999767 1.530771
+	name = WinterFirTree00-1084_508
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr59.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 123
+	classPrompt = StaticMesh
+	position = -29.46995 -95.45428 26.58015
+	rotation = 0 0 -0.760406 0.649448
+	scale = 1.454287 1.454287 0.97276
+	name = WinterFirTree00-1084_509
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr59.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 124
+	classPrompt = StaticMesh
+	position = -45.99489 -87.26363 26.14891
+	rotation = -0.042946 -0.067437 -0.035384 0.99617
+	scale = 1.999767 1.999767 1.530771
+	name = WinterFirTree00-1084_510
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr59.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 125
+	classPrompt = StaticMesh
+	position = -51.89203 -73.54742 26.73217
+	rotation = 0 0 -0.043619 0.999048
+	scale = 1.999767 1.999767 1.530771
+	name = WinterFirTree00-1084_511
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr59.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 126
+	classPrompt = StaticMesh
+	position = -53.24523 -80.10899 27.31469
+	rotation = 0 0 -0.760406 0.649448
+	scale = 1.454287 1.454287 0.97276
+	name = WinterFirTree00-1084_512
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr59.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 127
+	classPrompt = StaticMesh
+	position = -43.54577 -96.8452 27.51553
+	rotation = 0 0 -0.043619 0.999048
+	scale = 1.454287 1.454287 0.97276
+	name = WinterFirTree00-1084_513
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr59.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 128
+	classPrompt = StaticMesh
+	position = -12.61505 -89.54591 28.24165
+	rotation = 0 0 -0.043619 0.999048
+	scale = 1.454287 1.454287 0.97276
+	name = WinterFirTree00-1084_514
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr59.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 129
+	classPrompt = StaticMesh
+	position = -36.81847 -90.1761 26.15964
+	rotation = 0 0 -0.760406 0.649448
+	scale = 1.454287 1.454287 0.97276
+	name = WinterFirTree00-1084_515
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr59.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 130
+	classPrompt = StaticMesh
+	position = -60.50409 -71.80855 27.02955
+	rotation = 0 0 -0.043619 0.999048
+	scale = 1.454287 1.454287 0.97276
+	name = WinterFirTree00-1084_516
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr59.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 131
+	classPrompt = StaticMesh
+	position = -83.54572 -77.65392 27.76005
+	rotation = 0 0 -0.760406 0.649448
+	scale = 1.454287 1.454287 0.97276
+	name = WinterFirTree00-1084_517
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr59.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 132
+	classPrompt = StaticMesh
+	position = -55.21333 -66.48944 27.12317
+	rotation = 0 0 -0.043619 0.999048
+	scale = 1.454287 1.454287 0.97276
+	name = WinterFirTree00-1084_518
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr59.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 133
+	classPrompt = StaticMesh
+	position = -71.5446 -46.04385 28.33184
+	rotation = 0 0 -0.760406 0.649448
+	scale = 1.454287 1.454287 0.97276
+	name = WinterFirTree00-1084_519
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr59.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 134
+	classPrompt = StaticMesh
+	position = -68.41497 -45.1133 28.01711
+	rotation = 0 0 -0.043619 0.999048
+	scale = 1.454287 1.454287 0.97276
+	name = WinterFirTree00-1084_520
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr59.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 135
+	classPrompt = StaticMesh
+	position = -73.89936 -55.75737 26.93434
+	rotation = 0 0 -0.760406 0.649448
+	scale = 1.454287 1.454287 0.97276
+	name = WinterFirTree00-1084_521
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr59.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 136
+	classPrompt = StaticMesh
+	position = -65.02116 -85.90634 27.49546
+	rotation = 0 0 -0.043619 0.999048
+	scale = 1.779971 1.779971 1.663256
+	name = WinterFirTree00-1084_522
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr59.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 137
+	classPrompt = StaticMesh
+	position = -81.75416 -92.88158 27.14343
+	rotation = 0 0 -0.760406 0.649448
+	scale = 1.454287 1.454287 0.97276
+	name = WinterFirTree00-1084_523
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr59.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 138
+	classPrompt = StaticMesh
+	position = -78.78446 -84.80164 27.71277
+	rotation = 0 0 -0.043619 0.999048
+	scale = 1.999767 1.999767 1.530771
+	name = WinterFirTree00-1084_524
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr59.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 139
+	classPrompt = StaticMesh
+	position = -55.29901 -86.41832 25.80455
+	rotation = 0 0 -0.043619 0.999048
+	scale = 1.735311 1.735311 1.396727
+	name = WinterFirTree00-1084_525
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr59.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 140
+	classPrompt = StaticMesh
+	position = -8.217453 80.34547 9.400604
+	rotation = 0 0 0.382683 0.92388
+	scale = 1.444094 1.444094 1.130859
+	name = WinterFirTree00-1085_636
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr59.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 141
+	classPrompt = StaticMesh
+	position = -24.74947 72.71452 10.59358
+	rotation = 0 0 0.998135 0.061049
+	scale = 1.444094 1.444094 1.130859
+	name = WinterFirTree00-1085_637
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr59.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 142
+	classPrompt = StaticMesh
+	position = -23.21355 66.6582 10.29537
+	rotation = 0 0 0.737277 0.67559
+	scale = 1.444094 1.444094 1.130859
+	name = WinterFirTree00-1085_638
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr59.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 143
+	classPrompt = StaticMesh
+	position = -42.00418 73.12439 8.884258
+	rotation = 0 0 0.878817 0.477159
+	scale = 1.444094 1.444094 1.130859
+	name = WinterFirTree00-1085_639
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr59.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 144
+	classPrompt = StaticMesh
+	position = -49.49978 77.14388 9.187512
+	rotation = 0 0 0.382683 0.92388
+	scale = 1.444094 1.444094 1.130859
+	name = WinterFirTree00-1085_640
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr59.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 145
+	classPrompt = StaticMesh
+	position = -49.517 73.27689 9.338877
+	rotation = 0 0 0.382683 0.92388
+	scale = 1.444094 1.444094 1.130859
+	name = WinterFirTree00-1085_641
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr59.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 146
+	classPrompt = StaticMesh
+	position = 37.52432 6.585976 9.395428
+	rotation = 0 0 0.382683 0.92388
+	scale = 1.444094 1.444094 1.130859
+	name = WinterFirTree00-1085_642
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr59.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 147
+	classPrompt = StaticMesh
+	position = 96.80818 25.90022 9.0975
+	rotation = 0 0 0.998135 0.061049
+	scale = 1.444094 1.444094 1.130859
+	name = WinterFirTree00-1085_643
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr59.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 148
+	classPrompt = StaticMesh
+	position = 97.26532 15.45541 9.090189
+	rotation = 0 0 0.737277 0.67559
+	scale = 1.444094 1.444094 1.130859
+	name = WinterFirTree00-1085_644
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr59.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 149
+	classPrompt = StaticMesh
+	position = 91.713 26.06169 9.053866
+	rotation = 0 0 0.878817 0.477159
+	scale = 1.444094 1.444094 1.130859
+	name = WinterFirTree00-1085_645
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr59.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 150
+	classPrompt = StaticMesh
+	position = 26.42057 -1.099686 9.445543
+	rotation = 0 0 0.382683 0.92388
+	scale = 1.444094 1.444094 1.130859
+	name = WinterFirTree00-1085_646
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr59.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 151
+	classPrompt = StaticMesh
+	position = 60.28113 26.36146 14.03205
+	rotation = 0 0 0.382683 0.92388
+	scale = 1.444094 1.444094 1.130859
+	name = WinterFirTree00-1085_647
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr59.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 152
+	classPrompt = StaticMesh
+	position = -33.61028 8.51741 9.173944
+	rotation = 0 0 0.382683 0.92388
+	scale = 1.444094 1.444094 1.130859
+	name = WinterFirTree00-1085_648
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr59.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 153
+	classPrompt = StaticMesh
+	position = 14.36846 61.66908 9.122534
+	rotation = 0 0 0.87462 0.48481
+	scale = 1.444094 1.444094 1.130859
+	name = WinterFirTree00-1085_649
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr59.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 154
+	classPrompt = StaticMesh
+	position = 9.967094 64.82452 8.699387
+	rotation = 0 0 0.374607 0.927184
+	scale = 1.444094 1.444094 1.130859
+	name = WinterFirTree00-1085_650
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr59.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 155
+	classPrompt = StaticMesh
+	position = 32.30481 54.63567 9.14129
+	rotation = 0 0 0.587785 0.809017
+	scale = 1.444094 1.444094 1.130859
+	name = WinterFirTree00-1085_651
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr59.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 156
+	classPrompt = StaticMesh
+	position = -21.12103 16.5982 9.012772
+	rotation = 0 0 0.382683 0.92388
+	scale = 1.444094 1.444094 1.130859
+	name = WinterFirTree00-1085_652
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr59.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 157
+	classPrompt = StaticMesh
+	position = -59.3188 19.09828 8.393086
+	rotation = 0 0 0.325568 0.945519
+	scale = 1.444094 1.444094 1.130859
+	name = WinterFirTree00-1085_653
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr59.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 158
+	classPrompt = StaticMesh
+	position = 20.60744 -73.16597 21.55414
+	rotation = 0 0 0.382683 0.92388
+	scale = 1.444094 1.444094 1.130859
+	name = WinterFirTree00-1085_654
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr59.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 159
+	classPrompt = StaticMesh
+	position = 49.48701 -81.92288 21.71566
+	rotation = 0 0 0.998135 0.061049
+	scale = 1.444094 1.444094 1.130859
+	name = WinterFirTree00-1085_655
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr59.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 160
+	classPrompt = StaticMesh
+	position = 49.12227 -85.34174 21.82116
+	rotation = 0 0 0.737277 0.67559
+	scale = 1.444094 1.444094 1.130859
+	name = WinterFirTree00-1085_656
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr59.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 161
+	classPrompt = StaticMesh
+	position = 44.3918 -81.76138 22.86694
+	rotation = 0 0 0.878817 0.477159
+	scale = 1.444094 1.444094 1.130859
+	name = WinterFirTree00-1085_657
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr59.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 162
+	classPrompt = StaticMesh
+	position = 2.80941 -61.16413 21.49071
+	rotation = 0 0 0.382683 0.92388
+	scale = 1.444094 1.444094 1.130859
+	name = WinterFirTree00-1085_658
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr59.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 163
+	classPrompt = StaticMesh
+	position = 12.33701 -52.93854 19.7568
+	rotation = 0 0 0.382683 0.92388
+	scale = 1.444094 1.444094 1.130859
+	name = WinterFirTree00-1085_659
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr59.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 164
+	classPrompt = StaticMesh
+	position = 74.74712 51.32513 19.73827
+	rotation = 0 0 0.870356 0.492424
+	scale = 1.444094 1.444094 1.130859
+	name = WinterFirTree00-1085_669
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr59.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 165
+	classPrompt = StaticMesh
+	position = 85.18762 54.68063 19.8662
+	rotation = 0 0 0.622514 0.782608
+	scale = 1.444094 1.444094 1.130859
+	name = WinterFirTree00-1085_670
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr59.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 166
+	classPrompt = StaticMesh
+	position = 81.72986 57.35046 19.77901
+	rotation = 0 0 -0.008726 0.999962
+	scale = 1.683314 1.683314 1.329957
+	name = WinterFirTree00-1085_671
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr59.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 167
+	classPrompt = StaticMesh
+	position = 83.0759 65.87558 20.32565
+	rotation = 0 0 -0.008726 0.999962
+	scale = 1.444094 1.444094 1.130859
+	name = WinterFirTree00-1085_672
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr59.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 168
+	classPrompt = StaticMesh
+	position = 85.73035 44.24129 19.00797
+	rotation = 0 0 0.870356 0.492424
+	scale = 1.444094 1.444094 1.130859
+	name = WinterFirTree00-1085_673
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr59.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 169
+	classPrompt = StaticMesh
+	position = 85.91544 60.53786 20.08488
+	rotation = 0 0 0.622514 0.782608
+	scale = 1.444094 1.444094 1.130859
+	name = WinterFirTree00-1085_674
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr59.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 170
+	classPrompt = StaticMesh
+	position = 93.62488 58.9514 19.75303
+	rotation = 0 0 -0.008726 0.999962
+	scale = 1.683314 1.683314 1.329957
+	name = WinterFirTree00-1085_675
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr59.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 171
+	classPrompt = StaticMesh
+	position = 97.29193 70.84793 15.11316
+	rotation = 0 0 -0.008726 0.999962
+	scale = 1.444094 1.444094 1.130859
+	name = WinterFirTree00-1085_676
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr59.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 172
+	classPrompt = StaticMesh
+	position = -58.1069 -30.20748 21.63684
+	rotation = 0 0 0.945518 -0.325568
+	scale = 1.444094 1.444094 1.130859
+	name = WinterFirTree00-1085_713
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr59.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 173
+	classPrompt = StaticMesh
+	position = -47.91578 -33.91606 23.26007
+	rotation = 0 0 0.945518 -0.325568
+	scale = 1.444094 1.444094 1.130859
+	name = WinterFirTree00-1085_714
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr59.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 174
+	classPrompt = StaticMesh
+	position = -28.37614 -64.13626 22.93822
+	rotation = -0.03163 -0.014749 0.93912 0.341812
+	scale = 1.444094 1.444094 1.130859
+	name = WinterFirTree00-1085_715
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr59.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 175
+	classPrompt = StaticMesh
+	position = -45.24134 -31.86401 20.68823
+	rotation = -0.077351 0.021596 0.937591 0.33834
+	scale = 1.444094 1.444094 1.130859
+	name = WinterFirTree00-1085_716
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr59.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 176
+	classPrompt = StaticMesh
+	position = -33.14487 -58.03997 23.11464
+	rotation = 0 0 0.939693 0.34202
+	scale = 1.444094 1.444094 1.130859
+	name = WinterFirTree00-1085_717
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr59.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 177
+	classPrompt = StaticMesh
+	position = -15.91675 -60.59902 21.77306
+	rotation = 0 0 0.939693 0.34202
+	scale = 1.444094 1.444094 1.130859
+	name = WinterFirTree00-1085_718
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr59.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 178
+	classPrompt = StaticMesh
+	position = -12.34393 -64.18881 21.82898
+	rotation = 0 0 0.939693 0.34202
+	scale = 1.444094 1.444094 1.130859
+	name = WinterFirTree00-1085_719
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr59.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 179
+	classPrompt = StaticMesh
+	position = -21.72508 -91.51213 26.89821
+	rotation = -0.03163 -0.014749 0.93912 0.341812
+	scale = 1.444094 1.444094 1.130859
+	name = WinterFirTree00-1085_720
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr59.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 180
+	classPrompt = StaticMesh
+	position = -70.74118 -74.91438 27.8807
+	rotation = -0.008176 -0.06975 0.942093 -0.327915
+	scale = 1.444094 1.444094 1.130859
+	name = WinterFirTree00-1085_721
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr59.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 181
+	classPrompt = StaticMesh
+	position = -39.41666 -86.86561 26.12471
+	rotation = -0.077351 0.021596 0.937591 0.33834
+	scale = 1.444094 1.444094 1.130859
+	name = WinterFirTree00-1085_722
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr59.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 182
+	classPrompt = StaticMesh
+	position = -26.49381 -85.41583 27.98632
+	rotation = 0 0 0.939693 0.34202
+	scale = 1.444094 1.444094 1.130859
+	name = WinterFirTree00-1085_723
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr59.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 183
+	classPrompt = StaticMesh
+	position = -71.88859 -69.50743 28.72473
+	rotation = 0 0 0.939693 0.34202
+	scale = 1.444094 1.444094 1.130859
+	name = WinterFirTree00-1085_724
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr59.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 184
+	classPrompt = StaticMesh
+	position = -67.59505 -59.79407 27.30383
+	rotation = 0 0 0.945518 -0.325568
+	scale = 1.444094 1.444094 1.130859
+	name = WinterFirTree00-1085_725
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr59.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 185
+	classPrompt = StaticMesh
+	position = -73.61703 -65.68184 28.57678
+	rotation = 0 0 0.939693 0.34202
+	scale = 1.444094 1.444094 1.130859
+	name = WinterFirTree00-1085_726
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr59.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 186
+	classPrompt = StaticMesh
+	position = -9.265694 -87.97488 27.90605
+	rotation = 0 0 0.939693 0.34202
+	scale = 1.444094 1.444094 1.130859
+	name = WinterFirTree00-1085_727
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr59.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 187
+	classPrompt = StaticMesh
+	position = -42.0911 -88.91766 26.27999
+	rotation = 0 0 0.945518 -0.325568
+	scale = 1.444094 1.444094 1.130859
+	name = WinterFirTree00-1085_728
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr59.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 188
+	classPrompt = StaticMesh
+	position = -5.692879 -91.56468 28.29455
+	rotation = 0 0 0.939693 0.34202
+	scale = 1.444094 1.444094 1.130859
+	name = WinterFirTree00-1085_729
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr59.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 189
+	classPrompt = StaticMesh
+	position = -88.77641 -43.00425 28.56473
+	rotation = 0 0 0.945518 -0.325568
+	scale = 1.444094 1.444094 1.130859
+	name = WinterFirTree00-1085_730
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr59.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 190
+	classPrompt = StaticMesh
+	position = -87.97176 -85.40854 27.03475
+	rotation = 0 0 0.939693 0.34202
+	scale = 1.444094 1.444094 1.130859
+	name = WinterFirTree00-1085_731
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr59.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 191
+	classPrompt = StaticMesh
+	position = -51.91805 -84.4238 27.28544
+	rotation = 0 0 0.945518 -0.325568
+	scale = 1.444094 1.444094 1.130859
+	name = WinterFirTree00-1085_732
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr59.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 192
+	classPrompt = StaticMesh
+	position = -66.28026 -48.44379 28.29074
+	rotation = 0 0 0.939693 0.34202
+	scale = 1.444094 1.444094 1.130859
+	name = WinterFirTree00-1085_733
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr59.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 193
+	classPrompt = StaticMesh
+	position = -72.94901 -52.90525 27.97213
+	rotation = 0 0 0.945518 -0.325568
+	scale = 1.444094 1.444094 1.130859
+	name = WinterFirTree00-1085_734
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr59.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 194
+	classPrompt = StaticMesh
+	position = -70.78942 -55.5806 27.47838
+	rotation = 0 0 0.939693 0.34202
+	scale = 1.444094 1.444094 1.130859
+	name = WinterFirTree00-1085_735
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr59.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 195
+	classPrompt = StaticMesh
+	position = -89.8232 -82.05631 27.04698
+	rotation = 0 0 0.945518 -0.325568
+	scale = 1.444094 1.444094 1.130859
+	name = WinterFirTree00-1085_736
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr59.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 196
+	classPrompt = StaticMesh
+	position = -72.99477 -90.67078 26.83706
+	rotation = 0 0 0.939693 0.34202
+	scale = 1.444094 1.444094 1.130859
+	name = WinterFirTree00-1085_737
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr59.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 197
+	classPrompt = StaticMesh
+	position = -67.62177 -64.49448 27.31564
+	rotation = 0 0 0.939693 0.34202
+	scale = 1.444094 1.444094 1.130859
+	name = WinterFirTree00-1085_738
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr59.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 198
+	classPrompt = StaticMesh
+	position = -21.34675 71.6423 10.98434
+	rotation = 0 0 0.75471 0.656059
+	scale = 1.114684 1.114684 1.130818
+	name = WinterFirTree00-1086_921
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr59.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 199
+	classPrompt = StaticMesh
+	position = -21.75515 77.78943 10.32104
+	rotation = 0 0 0.961262 0.275637
+	scale = 1.114684 1.114684 1.130818
+	name = WinterFirTree00-1086_922
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr59.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 200
+	classPrompt = StaticMesh
+	position = -26.07912 86.06578 8.770689
+	rotation = 0 0 0.75471 0.656059
+	scale = 1.114684 1.114684 1.130818
+	name = WinterFirTree00-1086_923
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr59.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 201
+	classPrompt = StaticMesh
+	position = 12.09454 62.37592 9.152806
+	rotation = 0 0 0.75471 0.656059
+	scale = 1.114684 1.114684 1.130818
+	name = WinterFirTree00-1086_924
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr59.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 202
+	classPrompt = StaticMesh
+	position = -11.29627 78.44029 8.983665
+	rotation = 0 0 -0.34202 0.939693
+	scale = 1.114684 1.114684 1.130818
+	name = WinterFirTree00-1086_925
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr59.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 203
+	classPrompt = StaticMesh
+	position = 24.7327 27.22086 16.29985
+	rotation = 0 0 0.75471 0.656059
+	scale = 1.114684 1.114684 1.130818
+	name = WinterFirTree00-1086_926
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr59.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 204
+	classPrompt = StaticMesh
+	position = 97.5757 28.74443 9.074399
+	rotation = 0 0 0.961262 0.275637
+	scale = 1.114684 1.114684 1.130818
+	name = WinterFirTree00-1086_927
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr59.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 205
+	classPrompt = StaticMesh
+	position = 71.44633 22.58212 13.36538
+	rotation = 0 0 0.75471 0.656059
+	scale = 1.114684 1.114684 1.130818
+	name = WinterFirTree00-1086_928
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr59.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 206
+	classPrompt = StaticMesh
+	position = 72.3642 25.39395 13.5753
+	rotation = 0 0 0.75471 0.656059
+	scale = 1.114684 1.114684 1.130818
+	name = WinterFirTree00-1086_929
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr59.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 207
+	classPrompt = StaticMesh
+	position = 58.84135 9.197754 9.131178
+	rotation = 0 0 -0.34202 0.939693
+	scale = 1.114684 1.114684 1.130818
+	name = WinterFirTree00-1086_930
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr59.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 208
+	classPrompt = StaticMesh
+	position = -10.38848 57.06467 10.29042
+	rotation = 0 0 0.75471 0.656059
+	scale = 1.114684 1.114684 1.130818
+	name = WinterFirTree00-1086_931
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr59.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 209
+	classPrompt = StaticMesh
+	position = 42.73857 45.70363 9.375114
+	rotation = 0 0 0.748956 0.66262
+	scale = 1.114684 1.114684 1.130818
+	name = WinterFirTree00-1086_932
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr59.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 210
+	classPrompt = StaticMesh
+	position = -8.421806 17.23461 9.079217
+	rotation = 0 0 0.75471 0.656059
+	scale = 1.114684 1.114684 1.130818
+	name = WinterFirTree00-1086_933
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr59.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 211
+	classPrompt = StaticMesh
+	position = -3.711632 58.93536 9.684388
+	rotation = 0 0 0.75471 0.656059
+	scale = 1.114684 1.114684 1.130818
+	name = WinterFirTree00-1086_934
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr59.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 212
+	classPrompt = StaticMesh
+	position = -10.40481 65.15976 9.543379
+	rotation = 0 0 -0.34202 0.939693
+	scale = 1.114684 1.114684 1.130818
+	name = WinterFirTree00-1086_935
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr59.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 213
+	classPrompt = StaticMesh
+	position = 44.99644 -62.51264 20.29168
+	rotation = 0 0 0.75471 0.656059
+	scale = 1.114684 1.114684 1.130818
+	name = WinterFirTree00-1086_936
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr59.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 214
+	classPrompt = StaticMesh
+	position = 50.75453 -79.07867 21.51405
+	rotation = 0 0 0.961262 0.275637
+	scale = 1.114684 1.114684 1.130818
+	name = WinterFirTree00-1086_937
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr59.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 215
+	classPrompt = StaticMesh
+	position = 21.31895 -69.22649 21.63223
+	rotation = 0 0 0.75471 0.656059
+	scale = 1.114684 1.114684 1.130818
+	name = WinterFirTree00-1086_938
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr59.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 216
+	classPrompt = StaticMesh
+	position = 60.179 -79.93903 15.78078
+	rotation = 0 0 0.75471 0.656059
+	scale = 1.114684 1.114684 1.130818
+	name = WinterFirTree00-1086_939
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr59.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 217
+	classPrompt = StaticMesh
+	position = 46.54178 -46.73726 17.82313
+	rotation = 0 0 -0.34202 0.939693
+	scale = 1.114684 1.114684 1.130818
+	name = WinterFirTree00-1086_940
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr59.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 218
+	classPrompt = StaticMesh
+	position = 85.62805 63.89752 20.32846
+	rotation = 0 0 0.438371 0.898794
+	scale = 1.114684 1.114684 1.130818
+	name = WinterFirTree00-1086_947
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr59.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 219
+	classPrompt = StaticMesh
+	position = 89.39444 64.8208 20.33221
+	rotation = 0 0 0.438371 0.898794
+	scale = 1.114684 1.114684 1.130818
+	name = WinterFirTree00-1086_948
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr59.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 220
+	classPrompt = StaticMesh
+	position = -87.09084 8.420677 21.85825
+	rotation = 0 0 0.993572 -0.113203
+	scale = 1.114684 1.114684 1.130818
+	name = WinterFirTree00-1086_961
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr59.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 221
+	classPrompt = StaticMesh
+	position = -49.60606 -48.74995 26.04411
+	rotation = 0 0 0.993572 -0.113203
+	scale = 1.114684 1.114684 1.130818
+	name = WinterFirTree00-1086_962
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr59.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 222
+	classPrompt = StaticMesh
+	position = -57.92859 -65.73882 25.99061
+	rotation = 0 0 0.993572 -0.113203
+	scale = 1.114684 1.114684 1.130818
+	name = WinterFirTree00-1086_963
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr59.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 223
+	classPrompt = StaticMesh
+	position = -29.54144 -60.34752 22.62292
+	rotation = 0 0 0.993572 -0.113203
+	scale = 1.114684 1.114684 1.130818
+	name = WinterFirTree00-1086_964
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr59.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 224
+	classPrompt = StaticMesh
+	position = -65.61609 -98.10959 29.39978
+	rotation = 0 0 0.993572 -0.113203
+	scale = 1.114684 1.114684 1.130818
+	name = WinterFirTree00-1086_965
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr59.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 225
+	classPrompt = StaticMesh
+	position = -22.89039 -87.72338 26.83903
+	rotation = 0 0 0.993572 -0.113203
+	scale = 1.114684 1.114684 1.130818
+	name = WinterFirTree00-1086_966
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr59.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 226
+	classPrompt = StaticMesh
+	position = -51.27753 -93.11469 25.86863
+	rotation = 0 0 0.993572 -0.113203
+	scale = 1.114684 1.114684 1.130818
+	name = WinterFirTree00-1086_967
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr59.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 227
+	classPrompt = StaticMesh
+	position = -69.62344 -71.58679 27.15383
+	rotation = 0 0 0.993572 -0.113203
+	scale = 1.114684 1.114684 1.130818
+	name = WinterFirTree00-1086_968
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr59.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 228
+	classPrompt = StaticMesh
+	position = -69.0722 -94.84582 28.78703
+	rotation = 0 0 0.993572 -0.113203
+	scale = 1.114684 1.114684 1.130818
+	name = WinterFirTree00-1086_969
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr59.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 229
+	classPrompt = StaticMesh
+	position = -66.86061 -78.89908 28.55544
+	rotation = 0 0 0.461749 0.887011
+	scale = 1.114684 1.114684 1.130818
+	name = WinterFirTree00-1086_970
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr59.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 230
+	classPrompt = StaticMesh
+	position = -83.20324 -54.13982 26.65491
+	rotation = 0 0 0.993572 -0.113203
+	scale = 1.114684 1.114684 1.130818
+	name = WinterFirTree00-1086_971
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr59.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 231
+	classPrompt = StaticMesh
+	position = -51.60964 -58.66988 26.82627
+	rotation = 0 0 0.993572 -0.113203
+	scale = 1.114684 1.114684 1.130818
+	name = WinterFirTree00-1086_972
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr59.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 232
+	classPrompt = StaticMesh
+	position = -88.01236 -75.43449 26.43811
+	rotation = 0 0 0.993572 -0.113203
+	scale = 1.114684 1.114684 1.130818
+	name = WinterFirTree00-1086_973
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr59.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 233
+	classPrompt = StaticMesh
+	position = -72.60208 -58.0583 27.60221
+	rotation = 0 0 0.993572 -0.113203
+	scale = 1.114684 1.114684 1.130818
+	name = WinterFirTree00-1086_974
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr59.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 234
+	classPrompt = StaticMesh
+	position = -59.92218 -92.57859 27.472
+	rotation = 0 0 0.461749 0.887011
+	scale = 1.487171 1.487171 1.52904
+	name = WinterFirTree00-1086_975
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr59.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 235
+	classPrompt = StaticMesh
+	position = -91.88208 -63.10516 26.88367
+	rotation = 0 0 0.461749 0.887011
+	scale = 1.114684 1.114684 1.130818
+	name = WinterFirTree00-1086_976
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr59.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 236
+	classPrompt = StaticMesh
+	position = -88.4592 90.17172 14.50068
+	rotation = 0 0 0.75471 0.656059
+	scale = 1.114684 1.114684 1.130818
+	name = WinterFirTree00-1086_1051
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr59.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 237
+	classPrompt = StaticMesh
+	position = -46.47762 71.50958 9.470078
+	rotation = 0 0 -0.891007 0.45399
+	scale = 1.189255 1.189255 1.131989
+	name = WinterFirTree00-1087_1099
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr59.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 238
+	classPrompt = StaticMesh
+	position = -8.76329 76.45357 9.24114
+	rotation = 0 0 -0.398749 0.91706
+	scale = 1.46862 1.468621 1.397789
+	name = WinterFirTree00-1087_1100
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr59.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 239
+	classPrompt = StaticMesh
+	position = 24.22566 1.698563 9.673988
+	rotation = 0 0 -0.891007 0.45399
+	scale = 1.189255 1.189255 1.131989
+	name = WinterFirTree00-1087_1101
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr59.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 240
+	classPrompt = StaticMesh
+	position = 74.46538 22.46391 13.31339
+	rotation = 0 0 -0.398749 0.91706
+	scale = 1.46862 1.468621 1.397789
+	name = WinterFirTree00-1087_1102
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr59.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 241
+	classPrompt = StaticMesh
+	position = -25.88171 13.39682 9.265793
+	rotation = 0 0 -0.891007 0.45399
+	scale = 1.189255 1.189255 1.131989
+	name = WinterFirTree00-1087_1103
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr59.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 242
+	classPrompt = StaticMesh
+	position = -7.592827 64.21274 9.985255
+	rotation = 0 0 -0.398749 0.91706
+	scale = 1.46862 1.468621 1.397789
+	name = WinterFirTree00-1087_1104
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr59.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 243
+	classPrompt = StaticMesh
+	position = -6.63765 -60.89683 21.63235
+	rotation = 0 0 -0.891007 0.45399
+	scale = 1.189255 1.189255 1.131989
+	name = WinterFirTree00-1087_1105
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr59.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 244
+	classPrompt = StaticMesh
+	position = 49.35379 -47.68428 16.21508
+	rotation = 0 0 -0.398749 0.91706
+	scale = 1.46862 1.468621 1.397789
+	name = WinterFirTree00-1087_1106
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr59.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 245
+	classPrompt = StaticMesh
+	position = -85.0638 11.35728 20.86931
+	rotation = 0 0 0.406737 0.913546
+	scale = 1.189255 1.189255 1.131989
+	name = WinterFirTree00-1087_1107
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr59.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 246
+	classPrompt = StaticMesh
+	position = -47.06757 -46.24798 25.83846
+	rotation = 0 0 0.406737 0.913546
+	scale = 1.189255 1.189255 1.131989
+	name = WinterFirTree00-1087_1108
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr59.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 247
+	classPrompt = StaticMesh
+	position = -53.30107 -64.4361 25.72106
+	rotation = 0 0 0.216439 0.976296
+	scale = 1.46862 1.468621 1.397789
+	name = WinterFirTree00-1087_1109
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr59.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 248
+	classPrompt = StaticMesh
+	position = -79.03214 -76.69023 29.45525
+	rotation = 0 0 -0.267239 0.96363
+	scale = 1.189255 1.189255 1.131989
+	name = WinterFirTree00-1087_1110
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr59.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 249
+	classPrompt = StaticMesh
+	position = -55.90157 -62.80222 26.0913
+	rotation = 0 0 0.406737 0.913546
+	scale = 1.189255 1.189255 1.131989
+	name = WinterFirTree00-1087_1111
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr59.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 250
+	classPrompt = StaticMesh
+	position = -90.21846 -49.66721 26.06464
+	rotation = 0 0 0.406737 0.913546
+	scale = 1.46862 1.468621 1.397789
+	name = WinterFirTree00-1087_1112
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr59.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 251
+	classPrompt = StaticMesh
+	position = -31.30819 68.19809 9.808168
+	rotation = 0 0 0.71325 0.700909
+	scale = 1.037277 1.037277 0.998856
+	name = WinterFirTree00-1088_1121
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr59.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 252
+	classPrompt = StaticMesh
+	position = -27.01236 71.34804 10.54035
+	rotation = 0 0 0.71325 0.700909
+	scale = 0.947547 0.947547 0.912492
+	name = WinterFirTree00-1088_1122
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr59.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 253
+	classPrompt = StaticMesh
+	position = 62.26927 29.58781 13.86823
+	rotation = 0 0 0.71325 0.700909
+	scale = 1.037277 1.037277 0.998856
+	name = WinterFirTree00-1088_1123
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr59.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 254
+	classPrompt = StaticMesh
+	position = 59.94992 29.09607 14.89514
+	rotation = 0 0 0.71325 0.700909
+	scale = 0.947547 0.947547 0.912492
+	name = WinterFirTree00-1088_1124
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr59.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 255
+	classPrompt = StaticMesh
+	position = -10.32525 20.36639 9.45584
+	rotation = 0 0 0.71325 0.700909
+	scale = 1.037277 1.037277 0.998856
+	name = WinterFirTree00-1088_1125
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr59.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 256
+	classPrompt = StaticMesh
+	position = -13.24545 20.40575 9.293956
+	rotation = 0 0 0.71325 0.700909
+	scale = 0.947547 0.947547 0.912492
+	name = WinterFirTree00-1088_1126
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr59.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 257
+	classPrompt = StaticMesh
+	position = 16.5005 -57.35389 15.78252
+	rotation = 0 0 0.71325 0.700909
+	scale = 1.037277 1.037277 0.998856
+	name = WinterFirTree00-1088_1127
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr59.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 258
+	classPrompt = StaticMesh
+	position = 18.23597 -59.1672 15.99467
+	rotation = 0 0 0.71325 0.700909
+	scale = 0.947547 0.947547 0.912492
+	name = WinterFirTree00-1088_1128
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr59.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 259
+	classPrompt = StaticMesh
+	position = -82.67397 -81.92582 29.6301
+	rotation = 0 0 0.99863 -0.052336
+	scale = 1.175323 1.175323 1.131725
+	name = WinterFirTree00-1088_1129
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr59.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 260
+	classPrompt = StaticMesh
+	position = -52.67712 -62.21177 26.21523
+	rotation = 0 0 0.99863 -0.052336
+	scale = 1.037277 1.037277 0.998856
+	name = WinterFirTree00-1088_1130
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr59.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 261
+	classPrompt = StaticMesh
+	position = -68.38396 -69.2144 26.77258
+	rotation = 0 0 0.99863 -0.052336
+	scale = 1.727507 1.727507 1.663199
+	name = WinterFirTree00-1088_1131
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr59.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 262
+	classPrompt = StaticMesh
+	position = -85.25855 -40.09457 27.30937
+	rotation = 0 0 0.99863 -0.052336
+	scale = 0.947547 0.947547 0.912492
+	name = WinterFirTree00-1088_1132
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr59.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 263
+	classPrompt = StaticMesh
+	position = -35.72144 53.67078 9.40071
+	rotation = 0 0 -0.995396 -0.095846
+	scale = 2.034047 2.034047 1.329636
+	name = WinterFirTree00-1089_1142
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr59.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 264
+	classPrompt = StaticMesh
+	position = -33.17888 71.54155 8.976283
+	rotation = 0 0 -0.75471 0.656059
+	scale = 2.034047 2.034047 1.329636
+	name = WinterFirTree00-1089_1143
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr59.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 265
+	classPrompt = StaticMesh
+	position = 45.839 22.04396 9.075487
+	rotation = 0 0 -0.995396 -0.095846
+	scale = 2.034047 2.034047 1.329636
+	name = WinterFirTree00-1089_1144
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr59.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 266
+	classPrompt = StaticMesh
+	position = 66.18362 8.253258 9.145915
+	rotation = 0 0 -0.75471 0.656059
+	scale = 2.034047 2.034047 1.329636
+	name = WinterFirTree00-1089_1145
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr59.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 267
+	classPrompt = StaticMesh
+	position = -15.90737 17.39831 9.051603
+	rotation = 0 0 -0.995396 -0.095846
+	scale = 2.034047 2.034047 1.329636
+	name = WinterFirTree00-1089_1146
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr59.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 268
+	classPrompt = StaticMesh
+	position = -55.27811 17.21216 8.445635
+	rotation = 0 0 -0.793353 0.608761
+	scale = 2.034047 2.034047 1.329636
+	name = WinterFirTree00-1089_1147
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr59.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 269
+	classPrompt = StaticMesh
+	position = -2.651207 -63.58885 21.49071
+	rotation = 0 0 -0.995396 -0.095846
+	scale = 2.034047 2.034047 1.329636
+	name = WinterFirTree00-1089_1148
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr59.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 270
+	classPrompt = StaticMesh
+	position = 32.4608 -62.43119 21.22825
+	rotation = 0 0 -0.75471 0.656059
+	scale = 2.034047 2.034047 1.329636
+	name = WinterFirTree00-1089_1149
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr59.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 271
+	classPrompt = StaticMesh
+	position = -70.52024 -79.35352 27.44699
+	rotation = 0 0 -0.026177 0.999657
+	scale = 2.034047 2.034047 1.329636
+	name = WinterFirTree00-1089_1152
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr59.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 272
+	classPrompt = StaticMesh
+	position = -79.05536 -74.18694 29.37144
+	rotation = 0 0 -0.743145 0.669131
+	scale = 2.034047 2.034047 1.329636
+	name = WinterFirTree00-1089_1153
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr59.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 273
+	classPrompt = StaticMesh
+	position = -85.51247 -50.52706 26.64534
+	rotation = 0 0 -0.026177 0.999657
+	scale = 2.034047 2.034047 1.329636
+	name = WinterFirTree00-1089_1154
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr59.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 274
+	classPrompt = StaticMesh
+	position = -3.980774 78.09341 9.314665
+	rotation = 0 0 -0.91706 0.398749
+	scale = 1.974942 1.974942 1.39656
+	name = WinterFirTree00-1090_1162
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr59.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 275
+	classPrompt = StaticMesh
+	position = -28.78125 44.73439 9.900435
+	rotation = 0 0 -0.91706 0.398749
+	scale = 1.974942 1.974942 1.39656
+	name = WinterFirTree00-1090_1163
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr59.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 276
+	classPrompt = StaticMesh
+	position = 1.565659 66.9272 10.24109
+	rotation = 0 0 -0.66262 0.748956
+	scale = 1.974942 1.974942 1.39656
+	name = WinterFirTree00-1090_1164
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr59.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 277
+	classPrompt = StaticMesh
+	position = -28.38047 84.1106 9.247458
+	rotation = 0 0 -0.91706 0.398749
+	scale = 1.974942 1.974942 1.39656
+	name = WinterFirTree00-1090_1165
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr59.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 278
+	classPrompt = StaticMesh
+	position = -27.92167 65.11089 9.53947
+	rotation = 0 0 -0.91706 0.398749
+	scale = 1.974942 1.974942 1.39656
+	name = WinterFirTree00-1090_1166
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr59.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 279
+	classPrompt = StaticMesh
+	position = -41.86156 70.20447 8.752327
+	rotation = 0 0 -0.566406 0.824126
+	scale = 1.252551 1.252552 1.124335
+	name = WinterFirTree00-1090_1167
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr59.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 280
+	classPrompt = StaticMesh
+	position = 23.07159 31.43765 14.5576
+	rotation = 0 0 -0.91706 0.398749
+	scale = 1.974942 1.974942 1.39656
+	name = WinterFirTree00-1090_1168
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr59.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 281
+	classPrompt = StaticMesh
+	position = -8.018311 33.78358 8.970125
+	rotation = 0 0 -0.91706 0.398749
+	scale = 1.974942 1.974942 1.39656
+	name = WinterFirTree00-1090_1169
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr59.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 282
+	classPrompt = StaticMesh
+	position = 19.59667 34.95897 13.94681
+	rotation = 0 0 -0.91706 0.398749
+	scale = 1.974942 1.974942 1.39656
+	name = WinterFirTree00-1090_1171
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr59.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 283
+	classPrompt = StaticMesh
+	position = 91.84702 14.94778 8.827678
+	rotation = 0 0 -0.91706 0.398749
+	scale = 1.974942 1.974942 1.39656
+	name = WinterFirTree00-1090_1172
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr59.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 284
+	classPrompt = StaticMesh
+	position = 67.69388 23.30956 13.03115
+	rotation = 0 0 -0.566406 0.824126
+	scale = 1.252551 1.252552 1.124335
+	name = WinterFirTree00-1090_1173
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr59.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 285
+	classPrompt = StaticMesh
+	position = -12.04958 61.28146 9.461246
+	rotation = 0 0 -0.91706 0.398749
+	scale = 1.974942 1.974942 1.39656
+	name = WinterFirTree00-1090_1174
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr59.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 286
+	classPrompt = StaticMesh
+	position = -16.97469 54.68753 10.09767
+	rotation = 0 0 -0.91706 0.398749
+	scale = 1.974942 1.974942 1.39656
+	name = WinterFirTree00-1090_1175
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr59.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 287
+	classPrompt = StaticMesh
+	position = 40.05194 48.15253 9.143837
+	rotation = 0 0 -0.920505 0.390731
+	scale = 1.974942 1.974942 1.39656
+	name = WinterFirTree00-1090_1176
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr59.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 288
+	classPrompt = StaticMesh
+	position = -15.25283 59.85214 9.213778
+	rotation = 0 0 -0.91706 0.398749
+	scale = 1.974942 1.974942 1.39656
+	name = WinterFirTree00-1090_1177
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr59.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 289
+	classPrompt = StaticMesh
+	position = 4.568275 64.77905 9.060496
+	rotation = 0 0 -0.999391 -0.034899
+	scale = 1.974942 1.974942 1.39656
+	name = WinterFirTree00-1090_1178
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr59.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 290
+	classPrompt = StaticMesh
+	position = -22.69997 12.97769 9.029201
+	rotation = 0 0 -0.566406 0.824126
+	scale = 1.252551 1.252552 1.124335
+	name = WinterFirTree00-1090_1179
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr59.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 291
+	classPrompt = StaticMesh
+	position = 56.10074 -62.8595 13.85078
+	rotation = 0 0 -0.91706 0.398749
+	scale = 1.974942 1.974942 1.39656
+	name = WinterFirTree00-1090_1180
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr59.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 292
+	classPrompt = StaticMesh
+	position = 37.96426 -60.14009 20.97109
+	rotation = 0 0 -0.91706 0.398749
+	scale = 1.974942 1.974942 1.39656
+	name = WinterFirTree00-1090_1181
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr59.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 293
+	classPrompt = StaticMesh
+	position = 57.70868 -87.83286 21.2528
+	rotation = 0 0 -0.66262 0.748956
+	scale = 1.974942 1.974942 1.39656
+	name = WinterFirTree00-1090_1182
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr59.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 294
+	classPrompt = StaticMesh
+	position = 43.00356 -56.65059 21.34118
+	rotation = 0 0 -0.91706 0.398749
+	scale = 1.974942 1.974942 1.39656
+	name = WinterFirTree00-1090_1183
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr59.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 295
+	classPrompt = StaticMesh
+	position = 29.60022 -76.29022 20.76528
+	rotation = 0 0 -0.91706 0.398749
+	scale = 1.974942 1.974942 1.39656
+	name = WinterFirTree00-1090_1184
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr59.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 296
+	classPrompt = StaticMesh
+	position = 15.20039 -60.02282 16.03217
+	rotation = 0 0 -0.566406 0.824126
+	scale = 1.252551 1.252552 1.124335
+	name = WinterFirTree00-1090_1185
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr59.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 297
+	classPrompt = StaticMesh
+	position = 71.25533 43.3849 12.37831
+	rotation = 0 0 -0.999962 0.008727
+	scale = 1.974942 1.974942 1.39656
+	name = WinterFirTree00-1090_1193
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr59.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 298
+	classPrompt = StaticMesh
+	position = 78.4012 74.06165 16.49621
+	rotation = 0 0 -0.999962 0.008727
+	scale = 1.974942 1.974942 1.39656
+	name = WinterFirTree00-1090_1194
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr59.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 299
+	classPrompt = StaticMesh
+	position = 97.07806 57.98268 19.6979
+	rotation = 0 0 -0.999962 0.008727
+	scale = 1.974942 1.974942 1.39656
+	name = WinterFirTree00-1090_1195
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr59.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 300
+	classPrompt = StaticMesh
+	position = 93.60863 72.71523 14.9355
+	rotation = 0 0 -0.999962 0.008727
+	scale = 1.974942 1.974942 1.39656
+	name = WinterFirTree00-1090_1196
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr59.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 301
+	classPrompt = StaticMesh
+	position = 97.21257 44.15591 12.80619
+	rotation = 0 0 -0.999962 0.008727
+	scale = 1.974942 1.974942 1.39656
+	name = WinterFirTree00-1090_1197
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr59.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 302
+	classPrompt = StaticMesh
+	position = -85.55115 2.8162 21.07327
+	rotation = 0 0 -0.325568 0.945518
+	scale = 1.974942 1.974942 1.39656
+	name = WinterFirTree00-1090_1215
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr59.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 303
+	classPrompt = StaticMesh
+	position = -48.6288 -56.57791 26.6818
+	rotation = 0 0 -0.325568 0.945518
+	scale = 1.974942 1.974942 1.39656
+	name = WinterFirTree00-1090_1216
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr59.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 304
+	classPrompt = StaticMesh
+	position = -49.48468 -30.61293 21.09734
+	rotation = 0 0 -0.325568 0.945518
+	scale = 0.96007 0.96007 1.328484
+	name = WinterFirTree00-1090_1217
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr59.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 305
+	classPrompt = StaticMesh
+	position = -52.3513 -31.90584 21.57874
+	rotation = 0 0 -0.325568 0.945518
+	scale = 1.974942 1.974942 1.39656
+	name = WinterFirTree00-1090_1218
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr59.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 306
+	classPrompt = StaticMesh
+	position = -22.02638 -65.23871 21.95537
+	rotation = 0 0 -0.325568 0.945518
+	scale = 1.974942 1.974942 1.39656
+	name = WinterFirTree00-1090_1219
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr59.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 307
+	classPrompt = StaticMesh
+	position = -24.09671 -61.12064 22.00186
+	rotation = 0 0 -0.325568 0.945518
+	scale = 1.974942 1.974942 1.39656
+	name = WinterFirTree00-1090_1220
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr59.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 308
+	classPrompt = StaticMesh
+	position = -31.74014 -54.0291 22.68089
+	rotation = 0 0 -0.325568 0.945518
+	scale = 1.974942 1.974942 1.39656
+	name = WinterFirTree00-1090_1221
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr59.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 309
+	classPrompt = StaticMesh
+	position = 7.173805 -74.14487 21.63896
+	rotation = 0 0 -0.325568 0.945518
+	scale = 1.974942 1.974942 1.39656
+	name = WinterFirTree00-1090_1222
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr59.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 310
+	classPrompt = StaticMesh
+	position = -90.58493 -56.89687 26.83188
+	rotation = 0 0 -0.325568 0.945518
+	scale = 1.974942 1.974942 1.39656
+	name = WinterFirTree00-1090_1223
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr59.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 311
+	classPrompt = StaticMesh
+	position = -73.89342 -43.75939 27.56868
+	rotation = 0 0 -0.325568 0.945518
+	scale = 1.974942 1.974942 1.39656
+	name = WinterFirTree00-1090_1224
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr59.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 312
+	classPrompt = StaticMesh
+	position = -15.37532 -92.61458 27.66406
+	rotation = 0 0 -0.325568 0.945518
+	scale = 1.974942 1.974942 1.39656
+	name = WinterFirTree00-1090_1225
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr59.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 313
+	classPrompt = StaticMesh
+	position = -17.44565 -88.49651 26.73668
+	rotation = 0 0 -0.325568 0.945518
+	scale = 1.974942 1.974942 1.39656
+	name = WinterFirTree00-1090_1226
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr59.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 314
+	classPrompt = StaticMesh
+	position = -41.52509 -79.11292 26.18172
+	rotation = 0 0 -0.325568 0.945518
+	scale = 1.974942 1.974942 1.39656
+	name = WinterFirTree00-1090_1227
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr59.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 315
+	classPrompt = StaticMesh
+	position = -30.19795 -86.55357 26.37412
+	rotation = 0 0 -0.325568 0.945518
+	scale = 1.974942 1.974942 1.39656
+	name = WinterFirTree00-1090_1228
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr59.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 316
+	classPrompt = StaticMesh
+	position = -56.38891 -71.34328 26.41426
+	rotation = 0 0 -0.325568 0.945518
+	scale = 1.974942 1.974942 1.39656
+	name = WinterFirTree00-1090_1229
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr59.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 317
+	classPrompt = StaticMesh
+	position = -70.72252 -62.9276 28.02256
+	rotation = 0 0 -0.325568 0.945518
+	scale = 1.974942 1.974942 1.39656
+	name = WinterFirTree00-1090_1230
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr59.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 318
+	classPrompt = StaticMesh
+	position = -10.58986 -76.33311 25.81477
+	rotation = 0 0 -0.325568 0.945518
+	scale = 1.974942 1.974942 1.39656
+	name = WinterFirTree00-1090_1231
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr59.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 319
+	classPrompt = StaticMesh
+	position = -68.03253 -90.8105 27.93147
+	rotation = 0 0 -0.325568 0.945518
+	scale = 1.974942 1.974942 1.39656
+	name = WinterFirTree00-1090_1232
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr59.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 320
+	classPrompt = StaticMesh
+	position = -85.73061 -94.81725 27.51395
+	rotation = 0 0 -0.325568 0.945518
+	scale = 1.974942 1.974942 1.39656
+	name = WinterFirTree00-1090_1233
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr59.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 321
+	classPrompt = StaticMesh
+	position = -70.3484 -49.60698 28.67859
+	rotation = 0 0 -0.325568 0.945518
+	scale = 1.974942 1.974942 1.39656
+	name = WinterFirTree00-1090_1234
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr59.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 322
+	classPrompt = StaticMesh
+	position = -80.64384 -94.62987 26.69747
+	rotation = 0 0 -0.325568 0.945518
+	scale = 1.974942 1.974942 1.39656
+	name = WinterFirTree00-1090_1235
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr59.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 323
+	classPrompt = StaticMesh
+	position = -78.16151 -91.03699 26.5081
+	rotation = 0 0 -0.325568 0.945518
+	scale = 1.974942 1.974942 1.39656
+	name = WinterFirTree00-1090_1236
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr59.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 324
+	classPrompt = StaticMesh
+	position = -75.68407 -71.56019 29.09003
+	rotation = 0 0 0.224951 0.97437
+	scale = 1.252551 1.252552 1.124335
+	name = WinterFirTree00-1090_1237
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr59.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 325
+	classPrompt = StaticMesh
+	position = -62.66045 -59.30593 27.66176
+	rotation = 0 0 -0.325568 0.945518
+	scale = 0.96007 0.96007 1.328484
+	name = WinterFirTree00-1090_1238
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr59.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 326
+	classPrompt = StaticMesh
+	position = -89.17968 -46.33734 27.19327
+	rotation = 0 0 -0.325568 0.945518
+	scale = 1.974942 1.974942 1.39656
+	name = WinterFirTree00-1090_1239
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr59.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 327
+	classPrompt = StaticMesh
+	position = -90.23603 85.84669 13.84532
+	rotation = 0 0 -0.91706 0.398749
+	scale = 1.974942 1.974942 1.39656
+	name = WinterFirTree00-1090_1328
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr59.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 328
+	classPrompt = StaticMesh
+	position = 79.34027 -59.16381 9.104922
+	rotation = 0 0 -0.96363 0.267238
+	scale = 0.842829 0.842829 1.287747
+	name = WinterLeafTree00-1093_1377
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr56.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 329
+	classPrompt = StaticMesh
+	position = 80.15128 -90.09693 10.50192
+	rotation = 0 0 0.350207 0.936672
+	scale = 0.842829 0.842829 1.287747
+	name = WinterLeafTree00-1093_1378
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr56.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 330
+	classPrompt = StaticMesh
+	position = -3.586342 -16.35271 9.954881
+	rotation = 0 0 0.927184 0.374607
+	scale = 0.842829 0.842829 1.287747
+	name = WinterLeafTree00-1093_1384
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr56.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 331
+	classPrompt = StaticMesh
+	position = 74.32617 -59.94461 9.992271
+	rotation = 0 0 -0.636078 0.771625
+	scale = 0.734069 0.734069 0.928244
+	name = WinterLeafTree00-1094_1417
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr56.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 332
+	classPrompt = StaticMesh
+	position = 68.90497 -65.54994 10.3428
+	rotation = 0 0 -0.992546 0.121869
+	scale = 0.734069 0.734069 0.928244
+	name = WinterLeafTree00-1094_1418
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr56.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 333
+	classPrompt = StaticMesh
+	position = 73.76825 -47.36359 9.797813
+	rotation = 0 0 -0.992546 0.121869
+	scale = 0.734069 0.734069 0.928244
+	name = WinterLeafTree00-1094_1419
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr56.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 334
+	classPrompt = StaticMesh
+	position = 83.8096 -93.24241 9.852799
+	rotation = 0 0 0.207912 0.978148
+	scale = 0.734069 0.734069 0.928244
+	name = WinterLeafTree00-1094_1420
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr56.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 335
+	classPrompt = StaticMesh
+	position = 80.74185 -81.53849 11.15705
+	rotation = 0 0 0.824126 0.566406
+	scale = 0.734069 0.734069 0.928244
+	name = WinterLeafTree00-1094_1421
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr56.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 336
+	classPrompt = StaticMesh
+	position = 80.30045 -76.20988 11.12312
+	rotation = 0 0 0.207912 0.978148
+	scale = 0.734069 0.734069 0.928244
+	name = WinterLeafTree00-1094_1422
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr56.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 337
+	classPrompt = StaticMesh
+	position = -6.639427 -15.32691 9.770982
+	rotation = 0 0 0.97437 -0.224951
+	scale = 0.734069 0.734069 0.928244
+	name = WinterLeafTree00-1094_1429
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr56.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 338
+	classPrompt = StaticMesh
+	position = -12.88428 -6.378311 9.268377
+	rotation = 0 0 0.861629 0.507538
+	scale = 0.734069 0.734069 0.928244
+	name = WinterLeafTree00-1094_1430
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr56.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 339
+	classPrompt = StaticMesh
+	position = 96.03354 -82.20036 9.479055
+	rotation = 0 0 -0.782608 -0.622515
+	scale = 0.623697 0.623697 1.130678
+	name = WinterLeafTree01-1095_1474
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr57.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 340
+	classPrompt = StaticMesh
+	position = 70.49722 -61.82563 9.942828
+	rotation = 0 0 -0.990268 -0.139173
+	scale = 0.604203 0.604203 1.095152
+	name = WinterLeafTree01-1095_1480
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr57.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 341
+	classPrompt = StaticMesh
+	position = 77.32751 -47.96527 9.43407
+	rotation = 0 0 -0.782608 -0.622515
+	scale = 0.604203 0.604203 1.095152
+	name = WinterLeafTree01-1095_1481
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr57.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 342
+	classPrompt = StaticMesh
+	position = 79.86636 -93.85703 9.9918
+	rotation = 0 0 -0.551937 0.833886
+	scale = 0.604203 0.604203 1.095152
+	name = WinterLeafTree01-1095_1482
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr57.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 343
+	classPrompt = StaticMesh
+	position = -9.447365 -12.11518 8.958708
+	rotation = 0 0 0.700909 0.713251
+	scale = 0.604203 0.604203 1.095152
+	name = WinterLeafTree01-1095_1491
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr57.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 344
+	classPrompt = StaticMesh
+	position = -19.80003 -5.633904 8.501986
+	rotation = 0 0 0.241922 0.970296
+	scale = 0.604203 0.604203 1.095152
+	name = WinterLeafTree01-1095_1492
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr57.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 345
+	classPrompt = StaticMesh
+	position = 71.15741 -58.16341 9.801427
+	rotation = 0 0 -0.725375 -0.688355
+	scale = 0.767933 0.767933 1.194441
+	name = WinterLeafTree01-1096_1533
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr57.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 346
+	classPrompt = StaticMesh
+	position = 80.91943 -64.15432 10.01205
+	rotation = 0 0 -0.927184 -0.374607
+	scale = 0.767933 0.767933 1.194441
+	name = WinterLeafTree01-1096_1534
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr57.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 347
+	classPrompt = StaticMesh
+	position = 76.87915 -51.25839 8.961625
+	rotation = 0 0 -0.927184 -0.374607
+	scale = 0.767933 0.767933 1.194441
+	name = WinterLeafTree01-1096_1535
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr57.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 348
+	classPrompt = StaticMesh
+	position = 76.55069 -88.37815 10.7919
+	rotation = 0 0 -0.292372 0.956305
+	scale = 0.767933 0.767933 1.194441
+	name = WinterLeafTree01-1096_1536
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr57.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 349
+	classPrompt = StaticMesh
+	position = 77.06509 -78.58784 11.29757
+	rotation = 0 0 -0.292372 0.956305
+	scale = 0.767933 0.767933 1.194441
+	name = WinterLeafTree01-1096_1538
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr57.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 350
+	classPrompt = StaticMesh
+	position = -3.500618 -8.568192 10.56464
+	rotation = 0 0 0.507538 0.861629
+	scale = 0.767933 0.767933 1.194441
+	name = WinterLeafTree01-1096_1545
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr57.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 351
+	classPrompt = StaticMesh
+	position = -5.739098 -11.80505 10.3473
+	rotation = 0 0 0.156435 0.987688
+	scale = 0.767933 0.767933 1.194441
+	name = WinterLeafTree01-1096_1546
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr57.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 352
+	classPrompt = StaticMesh
+	position = 75.74829 -55.37704 9.19306
+	rotation = 0 0 -0.843392 -0.5373
+	scale = 1.012714 1.012714 1.363025
+	name = WinterLeafTree01-1097_1571
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr57.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 353
+	classPrompt = StaticMesh
+	position = 72.44669 -73.17041 11.62333
+	rotation = 0 0 -0.461749 0.887011
+	scale = 1.012714 1.012714 1.363025
+	name = WinterLeafTree01-1097_1572
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr57.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 354
+	classPrompt = StaticMesh
+	position = -11.74184 -14.60583 9.060056
+	rotation = 0 0 0.891007 0.453991
+	scale = 1.012714 1.012714 1.363025
+	name = WinterLeafTree01-1097_1575
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr57.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 355
+	classPrompt = StaticMesh
+	position = -12.40224 -9.466087 9.045793
+	rotation = 0 0 -0.275637 0.961262
+	scale = 1.012714 1.012714 1.363025
+	name = WinterLeafTree01-1097_1576
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr57.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 356
+	classPrompt = StaticMesh
+	position = -26.0257 16.61704 8.776368
+	rotation = 0 0 -0.936672 0.350208
+	scale = 0.106969 0.5 0.5
+	name = FarmTub00-1484_1615
+	editorLayer = "Root Layer\\Static"
+	meshName = "Types\\Models\\stst68.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 357
+	classPrompt = StaticMesh
+	position = -35.23334 14.89519 8.602942
+	rotation = 0 0 -0.414693 0.909962
+	scale = 0.106969 0.5 0.5
+	name = FarmTub00-1484_1616
+	editorLayer = "Root Layer\\Static"
+	meshName = "Types\\Models\\stst68.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 358
+	classPrompt = StaticMesh
+	position = -33.82925 13.36644 8.602942
+	rotation = 0 0 -0.909961 -0.414693
+	scale = 0.106969 0.5 0.5
+	name = FarmTub00-1484_1617
+	editorLayer = "Root Layer\\Static"
+	meshName = "Types\\Models\\stst68.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 359
+	classPrompt = StaticMesh
+	position = -27.66245 15.21463 8.738976
+	rotation = 0 0 -0.936672 0.350208
+	scale = 0.106969 0.5 0.5
+	name = FarmTub00-1484_1618
+	editorLayer = "Root Layer\\Static"
+	meshName = "Types\\Models\\stst68.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 360
+	classPrompt = StaticMesh
+	position = 76.01382 -74.30278 10.95342
+	rotation = -0.118482 -0.160809 0.92617 0.319862
+	scale = 0.492267 0.261142 0.728235
+	name = SecretRuinStone00-3351_1732
+	editorLayer = "Root Layer\\Static"
+	meshName = "Types\\Models\\stbuho35.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 361
+	classPrompt = StaticMesh
+	position = 74.86316 -68.793 10.5894
+	rotation = 0 0 -0.669131 0.743145
+	scale = 0.5 0.5 0.5
+	name = SecretRuin00-3352_1733
+	editorLayer = "Root Layer\\Static"
+	meshName = "Types\\Models\\stbuho34.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 362
+	classPrompt = StaticMesh
+	position = 60.48697 96.42027 8.302942
+	rotation = 0 0 -0.992546 -0.121869
+	scale = 2.189977 2.189977 1.464615
+	name = WinterFirTree00-1084_1739
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr59.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 363
+	classPrompt = StaticMesh
+	position = 60.64955 81.08469 8.550806
+	rotation = 0 0 0.878817 0.477159
+	scale = 1.444094 1.444094 1.130859
+	name = WinterFirTree00-1085_1740
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr59.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 364
+	classPrompt = StaticMesh
+	position = 46.75684 85.6703 7.953377
+	rotation = 0 0 -0.91706 0.398749
+	scale = 1.974942 1.974942 1.39656
+	name = WinterFirTree00-1090_1741
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr59.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 365
+	classPrompt = StaticMesh
+	position = 93.29187 93.81242 8.152942
+	rotation = 0 0 -0.992546 -0.121869
+	scale = 1.454287 1.454287 0.97276
+	name = WinterFirTree00-1084_1776
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr59.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 366
+	classPrompt = StaticMesh
+	position = 97.28883 90.52721 8.152942
+	rotation = 0 0 0.382683 0.92388
+	scale = 1.444094 1.444094 1.130859
+	name = WinterFirTree00-1085_1779
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr59.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 367
+	classPrompt = StaticMesh
+	position = 88.59009 94.25362 8.152942
+	rotation = 0 0 -0.91706 0.398749
+	scale = 1.974942 1.974942 1.39656
+	name = WinterFirTree00-1090_1784
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr59.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 368
+	classPrompt = StaticMesh
+	position = 39.78075 96.70271 8.752941
+	rotation = 0 0 -0.544639 0.838671
+	scale = 1 1 0.759588
+	name = LogStack00-9_1806
+	editorLayer = "Root Layer\\Static"
+	meshName = "Types\\Models\\stbuho13.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 369
+	classPrompt = StaticMesh
+	position = -29.9529 22.63 8.752942
+	rotation = 0 0 0.34202 0.939692
+	scale = 0.578038 0.75 0.397324
+	name = DogGate_1943
+	editorLayer = "Root Layer\\Static"
+	meshName = "Types\\Models\\stga5.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 370
+	classPrompt = StaticMesh
+	position = -47.30548 95.22066 10.23578
+	rotation = 0 0 0.996195 0.087156
+	scale = 1.444094 1.444094 1.130859
+	name = WinterFirTree00-1085_2064
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr59.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 371
+	classPrompt = StaticMesh
+	position = -45.63507 92.3616 9.263961
+	rotation = 0 0 -0.190809 0.981628
+	scale = 1.252551 1.252552 1.124335
+	name = WinterFirTree00-1090_2067
+	editorLayer = "Root Layer\\Vegetation"
+	meshName = "Types\\Models\\nafltr59.mesh"
+	forceMaterial = tree03
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = DecorativeObjectManager
+	uin = 372
+	classPrompt = DecorativeObjectManager
+	subscriptionsToDeletionEvent = 54 56 55 13
+	enabled = True
+	visible = True
+	geometries = 54 56 55 13
+	itemDataVersion = 2
+	tags
+	{
+	}
+	typeItems
+	{
+	}
+}
+entity
+{
+	type = HeightmapWater
+	uin = 373
+	classPrompt = HeightmapWater
+	useHDRTexture = False
+	reflectionLevel = None
+	enabled = True
+	position = 0 0 7
+	horizontalSize = 196
+	dataDirectory = HeightmapTerrain
+	masksSize = 256
+	detailMapsDistance = 50
+	renderQueueGroup = WorldGeometry1
+	collision = True
+	collisionMaterialName = Default
+	collisionHeightfieldThickness = 2
+	castDynamicShadows = False
+	receiveStaticShadows = True
+	simpleRendering = False
+	tileSize = 64
+	visible = True
+	allowVertexTextureFetchOptimization = True
+	useFloat16BitHeightTexture = False
+	heightMultiplier = 1
+	heightmapTerrainManagerIndex = 0 0
+	ambientOcclusion
+	{
+		enabled = False
+		size = 1024
+		rayLength = 1
+		iterationCount = 100
+		blur = True
+		power = 1
+	}
+	lodSettings
+	{
+		enabled = True
+		maxCount = 99
+		lodLevelDistances = 100 + level * 200
+		morphAreaPercent = 0.3
+		showLevels = False
+	}
+	tags
+	{
+	}
+	layers
+	{
+		item
+		{
+			name = base
+			baseMap = "Base\\Types\\WaterPlane\\WaterNoise.dds"
+			baseScale = 10
+			detailScale = 2
+			deepColor = 0.2431373 0.3529412 0.5294118 0.7843138
+			shallowColor = 0.2431373 0.3529412 0.5294118 0.7843138
+			reflectionColor = 1 1 1
+			softParticles = True
+		}
+		item
+		{
+			name = second
+			baseMap = "Base\\Types\\WaterPlane\\WaterNoise.dds"
+			baseScale = 10
+			detailScale = 2
+			deepColor = 0 0.3019608 0.5019608 0.01960784
+			shallowColor = 0 1 1 0.01960784
+			reflectionColor = 1 1 1 0.01960784
+			softParticles = True
+		}
+	}
+}
+entity
+{
+	type = MapTeleporter
+	uin = 374
+	classPrompt = MapTeleporter
+	active = True
+	changeMapName = "Maps\\MemTest1\\Map.map"
+	changeMapSpawnObjectName = MapTeleporter_0
+	boundstype = Sphere
+	_teleportedUnits = 
+	_gameDescription = "\x041f\x0440\x043e\x0445\x043e\x0434 \x0432 \x0434\x0440\x0443\x0433\x0443\x044e \x043c\x0435\x0441\x0442\x043d\x043e\x0441\x0442\x044c"
+	_gameName = "\x041f\x0440\x043e\x0445\x043e\x0434"
+	position = 49.47548 94.4638 9.278782
+	name = MapTeleporter_0
+	_questSystemAlias
+	{
+	}
+	tags
+	{
+	}
+}
+entity
+{
+	type = HumanCreator
+	uin = 375
+	classPrompt = MapUnitCreator
+	_faction = IngosArmy
+	_intellect = BaseNPCIntellect
+	_unitLevel = 0 1
+	_gender = 1
+	position = -24.99309 36.44118 8.63168
+	name = Lieutenant
+	_tasks
+	{
+		item
+		{
+			_scriptName = Patrol
+			_targetEntity = 382
+		}
+	}
+	_questSystemAlias
+	{
+		item
+		{
+			value = 108b4f03-edd0-4b6e-835f-6fb6a23b809d
+		}
+		item
+		{
+			value = 750ddc97-a266-4831-8974-368be7dff39e
+		}
+		item
+		{
+			value = 1af4d7e1-9e1c-49f9-9410-c61076812b12
+		}
+	}
+	tags
+	{
+	}
+	inventory
+	{
+		item
+		{
+			Count = 2
+			LootChance = 50
+			DataBaseID = 168
+			ItemType = AllodsMaterial
+		}
+		item
+		{
+			LootChance = 50
+			DataBaseID = 169
+			ItemType = AllodsMaterial
+		}
+	}
+	equipment
+	{
+		item
+		{
+			Section = Head
+			LootChance = 50
+			DataBaseID = 18
+			ItemType = AllodsArmor
+			_energy = 1
+			_solidity = 1
+			_itemSkills
+			{
+			}
+		}
+		item
+		{
+			Section = BodyL
+			LootChance = 50
+		}
+		item
+		{
+			Section = BodyH
+			LootChance = 50
+			DataBaseID = 14
+			ItemType = AllodsArmor
+			_energy = 1
+			_solidity = 1
+			_itemSkills
+			{
+			}
+		}
+		item
+		{
+			Section = LegL
+			LootChance = 50
+		}
+		item
+		{
+			Section = LegH
+			LootChance = 50
+			DataBaseID = 16
+			ItemType = AllodsArmor
+			_energy = 1
+			_solidity = 1
+			_itemSkills
+			{
+			}
+		}
+		item
+		{
+			Section = Hand
+			LootChance = 50
+		}
+		item
+		{
+			Section = Foot
+			LootChance = 50
+		}
+		item
+		{
+			Section = WHand
+			LootChance = 50
+		}
+		item
+		{
+			Section = WHand
+			LootChance = 50
+		}
+		item
+		{
+			Section = WHand
+			LootChance = 50
+		}
+		item
+		{
+			Section = WHand
+			LootChance = 50
+		}
+		item
+		{
+			Section = SpellSlot
+			LootChance = 50
+		}
+		item
+		{
+			Section = SpellSlot
+			LootChance = 50
+		}
+		item
+		{
+			Section = SpellSlot
+			LootChance = 50
+		}
+		item
+		{
+			Section = SpellSlot
+			LootChance = 50
+		}
+	}
+}
+entity
+{
+	type = Deer
+	uin = 376
+	classPrompt = UCreature
+	_initialai = BaseFleeIntellect
+	_moveShift = 0 0 0
+	melee = 0
+	basedamage = 4
+	_experienceReward = 0
+	energycoeff = 1.2
+	healthcoeff = 2.3
+	regenerationHealth = 0.005
+	_face = 1
+	_hair = -1
+	_faction = WildPeaceful
+	_isHandBroken = False
+	_boredCounter = 0
+	_spellPosition = 0 0 0
+	_personalEnemies = 
+	_deadAlly = 
+	_money = 1
+	_gameDescription = "\x041b\x0435\x0441\x043d\x043e\x0439 \x043e\x043b\x0435\x043d\x044c"
+	_gameName = "\x041e\x043b\x0435\x043d\x044c"
+	_handwork = 99
+	position = 76.77612 -41.78269 10.29005
+	name = Deer_0
+	editorLayer = "Root Layer\\Units"
+	_tasks
+	{
+		item
+		{
+			_scriptName = Idle
+		}
+	}
+	_unitTasksForSave
+	{
+	}
+	bodyParts
+	{
+		item
+		{
+			_mainHealthPercent = 1.01
+			_section = Head
+		}
+		item
+		{
+			_mainHealthPercent = 1.01
+		}
+		item
+		{
+			_mainHealthPercent = 0.51
+			_section = Leg
+		}
+		item
+		{
+			_mainHealthPercent = 0.51
+			_section = Leg
+		}
+		item
+		{
+			_mainHealthPercent = 0.51
+			_section = Leg
+		}
+		item
+		{
+			_mainHealthPercent = 0.51
+			_section = Leg
+		}
+	}
+	_questSystemAlias
+	{
+	}
+	tags
+	{
+	}
+	inventory
+	{
+		item
+		{
+			LootChance = 100
+			DataBaseID = 165
+			ItemType = AllodsMaterial
+		}
+	}
+}
+entity
+{
+	type = Hare
+	uin = 377
+	classPrompt = UCreature
+	_initialai = BaseFleeIntellect
+	_moveShift = 0 0 0
+	melee = 0
+	_experienceReward = 0
+	energycoeff = 1.2
+	healthcoeff = 2.3
+	regenerationHealth = 0.005
+	_face = 1
+	_hair = -1
+	_faction = WildPeaceful
+	_isHandBroken = False
+	_boredCounter = 0
+	_spellPosition = 0 0 0
+	_personalEnemies = 
+	_deadAlly = 
+	_money = 1
+	_gameDescription = "\x0417\x0430\x044f\x0446"
+	_gameName = "\x0417\x0430\x044f\x0446"
+	_handwork = 99
+	position = 69.82915 -46.35736 9.966543
+	name = Hare_0
+	editorLayer = "Root Layer\\Units"
+	_tasks
+	{
+		item
+		{
+			_scriptName = Idle
+		}
+	}
+	_unitTasksForSave
+	{
+	}
+	bodyParts
+	{
+		item
+		{
+			_mainHealthPercent = 1.01
+			_section = Head
+		}
+		item
+		{
+			_mainHealthPercent = 1.01
+		}
+		item
+		{
+			_mainHealthPercent = 0.51
+			_section = Leg
+		}
+		item
+		{
+			_mainHealthPercent = 0.51
+			_section = Leg
+		}
+		item
+		{
+			_mainHealthPercent = 0.51
+			_section = Leg
+		}
+		item
+		{
+			_mainHealthPercent = 0.51
+			_section = Leg
+		}
+	}
+	_questSystemAlias
+	{
+	}
+	tags
+	{
+	}
+	inventory
+	{
+		item
+		{
+			LootChance = 100
+			DataBaseID = 165
+			ItemType = AllodsMaterial
+		}
+	}
+}
+entity
+{
+	type = Hare
+	uin = 378
+	classPrompt = UCreature
+	_initialai = BaseFleeIntellect
+	_moveShift = 0 0 0
+	melee = 0
+	_experienceReward = 0
+	energycoeff = 1.2
+	healthcoeff = 2.3
+	regenerationHealth = 0.005
+	_hair = -1
+	_faction = WildPeaceful
+	_isHandBroken = False
+	_boredCounter = 0
+	_spellPosition = 0 0 0
+	_personalEnemies = 
+	_deadAlly = 
+	_money = 1
+	_gameDescription = "\x0417\x0430\x044f\x0446"
+	_gameName = "\x0417\x0430\x044f\x0446"
+	_handwork = 99
+	position = -15.86465 73.88995 10.00619
+	name = Hare_1
+	editorLayer = "Root Layer\\Units"
+	_tasks
+	{
+		item
+		{
+			_scriptName = Idle
+		}
+	}
+	_unitTasksForSave
+	{
+	}
+	bodyParts
+	{
+		item
+		{
+			_mainHealthPercent = 1.01
+			_section = Head
+		}
+		item
+		{
+			_mainHealthPercent = 1.01
+		}
+		item
+		{
+			_mainHealthPercent = 0.51
+			_section = Leg
+		}
+		item
+		{
+			_mainHealthPercent = 0.51
+			_section = Leg
+		}
+		item
+		{
+			_mainHealthPercent = 0.51
+			_section = Leg
+		}
+		item
+		{
+			_mainHealthPercent = 0.51
+			_section = Leg
+		}
+	}
+	_questSystemAlias
+	{
+	}
+	tags
+	{
+	}
+	inventory
+	{
+		item
+		{
+			LootChance = 100
+			DataBaseID = 165
+			ItemType = AllodsMaterial
+		}
+	}
+}
+entity
+{
+	type = Hare
+	uin = 379
+	classPrompt = UCreature
+	_initialai = BaseFleeIntellect
+	_moveShift = 0 0 0
+	melee = 0
+	_experienceReward = 0
+	energycoeff = 1.2
+	healthcoeff = 2.3
+	regenerationHealth = 0.005
+	_face = 1
+	_hair = -1
+	_faction = WildPeaceful
+	_isHandBroken = False
+	_boredCounter = 0
+	_spellPosition = 0 0 0
+	_personalEnemies = 
+	_deadAlly = 
+	_money = 1
+	_gameDescription = "\x0417\x0430\x044f\x0446"
+	_gameName = "\x0417\x0430\x044f\x0446"
+	_handwork = 99
+	position = -48.89279 85.55614 9.113171
+	name = Hare_2
+	editorLayer = "Root Layer\\Units"
+	_tasks
+	{
+		item
+		{
+			_scriptName = Idle
+		}
+	}
+	_unitTasksForSave
+	{
+	}
+	bodyParts
+	{
+		item
+		{
+			_mainHealthPercent = 1.01
+			_section = Head
+		}
+		item
+		{
+			_mainHealthPercent = 1.01
+		}
+		item
+		{
+			_mainHealthPercent = 0.51
+			_section = Leg
+		}
+		item
+		{
+			_mainHealthPercent = 0.51
+			_section = Leg
+		}
+		item
+		{
+			_mainHealthPercent = 0.51
+			_section = Leg
+		}
+		item
+		{
+			_mainHealthPercent = 0.51
+			_section = Leg
+		}
+	}
+	_questSystemAlias
+	{
+	}
+	tags
+	{
+	}
+	inventory
+	{
+		item
+		{
+			LootChance = 100
+			DataBaseID = 165
+			ItemType = AllodsMaterial
+		}
+	}
+}
+entity
+{
+	type = Hare
+	uin = 380
+	classPrompt = UCreature
+	_initialai = BaseFleeIntellect
+	_moveShift = 0 0 0
+	melee = 0
+	_experienceReward = 0
+	energycoeff = 1.2
+	healthcoeff = 2.3
+	regenerationHealth = 0.005
+	_face = 1
+	_hair = -1
+	_faction = WildPeaceful
+	_isHandBroken = False
+	_boredCounter = 0
+	_spellPosition = 0 0 0
+	_personalEnemies = 
+	_deadAlly = 
+	_money = 1
+	_gameDescription = "\x0417\x0430\x044f\x0446"
+	_gameName = "\x0417\x0430\x044f\x0446"
+	_handwork = 99
+	position = 58.06966 88.92651 8.898306
+	name = Hare_3
+	editorLayer = "Root Layer\\Units"
+	_tasks
+	{
+		item
+		{
+			_scriptName = Idle
+		}
+	}
+	_unitTasksForSave
+	{
+	}
+	bodyParts
+	{
+		item
+		{
+			_mainHealthPercent = 1.01
+			_section = Head
+		}
+		item
+		{
+			_mainHealthPercent = 1.01
+		}
+		item
+		{
+			_mainHealthPercent = 0.51
+			_section = Leg
+		}
+		item
+		{
+			_mainHealthPercent = 0.51
+			_section = Leg
+		}
+		item
+		{
+			_mainHealthPercent = 0.51
+			_section = Leg
+		}
+		item
+		{
+			_mainHealthPercent = 0.51
+			_section = Leg
+		}
+	}
+	_questSystemAlias
+	{
+	}
+	tags
+	{
+	}
+	inventory
+	{
+		item
+		{
+			LootChance = 100
+			DataBaseID = 165
+			ItemType = AllodsMaterial
+		}
+	}
+}
+entity
+{
+	type = Deer
+	uin = 381
+	classPrompt = UCreature
+	_initialai = BaseFleeIntellect
+	_moveShift = 0 0 0
+	melee = 0
+	basedamage = 4
+	_experienceReward = 0
+	energycoeff = 1.2
+	healthcoeff = 2.3
+	regenerationHealth = 0.005
+	_face = 1
+	_hair = -1
+	_faction = WildPeaceful
+	_isHandBroken = False
+	_boredCounter = 0
+	_spellPosition = 0 0 0
+	_personalEnemies = 
+	_deadAlly = 
+	_money = 1
+	_gameDescription = "\x041b\x0435\x0441\x043d\x043e\x0439 \x043e\x043b\x0435\x043d\x044c"
+	_gameName = "\x041e\x043b\x0435\x043d\x044c"
+	_handwork = 99
+	position = -30.56755 79.36608 11.34744
+	name = Deer_1
+	editorLayer = "Root Layer\\Units"
+	_tasks
+	{
+		item
+		{
+			_scriptName = Idle
+		}
+	}
+	_unitTasksForSave
+	{
+	}
+	bodyParts
+	{
+		item
+		{
+			_mainHealthPercent = 1.01
+			_section = Head
+		}
+		item
+		{
+			_mainHealthPercent = 1.01
+		}
+		item
+		{
+			_mainHealthPercent = 0.51
+			_section = Leg
+		}
+		item
+		{
+			_mainHealthPercent = 0.51
+			_section = Leg
+		}
+		item
+		{
+			_mainHealthPercent = 0.51
+			_section = Leg
+		}
+		item
+		{
+			_mainHealthPercent = 0.51
+			_section = Leg
+		}
+	}
+	_questSystemAlias
+	{
+	}
+	tags
+	{
+	}
+	inventory
+	{
+		item
+		{
+			LootChance = 100
+			DataBaseID = 165
+			ItemType = AllodsMaterial
+		}
+	}
+}
+entity
+{
+	type = MapCurve
+	uin = 382
+	classPrompt = MapCurve
+	subscriptionsToDeletionEvent = 383 384 385
+	curveType = UniformCubicSpline
+	points = 382 383 384 385
+	roundedLineCurveCurvatureRadius = 1
+	owner = 382
+	time = 0
+	roundedLineCurveOverrideCurvatureRadius = -1
+	position = -25.83878 29.90396 9.281016
+	rotation = 0 0 -0.2528953 0.9674937
+	name = MapCurve_0
+	tags
+	{
+	}
+}
+entity
+{
+	type = MapCurvePoint
+	uin = 383
+	classPrompt = MapCurvePoint
+	subscriptionsToDeletionEvent = 382
+	owner = 382
+	time = 1
+	roundedLineCurveOverrideCurvatureRadius = -1
+	position = -18.31714 36.99751 9.281016
+	rotation = 0 0 -0.3945806 0.9188613
+	tags
+	{
+	}
+}
+entity
+{
+	type = MapCurvePoint
+	uin = 384
+	classPrompt = MapCurvePoint
+	subscriptionsToDeletionEvent = 382
+	owner = 382
+	time = 2
+	roundedLineCurveOverrideCurvatureRadius = -1
+	position = -24.68215 50.67048 11.41562
+	rotation = 0 0 0.7989979 0.6013338
+	tags
+	{
+	}
+}
+entity
+{
+	type = MapCurvePoint
+	uin = 385
+	classPrompt = MapCurvePoint
+	subscriptionsToDeletionEvent = 382
+	owner = 382
+	time = 3
+	roundedLineCurveOverrideCurvatureRadius = -1
+	position = -41.65389 22.71441 8.413181
+	rotation = 0 0 0.3592887 0.9332265
+	tags
+	{
+	}
+}
+entity
+{
+	type = RatCreator
+	uin = 386
+	classPrompt = MapUnitCreator
+	_faction = WildPredators
+	_intellect = BaseNPCIntellect
+	_unitLevel = 0 1
+	_isRespawn = True
+	_respawnTime = 509
+	_subscribedToUnit = True
+	position = 32.96075 46.86881 9.057072
+	name = RatCreator_0
+	editorLayer = "Root Layer\\Units"
+	_tasks
+	{
+		item
+		{
+			_scriptName = Idle
+		}
+	}
+	_questSystemAlias
+	{
+		item
+		{
+			value = 7ea7ac06-060d-4684-9c8c-4e8edf8e12ff
+		}
+	}
+	tags
+	{
+	}
+	inventory
+	{
+		item
+		{
+			LootChance = 10
+			DataBaseID = 156
+			ItemType = AllodsMaterial
+		}
+	}
+	equipment
+	{
+	}
+}
+entity
+{
+	type = RatCreator
+	uin = 387
+	classPrompt = MapUnitCreator
+	_faction = WildPredators
+	_intellect = BaseNPCIntellect
+	_unitLevel = 0 1
+	_isRespawn = True
+	_respawnTime = 509
+	_subscribedToUnit = True
+	position = 19.29243 47.48997 10.04074
+	name = RatCreator_1
+	editorLayer = "Root Layer\\Units"
+	_tasks
+	{
+		item
+		{
+			_scriptName = Idle
+		}
+	}
+	_questSystemAlias
+	{
+		item
+		{
+			value = 7ea7ac06-060d-4684-9c8c-4e8edf8e12ff
+		}
+	}
+	tags
+	{
+	}
+	inventory
+	{
+	}
+	equipment
+	{
+	}
+}
+entity
+{
+	type = RatCreator
+	uin = 388
+	classPrompt = MapUnitCreator
+	_faction = WildPredators
+	_intellect = BaseNPCIntellect
+	_unitLevel = 0 1
+	_isRespawn = True
+	_respawnTime = 509
+	_subscribedToUnit = True
+	position = 16.93043 60.56348 9.250946
+	name = RatCreator_2
+	editorLayer = "Root Layer\\Units"
+	_tasks
+	{
+		item
+		{
+			_scriptName = Idle
+		}
+	}
+	_questSystemAlias
+	{
+		item
+		{
+			value = 7ea7ac06-060d-4684-9c8c-4e8edf8e12ff
+		}
+	}
+	tags
+	{
+	}
+	inventory
+	{
+	}
+	equipment
+	{
+	}
+}
+entity
+{
+	type = RatCreator
+	uin = 389
+	classPrompt = MapUnitCreator
+	_faction = WildPredators
+	_intellect = BaseNPCIntellect
+	_unitLevel = 0 1
+	_isRespawn = True
+	_respawnTime = 509
+	_subscribedToUnit = True
+	position = 50.10212 38.90813 9.057072
+	name = RatCreator_3
+	editorLayer = "Root Layer\\Units"
+	_tasks
+	{
+		item
+		{
+			_scriptName = Idle
+		}
+	}
+	_questSystemAlias
+	{
+		item
+		{
+			value = 7ea7ac06-060d-4684-9c8c-4e8edf8e12ff
+		}
+	}
+	tags
+	{
+	}
+	inventory
+	{
+		item
+		{
+			LootChance = 10
+			DataBaseID = 156
+			ItemType = AllodsMaterial
+		}
+	}
+	equipment
+	{
+	}
+}
+entity
+{
+	type = Chest
+	uin = 390
+	classPrompt = Chest
+	_gameName = "\x0421\x0443\x043d\x0434\x0443\x043a"
+	position = 75.54662 -66.29981 10.54
+	rotation = 0 0 -0.7071068 -0.7071068
+	name = Chest_0
+	_questSystemAlias
+	{
+	}
+	tags
+	{
+	}
+	inventory
+	{
+		item
+		{
+			LootChance = 100
+			DataBaseID = 18
+			ItemType = AllodsArmor
+			_energy = 1
+			_solidity = 1
+			_itemSkills
+			{
+			}
+		}
+		item
+		{
+			Count = 5
+			LootChance = 25
+			DataBaseID = 165
+			ItemType = AllodsMaterial
+		}
+	}
+}
+entity
+{
+	type = Region
+	uin = 391
+	classPrompt = QuestRegion
+	enabled = False
+	shapeType = Box
+	filter = OnlyBodies
+	position = 28.05882 49.84216 8.951011
+	rotation = 0 0 -0.1256971 0.9920687
+	scale = 41.80988 23.61275 3.362527
+	name = Region_1
+	editorLayer = "Root Layer\\Regions"
+	checkType = Bounds
+	_questSystemAlias
+	{
+		item
+		{
+			value = 0df52083-9683-440e-8131-4f9258cfc803
+		}
+	}
+	tags
+	{
+	}
+}
+entity
+{
+	type = Human
+	uin = 392
+	classPrompt = UGameCharacter
+	_initialai = BasePlayerIntellect
+	_moveShift = 0 0 0
+	_experienceReward = 0
+	experience = 100
+	freeexp = 100
+	regenerationHealth = 0.001
+	strength = 25
+	agility = 25
+	intelligence = 25
+	_hair = 1
+	_faction = PlayerFaction
+	_isHandBroken = False
+	_boredCounter = 0
+	_soundSet = MaleSoundSet1
+	_spellPosition = 0 0 0
+	_personalEnemies = 
+	_deadAlly = 
+	_money = 1
+	_gameName = "\x0427\x0435\x043b\x043e\x0432\x0435\x043a"
+	position = 19.25826 7.598287 9.796503
+	name = Human_2
+	editorLayer = "Root Layer\\Units"
+	equipment
+	{
+		item
+		{
+			Section = Head
+			LootChance = 50
+		}
+		item
+		{
+			Section = BodyL
+			LootChance = 50
+			DataBaseID = 54
+			ItemType = AllodsArmor
+			_energy = 1
+			_solidity = 1
+			_itemSkills
+			{
+			}
+		}
+		item
+		{
+			Section = BodyH
+			LootChance = 50
+		}
+		item
+		{
+			Section = LegL
+			LootChance = 50
+			DataBaseID = 63
+			ItemType = AllodsArmor
+			_energy = 1
+			_solidity = 1
+			_itemSkills
+			{
+			}
+		}
+		item
+		{
+			Section = LegH
+			LootChance = 50
+			DataBaseID = 80
+			ItemType = AllodsArmor
+			_energy = 1
+			_solidity = 1
+			_itemSkills
+			{
+			}
+		}
+		item
+		{
+			Section = Hand
+			LootChance = 50
+		}
+		item
+		{
+			Section = Foot
+			LootChance = 50
+		}
+		item
+		{
+			Section = WHand
+			LootChance = 50
+		}
+		item
+		{
+			Section = WHand
+			LootChance = 50
+		}
+		item
+		{
+			Section = WHand
+			LootChance = 50
+		}
+		item
+		{
+			Section = WHand
+			LootChance = 50
+		}
+		item
+		{
+			Section = SpellSlot
+			LootChance = 50
+		}
+		item
+		{
+			Section = SpellSlot
+			LootChance = 50
+		}
+		item
+		{
+			Section = SpellSlot
+			LootChance = 50
+		}
+		item
+		{
+			Section = SpellSlot
+			LootChance = 50
+		}
+	}
+	LearnedSkills
+	{
+	}
+	_tasks
+	{
+	}
+	_unitTasksForSave
+	{
+	}
+	bodyParts
+	{
+		item
+		{
+			_mainHealthPercent = 1.01
+			_section = Head
+		}
+		item
+		{
+			_mainHealthPercent = 1.01
+		}
+		item
+		{
+			_mainHealthPercent = 0.34
+			_section = Hand
+		}
+		item
+		{
+			_mainHealthPercent = 0.34
+			_section = Hand
+		}
+		item
+		{
+			_mainHealthPercent = 0.67
+			_section = Leg
+		}
+		item
+		{
+			_mainHealthPercent = 0.67
+			_section = Leg
+		}
+	}
+	_questSystemAlias
+	{
+	}
+	tags
+	{
+	}
+	inventory
+	{
+		item
+		{
+			LootChance = 50
+			DataBaseID = 199
+			ItemType = AllodsWeapon
+			_energy = 1
+			_solidity = 1
+			_itemSkills
+			{
+			}
+		}
+	}
+}
+entity
+{
+	type = Boar
+	uin = 393
+	classPrompt = UCreature
+	_initialai = BaseNPCIntellect
+	_moveShift = 0 0 0
+	_experienceReward = 0
+	regenerationHealth = 0.01
+	_hair = -1
+	_faction = WildAgro
+	_isHandBroken = False
+	_boredCounter = 0
+	_soundSet = BoarSoundSet
+	_spellPosition = 0 0 0
+	_personalEnemies = 
+	_deadAlly = 
+	_money = 1
+	_gameName = "\x041a\x0430\x0431\x0430\x043d"
+	position = -31.4875 16.64434 10.08585
+	name = Boar_0
+	editorLayer = "Root Layer\\Units"
+	_tasks
+	{
+	}
+	_unitTasksForSave
+	{
+	}
+	bodyParts
+	{
+		item
+		{
+			_mainHealthPercent = 1.01
+			_section = Head
+		}
+		item
+		{
+			_mainHealthPercent = 1.01
+		}
+		item
+		{
+			_mainHealthPercent = 0.51
+			_section = Leg
+		}
+		item
+		{
+			_mainHealthPercent = 0.51
+			_section = Leg
+		}
+		item
+		{
+			_mainHealthPercent = 0.51
+			_section = Leg
+		}
+		item
+		{
+			_mainHealthPercent = 0.51
+			_section = Leg
+		}
+	}
+	_questSystemAlias
+	{
+	}
+	tags
+	{
+	}
+	inventory
+	{
+		item
+		{
+			LootChance = 100
+			DataBaseID = 165
+			ItemType = AllodsMaterial
+		}
+	}
+}
+entity
+{
+	type = Boar
+	uin = 394
+	classPrompt = UCreature
+	_initialai = BaseNPCIntellect
+	_moveShift = 0 0 0
+	_experienceReward = 0
+	regenerationHealth = 0.01
+	_hair = -1
+	_faction = WildAgro
+	_isHandBroken = False
+	_boredCounter = 0
+	_soundSet = BoarSoundSet
+	_spellPosition = 0 0 0
+	_personalEnemies = 
+	_deadAlly = 
+	_money = 1
+	_gameName = "\x041a\x0430\x0431\x0430\x043d"
+	position = -25.80735 21.77997 9.938313
+	name = Boar_1
+	editorLayer = "Root Layer\\Units"
+	_tasks
+	{
+	}
+	_unitTasksForSave
+	{
+	}
+	bodyParts
+	{
+		item
+		{
+			_mainHealthPercent = 1.01
+			_section = Head
+		}
+		item
+		{
+			_mainHealthPercent = 1.01
+		}
+		item
+		{
+			_mainHealthPercent = 0.51
+			_section = Leg
+		}
+		item
+		{
+			_mainHealthPercent = 0.51
+			_section = Leg
+		}
+		item
+		{
+			_mainHealthPercent = 0.51
+			_section = Leg
+		}
+		item
+		{
+			_mainHealthPercent = 0.51
+			_section = Leg
+		}
+	}
+	_questSystemAlias
+	{
+	}
+	tags
+	{
+	}
+	inventory
+	{
+		item
+		{
+			LootChance = 100
+			DataBaseID = 165
+			ItemType = AllodsMaterial
+		}
+	}
+}
+entity
+{
+	type = Boar
+	uin = 395
+	classPrompt = UCreature
+	_initialai = BaseNPCIntellect
+	_moveShift = 0 0 0
+	_experienceReward = 0
+	regenerationHealth = 0.01
+	_hair = -1
+	_faction = WildAgro
+	_isHandBroken = False
+	_boredCounter = 0
+	_soundSet = BoarSoundSet
+	_spellPosition = 0 0 0
+	_personalEnemies = 
+	_deadAlly = 
+	_money = 1
+	_gameName = "\x041a\x0430\x0431\x0430\x043d"
+	position = -27.86922 18.51054 10.34741
+	name = Boar_2
+	editorLayer = "Root Layer\\Units"
+	_tasks
+	{
+	}
+	_unitTasksForSave
+	{
+	}
+	bodyParts
+	{
+		item
+		{
+			_mainHealthPercent = 1.01
+			_section = Head
+		}
+		item
+		{
+			_mainHealthPercent = 1.01
+		}
+		item
+		{
+			_mainHealthPercent = 0.51
+			_section = Leg
+		}
+		item
+		{
+			_mainHealthPercent = 0.51
+			_section = Leg
+		}
+		item
+		{
+			_mainHealthPercent = 0.51
+			_section = Leg
+		}
+		item
+		{
+			_mainHealthPercent = 0.51
+			_section = Leg
+		}
+	}
+	_questSystemAlias
+	{
+	}
+	tags
+	{
+	}
+	inventory
+	{
+		item
+		{
+			LootChance = 100
+			DataBaseID = 165
+			ItemType = AllodsMaterial
+		}
+	}
+}
+entity
+{
+	type = Waymark3Ways
+	uin = 396
+	classPrompt = Dynamic
+	_gameName = "\x0414\x043e\x0440\x043e\x0436\x043d\x044b\x0439 \x0443\x043a\x0430\x0437\x0430\x0442\x0435\x043b\x044c"
+	position = 16.73502 -2.558488 9.019019
+	name = Waymark3Ways_0
+	_questSystemAlias
+	{
+		item
+		{
+			value = e0ca4d6e-e9b3-43ac-86b4-5668b3d22ae1
+		}
+	}
+	tags
+	{
+	}
+}

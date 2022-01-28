@@ -1,0 +1,585 @@
+type FemaleSoundSet1
+{
+	class = UnitSoundSet
+	creatableInMapEditor = False
+	uniqueEntityInstance = True
+	TypedSound
+	{
+		item
+		{
+			_soundType = Speech
+			UnitSound
+			{
+			}
+		}
+		item
+		{
+			_soundType = ArmHitted
+			UnitSound
+			{
+				item
+				{
+					_sound = "Sounds\\Units\\HHP\\ArmHitted\\56.ogg"
+				}
+				item
+				{
+					_sound = "Sounds\\Units\\HHP\\ArmHitted\\57.ogg"
+				}
+			}
+		}
+		item
+		{
+			_soundType = LegHitted
+			UnitSound
+			{
+				item
+				{
+					_sound = "Sounds\\Units\\HHP\\LegHitted\\58.ogg"
+				}
+				item
+				{
+					_sound = "Sounds\\Units\\HHP\\LegHitted\\59.ogg"
+				}
+			}
+		}
+		item
+		{
+			_soundType = ArmorDestroyed
+			UnitSound
+			{
+				item
+				{
+					_sound = "Sounds\\Units\\HHP\\ArmorDestroyed\\62.ogg"
+				}
+			}
+		}
+		item
+		{
+			_soundType = WeaponDestroyed
+			UnitSound
+			{
+				item
+				{
+					_sound = "Sounds\\Units\\HHP\\WeaponDestroyed\\63.ogg"
+				}
+			}
+		}
+		item
+		{
+			_soundType = AckAttack
+			UnitSound
+			{
+				item
+				{
+					_sound = "Sounds\\Units\\HHP\\AckAttack\\5.ogg"
+				}
+				item
+				{
+					_sound = "Sounds\\Units\\HHP\\AckAttack\\6.ogg"
+				}
+				item
+				{
+					_sound = "Sounds\\Units\\HHP\\AckAttack\\7.ogg"
+				}
+			}
+		}
+		item
+		{
+			_soundType = DangerAttack
+			UnitSound
+			{
+			}
+		}
+		item
+		{
+			_soundType = Move
+			UnitSound
+			{
+				item
+				{
+					_sound = "Sounds\\Units\\HHP\\Move\\1.ogg"
+				}
+				item
+				{
+					_sound = "Sounds\\Units\\HHP\\Move\\2.ogg"
+				}
+				item
+				{
+					_sound = "Sounds\\Units\\HHP\\Move\\3.ogg"
+				}
+				item
+				{
+					_sound = "Sounds\\Units\\HHP\\Move\\4.ogg"
+				}
+			}
+		}
+		item
+		{
+			_soundType = ChangeMoveDest
+			UnitSound
+			{
+				item
+				{
+					_sound = "Sounds\\Units\\HHP\\ChangeMoveDest\\26.ogg"
+				}
+				item
+				{
+					_sound = "Sounds\\Units\\HHP\\ChangeMoveDest\\27.ogg"
+				}
+			}
+		}
+		item
+		{
+			_soundType = CastSpell
+			UnitSound
+			{
+				item
+				{
+					_sound = "Sounds\\Units\\HHP\\CastSpell\\10.ogg"
+				}
+				item
+				{
+					_sound = "Sounds\\Units\\HHP\\CastSpell\\8.ogg"
+				}
+				item
+				{
+					_sound = "Sounds\\Units\\HHP\\CastSpell\\9.ogg"
+				}
+			}
+		}
+		item
+		{
+			_soundType = Kill
+			UnitSound
+			{
+				item
+				{
+					_sound = "Sounds\\Units\\HHP\\Kill\\70.ogg"
+				}
+			}
+		}
+		item
+		{
+			_soundType = Follow
+			UnitSound
+			{
+				item
+				{
+					_sound = "Sounds\\Units\\HHP\\Follow\\20.ogg"
+				}
+				item
+				{
+					_sound = "Sounds\\Units\\HHP\\Follow\\21.ogg"
+				}
+				item
+				{
+					_sound = "Sounds\\Units\\HHP\\Follow\\22.ogg"
+				}
+			}
+		}
+		item
+		{
+			_soundType = NoPath
+			UnitSound
+			{
+				item
+				{
+					_sound = "Sounds\\Units\\HHP\\NoPath\\35.ogg"
+				}
+				item
+				{
+					_sound = "Sounds\\Units\\HHP\\NoPath\\36.ogg"
+				}
+				item
+				{
+					_sound = "Sounds\\Units\\HHP\\NoPath\\37.ogg"
+				}
+				item
+				{
+					_sound = "Sounds\\Units\\HHP\\NoPath\\38.ogg"
+				}
+			}
+		}
+		item
+		{
+			_soundType = NoChangePath
+			UnitSound
+			{
+				item
+				{
+					_sound = "Sounds\\Units\\HHP\\NoChangePath\\32.ogg"
+				}
+				item
+				{
+					_sound = "Sounds\\Units\\HHP\\NoChangePath\\33.ogg"
+				}
+				item
+				{
+					_sound = "Sounds\\Units\\HHP\\NoChangePath\\34.ogg"
+				}
+			}
+		}
+		item
+		{
+			_soundType = NoCastSpell
+			UnitSound
+			{
+				item
+				{
+					_sound = "Sounds\\Units\\HHP\\NoCastSpell\\39.ogg"
+				}
+				item
+				{
+					_sound = "Sounds\\Units\\HHP\\NoCastSpell\\40.ogg"
+				}
+			}
+		}
+		item
+		{
+			_soundType = NoTarget
+			UnitSound
+			{
+				item
+				{
+					_sound = "Sounds\\Units\\HHP\\NoTarget\\44.ogg"
+				}
+				item
+				{
+					_sound = "Sounds\\Units\\HHP\\NoTarget\\45.ogg"
+				}
+				item
+				{
+					_sound = "Sounds\\Units\\HHP\\NoTarget\\46.ogg"
+				}
+			}
+		}
+		item
+		{
+			_soundType = NoRunInjured
+			UnitSound
+			{
+				item
+				{
+					_sound = "Sounds\\Units\\HHP\\NoRunInjured\\49.ogg"
+				}
+			}
+		}
+		item
+		{
+			_soundType = NoRunEnergy
+			UnitSound
+			{
+				item
+				{
+					_sound = "Sounds\\Units\\HHP\\NoRunEnergy\\53.ogg"
+				}
+				item
+				{
+					_sound = "Sounds\\Units\\HHP\\NoRunEnergy\\54.ogg"
+				}
+				item
+				{
+					_sound = "Sounds\\Units\\HHP\\NoRunEnergy\\55.ogg"
+				}
+			}
+		}
+		item
+		{
+			_soundType = NoRunOverload
+			UnitSound
+			{
+				item
+				{
+					_sound = "Sounds\\Units\\HHP\\NoRunOverload\\48.ogg"
+				}
+			}
+		}
+		item
+		{
+			_soundType = Loot
+			UnitSound
+			{
+				item
+				{
+					_sound = "Sounds\\Units\\HHP\\Loot\\11.ogg"
+				}
+				item
+				{
+					_sound = "Sounds\\Units\\HHP\\Loot\\12.ogg"
+				}
+				item
+				{
+					_sound = "Sounds\\Units\\HHP\\Loot\\13.ogg"
+				}
+			}
+		}
+		item
+		{
+			_soundType = InteractionObj
+			UnitSound
+			{
+				item
+				{
+					_sound = "Sounds\\Units\\HHP\\InteractionObj\\14.ogg"
+				}
+				item
+				{
+					_sound = "Sounds\\Units\\HHP\\InteractionObj\\15.ogg"
+				}
+				item
+				{
+					_sound = "Sounds\\Units\\HHP\\InteractionObj\\16.ogg"
+				}
+			}
+		}
+		item
+		{
+			_soundType = InteractionObjFail
+			UnitSound
+			{
+				item
+				{
+					_sound = "Sounds\\Units\\HHP\\InteractionObjFail\\43.ogg"
+				}
+			}
+		}
+		item
+		{
+			_soundType = CastFail
+			UnitSound
+			{
+			}
+		}
+		item
+		{
+			_soundType = Selected
+			UnitSound
+			{
+			}
+		}
+		item
+		{
+			_soundType = Steal
+			UnitSound
+			{
+				item
+				{
+					_sound = "Sounds\\Units\\HHP\\Steal\\17.ogg"
+				}
+				item
+				{
+					_sound = "Sounds\\Units\\HHP\\Steal\\18.ogg"
+				}
+				item
+				{
+					_sound = "Sounds\\Units\\HHP\\Steal\\19.ogg"
+				}
+			}
+		}
+		item
+		{
+			_soundType = StealFail
+			UnitSound
+			{
+				item
+				{
+					_sound = "Sounds\\Units\\HHP\\StealFail\\64.ogg"
+				}
+			}
+		}
+		item
+		{
+			_soundType = UsePotion
+			UnitSound
+			{
+				item
+				{
+					_sound = "Sounds\\Units\\HHP\\UsePotion\\23.ogg"
+				}
+				item
+				{
+					_sound = "Sounds\\Units\\HHP\\UsePotion\\24.ogg"
+				}
+				item
+				{
+					_sound = "Sounds\\Units\\HHP\\UsePotion\\25.ogg"
+				}
+			}
+		}
+		item
+		{
+			_soundType = Reserved1
+			UnitSound
+			{
+			}
+		}
+		item
+		{
+			_soundType = Reserved2
+			UnitSound
+			{
+			}
+		}
+		item
+		{
+			_soundType = Reserved3
+			UnitSound
+			{
+			}
+		}
+		item
+		{
+			_soundType = Reserved4
+			UnitSound
+			{
+			}
+		}
+		item
+		{
+			_soundType = Reserved5
+			UnitSound
+			{
+			}
+		}
+		item
+		{
+			_soundType = Reserved6
+			UnitSound
+			{
+			}
+		}
+		item
+		{
+			_soundType = Scenario
+			UnitSound
+			{
+			}
+		}
+		item
+		{
+			_soundType = ShopNo
+			UnitSound
+			{
+				item
+				{
+					_sound = "Sounds\\Units\\HHP\\ShopNo\\73.ogg"
+				}
+			}
+		}
+		item
+		{
+			_soundType = ShopYes
+			UnitSound
+			{
+				item
+				{
+					_sound = "Sounds\\Units\\HHP\\ShopYes\\72.ogg"
+				}
+			}
+		}
+		item
+		{
+			_soundType = Attack
+			_probability = 40
+			UnitSound
+			{
+				item
+				{
+					_sound = "Sounds\\Units\\HHP\\Attack\\1.ogg"
+				}
+				item
+				{
+					_sound = "Sounds\\Units\\HHP\\Attack\\2.ogg"
+				}
+				item
+				{
+					_sound = "Sounds\\Units\\HHP\\Attack\\3.ogg"
+				}
+				item
+				{
+					_sound = "Sounds\\Units\\HHP\\Attack\\4.ogg"
+				}
+			}
+		}
+		item
+		{
+			_soundType = Idle
+			UnitSound
+			{
+			}
+		}
+		item
+		{
+			_soundType = Death
+			UnitSound
+			{
+				item
+				{
+					_sound = "Sounds\\Units\\HHP\\Death\\1.ogg"
+				}
+				item
+				{
+					_sound = "Sounds\\Units\\HHP\\Death\\2.ogg"
+				}
+				item
+				{
+					_sound = "Sounds\\Units\\HHP\\Death\\3.ogg"
+				}
+				item
+				{
+					_sound = "Sounds\\Units\\HHP\\Death\\4.ogg"
+				}
+			}
+		}
+		item
+		{
+			_soundType = Hit
+			UnitSound
+			{
+				item
+				{
+					_sound = "Sounds\\Units\\HHP\\Hit\\1.ogg"
+				}
+				item
+				{
+					_sound = "Sounds\\Units\\HHP\\Hit\\2.ogg"
+				}
+				item
+				{
+					_sound = "Sounds\\Units\\HHP\\Hit\\3.ogg"
+				}
+				item
+				{
+					_sound = "Sounds\\Units\\HHP\\Hit\\4.ogg"
+				}
+			}
+		}
+		item
+		{
+			_soundType = Bored
+			UnitSound
+			{
+				item
+				{
+					_sound = "Sounds\\Units\\HHP\\Bored\\65.ogg"
+					_flags = 16335
+				}
+				item
+				{
+					_sound = "Sounds\\Units\\HHP\\Bored\\66.ogg"
+					_flags = 16335
+				}
+				item
+				{
+					_sound = "Sounds\\Units\\HHP\\Bored\\67.ogg"
+					_flags = 16335
+				}
+				item
+				{
+					_sound = "Sounds\\Units\\HHP\\Bored\\68.ogg"
+					_flags = 16335
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,9 @@
+highLevelMaterial flyerbridge00
+{
+template = ShaderBaseMaterial
+alphaRejectFunction = GreaterEqual
+diffuse1Map
+{
+texture = ".\\flyerbridge00.dds"
+}
+}

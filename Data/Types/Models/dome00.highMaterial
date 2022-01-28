@@ -1,0 +1,9 @@
+highLevelMaterial dome00
+{
+template = ShaderBaseMaterial
+alphaRejectFunction = GreaterEqual
+diffuse1Map
+{
+texture = ".\\dome00.dds"
+}
+}

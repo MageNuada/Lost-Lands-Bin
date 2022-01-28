@@ -1,0 +1,9 @@
+highLevelMaterial Obsidian
+{
+	template = ShaderBaseMaterial
+	specularColor = 0.5019608 0.5019608 0.5019608
+	diffuse1Map
+	{
+		texture = ".\\material0020.dds"
+	}
+}

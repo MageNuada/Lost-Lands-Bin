@@ -1,0 +1,8 @@
+highLevelMaterial "Enter the cave01"
+{
+	template = ShaderBaseMaterial
+	diffuse1Map
+	{
+		texture = "Types\\Vegetation\\cave01.dds"
+	}
+}

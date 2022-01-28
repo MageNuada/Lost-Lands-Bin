@@ -1,0 +1,50 @@
+type Monsters
+{
+	class = Faction
+	gamename = "\x041c\x043e\x043d\x0441\x0442\x0440\x044b"
+	gamedescr = "\x0414\x0440\x0435\x0432\x043d\x0438\x0435 \x043c\x043e\x043d\x0441\x0442\x0440\x044b"
+	creatableInMapEditor = False
+	newrelation
+	{
+		item
+		{
+			relation = Friend
+			_faction = Monsters
+		}
+		item
+		{
+			relation = Enemy
+			_faction = PlayerFaction
+		}
+		item
+		{
+			relation = Enemy
+			_faction = Kania
+		}
+		item
+		{
+			relation = Enemy
+			_faction = IngosArmy
+		}
+		item
+		{
+			relation = Enemy
+			_faction = Hadagan
+		}
+		item
+		{
+			relation = Enemy
+			_faction = GipathVillage
+		}
+		item
+		{
+			relation = Enemy
+			_faction = GipathBrigands
+		}
+		item
+		{
+			relation = Enemy
+			_faction = GoblinsFoothills
+		}
+	}
+}

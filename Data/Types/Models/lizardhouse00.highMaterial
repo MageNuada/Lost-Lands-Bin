@@ -1,0 +1,9 @@
+highLevelMaterial lizardhouse00
+{
+template = ShaderBaseMaterial
+alphaRejectFunction = GreaterEqual
+diffuse1Map
+{
+texture = ".\\lizardhouse00.dds"
+}
+}

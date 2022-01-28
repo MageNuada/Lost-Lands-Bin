@@ -1,0 +1,9 @@
+highLevelMaterial SchemeHelmet01
+{
+	template = ShaderBaseMaterial
+	doubleSided = True
+	diffuse1Map
+	{
+		texture = ".\\hl_07.0.dds"
+	}
+}

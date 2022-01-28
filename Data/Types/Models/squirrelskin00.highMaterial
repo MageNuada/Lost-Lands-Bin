@@ -1,0 +1,9 @@
+highLevelMaterial squirrelskin00
+{
+template = ShaderBaseMaterial
+alphaRejectFunction = GreaterEqual
+diffuse1Map
+{
+texture = ".\\squirrelskin00.dds"
+}
+}

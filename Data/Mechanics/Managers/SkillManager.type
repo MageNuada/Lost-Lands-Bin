@@ -1,0 +1,144 @@
+type SkillManager
+{
+	class = SkillManager
+	creatableInMapEditor = False
+	uniqueEntityInstance = True
+	skills
+	{
+		item
+		{
+			skills = Agility
+			increment = 2
+			levelAmount = 3
+			displayedname = "\x041b\x043e\x0432\x043a\x043e\x0441\x0442\x044c"
+			descriptor = Agility
+			effectdescription = "Agility increased by {0}"
+			requirements
+			{
+			}
+			special
+			{
+				item
+				{
+					value = Increase agility.
+				}
+				item
+				{
+					value = Beginner
+				}
+				item
+				{
+					value = Warrior
+				}
+				item
+				{
+					value = Master
+				}
+			}
+		}
+		item
+		{
+			skills = "Sword;Actions"
+			increment = 5
+			levelAmount = 5
+			displayedname = "\x041c\x0435\x0447"
+			descriptor = Sword
+			effectdescription = "Skill increased by {0}"
+			requirements
+			{
+				item
+				{
+					needskill = Agility
+					needlevel = 2
+				}
+			}
+			special
+			{
+				item
+				{
+					value = Increase sword skill.
+				}
+				item
+				{
+					value = Newbie
+				}
+				item
+				{
+					value = Good fighter
+				}
+				item
+				{
+					value = Master
+				}
+			}
+		}
+		item
+		{
+			skills = Strength
+			increment = 2
+			levelAmount = 2
+			displayedname = "\x0421\x0438\x043b\x0430"
+			descriptor = Strength
+			effectdescription = "Strength increased by {0}"
+			requirements
+			{
+				item
+				{
+					needskill = Agility
+					needlevel = 0
+				}
+			}
+			special
+			{
+				item
+				{
+					value = Increase strength.
+				}
+				item
+				{
+					value = Leather
+				}
+				item
+				{
+					value = Wood
+				}
+				item
+				{
+					value = Stone
+				}
+			}
+		}
+		item
+		{
+			skills = Crossbow
+			increment = 5
+			levelAmount = 4
+			expcost = 10
+			displayedname = "\x0410\x0440\x0431\x0430\x043b\x0435\x0442"
+			descriptor = Crossbow
+			effectdescription = "\x0410\x0442\x0430\x043a\x0430 \x0438\x0437 \x0430\x0440\x0431\x0430\x043b\x0435\x0442\x0430 \x043f\x043e\x0432\x044b\x0448\x0435\x043d\x0430 \x043d\x0430 {0}"
+			requirements
+			{
+			}
+			special
+			{
+				item
+				{
+					value = "\x041d\x0430\x0432\x044b\x043a \x0432\x043b\x0430\x0434\x0435\x043d\x0438\x044f \x0430\x0440\x0431\x0430\x043b\x0435\x0442\x043e\x043c."
+				}
+				item
+				{
+					value = "\x041d\x043e\x0432\x0438\x0447\x043e\x043a"
+				}
+				item
+				{
+					value = "\x041f\x0440\x043e\x0434\x0432\x0438\x043d\x0443\x0442\x044b\x0439"
+				}
+				item
+				{
+					value = "\x041c\x0430\x0441\x0442\x0435\x0440"
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,9 @@
+highLevelMaterial orcbridge00
+{
+template = ShaderBaseMaterial
+alphaRejectFunction = GreaterEqual
+diffuse1Map
+{
+texture = ".\\orcbridge00.dds"
+}
+}

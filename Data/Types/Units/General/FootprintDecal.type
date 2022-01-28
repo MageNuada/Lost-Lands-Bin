@@ -1,0 +1,114 @@
+type FootprintDecal
+{
+	class = FootPrintCreator
+	size = 0.3
+	lifeTime = 10
+	lifeTimeInt = 299
+	depthRenderOffset = 0.025
+	fadeTime = 7.5
+	fadeTimeInt = 224
+	applyToMapObjects = True
+	rayCheckDistance = 0.6
+	creatableInMapEditor = False
+	_defaultStepsSounds
+	{
+		physicsMaterialName = Default
+		stepsSounds
+		{
+			item
+			{
+				_sound = "Sounds\\General\\steps\\Default\\1.ogg"
+			}
+			item
+			{
+				_sound = "Sounds\\General\\steps\\Default\\2.ogg"
+			}
+			item
+			{
+				_sound = "Sounds\\General\\steps\\Default\\3.ogg"
+			}
+			item
+			{
+				_sound = "Sounds\\General\\steps\\Default\\4.ogg"
+			}
+			item
+			{
+				_sound = "Sounds\\General\\steps\\Default\\5.ogg"
+			}
+			item
+			{
+				_sound = "Sounds\\General\\steps\\Default\\6.ogg"
+			}
+		}
+	}
+	racesIndexes
+	{
+		item
+		{
+			_raceName = Human
+			_size = 0.3
+		}
+		item
+		{
+			_raceName = Wolf
+			_index = 20
+			_size = 0.3
+		}
+		item
+		{
+			_raceName = Deer
+			_index = 24
+			_size = 0.3
+		}
+		item
+		{
+			_raceName = Boar
+			_index = 18
+			_size = 0.3
+		}
+		item
+		{
+			_raceName = Hare
+			_index = 22
+			_size = 0.2
+		}
+		item
+		{
+			_raceName = GoblinMelee
+			_index = 7
+			_size = 0.3
+		}
+	}
+	materials
+	{
+		item
+		{
+			materialName = FootPrints
+		}
+		item
+		{
+			materialName = FootPrints1
+		}
+		item
+		{
+			materialName = FootPrints2
+		}
+		item
+		{
+			materialName = FootPrints3
+		}
+		item
+		{
+			materialName = FootPrints4
+		}
+	}
+	attachedObjects
+	{
+		mesh
+		{
+			meshName = "Base\\Simple Models\\Box.mesh"
+			forceMaterial = FootPrints
+			onlyForEditor = True
+		}
+	}
+}

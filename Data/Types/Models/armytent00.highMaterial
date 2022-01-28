@@ -1,0 +1,9 @@
+highLevelMaterial armytent00
+{
+template = ShaderBaseMaterial
+alphaRejectFunction = GreaterEqual
+diffuse1Map
+{
+texture = ".\\armytent00.dds"
+}
+}

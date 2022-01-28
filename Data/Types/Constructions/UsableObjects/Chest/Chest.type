@@ -1,0 +1,15 @@
+type Chest
+{
+	class = Chest
+	_activationSound = "Sounds\\General\\Tools\\BoxW.ogg"
+	cname = "\x0421\x0443\x043d\x0434\x0443\x043a"
+	attachedObjects
+	{
+		mesh
+		{
+			meshName = ".\\stst43.mesh"
+			collision = True
+			scale = 0.5988024 0.4431319 0.5988024
+		}
+	}
+}

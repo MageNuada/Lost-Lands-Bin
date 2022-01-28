@@ -1,0 +1,6 @@
+type Player
+{
+	class = Player
+	creatableInMapEditor = False
+	networkType = ClientOnly
+}

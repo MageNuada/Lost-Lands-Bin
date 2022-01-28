@@ -1,0 +1,8 @@
+highLevelMaterial Diamond
+{
+	template = ShaderBaseMaterial
+	diffuse1Map
+	{
+		texture = ".\\material0027.dds"
+	}
+}

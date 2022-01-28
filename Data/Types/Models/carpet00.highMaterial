@@ -1,0 +1,9 @@
+highLevelMaterial carpet00
+{
+template = ShaderBaseMaterial
+alphaRejectFunction = GreaterEqual
+diffuse1Map
+{
+texture = ".\\carpet00.dds"
+}
+}

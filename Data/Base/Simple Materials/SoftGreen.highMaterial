@@ -1,0 +1,12 @@
+highLevelMaterial SoftGreen
+{
+	template = ShaderBaseMaterial
+	blending = AlphaBlend
+	lighting = False
+	softParticles = True
+	softParticlesFadingLength = 0.2
+	diffuseColor = 0 1 0 0.5882353
+	diffuseScaleDynamic = True
+	emissionColor = 0 1 0
+	emissionPower = 0
+}

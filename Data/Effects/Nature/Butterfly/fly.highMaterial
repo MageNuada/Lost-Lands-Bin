@@ -1,0 +1,22 @@
+highLevelMaterial fly
+{
+	template = ShaderBaseMaterial
+	blending = AlphaBlend
+	lighting = False
+	useNormals = False
+	receiveShadows = False
+	diffuse1Map
+	{
+		texture = ".\\fly.png"
+		clamp = True
+		transform
+		{
+			scale = 0.5 2
+			animation
+			{
+				scrollSpeed = 10 0
+				scrollRound = 0.5 0
+			}
+		}
+	}
+}

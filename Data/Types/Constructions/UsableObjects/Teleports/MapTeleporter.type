@@ -1,0 +1,35 @@
+type MapTeleporter
+{
+	class = MapTeleporter
+	cdescription = "\x041f\x0440\x043e\x0445\x043e\x0434 \x0432 \x0434\x0440\x0443\x0433\x0443\x044e \x043c\x0435\x0441\x0442\x043d\x043e\x0441\x0442\x044c"
+	cname = "\x041f\x0440\x043e\x0445\x043e\x0434"
+	radius = 4
+	height = 2
+	physicsModel = ".\\MapTeleport.physics"
+	attachedObjects
+	{
+		mapObject
+		{
+			type = Region
+			alias = region
+			scale = 8 8 2
+		}
+		particle
+		{
+			particleName = Teleport_Spot
+		}
+		particle
+		{
+			particleName = t_s_1
+		}
+		light
+		{
+			diffuseColor = 1 0.937255 0.6588235
+			diffusePower = 0.7
+			specularColor = 0.7568628 0.9490197 1
+			attenuationNear = 1
+			attenuationFar = 4
+			position = 0 0 0.643446
+		}
+	}
+}

@@ -1,0 +1,7 @@
+type TextOnScreenManager
+{
+	class = TextOnScreenManager
+	creatableInMapEditor = False
+	uniqueEntityInstance = True
+	networkType = ClientOnly
+}

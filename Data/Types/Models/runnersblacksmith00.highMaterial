@@ -1,0 +1,9 @@
+highLevelMaterial runnersblacksmith00
+{
+template = ShaderBaseMaterial
+alphaRejectFunction = GreaterEqual
+diffuse1Map
+{
+texture = ".\\runnersblacksmith00.dds"
+}
+}

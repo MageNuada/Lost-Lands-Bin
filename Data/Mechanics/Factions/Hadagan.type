@@ -1,0 +1,49 @@
+type Hadagan
+{
+	class = Faction
+	gamename = "\x0425\x0430\x0434\x0430\x0433\x0430\x043d"
+	gamedescr = "\x0425\x0430\x0434\x0430\x0433\x0430\x043d\x0441\x043a\x0430\x044f \x0418\x043c\x043f\x0435\x0440\x0438\x044f"
+	creatableInMapEditor = False
+	newrelation
+	{
+		item
+		{
+			relation = Friend
+			_faction = Hadagan
+		}
+		item
+		{
+			relation = Enemy
+			_faction = Kania
+		}
+		item
+		{
+			relation = Enemy
+			_faction = IngosArmy
+		}
+		item
+		{
+			relation = Enemy
+			_faction = PlayerFaction
+		}
+		item
+		{
+			relation = Enemy
+			_faction = WildAgro
+		}
+		item
+		{
+			_faction = GipathVillage
+		}
+		item
+		{
+			relation = Enemy
+			_faction = WildPredators
+		}
+		item
+		{
+			relation = Enemy
+			_faction = Monsters
+		}
+	}
+}

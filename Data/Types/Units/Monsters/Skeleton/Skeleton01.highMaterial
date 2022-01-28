@@ -1,0 +1,10 @@
+highLevelMaterial Skeleton01
+{
+	template = ShaderBaseMaterial
+	doubleSided = True
+	alphaRejectFunction = GreaterEqual
+	diffuse1Map
+	{
+		texture = ".\\Skeleton01.dds"
+	}
+}

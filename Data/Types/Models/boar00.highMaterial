@@ -1,0 +1,9 @@
+highLevelMaterial boar00
+{
+template = ShaderBaseMaterial
+alphaRejectFunction = GreaterEqual
+diffuse1Map
+{
+texture = ".\\boar00.dds"
+}
+}

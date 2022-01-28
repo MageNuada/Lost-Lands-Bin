@@ -1,0 +1,9 @@
+highLevelMaterial Boots01Bronze
+{
+	template = ShaderBaseMaterial
+	alphaRejectFunction = GreaterEqual
+	diffuse1Map
+	{
+		texture = ".\\unhufebt_14.br.0.dds"
+	}
+}

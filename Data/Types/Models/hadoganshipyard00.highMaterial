@@ -1,0 +1,9 @@
+highLevelMaterial hadoganshipyard00
+{
+template = ShaderBaseMaterial
+alphaRejectFunction = GreaterEqual
+diffuse1Map
+{
+texture = ".\\hadoganshipyard00.dds"
+}
+}

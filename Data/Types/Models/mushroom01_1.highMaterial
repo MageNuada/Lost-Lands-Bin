@@ -1,0 +1,9 @@
+highLevelMaterial mushroom01_1
+{
+template = ShaderBaseMaterial
+alphaRejectFunction = GreaterEqual
+diffuse1Map
+{
+texture = ".\\mushroom01_1.dds"
+}
+}

@@ -1,0 +1,32 @@
+type Flowers
+{
+	class = DecorativeObject
+	batchSize = 25
+	distanceBetweenObjects = 0.3
+	visibilityDistance = 120
+	storeObjectsPositionsInVertices = True
+	scaleRange = 0.7 1.2
+	items
+	{
+		item
+		{
+			meshName = ".\\flower_red.mesh"
+		}
+		item
+		{
+			meshName = ".\\flower_blue.mesh"
+		}
+		item
+		{
+			meshName = ".\\flower_pink.mesh"
+		}
+		item
+		{
+			meshName = ".\\flower_white.mesh"
+		}
+		item
+		{
+			meshName = ".\\flower_yellow.mesh"
+		}
+	}
+}

@@ -1,0 +1,17 @@
+type Bush
+{
+	class = DecorativeObject
+	distanceBetweenObjects = 1
+	visibilityDistance = 100
+	storeObjectsPositionsInVertices = True
+	castShadows = True
+	scaleRange = 0.4 0.6
+	destroyBatchOnDistance = True
+	items
+	{
+		item
+		{
+			meshName = ".\\General\\Bulrush01.mesh"
+		}
+	}
+}

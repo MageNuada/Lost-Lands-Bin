@@ -1,0 +1,9 @@
+highLevelMaterial dgunistnote00
+{
+template = ShaderBaseMaterial
+alphaRejectFunction = GreaterEqual
+diffuse1Map
+{
+texture = ".\\dgunistnote00.dds"
+}
+}

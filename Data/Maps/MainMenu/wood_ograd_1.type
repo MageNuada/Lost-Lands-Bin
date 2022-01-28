@@ -1,0 +1,4 @@
+type wood_ograd_1
+{
+	class = MapObject
+}

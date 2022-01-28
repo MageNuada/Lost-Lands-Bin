@@ -1,0 +1,11 @@
+highLevelMaterial Invisible
+{
+	template = ShaderBaseMaterial
+	lighting = False
+	ambientLighting = False
+	receiveShadows = False
+	alphaRejectFunction = AlwaysFail
+	allowFog = False
+	depthWrite = False
+	depthTest = False
+}

@@ -1,0 +1,9 @@
+highLevelMaterial cart00
+{
+template = ShaderBaseMaterial
+alphaRejectFunction = GreaterEqual
+diffuse1Map
+{
+texture = ".\\cart00.dds"
+}
+}

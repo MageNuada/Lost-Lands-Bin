@@ -1,0 +1,9 @@
+highLevelMaterial SchemePants01
+{
+	template = ShaderBaseMaterial
+	alphaRejectFunction = GreaterEqual
+	diffuse1Map
+	{
+		texture = ".\\pt_00.0.dds"
+	}
+}

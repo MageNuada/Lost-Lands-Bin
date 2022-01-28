@@ -1,0 +1,9 @@
+highLevelMaterial headquaters00
+{
+template = ShaderBaseMaterial
+alphaRejectFunction = GreaterEqual
+diffuse1Map
+{
+texture = ".\\headquaters00.dds"
+}
+}

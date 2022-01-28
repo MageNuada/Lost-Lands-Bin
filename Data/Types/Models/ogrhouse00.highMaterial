@@ -1,0 +1,9 @@
+highLevelMaterial ogrhouse00
+{
+template = ShaderBaseMaterial
+alphaRejectFunction = GreaterEqual
+diffuse1Map
+{
+texture = ".\\ogrhouse00.dds"
+}
+}

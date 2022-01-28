@@ -1,0 +1,8 @@
+highLevelMaterial "Thick Leather"
+{
+	template = ShaderBaseMaterial
+	diffuse1Map
+	{
+		texture = ".\\material0000.dds"
+	}
+}

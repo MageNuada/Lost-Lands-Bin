@@ -1,0 +1,9 @@
+highLevelMaterial deadwarrior00
+{
+template = ShaderBaseMaterial
+alphaRejectFunction = GreaterEqual
+diffuse1Map
+{
+texture = ".\\deadwarrior00.dds"
+}
+}

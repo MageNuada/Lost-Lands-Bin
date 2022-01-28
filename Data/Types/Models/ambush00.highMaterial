@@ -1,0 +1,9 @@
+highLevelMaterial ambush00
+{
+template = ShaderBaseMaterial
+alphaRejectFunction = GreaterEqual
+diffuse1Map
+{
+texture = ".\\ambush00.dds"
+}
+}

@@ -1,0 +1,10 @@
+highLevelMaterial SchemePlate01
+{
+	template = ShaderBaseMaterial
+	doubleSided = True
+	alphaRejectFunction = GreaterEqual
+	diffuse1Map
+	{
+		texture = ".\\pl_04.0.dds"
+	}
+}

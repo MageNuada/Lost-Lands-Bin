@@ -1,0 +1,192 @@
+type Hare
+{
+	class = UCreature
+	_initialAI = BaseFleeIntellect
+	_viewDistance = 8.5
+	_walkVelocity = 2.846 0.4
+	_runVelocity = 2.846 0.4
+	_footPrintDecal = FootprintDecal
+	_bloodDecal = DeathBlood
+	_soundSetMale = HareSoundSet
+	_faction = WildPeaceful
+	_regenerationHealth = 0.005
+	cdescription = "\x0417\x0430\x044f\x0446"
+	cname = "\x0417\x0430\x044f\x0446"
+	radius = 0.25
+	height = 0.5
+	_bodyParts
+	{
+		item
+		{
+			_mainHealthPercent = 1.01
+			_section = Head
+		}
+		item
+		{
+			_mainHealthPercent = 1.01
+		}
+		item
+		{
+			_mainHealthPercent = 0.51
+			_section = Leg
+		}
+		item
+		{
+			_mainHealthPercent = 0.51
+			_section = Leg
+		}
+		item
+		{
+			_mainHealthPercent = 0.51
+			_section = Leg
+		}
+		item
+		{
+			_mainHealthPercent = 0.51
+			_section = Leg
+		}
+	}
+	_unitAppearance
+	{
+		item
+		{
+			_gender = Male
+			_relativePath = ".\\"
+			_additionalMeshes
+			{
+			}
+			_textures
+			{
+				item
+				{
+					value = HareBrown.dds
+				}
+				item
+				{
+					value = HareGrey.dds
+				}
+			}
+		}
+		item
+		{
+			_gender = Female
+			_relativePath = "Types\\Units\\WildAnimals\\"
+			_additionalMeshes
+			{
+			}
+			_textures
+			{
+			}
+		}
+	}
+	attachedObjects
+	{
+		mesh
+		{
+			meshName = ".\\Hare.mesh"
+			alias = Body
+			position = -0.1851813 0 -0.25
+			rotation = 0 0 -0.7071068 0.7071068
+			boneSlot LeftHand
+			{
+				bone = lh3
+			}
+			boneSlot RightHand
+			{
+				bone = rh3
+			}
+			boneSlot LeftLeg
+			{
+				bone = ll4
+			}
+			boneSlot RightLeg
+			{
+				bone = rl4
+			}
+			boneSlot BD
+			{
+				bone = bd
+			}
+		}
+		helper
+		{
+			alias = LeftFoot
+			boneSlot = LeftHand
+			position = 0.01994597 -0.03999998 -0.03666326
+			scale = 0.2 0.2 0.2
+		}
+		helper
+		{
+			alias = LeftFoot
+			boneSlot = LeftLeg
+			position = 0.009471875 -0.04000001 -0.02866322
+			scale = 0.2 0.2 0.2
+		}
+		helper
+		{
+			alias = RightFoot
+			boneSlot = RightHand
+			position = -0.01552812 -0.04000005 -0.03666326
+			scale = 0.2 0.2 0.2
+		}
+		helper
+		{
+			alias = RightFoot
+			boneSlot = RightLeg
+			position = -0.0389489 -0.04000005 -0.02866322
+			scale = 0.2 0.2 0.2
+		}
+	}
+	animationTypesNamesDict
+	{
+		MoveWalk
+		{
+			names = "Walk01;"
+		}
+		MoveRun
+		{
+			names = "Run01;"
+		}
+		IdleRest
+		{
+			names = "Idle01;"
+		}
+		IdleStand
+		{
+			names = "Idle01;"
+		}
+		IdleAgressive
+		{
+			names = "Idle01;"
+		}
+		HitStand
+		{
+			names = "Hit01;"
+		}
+		HitRest
+		{
+			names = "Hit01;"
+		}
+		Death
+		{
+			names = "Death01;"
+		}
+		CrossStandRest
+		{
+			names = "Idle01;"
+		}
+		CrossRestStand
+		{
+			names = "Idle01;"
+		}
+	}
+	inventory
+	{
+		item
+		{
+			LootChance = 100
+			DataBaseID = 165
+			ItemType = AllodsMaterial
+		}
+	}
+}

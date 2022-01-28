@@ -1,0 +1,9 @@
+highLevelMaterial ShroudYellow
+{
+	template = ShaderBaseMaterial
+	blending = AlphaBlend
+	useNormals = False
+	receiveShadows = False
+	diffuseColor = 1 1 0 0.1176471
+	diffusePower = 2
+}

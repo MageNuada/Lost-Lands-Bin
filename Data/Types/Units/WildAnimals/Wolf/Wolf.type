@@ -1,0 +1,202 @@
+type Wolf
+{
+	class = UCreature
+	_viewDistance = 8.5
+	_walkVelocity = 0.9 1
+	_runVelocity = 2.97 0.3
+	_footPrintDecal = FootprintDecal
+	_bloodDecal = DeathBlood
+	_faction = WildPredators
+	_initialAI = BaseNPCIntellect
+	_regenerationHealth = 0.001
+	cdescription = "\x041b\x0435\x0441\x043d\x043e\x0439 \x0432\x043e\x043b\x043a"
+	cname = "\x0412\x043e\x043b\x043a"
+	radius = 0.45
+	height = 0.9
+	_bodyParts
+	{
+		item
+		{
+			_section = Head
+			_lifePoints = 1
+			_sarmor = 0
+			_mainHealthPercent = 1.01
+		}
+		item
+		{
+			_section = Body
+			_lifePoints = 1
+			_sarmor = 0
+			_mainHealthPercent = 1.01
+		}
+		item
+		{
+			_section = Leg
+			_lifePoints = 1
+			_sarmor = 0
+			_mainHealthPercent = 0.51
+		}
+		item
+		{
+			_section = Leg
+			_lifePoints = 1
+			_sarmor = 0
+			_mainHealthPercent = 0.51
+		}
+		item
+		{
+			_section = Leg
+			_lifePoints = 1
+			_sarmor = 0
+			_mainHealthPercent = 0.51
+		}
+		item
+		{
+			_section = Leg
+			_lifePoints = 1
+			_sarmor = 0
+			_mainHealthPercent = 0.51
+		}
+	}
+	_unitAppearance
+	{
+		item
+		{
+			_gender = Male
+			_additionalMeshes
+			{
+			}
+			_textures
+			{
+			}
+		}
+		item
+		{
+			_gender = Female
+			_additionalMeshes
+			{
+			}
+			_textures
+			{
+			}
+		}
+	}
+	attachedObjects
+	{
+		mesh
+		{
+			meshName = ".\\Wolf.mesh"
+			castDynamicShadows = True
+			alias = Body
+			position = -0.4309726 0 -0.4480304
+			rotation = 0 0 -0.7071068 0.7071068
+			boneSlot LeftHand
+			{
+				bone = lh3
+			}
+			boneSlot RightHand
+			{
+				bone = rh3
+			}
+			boneSlot LeftLeg
+			{
+				bone = ll4
+			}
+			boneSlot RightLeg
+			{
+				bone = rl4
+			}
+			boneSlot HP
+			{
+				bone = hp
+			}
+			boneSlot BD
+			{
+				bone = bd
+			}
+		}
+		helper
+		{
+			alias = LeftFoot
+			boneSlot = LeftHand
+			position = 0.08 -0.04 -0.07
+			scale = 0.2 0.2 0.2
+		}
+		helper
+		{
+			alias = LeftFoot
+			boneSlot = LeftLeg
+			position = 0.08 -0.04 -0.062
+			scale = 0.2 0.2 0.2
+		}
+		helper
+		{
+			alias = RightFoot
+			boneSlot = RightHand
+			position = -0.08 -0.04 -0.07
+			scale = 0.2 0.2 0.2
+		}
+		helper
+		{
+			alias = RightFoot
+			boneSlot = RightLeg
+			position = -0.08 -0.04 -0.062
+			scale = 0.2 0.2 0.2
+		}
+	}
+	animationTypesNamesDict
+	{
+		MoveWalk
+		{
+			names = "cwalk;"
+		}
+		MoveRun
+		{
+			names = "crun;"
+		}
+		IdleRest
+		{
+			names = "crest;"
+		}
+		IdleStand
+		{
+			names = "cidle;"
+		}
+		IdleAgressive
+		{
+			names = "cidle;"
+		}
+		HitStand
+		{
+			names = "uhit01;"
+		}
+		HitRest
+		{
+			names = "uhit02;"
+		}
+		Death
+		{
+			names = "udeath01;cdeath02;udeath03;"
+		}
+		AttackSlash
+		{
+			names = "uattack01;uattack02;"
+		}
+		AttackPierce
+		{
+			names = "uattack01;uattack02;"
+		}
+		AttackSlashAndPierce
+		{
+			names = "uattack01;uattack02;"
+		}
+		CrossStandRest
+		{
+			names = "ucross01;"
+		}
+		CrossRestStand
+		{
+			names = "ucross02;"
+		}
+	}
+}

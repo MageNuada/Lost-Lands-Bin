@@ -1,0 +1,59 @@
+type WildPredators
+{
+	class = Faction
+	gamename = "\x0414\x0438\x043a\x0438\x0435 \x0445\x0438\x0449\x043d\x0438\x043a\x0438"
+	gamedescr = "\x041f\x0440\x0438\x0440\x043e\x0434\x043d\x044b\x0435 \x0445\x0438\x0449\x043d\x0438\x043a\x0438"
+	creatableInMapEditor = False
+	newrelation
+	{
+		item
+		{
+			relation = Friend
+			_faction = WildPredators
+		}
+		item
+		{
+			relation = Enemy
+			_faction = Hadagan
+		}
+		item
+		{
+			relation = Enemy
+			_faction = IngosArmy
+		}
+		item
+		{
+			relation = Enemy
+			_faction = Kania
+		}
+		item
+		{
+			relation = Enemy
+			_faction = PlayerFaction
+		}
+		item
+		{
+			relation = Enemy
+			_faction = GipathVillage
+		}
+		item
+		{
+			relation = Enemy
+			_faction = OrcsFootHills
+		}
+		item
+		{
+			relation = Enemy
+			_faction = GipathBrigands
+		}
+		item
+		{
+			_faction = WildAgro
+		}
+		item
+		{
+			relation = Enemy
+			_faction = WildPeaceful
+		}
+	}
+}

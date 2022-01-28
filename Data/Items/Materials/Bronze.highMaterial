@@ -1,0 +1,8 @@
+highLevelMaterial Bronze
+{
+	template = ShaderBaseMaterial
+	diffuse1Map
+	{
+		texture = ".\\material0021.dds"
+	}
+}

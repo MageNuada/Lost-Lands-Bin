@@ -1,0 +1,9 @@
+highLevelMaterial herosit00
+{
+template = ShaderBaseMaterial
+alphaRejectFunction = GreaterEqual
+diffuse1Map
+{
+texture = ".\\herosit00.dds"
+}
+}

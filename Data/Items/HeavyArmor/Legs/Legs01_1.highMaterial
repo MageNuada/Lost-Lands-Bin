@@ -1,0 +1,10 @@
+highLevelMaterial Legs01_1
+{
+	template = ShaderBaseMaterial
+	doubleSided = True
+	alphaRejectFunction = GreaterEqual
+	diffuse1Map
+	{
+		texture = ".\\Legs01_1.dds"
+	}
+}

@@ -1,0 +1,20 @@
+highLevelMaterial UnHuMa
+{
+	template = ShaderBaseMaterial
+	diffuse1Map
+	{
+		texture = ".\\Skins\\unhumaskin_00.dds"
+	}
+	diffuse2Map
+	{
+		blending = AlphaBlend
+	}
+	diffuse3Map
+	{
+		blending = AlphaBlend
+	}
+	diffuse4Map
+	{
+		blending = AlphaBlend
+	}
+}

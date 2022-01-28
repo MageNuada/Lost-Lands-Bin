@@ -1,0 +1,9 @@
+highLevelMaterial jug03
+{
+template = ShaderBaseMaterial
+alphaRejectFunction = GreaterEqual
+diffuse1Map
+{
+texture = ".\\jug03.dds"
+}
+}

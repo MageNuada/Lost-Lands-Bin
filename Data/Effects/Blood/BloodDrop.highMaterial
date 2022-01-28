@@ -1,0 +1,18 @@
+highLevelMaterial BloodDrop
+{
+	template = ShaderBaseMaterial
+	blending = AlphaBlend
+	lighting = False
+	softParticles = True
+	softParticlesFadingLength = 0.5
+	depthOffset = -0.4
+	diffuse1Map
+	{
+		texture = "Effects\\Textures\\rainsnow.dds"
+		clamp = True
+		transform
+		{
+			scale = 0.25 0.25
+		}
+	}
+}

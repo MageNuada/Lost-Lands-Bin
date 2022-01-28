@@ -1,0 +1,30 @@
+highLevelMaterial t_s_2
+{
+	template = ShaderBaseMaterial
+	blending = AlphaAdd
+	diffuseColor = 1 0.9490197 0.6666667 0.2941177
+	diffuse1Map
+	{
+		texture = "Effects\\DefaultFlare\\DefaultFlare.jpg"
+		clamp = True
+		transform
+		{
+			animation
+			{
+				rotateSpeed = -0.03
+			}
+		}
+	}
+	diffuse2Map
+	{
+		texture = "Effects\\DefaultFlare\\DefaultFlare.jpg"
+		clamp = True
+		transform
+		{
+			animation
+			{
+				rotateSpeed = 0.04
+			}
+		}
+	}
+}

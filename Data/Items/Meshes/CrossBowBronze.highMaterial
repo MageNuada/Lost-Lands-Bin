@@ -1,0 +1,9 @@
+highLevelMaterial CrossBowBronze
+{
+	template = ShaderBaseMaterial
+	alphaRejectFunction = GreaterEqual
+	diffuse1Map
+	{
+		texture = "./unhufecb_01.br.0.dds"
+	}
+}

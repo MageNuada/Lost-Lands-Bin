@@ -1,0 +1,9 @@
+highLevelMaterial Boots01
+{
+	template = ShaderBaseMaterial
+	alphaRejectFunction = GreaterEqual
+	diffuse1Map
+	{
+		texture = ".\\bt_14.0.dds"
+	}
+}

@@ -1,0 +1,9 @@
+highLevelMaterial dininghall00
+{
+template = ShaderBaseMaterial
+alphaRejectFunction = GreaterEqual
+diffuse1Map
+{
+texture = ".\\dininghall00.dds"
+}
+}

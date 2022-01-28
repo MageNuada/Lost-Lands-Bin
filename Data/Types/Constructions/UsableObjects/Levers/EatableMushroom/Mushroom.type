@@ -1,0 +1,32 @@
+type Mushroom
+{
+	class = Lever
+	_removeFromNavigation = True
+	cdescription = "\x041c\x043e\x0436\x0435\x0442, \x043d\x0435 \x0441\x0442\x043e\x0438\x0442 \x0435\x0433\x043e \x043a\x0443\x0448\x0430\x0442\x044c?"
+	cname = "\x0421\x0442\x0440\x0430\x043d\x043d\x044b\x0439 \x0433\x0440\x0438\x0431"
+	radius = 0.3
+	height = 0.5
+	_changingObjects
+	{
+		item
+		{
+			_translation = 0 0 0.15
+			_scale = 0.1 0.1 0.1
+			_aliasName = m
+			_rotationAngle
+			{
+			}
+		}
+	}
+	attachedObjects
+	{
+		mesh
+		{
+			meshName = "Types\\Vegetation\\Mushrooms\\Mushroom02.mesh"
+			castDynamicShadows = True
+			forceMaterial = Mushroom012
+			alias = m
+			position = 0 0 -0.2745469
+		}
+	}
+}

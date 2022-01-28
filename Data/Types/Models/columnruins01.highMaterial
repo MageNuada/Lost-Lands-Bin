@@ -1,0 +1,9 @@
+highLevelMaterial columnruins01
+{
+template = ShaderBaseMaterial
+alphaRejectFunction = GreaterEqual
+diffuse1Map
+{
+texture = ".\\columnruins01.dds"
+}
+}

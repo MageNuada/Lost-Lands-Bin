@@ -1,0 +1,28 @@
+sourceFile = "Types\\DecorativeObjects\\grass_green_2\\grass2.dae"
+materialsNamePrefix = grass_
+objects
+{
+	mesh
+	{
+		name = grass2
+		pivotPosition = -0.1264 0.4822005 6.044836
+		sources
+		{
+			item
+			{
+				name = Box01-geometry
+				rotation = 0.7071068 0 0 0.7071068
+			}
+			item
+			{
+				name = Duplicate02-geometry
+				rotation = 0.7071068 0 0 0.7071068
+			}
+			item
+			{
+				name = Duplicate03-geometry
+				rotation = 0.7071068 0 0 0.7071068
+			}
+		}
+	}
+}

@@ -1,0 +1,9 @@
+highLevelMaterial "Material #101_00000000.dds"
+{
+	template = ShaderBaseMaterial
+	doubleSided = True
+	diffuse1Map
+	{
+		texture = "Types\\Constructions\\Bridge01\\Bridge01.dds"
+	}
+}

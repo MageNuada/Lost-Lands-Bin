@@ -1,0 +1,9 @@
+highLevelMaterial teleportsmall00
+{
+template = ShaderBaseMaterial
+alphaRejectFunction = GreaterEqual
+diffuse1Map
+{
+texture = ".\\teleportsmall00.dds"
+}
+}

@@ -1,0 +1,9 @@
+highLevelMaterial driadprison00
+{
+template = ShaderBaseMaterial
+alphaRejectFunction = GreaterEqual
+diffuse1Map
+{
+texture = ".\\driadprison00.dds"
+}
+}

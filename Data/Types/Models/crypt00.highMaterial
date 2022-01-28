@@ -1,0 +1,9 @@
+highLevelMaterial crypt00
+{
+template = ShaderBaseMaterial
+alphaRejectFunction = GreaterEqual
+diffuse1Map
+{
+texture = ".\\crypt00.dds"
+}
+}

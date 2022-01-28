@@ -1,0 +1,11 @@
+highLevelMaterial grass_Material01
+{
+	template = ShaderBaseMaterial
+	doubleSided = True
+	alphaRejectFunction = GreaterEqual
+	diffuseColor = 0.8274511 1 0.05882353
+	diffuse1Map
+	{
+		texture = ".\\trava65.png"
+	}
+}

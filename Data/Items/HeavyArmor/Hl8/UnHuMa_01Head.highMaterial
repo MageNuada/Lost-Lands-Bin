@@ -1,0 +1,10 @@
+highLevelMaterial UnHuMa_01Head
+{
+	template = ShaderBaseMaterial
+	doubleSided = True
+	alphaRejectFunction = GreaterEqual
+	diffuse1Map
+	{
+		texture = ".\\unhufehl_01.ir.0.dds"
+	}
+}

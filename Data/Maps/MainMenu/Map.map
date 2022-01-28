@@ -1,0 +1,4465 @@
+type = GameMap
+uin = 3
+classPrompt = GameMap
+gameMusic = "Sounds\\Music\\Game.ogg"
+resetYCoordinateForDynamicBodies = False
+destroyObjectsBelowHeight = -500
+_baseAllod = Gipath
+windDirection = 0
+windSpeed = 0.3
+ambientIntensity = 0.4
+ambientSkyColor = 0.5058824 0.5294118 0.4901961
+ambientEquatorColor = 0.5058824 0.5294118 0.4901961
+ambientGroundColor = 0.5058824 0.5294118 0.4901961
+editorCameraPosition = 5.435394 -5.160172 13.53731
+editorCameraDirection = 3.020686 -0.3193337
+shadowColor = 1 1 1
+shadowPSSMSplitFactors = 0.1 0.4
+fov = 60
+logicSystemManager = 4
+staticBatchingRenderingEnabled = True
+staticBatchingPhysicsEnabledInMapEditor = True
+staticBatchingPhysicsEnabledInSimulation = True
+staticBatchingGridCellSize = 30 30 30
+staticBatchingFilterByMaxTriangleCount = 512
+name = "Maps\\MainMenu\\Map.map"
+shadowTechnique = ShadowmapMedium
+dataForEditor
+{
+}
+sceneGraphSettings
+{
+	amountOfObjectsOutsideOctreeBoundsToRebuld = 30
+	octreeBoundsRebuildExpand = 50 50 50
+	minNodeSize = 10 10 10
+	objectCountThresholdToCreateChildNodes = 10
+	maxNodeCount = 300000
+}
+tags
+{
+}
+rootEditorLayer
+{
+	name = Root Layer
+	layer
+	{
+		name = Layer 1
+	}
+	layer
+	{
+		name = Layer 2
+	}
+}
+entity
+{
+	type = LogicSystemManager
+	uin = 4
+	referencesToCompileDLL = "System.dll\r\nSystem.Drawing.dll\r\n\r\nEngineApp.dll\r\nUISystem.dll\r\nFileSystem.dll\r\nLog.dll\r\nMathEx.dll\r\nRenderer.dll\r\nPhysicsSystem.dll\r\nSoundSystem.dll\r\nEntitySystem.dll\r\nMapSystem.dll\r\nUtils.dll\r\nHeightmapTerrain.dll\r\nDecorativeObjectManager.dll\r\n\r\nProjectCommon.dll\r\nProjectEntities.dll"
+	usingNamespacesToCodeGeneration = "using System;\r\nusing System.Collections.Generic;\r\nusing System.Text;\r\n\r\nusing Engine;\r\nusing Engine.FileSystem;\r\nusing Engine.MathEx;\r\nusing Engine.Utils;\r\nusing Engine.Renderer;\r\nusing Engine.PhysicsSystem;\r\nusing Engine.SoundSystem;\r\nusing Engine.UISystem;\r\nusing Engine.EntitySystem;\r\nusing Engine.MapSystem;\r\n\r\nusing ProjectCommon;\r\nusing ProjectEntities;"
+	mapClassManager = 5
+	tags
+	{
+	}
+	entity
+	{
+		type = LogicClassManager
+		uin = 5
+		tags
+		{
+		}
+	}
+}
+entity
+{
+	type = HeightmapTerrain
+	uin = 6
+	classPrompt = HeightmapTerrain
+	subscriptionsToDeletionEvent = 149
+	enabled = True
+	position = 0 0 0
+	horizontalSize = 65
+	dataDirectory = HeightmapTerrain
+	masksSize = 256
+	detailMapsDistance = 50
+	renderQueueGroup = WorldGeometry1
+	collision = True
+	collisionMaterialName = Default
+	collisionHeightfieldThickness = 2
+	castDynamicShadows = True
+	receiveStaticShadows = True
+	simpleRendering = False
+	tileSize = 16
+	visible = True
+	allowVertexTextureFetchOptimization = True
+	useFloat16BitHeightTexture = False
+	heightMultiplier = 10.8
+	heightmapTerrainManagerIndex = 0 0
+	ambientOcclusion
+	{
+		enabled = False
+		size = 1024
+		rayLength = 1
+		iterationCount = 100
+		blur = True
+		power = 1
+	}
+	lodSettings
+	{
+		enabled = False
+		maxCount = 99
+		lodLevelDistances = 100 + level * 200
+		morphAreaPercent = 0.3
+		showLevels = False
+	}
+	tags
+	{
+	}
+	layers
+	{
+		item
+		{
+			name = Grass
+			baseMap = "Maps\\MainMenu\\grass_texture237.jpg"
+			baseScale = 1.2
+			detailScale = 2
+		}
+		item
+		{
+			name = Glound
+			baseMap = "Maps\\MainMenu\\Ground_tex.jpg"
+			baseScale = 2
+			detailMap = "Base\\Types\\HeightmapTerrain\\DefaultLayer1Detail.jpg"
+			detailScale = 2
+		}
+		item
+		{
+			name = Rock
+			baseMap = "Maps\\MainMenu\\hnprock13.dds"
+			baseScale = 7
+			detailScale = 2
+			baseNormalMap = "Maps\\MainMenu\\hnprock13_Normal.dds"
+		}
+		item
+		{
+			name = Sand
+			baseMap = "Maps\\MainMenu\\hnpsand52.dds"
+			baseScale = 1
+			detailScale = 2
+			baseNormalMap = "Maps\\MainMenu\\hnpsand52_Normal.dds"
+		}
+	}
+}
+entity
+{
+	type = Sun
+	uin = 7
+	classPrompt = Sun
+	billboardTexture = "Base\\Types\\Lighting\\Sun\\SunDefault.png"
+	billboardColor = 0.4078432 0.2431373 0
+	billboardPower = 4
+	billboardSize = 4
+	billboardRenderQueueGroup = Main
+	billboardOverridePosition = 0 0 0
+	enabled = True
+	lightType = Directional
+	diffuseColor = 1 1 1
+	diffusePower = 1
+	specularColor = 1 1 1
+	specularPower = 1
+	attenuationNear = 0
+	attenuationFar = 10
+	attenuationPower = 2
+	ffpAttenuationConstant = 1
+	ffpAttenuationLinear = 0
+	ffpAttenuationQuadric = 0
+	spotlightInnerAngle = 30
+	spotlightOuterAngle = 40
+	spotlightFalloff = 1
+	castShadows = True
+	allowStaticLighting = False
+	allowDynamicLighting = True
+	customShaderParameter = 0 0 0 0
+	position = 0 0 7
+	rotation = 0.1227878 -0.6963642 0.1227878 -0.6963642
+	name = Sun_0
+	tags
+	{
+	}
+}
+entity
+{
+	type = SkyBox
+	uin = 8
+	classPrompt = SkyBox
+	enabled = True
+	textureName = "Base\\Types\\Basic\\SkyBox\\SkyBoxClear.jpg"
+	color = 0.1803922 0.7098039 0.8509805
+	power = 1
+	tags
+	{
+	}
+}
+entity
+{
+	type = MapCompositorManager
+	uin = 9
+	classPrompt = MapCompositorManager
+	tags
+	{
+	}
+	items
+	{
+		item
+		{
+			name = Vignetting
+			Radius = 3
+			Intensity = 1
+			Enabled = True
+		}
+		item
+		{
+			name = LightScattering
+			Color = 1 0.6 0.4313726
+			Intensity = 0.5
+			Decay = 0.9
+			Density = 1
+			BlurFactor = 1
+			Resolution = 5
+			Enabled = True
+		}
+	}
+}
+entity
+{
+	type = SpawnPoint
+	uin = 10
+	classPrompt = SpawnPoint
+	defaultPoint = False
+	position = 0 0 0
+	name = SpawnPoint_0
+	editorLayer = "Root Layer\\Layer 2"
+	tags
+	{
+	}
+}
+entity
+{
+	type = WaterPlane
+	uin = 11
+	classPrompt = WaterPlane
+	size = 1000 500
+	position = 0 0 1
+	segments = 20 20
+	renderQueueGroup = Queue3
+	reflectionLevel = OnlySky
+	physicsHeight = 0
+	deepColor = 0.1294118 0.2 0.0627451 0.7843138
+	shallowColor = 0 0 0 0.7843138
+	reflectionColor = 0.4666667 0.2941177 0
+	reflectionTextureSize = QuarterOfFrameBuffer
+	visible = True
+	fixedPipelineMap = "Base\\Types\\WaterPlane\\WaterFixedPipeline.jpg"
+	fixedPipelineMapTiling = 10
+	fixedPipelineColor = 0 0.2980392 0.4980392
+	useHDRTexture = False
+	allowFog = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 12
+	classPrompt = StaticMesh
+	position = -15.8 7.7 -1.2
+	rotation = 0 0 -0.620496 0.7842096
+	scale = 0.6811206 0.6811206 0.9301366
+	name = StaticMesh_rock_001_0
+	editorLayer = "Root Layer\\Layer 2"
+	meshName = "Types\\Vegetation\\Stones\\rock_001.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 13
+	classPrompt = StaticMesh
+	position = -15.3 12.3 0.2
+	rotation = 0 0 0.2464127 0.969165
+	scale = 0.9639952 0.9639952 0.9639952
+	name = StaticMesh_rock_005_0
+	editorLayer = "Root Layer\\Layer 2"
+	meshName = "Types\\Vegetation\\Shrubs\\Paparotnik\\pap.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 14
+	classPrompt = StaticMesh
+	position = -21.9 28.8 2.9
+	rotation = 0 0 0.09540033 0.9954389
+	scale = 1.376734 0.9639952 0.9639952
+	name = StaticMesh_2
+	editorLayer = "Root Layer\\Layer 2"
+	meshName = "Maps\\VillageDemo\\Rock\\rock_005.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 15
+	classPrompt = StaticMesh
+	position = -10.6 28.6 4.2
+	rotation = 0 0 -0.7985824 0.6018854
+	scale = 0.9711405 1.10312 0.9301366
+	name = StaticMesh_3
+	editorLayer = "Root Layer\\Layer 2"
+	meshName = "Types\\Vegetation\\Stones\\rock_001.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 16
+	classPrompt = StaticMesh
+	position = -4.599999 27 1.6
+	rotation = 0 0 -0.7505563 -0.6608064
+	scale = 1.340092 0.9559554 1.268767
+	name = StaticMesh_4
+	editorLayer = "Root Layer\\Layer 2"
+	meshName = "Types\\Vegetation\\Stones\\rock_001.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 17
+	classPrompt = StaticMesh
+	position = 9.300001 26.7 -0.9000003
+	rotation = 0 0 -0.9802895 0.1975663
+	scale = 1.869195 1.333392 1.211513
+	name = StaticMesh_5
+	editorLayer = "Root Layer\\Layer 2"
+	meshName = "Types\\Vegetation\\Stones\\rock_001.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 18
+	classPrompt = StaticMesh
+	position = 29 -5.6 3.599999
+	scale = 1.711284 1.711284 0.9016901
+	name = StaticMesh_rock_001_1
+	editorLayer = "Root Layer\\Layer 2"
+	meshName = "Types\\Vegetation\\Stones\\rock_001.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 19
+	classPrompt = StaticMesh
+	position = 28.9 3.900001 3.599999
+	rotation = 0 0 0.9478537 0.3187058
+	scale = 0.5597343 0.5597343 1
+	name = StaticMesh_6
+	editorLayer = "Root Layer\\Layer 2"
+	meshName = "Types\\Vegetation\\Stones\\rock_001.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 20
+	classPrompt = StaticMesh
+	position = 26.4 15.9 4.1
+	rotation = 0 0 0.4552903 0.8903431
+	scale = 0.7941842 1.802744 0.4727429
+	name = StaticMesh_rock_002_0
+	editorLayer = "Root Layer\\Layer 2"
+	meshName = "Types\\Vegetation\\Stones\\rock_002.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 21
+	classPrompt = StaticMesh
+	position = 28.6 27.4 0.2999995
+	rotation = 0 0 0.9478537 0.3187058
+	scale = 0.9189937 0.9189937 1
+	name = StaticMesh_7
+	editorLayer = "Root Layer\\Layer 2"
+	meshName = "Types\\Vegetation\\Stones\\rock_001.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 22
+	classPrompt = StaticMesh
+	position = -3.8 -3.8 1.1
+	name = StaticMesh_rock_010_0
+	editorLayer = "Root Layer\\Layer 2"
+	meshName = "Types\\Vegetation\\Stones\\rock_010.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 23
+	classPrompt = StaticMesh
+	position = -22.3 -3.1 2.8
+	name = StaticMesh_10
+	editorLayer = "Root Layer\\Layer 2"
+	meshName = "Types\\Vegetation\\Stones\\rock_010.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 24
+	classPrompt = StaticMesh
+	position = -6.5 -3.2 1.655627
+	rotation = 0 -0.08905144 0 0.9960271
+	name = t
+	editorLayer = "Root Layer\\Layer 2"
+	meshName = "Types\\Vegetation\\Stones\\rock_015.mesh"
+	collision = False
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 25
+	classPrompt = StaticMesh
+	position = -20.2 -4.9 2.7
+	rotation = -0.1427289 0.1881481 -0.06371514 0.9696232
+	name = StaticMesh_rock_019_0
+	editorLayer = "Root Layer\\Layer 2"
+	meshName = "Types\\Vegetation\\Stones\\rock_019.mesh"
+	collision = False
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 26
+	classPrompt = StaticMesh
+	position = 14.2 -1.7 6.2
+	rotation = 0.001582859 -0.08450355 0.0001342375 0.9964219
+	scale = 1.680883 1.680883 1.680883
+	name = StaticMesh_rock_015_1
+	editorLayer = "Root Layer\\Layer 2"
+	meshName = "Types\\Vegetation\\Stones\\rock_015.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 27
+	classPrompt = StaticMesh
+	position = 14.3 0.9 6
+	rotation = -0.04883146 0.04637239 0.6870498 0.7234831
+	name = StaticMesh_rock_015_2
+	editorLayer = "Root Layer\\Layer 2"
+	meshName = "Types\\Vegetation\\Stones\\rock_015.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 28
+	classPrompt = StaticMesh
+	position = 14.5 -2.3 6.200001
+	scale = 0.436362 0.436362 0.436362
+	name = StaticMesh_Shrub_016_0
+	editorLayer = "Root Layer\\Layer 2"
+	meshName = "Types\\Vegetation\\Shrubs\\Paparotnik\\pap.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 29
+	classPrompt = StaticMesh
+	position = 14.2 1.2 5.6
+	scale = 0.4449435 0.4449435 0.4449435
+	name = StaticMesh_Shrub_017_0
+	editorLayer = "Root Layer\\Layer 2"
+	meshName = "Types\\Vegetation\\Shrubs\\Paparotnik\\pap.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 30
+	classPrompt = StaticMesh
+	position = 14.3 21.2 1.7
+	rotation = 0 0 -0.3460123 0.93823
+	scale = 0.8413476 0.8413476 0.8413476
+	name = StaticMesh_Shrub_016_1
+	editorLayer = "Root Layer\\Layer 2"
+	meshName = "Types\\Vegetation\\Shrubs\\Paparotnik\\pap.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 31
+	classPrompt = StaticMesh
+	position = 11.7 20.2 1.7
+	rotation = 0 0 -0.5587103 0.8293629
+	scale = 0.8240412 0.8240412 0.8240412
+	name = StaticMesh_11
+	editorLayer = "Root Layer\\Layer 2"
+	meshName = "Types\\Vegetation\\Shrubs\\Paparotnik\\pap.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 32
+	classPrompt = StaticMesh
+	position = 10.2 20.3 1.7
+	rotation = 0 0 -0.5783533 0.8157866
+	scale = 0.8354172 0.8354172 0.8354172
+	name = StaticMesh_12
+	editorLayer = "Root Layer\\Layer 2"
+	meshName = "Types\\Vegetation\\Shrubs\\Paparotnik\\pap.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 33
+	classPrompt = StaticMesh
+	position = -14 16 2.8
+	rotation = -0.1913655 0.2637948 -0.05348201 0.9438916
+	scale = 0.6020987 0.6020987 0.6020987
+	name = StaticMesh_14
+	editorLayer = "Root Layer\\Layer 2"
+	meshName = "Types\\Vegetation\\Shrubs\\Paparotnik\\pap.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 34
+	classPrompt = StaticMesh
+	position = -9.354301 20.89173 2.8
+	rotation = -0.090505 0.3130771 -0.3705795 0.8697485
+	scale = 0.6020987 0.6020987 0.6020987
+	name = StaticMesh_17
+	editorLayer = "Root Layer\\Layer 2"
+	meshName = "Types\\Vegetation\\Shrubs\\Paparotnik\\pap.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 35
+	classPrompt = StaticMesh
+	position = -11.2 16.4 0.2
+	scale = 1 1 2.996588
+	name = StaticMesh_Ear_0
+	editorLayer = "Root Layer\\Layer 2"
+	meshName = "Types\\DecorativeObjects\\Ear\\Ear.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 36
+	classPrompt = StaticMesh
+	position = -10.1 15.6 0.2
+	scale = 1 1 2.996588
+	name = StaticMesh_18
+	editorLayer = "Root Layer\\Layer 2"
+	meshName = "Types\\DecorativeObjects\\Ear\\Ear.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 37
+	classPrompt = StaticMesh
+	position = -9.999999 16.5 0.2
+	scale = 1 1 2.996588
+	name = StaticMesh_19
+	editorLayer = "Root Layer\\Layer 2"
+	meshName = "Types\\DecorativeObjects\\Ear\\Ear.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 38
+	classPrompt = StaticMesh
+	position = -9.599999 14.9 -0.3
+	scale = 1 1 2.996588
+	name = StaticMesh_20
+	editorLayer = "Root Layer\\Layer 2"
+	meshName = "Types\\DecorativeObjects\\Ear\\Ear.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 39
+	classPrompt = StaticMesh
+	position = -11.3 15.9 0.3000001
+	scale = 2.026132 2.026132 5.955288
+	name = StaticMesh_GrassBrown_0
+	editorLayer = "Root Layer\\Layer 2"
+	meshName = "Types\\DecorativeObjects\\GrassBrown\\GrassBrown.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 40
+	classPrompt = StaticMesh
+	position = -9.900001 16 0.3000001
+	rotation = 0 0 0.5770618 0.8167005
+	scale = 2.026132 2.026132 5.955288
+	name = StaticMesh_25
+	editorLayer = "Root Layer\\Layer 2"
+	meshName = "Types\\DecorativeObjects\\GrassBrown\\GrassBrown.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 41
+	classPrompt = StaticMesh
+	position = -9.000001 14.7 0.3000001
+	scale = 2.026132 2.026132 5.955288
+	name = StaticMesh_26
+	editorLayer = "Root Layer\\Layer 2"
+	meshName = "Types\\DecorativeObjects\\GrassBrown\\GrassBrown.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 42
+	classPrompt = StaticMesh
+	position = -8.400001 13.6 0.3000001
+	rotation = 0 0 0.3528665 0.9356737
+	scale = 2.026132 2.026132 5.955288
+	name = StaticMesh_27
+	editorLayer = "Root Layer\\Layer 2"
+	meshName = "Types\\DecorativeObjects\\GrassBrown\\GrassBrown.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 43
+	classPrompt = StaticMesh
+	position = -8.500001 15.3 0.3000001
+	rotation = 0 0 -0.4252459 0.9050779
+	scale = 2.026132 2.026132 5.955288
+	name = StaticMesh_28
+	editorLayer = "Root Layer\\Layer 2"
+	meshName = "Types\\DecorativeObjects\\GrassBrown\\GrassBrown.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 44
+	classPrompt = StaticMesh
+	position = -11.1 21.2 0.2
+	scale = 1 1 2.996588
+	name = StaticMesh_21
+	editorLayer = "Root Layer\\Layer 2"
+	meshName = "Types\\DecorativeObjects\\Ear\\Ear.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 45
+	classPrompt = StaticMesh
+	position = -9.999999 20.4 0.2
+	scale = 1 1 2.996588
+	name = StaticMesh_22
+	editorLayer = "Root Layer\\Layer 2"
+	meshName = "Types\\DecorativeObjects\\Ear\\Ear.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 46
+	classPrompt = StaticMesh
+	position = -9.899999 21.3 0.2
+	scale = 1 1 2.996588
+	name = StaticMesh_23
+	editorLayer = "Root Layer\\Layer 2"
+	meshName = "Types\\DecorativeObjects\\Ear\\Ear.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 47
+	classPrompt = StaticMesh
+	position = -9.499999 19.7 -0.3
+	scale = 1 1 2.996588
+	name = StaticMesh_24
+	editorLayer = "Root Layer\\Layer 2"
+	meshName = "Types\\DecorativeObjects\\Ear\\Ear.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 48
+	classPrompt = StaticMesh
+	position = -11.2 20.7 0.3000001
+	scale = 2.026132 2.026132 5.955288
+	name = StaticMesh_29
+	editorLayer = "Root Layer\\Layer 2"
+	meshName = "Types\\DecorativeObjects\\GrassBrown\\GrassBrown.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 49
+	classPrompt = StaticMesh
+	position = -8.900001 19.5 0.3000001
+	scale = 2.026132 2.026132 5.955288
+	name = StaticMesh_30
+	editorLayer = "Root Layer\\Layer 2"
+	meshName = "Types\\DecorativeObjects\\GrassBrown\\GrassBrown.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 50
+	classPrompt = StaticMesh
+	position = -8.3 18.4 0.3000001
+	rotation = 0 0 0.3528665 0.9356737
+	scale = 2.026132 2.026132 5.955288
+	name = StaticMesh_31
+	editorLayer = "Root Layer\\Layer 2"
+	meshName = "Types\\DecorativeObjects\\GrassBrown\\GrassBrown.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 51
+	classPrompt = StaticMesh
+	position = -8.400001 20.1 0.3000001
+	rotation = 0 0 -0.4252459 0.9050779
+	scale = 2.026132 2.026132 5.955288
+	name = StaticMesh_32
+	editorLayer = "Root Layer\\Layer 2"
+	meshName = "Types\\DecorativeObjects\\GrassBrown\\GrassBrown.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 52
+	classPrompt = StaticMesh
+	position = -9.8 20.8 0.3000001
+	rotation = 0 0 0.5770618 0.8167005
+	scale = 2.026132 2.026132 5.955288
+	name = StaticMesh_33
+	editorLayer = "Root Layer\\Layer 2"
+	meshName = "Types\\DecorativeObjects\\GrassBrown\\GrassBrown.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 53
+	classPrompt = StaticMesh
+	position = 9.536743E-07 24.5 -0.4999999
+	scale = 1 1 2.996588
+	name = StaticMesh_34
+	editorLayer = "Root Layer\\Layer 2"
+	meshName = "Types\\DecorativeObjects\\Ear\\Ear.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 54
+	classPrompt = StaticMesh
+	position = 1.100001 23.7 -0.4999999
+	scale = 1 1 2.996588
+	name = StaticMesh_35
+	editorLayer = "Root Layer\\Layer 2"
+	meshName = "Types\\DecorativeObjects\\Ear\\Ear.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 55
+	classPrompt = StaticMesh
+	position = 1.200002 24.6 -0.4999999
+	scale = 1 1 2.996588
+	name = StaticMesh_36
+	editorLayer = "Root Layer\\Layer 2"
+	meshName = "Types\\DecorativeObjects\\Ear\\Ear.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 56
+	classPrompt = StaticMesh
+	position = 1.600001 23 -0.9999999
+	scale = 1 1 2.996588
+	name = StaticMesh_37
+	editorLayer = "Root Layer\\Layer 2"
+	meshName = "Types\\DecorativeObjects\\Ear\\Ear.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 57
+	classPrompt = StaticMesh
+	position = -0.09999943 24 -0.3999999
+	scale = 2.026132 2.026132 5.955288
+	name = StaticMesh_38
+	editorLayer = "Root Layer\\Layer 2"
+	meshName = "Types\\DecorativeObjects\\GrassBrown\\GrassBrown.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 58
+	classPrompt = StaticMesh
+	position = 2.2 22.8 -0.3999999
+	scale = 2.026132 2.026132 5.955288
+	name = StaticMesh_39
+	editorLayer = "Root Layer\\Layer 2"
+	meshName = "Types\\DecorativeObjects\\GrassBrown\\GrassBrown.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 59
+	classPrompt = StaticMesh
+	position = 2.8 21.7 -0.3999999
+	rotation = 0 0 0.3528665 0.9356737
+	scale = 2.026132 2.026132 5.955288
+	name = StaticMesh_40
+	editorLayer = "Root Layer\\Layer 2"
+	meshName = "Types\\DecorativeObjects\\GrassBrown\\GrassBrown.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 60
+	classPrompt = StaticMesh
+	position = 2.7 23.4 -0.3999999
+	rotation = 0 0 -0.4252459 0.9050779
+	scale = 2.026132 2.026132 5.955288
+	name = StaticMesh_41
+	editorLayer = "Root Layer\\Layer 2"
+	meshName = "Types\\DecorativeObjects\\GrassBrown\\GrassBrown.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 61
+	classPrompt = StaticMesh
+	position = 1.3 24.1 -0.3999999
+	rotation = 0 0 0.5770618 0.8167005
+	scale = 2.026132 2.026132 5.955288
+	name = StaticMesh_42
+	editorLayer = "Root Layer\\Layer 2"
+	meshName = "Types\\DecorativeObjects\\GrassBrown\\GrassBrown.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 62
+	classPrompt = StaticMesh
+	position = -21.5 1 -0.3999999
+	scale = 1 1 2.996588
+	name = StaticMesh_43
+	editorLayer = "Root Layer\\Layer 2"
+	meshName = "Types\\DecorativeObjects\\Ear\\Ear.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 63
+	classPrompt = StaticMesh
+	position = -20.4 0.1999989 -0.3999999
+	scale = 1 1 2.996588
+	name = StaticMesh_44
+	editorLayer = "Root Layer\\Layer 2"
+	meshName = "Types\\DecorativeObjects\\Ear\\Ear.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 64
+	classPrompt = StaticMesh
+	position = -20.3 1.099998 -0.3999999
+	scale = 1 1 2.996588
+	name = StaticMesh_45
+	editorLayer = "Root Layer\\Layer 2"
+	meshName = "Types\\DecorativeObjects\\Ear\\Ear.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 65
+	classPrompt = StaticMesh
+	position = -19.9 -0.5 -0.8999999
+	scale = 1 1 2.996588
+	name = StaticMesh_46
+	editorLayer = "Root Layer\\Layer 2"
+	meshName = "Types\\DecorativeObjects\\Ear\\Ear.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 66
+	classPrompt = StaticMesh
+	position = -21.6 0.5 -0.2999999
+	scale = 2.026132 2.026132 5.955288
+	name = StaticMesh_47
+	editorLayer = "Root Layer\\Layer 2"
+	meshName = "Types\\DecorativeObjects\\GrassBrown\\GrassBrown.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 67
+	classPrompt = StaticMesh
+	position = -19.3 -0.6999989 -0.2999999
+	scale = 2.026132 2.026132 5.955288
+	name = StaticMesh_48
+	editorLayer = "Root Layer\\Layer 2"
+	meshName = "Types\\DecorativeObjects\\GrassBrown\\GrassBrown.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 68
+	classPrompt = StaticMesh
+	position = -18.7 -1.799999 -0.2999999
+	rotation = 0 0 0.3528665 0.9356737
+	scale = 2.026132 2.026132 5.955288
+	name = StaticMesh_49
+	editorLayer = "Root Layer\\Layer 2"
+	meshName = "Types\\DecorativeObjects\\GrassBrown\\GrassBrown.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 69
+	classPrompt = StaticMesh
+	position = -18.8 -0.09999847 -0.2999999
+	rotation = 0 0 -0.4252459 0.9050779
+	scale = 2.026132 2.026132 5.955288
+	name = StaticMesh_50
+	editorLayer = "Root Layer\\Layer 2"
+	meshName = "Types\\DecorativeObjects\\GrassBrown\\GrassBrown.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 70
+	classPrompt = StaticMesh
+	position = -20.2 0.6000023 -0.2999999
+	rotation = 0 0 0.5770618 0.8167005
+	scale = 2.026132 2.026132 5.955288
+	name = StaticMesh_51
+	editorLayer = "Root Layer\\Layer 2"
+	meshName = "Types\\DecorativeObjects\\GrassBrown\\GrassBrown.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 71
+	classPrompt = StaticMesh
+	position = -21.9 6 -0.3999999
+	scale = 1 1 2.996588
+	name = StaticMesh_52
+	editorLayer = "Root Layer\\Layer 2"
+	meshName = "Types\\DecorativeObjects\\Ear\\Ear.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 72
+	classPrompt = StaticMesh
+	position = -20.8 5.199999 -0.3999999
+	scale = 1 1 2.996588
+	name = StaticMesh_53
+	editorLayer = "Root Layer\\Layer 2"
+	meshName = "Types\\DecorativeObjects\\Ear\\Ear.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 73
+	classPrompt = StaticMesh
+	position = -20.7 6.099998 -0.3999999
+	scale = 1 1 2.996588
+	name = StaticMesh_54
+	editorLayer = "Root Layer\\Layer 2"
+	meshName = "Types\\DecorativeObjects\\Ear\\Ear.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 74
+	classPrompt = StaticMesh
+	position = -20.3 4.5 -0.8999999
+	scale = 1 1 2.996588
+	name = StaticMesh_55
+	editorLayer = "Root Layer\\Layer 2"
+	meshName = "Types\\DecorativeObjects\\Ear\\Ear.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 75
+	classPrompt = StaticMesh
+	position = -22 5.5 -0.2999999
+	scale = 2.026132 2.026132 5
+	name = StaticMesh_56
+	editorLayer = "Root Layer\\Layer 2"
+	meshName = "Types\\DecorativeObjects\\GrassBrown\\GrassBrown.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 76
+	classPrompt = StaticMesh
+	position = -19.7 4.300001 -0.2999999
+	scale = 2.026132 2.026132 5.955288
+	name = StaticMesh_57
+	editorLayer = "Root Layer\\Layer 2"
+	meshName = "Types\\DecorativeObjects\\GrassBrown\\GrassBrown.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 77
+	classPrompt = StaticMesh
+	position = -19.1 3.200001 -0.2999999
+	rotation = 0 0 0.3528665 0.9356737
+	scale = 2.026132 2.026132 5.955288
+	name = StaticMesh_58
+	editorLayer = "Root Layer\\Layer 2"
+	meshName = "Types\\DecorativeObjects\\GrassBrown\\GrassBrown.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 78
+	classPrompt = StaticMesh
+	position = -19.2 4.900002 -0.2999999
+	rotation = 0 0 -0.4252459 0.9050779
+	scale = 2.026132 2.026132 5.955288
+	name = StaticMesh_59
+	editorLayer = "Root Layer\\Layer 2"
+	meshName = "Types\\DecorativeObjects\\GrassBrown\\GrassBrown.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 79
+	classPrompt = StaticMesh
+	position = -20.6 5.600002 -0.2999999
+	rotation = 0 0 0.5770618 0.8167005
+	scale = 2.026132 2.026132 5
+	name = StaticMesh_60
+	editorLayer = "Root Layer\\Layer 2"
+	meshName = "Types\\DecorativeObjects\\GrassBrown\\GrassBrown.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 80
+	classPrompt = StaticMesh
+	position = -19.7 5.3 -0.3999999
+	scale = 1 1 2.996588
+	name = StaticMesh_61
+	editorLayer = "Root Layer\\Layer 2"
+	meshName = "Types\\DecorativeObjects\\Ear\\Ear.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 81
+	classPrompt = StaticMesh
+	position = -18.6 4.499999 -0.3999999
+	scale = 1 1 2.996588
+	name = StaticMesh_62
+	editorLayer = "Root Layer\\Layer 2"
+	meshName = "Types\\DecorativeObjects\\Ear\\Ear.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 82
+	classPrompt = StaticMesh
+	position = -18.5 5.399999 -0.3999999
+	scale = 1 1 2.996588
+	name = StaticMesh_63
+	editorLayer = "Root Layer\\Layer 2"
+	meshName = "Types\\DecorativeObjects\\Ear\\Ear.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 83
+	classPrompt = StaticMesh
+	position = -18.1 3.8 -0.8999999
+	scale = 1 1 2.996588
+	name = StaticMesh_64
+	editorLayer = "Root Layer\\Layer 2"
+	meshName = "Types\\DecorativeObjects\\Ear\\Ear.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 84
+	classPrompt = StaticMesh
+	position = -19.8 4.8 -0.2999999
+	scale = 2.026132 2.026132 5.955288
+	name = StaticMesh_65
+	editorLayer = "Root Layer\\Layer 2"
+	meshName = "Types\\DecorativeObjects\\GrassBrown\\GrassBrown.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 85
+	classPrompt = StaticMesh
+	position = -17.5 3.600001 -0.2999999
+	scale = 2.026132 2.026132 5.955288
+	name = StaticMesh_66
+	editorLayer = "Root Layer\\Layer 2"
+	meshName = "Types\\DecorativeObjects\\GrassBrown\\GrassBrown.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 86
+	classPrompt = StaticMesh
+	position = -16.9 2.500001 -0.2999999
+	rotation = 0 0 0.3528665 0.9356737
+	scale = 2.026132 2.026132 5.955288
+	name = StaticMesh_67
+	editorLayer = "Root Layer\\Layer 2"
+	meshName = "Types\\DecorativeObjects\\GrassBrown\\GrassBrown.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 87
+	classPrompt = StaticMesh
+	position = -17 4.200002 -0.2999999
+	rotation = 0 0 -0.4252459 0.9050779
+	scale = 2.026132 2.026132 5.955288
+	name = StaticMesh_68
+	editorLayer = "Root Layer\\Layer 2"
+	meshName = "Types\\DecorativeObjects\\GrassBrown\\GrassBrown.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 88
+	classPrompt = StaticMesh
+	position = -18.4 4.900002 -0.2999999
+	rotation = 0 0 0.5770618 0.8167005
+	scale = 2.026132 2.026132 5.955288
+	name = StaticMesh_69
+	editorLayer = "Root Layer\\Layer 2"
+	meshName = "Types\\DecorativeObjects\\GrassBrown\\GrassBrown.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 89
+	classPrompt = StaticMesh
+	position = -17.9 6.1 -0.3999999
+	scale = 1 1 2.996588
+	name = StaticMesh_70
+	editorLayer = "Root Layer\\Layer 2"
+	meshName = "Types\\DecorativeObjects\\Ear\\Ear.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 90
+	classPrompt = StaticMesh
+	position = -16.8 5.299999 -0.3999999
+	scale = 1 1 2.996588
+	name = StaticMesh_71
+	editorLayer = "Root Layer\\Layer 2"
+	meshName = "Types\\DecorativeObjects\\Ear\\Ear.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 91
+	classPrompt = StaticMesh
+	position = -16.7 6.199999 -0.3999999
+	scale = 1 1 2.996588
+	name = StaticMesh_72
+	editorLayer = "Root Layer\\Layer 2"
+	meshName = "Types\\DecorativeObjects\\Ear\\Ear.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 92
+	classPrompt = StaticMesh
+	position = -16.3 4.6 -0.8999999
+	scale = 1 1 2.996588
+	name = StaticMesh_73
+	editorLayer = "Root Layer\\Layer 2"
+	meshName = "Types\\DecorativeObjects\\Ear\\Ear.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 93
+	classPrompt = StaticMesh
+	position = -18 5.6 -0.2999999
+	scale = 2.026132 2.026132 5.955288
+	name = StaticMesh_74
+	editorLayer = "Root Layer\\Layer 2"
+	meshName = "Types\\DecorativeObjects\\GrassBrown\\GrassBrown.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 94
+	classPrompt = StaticMesh
+	position = -15.7 4.400001 -0.2999999
+	scale = 2.026132 2.026132 5.955288
+	name = StaticMesh_75
+	editorLayer = "Root Layer\\Layer 2"
+	meshName = "Types\\DecorativeObjects\\GrassBrown\\GrassBrown.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 95
+	classPrompt = StaticMesh
+	position = -15.1 3.300001 -0.2999999
+	rotation = 0 0 0.3528665 0.9356737
+	scale = 2.026132 2.026132 5.955288
+	name = StaticMesh_76
+	editorLayer = "Root Layer\\Layer 2"
+	meshName = "Types\\DecorativeObjects\\GrassBrown\\GrassBrown.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 96
+	classPrompt = StaticMesh
+	position = -15.2 5.000002 -0.2999999
+	rotation = 0 0 -0.4252459 0.9050779
+	scale = 2.026132 2.026132 5.955288
+	name = StaticMesh_77
+	editorLayer = "Root Layer\\Layer 2"
+	meshName = "Types\\DecorativeObjects\\GrassBrown\\GrassBrown.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 97
+	classPrompt = StaticMesh
+	position = -16.6 5.700003 -0.2999999
+	rotation = 0 0 0.5770618 0.8167005
+	scale = 2.026132 2.026132 5.955288
+	name = StaticMesh_78
+	editorLayer = "Root Layer\\Layer 2"
+	meshName = "Types\\DecorativeObjects\\GrassBrown\\GrassBrown.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 98
+	classPrompt = StaticMesh
+	position = -15.2 8.3 -0.3999999
+	scale = 1 1 2.996588
+	name = StaticMesh_79
+	editorLayer = "Root Layer\\Layer 2"
+	meshName = "Types\\DecorativeObjects\\Ear\\Ear.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 99
+	classPrompt = StaticMesh
+	position = -14.1 7.499999 -0.3999999
+	scale = 1 1 2.996588
+	name = StaticMesh_80
+	editorLayer = "Root Layer\\Layer 2"
+	meshName = "Types\\DecorativeObjects\\Ear\\Ear.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 100
+	classPrompt = StaticMesh
+	position = -14 8.399999 -0.3999999
+	scale = 1 1 2.996588
+	name = StaticMesh_81
+	editorLayer = "Root Layer\\Layer 2"
+	meshName = "Types\\DecorativeObjects\\Ear\\Ear.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 101
+	classPrompt = StaticMesh
+	position = -13.6 6.8 -0.8999999
+	scale = 1 1 2.996588
+	name = StaticMesh_82
+	editorLayer = "Root Layer\\Layer 2"
+	meshName = "Types\\DecorativeObjects\\Ear\\Ear.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 102
+	classPrompt = StaticMesh
+	position = -15.3 7.8 -0.2999999
+	scale = 2.026132 2.026132 5.955288
+	name = StaticMesh_83
+	editorLayer = "Root Layer\\Layer 2"
+	meshName = "Types\\DecorativeObjects\\GrassBrown\\GrassBrown.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 103
+	classPrompt = StaticMesh
+	position = -13 6.600001 -0.2999999
+	scale = 2.026132 2.026132 5.955288
+	name = StaticMesh_84
+	editorLayer = "Root Layer\\Layer 2"
+	meshName = "Types\\DecorativeObjects\\GrassBrown\\GrassBrown.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 104
+	classPrompt = StaticMesh
+	position = -12.4 5.500001 -0.2999999
+	rotation = 0 0 0.3528665 0.9356737
+	scale = 2.026132 2.026132 5.955288
+	name = StaticMesh_85
+	editorLayer = "Root Layer\\Layer 2"
+	meshName = "Types\\DecorativeObjects\\GrassBrown\\GrassBrown.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 105
+	classPrompt = StaticMesh
+	position = -12.5 7.200002 -0.2999999
+	rotation = 0 0 -0.4252459 0.9050779
+	scale = 2.026132 2.026132 5.955288
+	name = StaticMesh_86
+	editorLayer = "Root Layer\\Layer 2"
+	meshName = "Types\\DecorativeObjects\\GrassBrown\\GrassBrown.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 106
+	classPrompt = StaticMesh
+	position = -13.9 7.900002 -0.2999999
+	rotation = 0 0 0.5770618 0.8167005
+	scale = 2.026132 2.026132 5.955288
+	name = StaticMesh_87
+	editorLayer = "Root Layer\\Layer 2"
+	meshName = "Types\\DecorativeObjects\\GrassBrown\\GrassBrown.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 107
+	classPrompt = StaticMesh
+	position = -12.4 12.4 -0.3999999
+	scale = 1 1 2.996588
+	name = StaticMesh_88
+	editorLayer = "Root Layer\\Layer 2"
+	meshName = "Types\\DecorativeObjects\\Ear\\Ear.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 108
+	classPrompt = StaticMesh
+	position = -11.3 11.6 -0.3999999
+	scale = 1 1 2.996588
+	name = StaticMesh_89
+	editorLayer = "Root Layer\\Layer 2"
+	meshName = "Types\\DecorativeObjects\\Ear\\Ear.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 109
+	classPrompt = StaticMesh
+	position = -11.2 12.5 -0.3999999
+	scale = 1 1 2.996588
+	name = StaticMesh_90
+	editorLayer = "Root Layer\\Layer 2"
+	meshName = "Types\\DecorativeObjects\\Ear\\Ear.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 110
+	classPrompt = StaticMesh
+	position = -10.8 10.9 -0.8999999
+	scale = 1 1 2.996588
+	name = StaticMesh_91
+	editorLayer = "Root Layer\\Layer 2"
+	meshName = "Types\\DecorativeObjects\\Ear\\Ear.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 111
+	classPrompt = StaticMesh
+	position = -12.5 11.9 -0.2999999
+	scale = 2.026132 2.026132 5.955288
+	name = StaticMesh_92
+	editorLayer = "Root Layer\\Layer 2"
+	meshName = "Types\\DecorativeObjects\\GrassBrown\\GrassBrown.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 112
+	classPrompt = StaticMesh
+	position = -10.2 10.7 -0.2999999
+	scale = 2.026132 2.026132 5.955288
+	name = StaticMesh_93
+	editorLayer = "Root Layer\\Layer 2"
+	meshName = "Types\\DecorativeObjects\\GrassBrown\\GrassBrown.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 113
+	classPrompt = StaticMesh
+	position = -9.599999 9.6 -0.2999999
+	rotation = 0 0 0.3528665 0.9356737
+	scale = 2.026132 2.026132 5.955288
+	name = StaticMesh_94
+	editorLayer = "Root Layer\\Layer 2"
+	meshName = "Types\\DecorativeObjects\\GrassBrown\\GrassBrown.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 114
+	classPrompt = StaticMesh
+	position = -9.699998 11.3 -0.2999999
+	rotation = 0 0 -0.4252459 0.9050779
+	scale = 2.026132 2.026132 5.955288
+	name = StaticMesh_95
+	editorLayer = "Root Layer\\Layer 2"
+	meshName = "Types\\DecorativeObjects\\GrassBrown\\GrassBrown.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 115
+	classPrompt = StaticMesh
+	position = -11.1 12 -0.2999999
+	rotation = 0 0 0.5770618 0.8167005
+	scale = 2.026132 2.026132 5.955288
+	name = StaticMesh_96
+	editorLayer = "Root Layer\\Layer 2"
+	meshName = "Types\\DecorativeObjects\\GrassBrown\\GrassBrown.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 116
+	classPrompt = StaticMesh
+	position = -18 0.2999992 -0.3999999
+	scale = 1 1 2.996588
+	name = StaticMesh_97
+	editorLayer = "Root Layer\\Layer 2"
+	meshName = "Types\\DecorativeObjects\\Ear\\Ear.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 117
+	classPrompt = StaticMesh
+	position = -16.9 -0.5000019 -0.3999999
+	scale = 1 1 2.996588
+	name = StaticMesh_98
+	editorLayer = "Root Layer\\Layer 2"
+	meshName = "Types\\DecorativeObjects\\Ear\\Ear.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 118
+	classPrompt = StaticMesh
+	position = -16.8 0.3999977 -0.3999999
+	scale = 1 1 2.996588
+	name = StaticMesh_99
+	editorLayer = "Root Layer\\Layer 2"
+	meshName = "Types\\DecorativeObjects\\Ear\\Ear.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 119
+	classPrompt = StaticMesh
+	position = -16.4 -1.200001 -0.8999999
+	scale = 1 1 2.996588
+	name = StaticMesh_100
+	editorLayer = "Root Layer\\Layer 2"
+	meshName = "Types\\DecorativeObjects\\Ear\\Ear.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 120
+	classPrompt = StaticMesh
+	position = -18.1 -0.2000008 -0.2999999
+	scale = 2.026132 2.026132 5.955288
+	name = StaticMesh_101
+	editorLayer = "Root Layer\\Layer 2"
+	meshName = "Types\\DecorativeObjects\\GrassBrown\\GrassBrown.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 121
+	classPrompt = StaticMesh
+	position = -15.8 -1.4 -0.2999999
+	scale = 2.026132 2.026132 5.955288
+	name = StaticMesh_102
+	editorLayer = "Root Layer\\Layer 2"
+	meshName = "Types\\DecorativeObjects\\GrassBrown\\GrassBrown.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 122
+	classPrompt = StaticMesh
+	position = -15.2 -2.5 -0.2999999
+	rotation = 0 0 0.3528665 0.9356737
+	scale = 2.026132 2.026132 5.955288
+	name = StaticMesh_103
+	editorLayer = "Root Layer\\Layer 2"
+	meshName = "Types\\DecorativeObjects\\GrassBrown\\GrassBrown.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 123
+	classPrompt = StaticMesh
+	position = -15.3 -0.7999992 -0.2999999
+	rotation = 0 0 -0.4252459 0.9050779
+	scale = 2.026132 2.026132 5.955288
+	name = StaticMesh_104
+	editorLayer = "Root Layer\\Layer 2"
+	meshName = "Types\\DecorativeObjects\\GrassBrown\\GrassBrown.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 124
+	classPrompt = StaticMesh
+	position = -16.7 -0.09999847 -0.2999999
+	rotation = 0 0 0.5770618 0.8167005
+	scale = 2.026132 2.026132 5.955288
+	name = StaticMesh_105
+	editorLayer = "Root Layer\\Layer 2"
+	meshName = "Types\\DecorativeObjects\\GrassBrown\\GrassBrown.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 125
+	classPrompt = StaticMesh
+	position = -15.4 0.6999992 -0.3999999
+	scale = 1 1 2.996588
+	name = StaticMesh_106
+	editorLayer = "Root Layer\\Layer 2"
+	meshName = "Types\\DecorativeObjects\\Ear\\Ear.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 126
+	classPrompt = StaticMesh
+	position = -14.3 -0.1000019 -0.3999999
+	scale = 1 1 2.996588
+	name = StaticMesh_107
+	editorLayer = "Root Layer\\Layer 2"
+	meshName = "Types\\DecorativeObjects\\Ear\\Ear.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 127
+	classPrompt = StaticMesh
+	position = -13.8 -0.8000008 -0.8999999
+	scale = 1 1 2.996588
+	name = StaticMesh_109
+	editorLayer = "Root Layer\\Layer 2"
+	meshName = "Types\\DecorativeObjects\\Ear\\Ear.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 128
+	classPrompt = StaticMesh
+	position = -15.5 0.1999992 -0.2999999
+	scale = 2.026132 2.026132 5.955288
+	name = StaticMesh_110
+	editorLayer = "Root Layer\\Layer 2"
+	meshName = "Types\\DecorativeObjects\\GrassBrown\\GrassBrown.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 129
+	classPrompt = StaticMesh
+	position = -13.2 -0.9999996 -0.2999999
+	scale = 2.026132 2.026132 5.955288
+	name = StaticMesh_111
+	editorLayer = "Root Layer\\Layer 2"
+	meshName = "Types\\DecorativeObjects\\GrassBrown\\GrassBrown.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 130
+	classPrompt = StaticMesh
+	position = -12.6 -2.1 -0.2999999
+	rotation = 0 0 0.3528665 0.9356737
+	scale = 2.026132 2.026132 5.955288
+	name = StaticMesh_112
+	editorLayer = "Root Layer\\Layer 2"
+	meshName = "Types\\DecorativeObjects\\GrassBrown\\GrassBrown.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 131
+	classPrompt = StaticMesh
+	position = -12.7 -0.3999992 -0.2999999
+	rotation = 0 0 -0.4252459 0.9050779
+	scale = 2.026132 2.026132 5.955288
+	name = StaticMesh_113
+	editorLayer = "Root Layer\\Layer 2"
+	meshName = "Types\\DecorativeObjects\\GrassBrown\\GrassBrown.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 132
+	classPrompt = StaticMesh
+	position = -14.1 0.3000015 -0.2999999
+	rotation = 0 0 0.5770618 0.8167005
+	scale = 2.026132 2.026132 5.955288
+	name = StaticMesh_114
+	editorLayer = "Root Layer\\Layer 2"
+	meshName = "Types\\DecorativeObjects\\GrassBrown\\GrassBrown.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 133
+	classPrompt = StaticMesh
+	position = -13 1.199998 -0.3999999
+	scale = 1 1 2.996588
+	name = StaticMesh_116
+	editorLayer = "Root Layer\\Layer 2"
+	meshName = "Types\\DecorativeObjects\\Ear\\Ear.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 134
+	classPrompt = StaticMesh
+	position = -12.5 0.4999993 -0.8999999
+	scale = 1 1 2.996588
+	name = StaticMesh_118
+	editorLayer = "Root Layer\\Layer 2"
+	meshName = "Types\\DecorativeObjects\\Ear\\Ear.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 135
+	classPrompt = StaticMesh
+	position = -11.9 0.3000004 -0.2999999
+	scale = 2.026132 2.026132 5.955288
+	name = StaticMesh_120
+	editorLayer = "Root Layer\\Layer 2"
+	meshName = "Types\\DecorativeObjects\\GrassBrown\\GrassBrown.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 136
+	classPrompt = StaticMesh
+	position = -11.3 -0.7999998 -0.2999999
+	rotation = 0 0 0.3528665 0.9356737
+	scale = 2.026132 2.026132 5.955288
+	name = StaticMesh_121
+	editorLayer = "Root Layer\\Layer 2"
+	meshName = "Types\\DecorativeObjects\\GrassBrown\\GrassBrown.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 137
+	classPrompt = StaticMesh
+	position = -11.4 0.9000008 -0.2999999
+	rotation = 0 0 -0.4252459 0.9050779
+	scale = 2.026132 2.026132 5.955288
+	name = StaticMesh_122
+	editorLayer = "Root Layer\\Layer 2"
+	meshName = "Types\\DecorativeObjects\\GrassBrown\\GrassBrown.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 138
+	classPrompt = StaticMesh
+	position = -14.2 -2.1 -0.2999999
+	scale = 2.026132 2.026132 5.955288
+	name = StaticMesh_108
+	editorLayer = "Root Layer\\Layer 2"
+	meshName = "Types\\DecorativeObjects\\GrassBrown\\GrassBrown.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 139
+	classPrompt = StaticMesh
+	position = -15 -1.7 -0.2999999
+	scale = 2.026132 2.026132 5.955288
+	name = StaticMesh_115
+	editorLayer = "Root Layer\\Layer 2"
+	meshName = "Types\\DecorativeObjects\\GrassBrown\\GrassBrown.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 140
+	classPrompt = StaticMesh
+	position = -14.3 -0.7999997 -0.2999999
+	scale = 2.026132 2.026132 5.955288
+	name = StaticMesh_117
+	editorLayer = "Root Layer\\Layer 2"
+	meshName = "Types\\DecorativeObjects\\GrassBrown\\GrassBrown.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 141
+	classPrompt = StaticMesh
+	position = -12.8 -1.2 -0.2999999
+	scale = 2.026132 2.026132 5.955288
+	name = StaticMesh_119
+	editorLayer = "Root Layer\\Layer 2"
+	meshName = "Types\\DecorativeObjects\\GrassBrown\\GrassBrown.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 142
+	classPrompt = StaticMesh
+	position = -13.6 0.1000004 -0.2999999
+	scale = 2.026132 2.026132 5.955288
+	name = StaticMesh_123
+	editorLayer = "Root Layer\\Layer 2"
+	meshName = "Types\\DecorativeObjects\\GrassBrown\\GrassBrown.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 143
+	classPrompt = StaticMesh
+	position = -17.6 -1.5 -0.2999999
+	scale = 2.026132 2.026132 5.955288
+	name = StaticMesh_124
+	editorLayer = "Root Layer\\Layer 2"
+	meshName = "Types\\DecorativeObjects\\GrassBrown\\GrassBrown.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 144
+	classPrompt = StaticMesh
+	position = -21.3 -1.4 1.2
+	name = StaticMesh_Shrub_016_3
+	editorLayer = "Root Layer\\Layer 2"
+	meshName = "Types\\Vegetation\\Shrubs\\Paparotnik\\pap.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 145
+	classPrompt = StaticMesh
+	position = -24.5 10.7 3.811337
+	rotation = 0 0 -0.8308023 0.5565677
+	name = StaticMesh_125
+	editorLayer = "Root Layer\\Layer 2"
+	meshName = "Types\\Vegetation\\Shrubs\\Paparotnik\\pap.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = Tree03A
+	uin = 146
+	classPrompt = MapObject
+	position = -27.2 19.2 2.6
+	editorLayer = "Root Layer\\Layer 2"
+	tags
+	{
+	}
+}
+entity
+{
+	type = Fog
+	uin = 147
+	classPrompt = Fog
+	enabled = True
+	mode = Linear
+	color = 0.1803922 0.7098039 0.8509805
+	linearStart = 56
+	linearEnd = 114
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 148
+	classPrompt = StaticMesh
+	position = -20.3 12.3 5
+	scale = 0.02 0.02 0.02
+	name = StaticMesh_grass_1_0
+	meshName = "Types\\DecorativeObjects\\grass_green_1\\grass_1.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = DecorativeObjectManager
+	uin = 149
+	classPrompt = DecorativeObjectManager
+	subscriptionsToDeletionEvent = 6
+	enabled = True
+	visible = True
+	geometries = 6
+	itemDataVersion = 2
+	tags
+	{
+	}
+	typeItems
+	{
+		item
+		{
+			type = Grass_Green_1
+			itemCount = 7564
+		}
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 150
+	classPrompt = StaticMesh
+	position = -13.4 -10.8 2.2
+	name = StaticMesh_Tree01_0
+	meshName = "Types\\Vegetation\\Tree01\\Tree01.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 151
+	classPrompt = StaticMesh
+	position = -13.7 -11.1 2.5
+	name = StaticMesh_Tree03_0
+	meshName = "Types\\Vegetation\\Tree01\\Tree03.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 152
+	classPrompt = StaticMesh
+	position = -20.2 -3.900001 2.8
+	scale = 0.644864 0.644864 0.8986843
+	name = StaticMesh_134
+	meshName = "Types\\Vegetation\\Tree01\\Tree01.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 153
+	classPrompt = StaticMesh
+	position = -27.6 -6.100001 2.6
+	scale = 1.286644 1.286644 1.393603
+	name = StaticMesh_130
+	meshName = "Types\\Vegetation\\Tree01\\Tree01.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 154
+	classPrompt = StaticMesh
+	position = -26.6 -1.300001 3.3
+	scale = 1.445058 1.445058 1.565185
+	name = StaticMesh_129
+	meshName = "Types\\Vegetation\\Tree01\\Tree01.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 155
+	classPrompt = StaticMesh
+	position = -15.4 10.3 2.8
+	scale = 1 1 1.393603
+	name = StaticMesh_126
+	meshName = "Types\\Vegetation\\Tree01\\Tree01.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 156
+	classPrompt = StaticMesh
+	position = -13.6 10.8 2.8
+	scale = 0.840162 0.840162 1.170852
+	name = StaticMesh_127
+	meshName = "Types\\Vegetation\\Tree01\\Tree01.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 157
+	classPrompt = StaticMesh
+	position = -15.8 16.1 2.9
+	scale = 0.7243785 0.7243785 1.009496
+	name = StaticMesh_145
+	meshName = "Types\\Vegetation\\Tree01\\Tree01.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 158
+	classPrompt = StaticMesh
+	position = -21.5 -2 2.9
+	scale = 0.8619144 0.8619144 0.8619144
+	name = StaticMesh_128
+	meshName = "Types\\Vegetation\\Tree01\\Tree03.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 159
+	classPrompt = StaticMesh
+	position = -22.3 -17.3 4.7
+	scale = 1.724671 1.724671 1.868043
+	name = StaticMesh_132
+	meshName = "Types\\Vegetation\\Tree01\\Tree01.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 160
+	classPrompt = StaticMesh
+	position = -23.1 -14.3 4.1
+	scale = 1.461296 1.461296 1.582773
+	name = StaticMesh_135
+	meshName = "Types\\Vegetation\\Tree01\\Tree01.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 161
+	classPrompt = StaticMesh
+	position = -0.5 2.7 2.3
+	scale = 0.9258372 0.9258372 0.9258372
+	name = StaticMesh_133
+	meshName = "Types\\Vegetation\\Tree01\\Tree01.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 162
+	classPrompt = StaticMesh
+	position = -0.2 5 2.2
+	scale = 0.6706566 0.6706566 0.6706566
+	name = StaticMesh_146
+	meshName = "Types\\Vegetation\\Tree01\\Tree01.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 163
+	classPrompt = StaticMesh
+	position = -3.6 -25.1 3.2
+	scale = 1.440572 1.440572 1.440572
+	name = StaticMesh_Tree01_1
+	meshName = "Types\\Vegetation\\Tree01\\Tree01.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 164
+	classPrompt = StaticMesh
+	position = 5.4 -21 2.9
+	name = StaticMesh_Tree01_2
+	meshName = "Types\\Vegetation\\Tree01\\Tree01.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 165
+	classPrompt = StaticMesh
+	position = 9.6 -27.6 2.643948
+	scale = 1.180234 1.180234 1.930418
+	name = StaticMesh_147
+	meshName = "Types\\Vegetation\\Tree01\\Tree01.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 166
+	classPrompt = StaticMesh
+	position = 4.1 -28.5 2.076264
+	scale = 1.180234 1.180234 1.466627
+	name = StaticMesh_148
+	meshName = "Types\\Vegetation\\Tree01\\Tree01.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 167
+	classPrompt = StaticMesh
+	position = 6.6 -28.9 2.281334
+	scale = 0.9146429 0.9146429 1.496011
+	name = StaticMesh_149
+	meshName = "Types\\Vegetation\\Tree01\\Tree01.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 168
+	classPrompt = StaticMesh
+	position = 6.8 -25.3 2.8
+	name = StaticMesh_Tree03_1
+	meshName = "Types\\Vegetation\\Tree01\\Tree03.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 169
+	classPrompt = StaticMesh
+	position = 8.3 -22.1 2.8
+	name = StaticMesh_Tree02_0
+	meshName = "Types\\Vegetation\\Tree01\\Tree02.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 170
+	classPrompt = StaticMesh
+	position = -9.5 -21.9 5.2
+	name = StaticMesh_Tree02_1
+	meshName = "Types\\Vegetation\\Tree01\\Tree02.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 171
+	classPrompt = StaticMesh
+	position = -16.3 -13 3.3
+	name = StaticMesh_Tree02_2
+	meshName = "Types\\Vegetation\\Tree01\\Tree02.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 172
+	classPrompt = StaticMesh
+	position = -11.3 -11.2 2.3
+	name = StaticMesh_pap_0
+	meshName = "Types\\Vegetation\\Shrubs\\Paparotnik\\pap.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 173
+	classPrompt = StaticMesh
+	position = -12.1 -9.400001 1.9
+	name = StaticMesh_pap_1
+	meshName = "Types\\Vegetation\\Shrubs\\Paparotnik\\pap.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 174
+	classPrompt = StaticMesh
+	position = -15.9 -12.9 3.5
+	name = StaticMesh_pap_2
+	meshName = "Types\\Vegetation\\Shrubs\\Paparotnik\\pap.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 175
+	classPrompt = StaticMesh
+	position = -13.5 -11.2 3.1
+	name = StaticMesh_pap_3
+	meshName = "Types\\Vegetation\\Shrubs\\Paparotnik\\pap.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 176
+	classPrompt = StaticMesh
+	position = -14.8 -10.8 3.1
+	name = StaticMesh_pap_4
+	meshName = "Types\\Vegetation\\Shrubs\\Paparotnik\\pap.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 177
+	classPrompt = StaticMesh
+	position = -23.2 -13 4.4
+	name = StaticMesh_pap_5
+	meshName = "Types\\Vegetation\\Shrubs\\Paparotnik\\pap.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 178
+	classPrompt = StaticMesh
+	position = -20.4 -16.3 5.7
+	name = StaticMesh_pap_6
+	meshName = "Types\\Vegetation\\Shrubs\\Paparotnik\\pap.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 179
+	classPrompt = StaticMesh
+	position = -10.5 -21.1 5.4
+	name = StaticMesh_pap_7
+	meshName = "Types\\Vegetation\\Shrubs\\Paparotnik\\pap.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 180
+	classPrompt = StaticMesh
+	position = -16.6 -22.8 4.4
+	name = StaticMesh_pap_8
+	meshName = "Types\\Vegetation\\Shrubs\\Paparotnik\\pap.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 181
+	classPrompt = StaticMesh
+	position = -17.8 -25.2 2.6
+	name = StaticMesh_pap_9
+	meshName = "Types\\Vegetation\\Shrubs\\Paparotnik\\pap.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 182
+	classPrompt = StaticMesh
+	position = -19.8 -22.6 3.5
+	name = StaticMesh_pap_10
+	meshName = "Types\\Vegetation\\Shrubs\\Paparotnik\\pap.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 183
+	classPrompt = StaticMesh
+	position = 5.6 -25.5 2.8
+	name = StaticMesh_pap_13
+	meshName = "Types\\Vegetation\\Shrubs\\Paparotnik\\pap.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 184
+	classPrompt = StaticMesh
+	position = 6.1 -28.7 2.3
+	name = StaticMesh_pap_14
+	meshName = "Types\\Vegetation\\Shrubs\\Paparotnik\\pap.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 185
+	classPrompt = StaticMesh
+	position = 3.4 -28.8 2.1
+	name = StaticMesh_pap_15
+	meshName = "Types\\Vegetation\\Shrubs\\Paparotnik\\pap.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 186
+	classPrompt = StaticMesh
+	position = 8.2 -21.9 3
+	name = StaticMesh_pap_16
+	meshName = "Types\\Vegetation\\Shrubs\\Paparotnik\\pap.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 187
+	classPrompt = StaticMesh
+	position = 4.3 -20.5 3.2
+	name = StaticMesh_pap_17
+	meshName = "Types\\Vegetation\\Shrubs\\Paparotnik\\pap.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 188
+	classPrompt = StaticMesh
+	position = 10 -27.5 3
+	name = StaticMesh_pap_18
+	meshName = "Types\\Vegetation\\Shrubs\\Paparotnik\\pap.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 189
+	classPrompt = StaticMesh
+	position = -3.3 -24.5 3.8
+	name = StaticMesh_pap_19
+	meshName = "Types\\Vegetation\\Shrubs\\Paparotnik\\pap.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 190
+	classPrompt = StaticMesh
+	position = -18.6 -3.3 2.4
+	name = StaticMesh_pap_20
+	meshName = "Types\\Vegetation\\Shrubs\\Paparotnik\\pap.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 191
+	classPrompt = StaticMesh
+	position = -20.5 -1.7 2.8
+	name = StaticMesh_pap_21
+	meshName = "Types\\Vegetation\\Shrubs\\Paparotnik\\pap.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 192
+	classPrompt = StaticMesh
+	position = -26 -5.7 3.8
+	name = StaticMesh_pap_22
+	meshName = "Types\\Vegetation\\Shrubs\\Paparotnik\\pap.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 193
+	classPrompt = StaticMesh
+	position = -25.6 -1.6 4.7
+	name = StaticMesh_pap_23
+	meshName = "Types\\Vegetation\\Shrubs\\Paparotnik\\pap.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 194
+	classPrompt = StaticMesh
+	position = -22.3 -4.3 4.1
+	name = StaticMesh_pap_24
+	meshName = "Types\\Vegetation\\Shrubs\\Paparotnik\\pap.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 195
+	classPrompt = StaticMesh
+	position = -19.8 8.900001 5.1
+	name = StaticMesh_pap_25
+	meshName = "Types\\Vegetation\\Shrubs\\Paparotnik\\pap.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 196
+	classPrompt = StaticMesh
+	position = -15.7 6.3 4.9
+	name = StaticMesh_pap_26
+	meshName = "Types\\Vegetation\\Shrubs\\Paparotnik\\pap.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 197
+	classPrompt = StaticMesh
+	position = -25.1 18.3 5.6
+	name = StaticMesh_pap_27
+	meshName = "Types\\Vegetation\\Shrubs\\Paparotnik\\pap.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 198
+	classPrompt = StaticMesh
+	position = -25.3 19.7 5.6
+	name = StaticMesh_pap_28
+	meshName = "Types\\Vegetation\\Shrubs\\Paparotnik\\pap.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 199
+	classPrompt = StaticMesh
+	position = -21.3 25.4 4.7
+	name = StaticMesh_pap_29
+	meshName = "Types\\Vegetation\\Shrubs\\Paparotnik\\pap.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 200
+	classPrompt = StaticMesh
+	position = -10.4 22.1 4.8
+	name = StaticMesh_pap_30
+	meshName = "Types\\Vegetation\\Shrubs\\Paparotnik\\pap.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 201
+	classPrompt = StaticMesh
+	position = -15 16.5 4.4
+	name = StaticMesh_pap_31
+	meshName = "Types\\Vegetation\\Shrubs\\Paparotnik\\pap.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 202
+	classPrompt = StaticMesh
+	position = 4.8 21.6 2
+	name = StaticMesh_pap_32
+	meshName = "Types\\Vegetation\\Shrubs\\Paparotnik\\pap.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 203
+	classPrompt = StaticMesh
+	position = 6.6 20 2.3
+	name = StaticMesh_pap_33
+	meshName = "Types\\Vegetation\\Shrubs\\Paparotnik\\pap.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 204
+	classPrompt = StaticMesh
+	position = 9.5 19.7 2.1
+	name = StaticMesh_pap_34
+	meshName = "Types\\Vegetation\\Shrubs\\Paparotnik\\pap.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 205
+	classPrompt = StaticMesh
+	position = 21.2 15 4.6
+	name = StaticMesh_pap_35
+	meshName = "Types\\Vegetation\\Shrubs\\Paparotnik\\pap.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 206
+	classPrompt = StaticMesh
+	position = -1.8 1.9 2.3
+	name = StaticMesh_pap_36
+	meshName = "Types\\Vegetation\\Shrubs\\Paparotnik\\pap.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 207
+	classPrompt = StaticMesh
+	position = -1.6 3.9 2.1
+	name = StaticMesh_pap_37
+	meshName = "Types\\Vegetation\\Shrubs\\Paparotnik\\pap.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 208
+	classPrompt = StaticMesh
+	position = 1.4 5.3 2.1
+	name = StaticMesh_pap_38
+	meshName = "Types\\Vegetation\\Shrubs\\Paparotnik\\pap.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 209
+	classPrompt = StaticMesh
+	position = -2.9 -1.7 2.1
+	name = StaticMesh_pap_39
+	meshName = "Types\\Vegetation\\Shrubs\\Paparotnik\\pap.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 210
+	classPrompt = StaticMesh
+	position = -6 -4.7 1.9
+	name = StaticMesh_pap_40
+	meshName = "Types\\Vegetation\\Shrubs\\Paparotnik\\pap.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 211
+	classPrompt = StaticMesh
+	position = -7.3 -10.6 2.5
+	name = StaticMesh_pap_41
+	meshName = "Types\\Vegetation\\Shrubs\\Paparotnik\\pap.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 212
+	classPrompt = StaticMesh
+	position = -6.6 -14.4 4
+	name = StaticMesh_pap_42
+	meshName = "Types\\Vegetation\\Shrubs\\Paparotnik\\pap.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 213
+	classPrompt = StaticMesh
+	position = -5.1 -11.4 5.1
+	name = StaticMesh_pap_43
+	meshName = "Types\\Vegetation\\Shrubs\\Paparotnik\\pap.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 214
+	classPrompt = StaticMesh
+	position = -18.8 -10.2 2.9
+	name = StaticMesh_pap_11
+	meshName = "Types\\Vegetation\\Shrubs\\Paparotnik\\pap.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 215
+	classPrompt = StaticMesh
+	position = -16.5 -18.7 6.1
+	name = StaticMesh_pap_12
+	meshName = "Types\\Vegetation\\Shrubs\\Paparotnik\\pap.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 216
+	classPrompt = StaticMesh
+	position = -9.400001 -16.2 4.5
+	name = StaticMesh_pap_44
+	meshName = "Types\\Vegetation\\Shrubs\\Paparotnik\\pap.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 217
+	classPrompt = StaticMesh
+	position = -11.5 -2.7 1.1
+	name = StaticMesh_pap_45
+	meshName = "Types\\Vegetation\\Shrubs\\Paparotnik\\pap.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 218
+	classPrompt = StaticMesh
+	position = -5.1 4.8 2.3
+	name = StaticMesh_pap_46
+	meshName = "Types\\Vegetation\\Shrubs\\Paparotnik\\pap.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 219
+	classPrompt = StaticMesh
+	position = -14 16.7 3.8
+	name = StaticMesh_pap_47
+	meshName = "Types\\Vegetation\\Shrubs\\Paparotnik\\pap.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 220
+	classPrompt = StaticMesh
+	position = -12 23.6 5.5
+	name = StaticMesh_pap_48
+	meshName = "Types\\Vegetation\\Shrubs\\Paparotnik\\pap.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 221
+	classPrompt = StaticMesh
+	position = 2.2 13.3 2.4
+	name = StaticMesh_pap_49
+	meshName = "Types\\Vegetation\\Shrubs\\Paparotnik\\pap.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 222
+	classPrompt = StaticMesh
+	position = -20.8 -21.6 3.5
+	rotation = 0 0 0.3287258 0.9444254
+	scale = 1.309782 1.309782 1.237477
+	name = StaticMesh_Tree03_2
+	meshName = "Types\\Vegetation\\Tree01\\Tree03.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 223
+	classPrompt = StaticMesh
+	position = -18.8 -21.7 4.4
+	scale = 1.309782 1.309782 1.445873
+	name = StaticMesh_Tree03_3
+	meshName = "Types\\Vegetation\\Tree01\\Tree03.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 224
+	classPrompt = StaticMesh
+	position = -18.9 1.1 1
+	rotation = 0 0 -0.4897536 0.8718609
+	scale = 2.406933 2.406933 1
+	name = StaticMesh_Plane_0
+	meshName = "Base\\Simple Models\\Plane.mesh"
+	forceMaterial = kuv_1v
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 225
+	classPrompt = StaticMesh
+	position = -20.8 5.1 1
+	rotation = 0 0 -0.3692282 0.9293388
+	scale = 2.406933 2.406933 1
+	name = StaticMesh_131
+	meshName = "Base\\Simple Models\\Plane.mesh"
+	forceMaterial = kuv_1v
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 226
+	classPrompt = StaticMesh
+	position = -11.1 7.2 1
+	rotation = 0 0 -0.996555 0.08293441
+	scale = 2.406933 2.406933 1
+	name = StaticMesh_150
+	meshName = "Base\\Simple Models\\Plane.mesh"
+	forceMaterial = kuv_1v
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 227
+	classPrompt = StaticMesh
+	position = -11.1 18.2 1
+	rotation = 0 0 -0.996555 0.08293441
+	scale = 2.406933 2.406933 1
+	name = StaticMesh_151
+	meshName = "Base\\Simple Models\\Plane.mesh"
+	forceMaterial = kuv_1v
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 228
+	classPrompt = StaticMesh
+	position = -4.400001 20.8 1
+	rotation = 0 0 -0.996555 0.08293441
+	scale = 2.406933 2.406933 1
+	name = StaticMesh_152
+	meshName = "Base\\Simple Models\\Plane.mesh"
+	forceMaterial = kuv_1v
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 229
+	classPrompt = StaticMesh
+	position = -10.6 16.6 1
+	rotation = 0 0 -0.996555 0.08293441
+	scale = 2.406933 2.406933 1
+	name = StaticMesh_153
+	meshName = "Base\\Simple Models\\Plane.mesh"
+	forceMaterial = kuv_1v
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 230
+	classPrompt = StaticMesh
+	position = -0.3000011 23.8 1
+	rotation = 0 0 -0.996555 0.08293441
+	scale = 2.406933 2.406933 1
+	name = StaticMesh_154
+	meshName = "Base\\Simple Models\\Plane.mesh"
+	forceMaterial = kuv_1v
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 231
+	classPrompt = StaticMesh
+	position = 2.799999 23.1 1
+	rotation = 0 0 -0.2385953 -0.971119
+	scale = 2.406933 2.406933 1
+	name = StaticMesh_155
+	meshName = "Base\\Simple Models\\Plane.mesh"
+	forceMaterial = kuv_1v
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 232
+	classPrompt = StaticMesh
+	position = 0.799999 22.6 1
+	rotation = 0 0 -0.2385953 -0.971119
+	scale = 2.406933 2.406933 1
+	name = StaticMesh_156
+	meshName = "Base\\Simple Models\\Plane.mesh"
+	forceMaterial = kuv_1v
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = VillageSplash2
+	uin = 233
+	classPrompt = MapObject
+	position = -32.5 4.1 0
+	name = VillageSplash2_1
+	tags
+	{
+	}
+}
+entity
+{
+	type = Svetlaki
+	uin = 234
+	classPrompt = MapObject
+	position = -3 14.6 2.9
+	name = Svetlali_0
+	tags
+	{
+	}
+}
+entity
+{
+	type = Svetlaki
+	uin = 235
+	classPrompt = MapObject
+	position = -14.2 22.4 4.6
+	name = Svetlali_1
+	tags
+	{
+	}
+}
+entity
+{
+	type = Svetlaki
+	uin = 236
+	classPrompt = MapObject
+	position = 7 -24.9 3.2
+	name = Svetlali_2
+	tags
+	{
+	}
+}
+entity
+{
+	type = Svetlaki
+	uin = 237
+	classPrompt = MapObject
+	position = -11.6 -11.2 2.8
+	name = Svetlali_3
+	tags
+	{
+	}
+}
+entity
+{
+	type = Svetlaki
+	uin = 238
+	classPrompt = MapObject
+	position = -1.6 -0.2 2.3
+	name = Svetlali_4
+	tags
+	{
+	}
+}
+entity
+{
+	type = Svetlaki
+	uin = 239
+	classPrompt = MapObject
+	position = -4.5 8 2.4
+	name = Svetlali_5
+	tags
+	{
+	}
+}
+entity
+{
+	type = Svetlaki
+	uin = 240
+	classPrompt = MapObject
+	position = 12.1 15 2.3
+	name = Svetlali_6
+	tags
+	{
+	}
+}
+entity
+{
+	type = Svetlaki
+	uin = 241
+	classPrompt = MapObject
+	position = -20 -3.1 2.9
+	name = Svetlali_7
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 242
+	classPrompt = StaticMesh
+	position = 1.1 -23.9 3.2
+	name = StaticMesh_Tree01_3
+	meshName = "Types\\Vegetation\\Tree01\\Tree01.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 243
+	classPrompt = StaticMesh
+	position = 2.8 -21.5 3.7
+	rotation = 0 0 -0.4085251 -0.9127471
+	name = StaticMesh_Tree01_4
+	meshName = "Types\\Vegetation\\Tree01\\Tree01.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 244
+	classPrompt = StaticMesh
+	position = 15 -24.6 5.1
+	rotation = 0 0 -0.8720131 0.4894826
+	name = StaticMesh_Tree01_5
+	meshName = "Types\\Vegetation\\Tree01\\Tree01.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 245
+	classPrompt = StaticMesh
+	position = 16.2 -23.4 3.9
+	rotation = 0 0 -0.1477271 0.9890282
+	name = StaticMesh_Tree01_6
+	meshName = "Types\\Vegetation\\Tree01\\Tree01.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 246
+	classPrompt = StaticMesh
+	position = 14.4 -22 4.4
+	rotation = 0 0 -0.5023034 0.8646914
+	name = StaticMesh_Tree01_7
+	meshName = "Types\\Vegetation\\Tree01\\Tree01.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 247
+	classPrompt = StaticMesh
+	position = 16.7 -20.3 3.3
+	rotation = 0 0 -0.995002 -0.09985472
+	name = StaticMesh_Tree01_8
+	meshName = "Types\\Vegetation\\Tree01\\Tree01.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 248
+	classPrompt = StaticMesh
+	position = 16.5 -17 4.9
+	rotation = 0 0 -0.9983618 0.05721657
+	name = StaticMesh_Tree01_9
+	meshName = "Types\\Vegetation\\Tree01\\Tree01.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 249
+	classPrompt = StaticMesh
+	position = 14 -18.3 5.5
+	rotation = 0 0 -0.5046717 -0.8633114
+	name = StaticMesh_Tree01_10
+	meshName = "Types\\Vegetation\\Tree01\\Tree01.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 250
+	classPrompt = StaticMesh
+	position = 14.5 -15.2 5.5
+	rotation = 0 0 -0.2500344 0.968237
+	name = StaticMesh_Tree01_11
+	meshName = "Types\\Vegetation\\Tree01\\Tree01.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 251
+	classPrompt = StaticMesh
+	position = 18.4 26.4 4.9
+	rotation = 0 0 -0.5672304 0.8235592
+	name = StaticMesh_Tree01_12
+	meshName = "Types\\Vegetation\\Tree01\\Tree01.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 252
+	classPrompt = StaticMesh
+	position = 18.7 25.1 4.3
+	rotation = 0 0 -0.715232 0.6988871
+	name = StaticMesh_Tree01_13
+	meshName = "Types\\Vegetation\\Tree01\\Tree01.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 253
+	classPrompt = StaticMesh
+	position = 21 24.4 4.4
+	rotation = 0 0 -0.9135316 0.4067678
+	name = StaticMesh_Tree01_14
+	meshName = "Types\\Vegetation\\Tree01\\Tree01.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 254
+	classPrompt = StaticMesh
+	position = 24.7 25.4 5.5
+	rotation = 0 0 -0.2325201 0.9725916
+	name = StaticMesh_Tree01_15
+	meshName = "Types\\Vegetation\\Tree01\\Tree01.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 255
+	classPrompt = StaticMesh
+	position = 15.7 20.8 3.3
+	rotation = 0 0 -0.8474237 -0.5309172
+	name = StaticMesh_Tree01_16
+	meshName = "Types\\Vegetation\\Tree01\\Tree01.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 256
+	classPrompt = StaticMesh
+	position = 6.3 19.4 3.4
+	rotation = 0 0 -0.5876403 0.8091223
+	name = StaticMesh_Tree01_17
+	meshName = "Types\\Vegetation\\Tree01\\Tree01.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 257
+	classPrompt = StaticMesh
+	position = -27.4 -3.3 3.5
+	rotation = 0 0 -0.217396 0.9760835
+	name = StaticMesh_Tree01_18
+	meshName = "Types\\Vegetation\\Tree01\\Tree01.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 258
+	classPrompt = StaticMesh
+	position = -26.5 -12.9 2.3
+	rotation = 0 0 -0.8593459 -0.5113949
+	name = StaticMesh_Tree01_19
+	meshName = "Types\\Vegetation\\Tree01\\Tree01.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = MapCamera
+	uin = 259
+	classPrompt = MapCamera
+	fov = 0
+	position = 6.9 1.9 9.7
+	rotation = 0.1708055 0.02184168 -0.96947 0.1745747
+	name = MapCamera_MainMenu
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 260
+	classPrompt = StaticMesh
+	position = -15.5 -9.1 3.2
+	rotation = -0.03121331 -0.08542235 -0.05467008 -0.994354
+	scale = 1.774045 1 1
+	name = StaticMesh_Log02_0
+	meshName = "Types\\Vegetation\\General\\Log02.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 261
+	classPrompt = StaticMesh
+	position = -11.6 -8.900001 1.5
+	rotation = 0 0 -0.9325423 -0.3610607
+	name = StaticMesh_TreeStump02_0
+	meshName = "Types\\Vegetation\\General\\TreeStump02.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 262
+	classPrompt = StaticMesh
+	position = -19 -9.500001 3.3
+	rotation = 0 0 -0.9922704 -0.1240946
+	name = StaticMesh_TreeStump03_0
+	meshName = "Types\\Vegetation\\General\\TreeStump03.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 263
+	classPrompt = StaticMesh
+	position = -11.97024 -11.33625 3.2
+	rotation = 0.0250995 -0.08741432 -0.6299454 -0.7712958
+	scale = 1.032629 1 1
+	name = StaticMesh_137
+	meshName = "Types\\Vegetation\\General\\Log02.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 264
+	classPrompt = StaticMesh
+	position = -12.2 -13.4 3.3
+	rotation = 0 0 -0.9922704 -0.1240946
+	name = StaticMesh_136
+	meshName = "Types\\Vegetation\\General\\TreeStump03.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 265
+	classPrompt = StaticMesh
+	position = 2.1 1.9 -1.4
+	name = StaticMesh_Group04_1
+	meshName = "Maps\\MainMenu\\Terrain\\Group04.mesh"
+	castDynamicShadows = True
+	tags
+	{
+		item
+		{
+			name = minimap
+		}
+		item
+		{
+			name = allowmovementpass
+			value = true
+		}
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 266
+	classPrompt = StaticMesh
+	position = -18 -18.3 8.353361
+	rotation = -0.04620301 -0.0277311 -0.2055702 0.9771577
+	name = StaticMesh_Group055_0
+	meshName = "Maps\\MainMenu\\Terrain\\Group055.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = EnvironmentManager
+	uin = 267
+	classPrompt = EnvironmentManager
+	_sun = 7
+	_moon = 283
+	_sky = 8
+	_nextChangeWeather = 8627
+	_windtransition = 2700
+	_fogTransition = 36
+	time = 180
+	name = EnvironmentManager_0
+	_weather
+	{
+		nPowerCheck = 0
+		fpWeatherStartTime = 0
+		fpWeatherTransformTime = 0
+		curWeather = Nothing
+		nextWeather = Nothing
+	}
+	tags
+	{
+	}
+}
+entity
+{
+	type = GridBasedNavigationSystem
+	uin = 268
+	classPrompt = GridBasedNavigationSystem
+	gridBounds = -35 -35 35 35
+	gridCellSize = 0.5
+	agentHeight = 2
+	agentMaxSlope = 35
+	heightByTerrainOnly = False
+	alwaysDrawGrid = False
+	drawGridDistance = 100
+	name = RPGPathFind_0
+	tags
+	{
+	}
+}
+entity
+{
+	type = TextOnScreenManager
+	uin = 269
+	classPrompt = TextOnScreenManager
+	name = TextOnScreenManager_0
+	_txt
+	{
+	}
+	tags
+	{
+	}
+}
+entity
+{
+	type = QuestsManager
+	uin = 270
+	classPrompt = QuestsManager
+	name = QuestsManager_0
+	tags
+	{
+	}
+}
+entity
+{
+	type = MapTeleporter
+	uin = 271
+	classPrompt = MapTeleporter
+	active = True
+	_teleportedUnits = 
+	_gameDescription = "\x041f\x0440\x043e\x0445\x043e\x0434 \x0432 \x0434\x0440\x0443\x0433\x0443\x044e \x043c\x0435\x0441\x0442\x043d\x043e\x0441\x0442\x044c"
+	_gameName = "\x041f\x0440\x043e\x0445\x043e\x0434"
+	position = 0.3061442 8.737629 2.316546
+	rotation = 0.06750485 0.01513796 0.7882046 0.6115125
+	name = MapTeleporter_0
+	_questSystemAlias
+	{
+	}
+	tags
+	{
+	}
+}
+entity
+{
+	type = Wolf
+	uin = 272
+	classPrompt = UCreature
+	_initialai = BaseNPCIntellect
+	_moveShift = 0 0 0
+	regenerationHealth = 0.001
+	_faction = WildPredators
+	_handinv = False
+	_spellPosition = 0 0 0
+	_personalEnemies = 
+	_deadAlly = 
+	_money = 1
+	_gameDescription = "\x041b\x0435\x0441\x043d\x043e\x0439 \x0432\x043e\x043b\x043a"
+	_gameName = "\x0412\x043e\x043b\x043a"
+	_alwaysVisible = True
+	position = -9.958187 -5.539657 2.035834
+	name = Wolf_0
+	_tasks
+	{
+		item
+		{
+			_scriptName = Idle
+			_nextState = Idle
+		}
+	}
+	_unitTasksForSave
+	{
+	}
+	bodyParts
+	{
+		item
+		{
+			_mainHealthPercent = 1.01
+			_section = Head
+		}
+		item
+		{
+			_mainHealthPercent = 1.01
+		}
+		item
+		{
+			_mainHealthPercent = 0.51
+			_section = Leg
+		}
+		item
+		{
+			_mainHealthPercent = 0.51
+			_section = Leg
+		}
+		item
+		{
+			_mainHealthPercent = 0.51
+			_section = Leg
+		}
+		item
+		{
+			_mainHealthPercent = 0.51
+			_section = Leg
+		}
+	}
+	_questSystemAlias
+	{
+	}
+	tags
+	{
+	}
+	inventory
+	{
+	}
+	equipment
+	{
+	}
+}
+entity
+{
+	type = Wolf
+	uin = 273
+	classPrompt = UCreature
+	_initialai = BaseNPCIntellect
+	_moveShift = 0 0 0
+	basedamage = 0
+	regenerationHealth = 0.001
+	_faction = WildPredators
+	_handinv = False
+	_spellPosition = 0 0 0
+	_personalEnemies = 
+	_deadAlly = 
+	_money = 1
+	_gameDescription = "\x041b\x0435\x0441\x043d\x043e\x0439 \x0432\x043e\x043b\x043a"
+	_gameName = "\x0412\x043e\x043b\x043a"
+	_alwaysVisible = True
+	position = -22.017 12.98468 5.665504
+	name = Wolf_1
+	_tasks
+	{
+		item
+		{
+			_scriptName = Patrol
+			_nextState = Idle
+			_targetEntity = 274
+		}
+	}
+	_unitTasksForSave
+	{
+	}
+	bodyParts
+	{
+		item
+		{
+			_mainHealthPercent = 1.01
+			_section = Head
+		}
+		item
+		{
+			_mainHealthPercent = 1.01
+		}
+		item
+		{
+			_mainHealthPercent = 0.51
+			_section = Leg
+		}
+		item
+		{
+			_mainHealthPercent = 0.51
+			_section = Leg
+		}
+		item
+		{
+			_mainHealthPercent = 0.51
+			_section = Leg
+		}
+		item
+		{
+			_mainHealthPercent = 0.51
+			_section = Leg
+		}
+	}
+	_questSystemAlias
+	{
+	}
+	tags
+	{
+	}
+	inventory
+	{
+	}
+	equipment
+	{
+	}
+}
+entity
+{
+	type = MapCurve
+	uin = 274
+	classPrompt = MapCurve
+	subscriptionsToDeletionEvent = 275 276 277
+	curveType = UniformCubicSpline
+	points = 274 275 276 277
+	roundedLineCurveCurvatureRadius = 1
+	owner = 274
+	time = 0
+	roundedLineCurveOverrideCurvatureRadius = -1
+	position = -20.60077 15.50931 5.722366
+	name = MapCurve_0
+	tags
+	{
+	}
+}
+entity
+{
+	type = MapCurvePoint
+	uin = 275
+	classPrompt = MapCurvePoint
+	subscriptionsToDeletionEvent = 274
+	owner = 274
+	time = 1
+	roundedLineCurveOverrideCurvatureRadius = -1
+	position = -22.46711 -6.705097 4.019902
+	tags
+	{
+	}
+}
+entity
+{
+	type = MapCurvePoint
+	uin = 276
+	classPrompt = MapCurvePoint
+	subscriptionsToDeletionEvent = 274
+	owner = 274
+	time = 2
+	roundedLineCurveOverrideCurvatureRadius = -1
+	position = -9.22159 -6.480917 1.89698
+	tags
+	{
+	}
+}
+entity
+{
+	type = MapCurvePoint
+	uin = 277
+	classPrompt = MapCurvePoint
+	subscriptionsToDeletionEvent = 274
+	owner = 274
+	time = 3
+	roundedLineCurveOverrideCurvatureRadius = -1
+	position = -8.876137 -20.20407 5.377079
+	tags
+	{
+	}
+}
+entity
+{
+	type = SoundSource
+	uin = 278
+	classPrompt = SoundSource
+	enabled = True
+	soundName = "Sounds\\General\\ambient\\Gipat\\DRYGRASS\\circle.ogg"
+	volume = 1
+	priority = 0.5
+	pitch = 1
+	rolloffModes = Logarithmic
+	minDistance = 40
+	maxDistance = 80
+	rolloffLogarithmicFactor = 1
+	streaming = False
+	replayDelay = 0
+	position = -2.510073 -5.282622 3.083522
+	name = SoundSource_0
+	tags
+	{
+	}
+}
+entity
+{
+	type = Human
+	uin = 279
+	classPrompt = UGameCharacter
+	_initialai = BaseNPCIntellect
+	_moveShift = 0 0 0
+	regenerationHealth = 0.001
+	_hair = 2
+	_faction = WildPredators
+	_handinv = False
+	_soundSet = MaleSoundSet1
+	_spellPosition = 0 0 0
+	_personalEnemies = 
+	_deadAlly = 
+	_money = 1
+	_gameName = "\x0427\x0435\x043b\x043e\x0432\x0435\x043a"
+	_alwaysVisible = True
+	position = -20.45503 -6.968735 4.225465
+	rotation = 0 0 -0.3511742 0.9363101
+	name = Human_0
+	LearnedSkills
+	{
+	}
+	_tasks
+	{
+	}
+	_unitTasksForSave
+	{
+	}
+	bodyParts
+	{
+		item
+		{
+			_mainHealthPercent = 1.01
+			_section = Head
+		}
+		item
+		{
+			_mainHealthPercent = 1.01
+		}
+		item
+		{
+			_mainHealthPercent = 0.34
+			_section = Hand
+		}
+		item
+		{
+			_mainHealthPercent = 0.34
+			_section = Hand
+		}
+		item
+		{
+			_mainHealthPercent = 0.67
+			_section = Leg
+		}
+		item
+		{
+			_mainHealthPercent = 0.67
+			_section = Leg
+		}
+	}
+	_questSystemAlias
+	{
+	}
+	tags
+	{
+	}
+	inventory
+	{
+	}
+	equipment
+	{
+		item
+		{
+			Section = BodyH
+			LootChance = 50
+			DataBaseID = 14
+			ItemType = AllodsArmor
+			_energy = 27
+			_solidity = 0
+			_itemSkills
+			{
+			}
+		}
+		item
+		{
+			Section = LegH
+			LootChance = 50
+			DataBaseID = 16
+			ItemType = AllodsArmor
+			_energy = 14
+			_solidity = 0
+			_itemSkills
+			{
+			}
+		}
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 280
+	classPrompt = StaticMesh
+	position = -18.46185 -64.9264 -14.66675
+	name = StaticMesh_Firepit01_0
+	meshName = "Types\\Vegetation\\General\\Firepit01.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = FireLight
+	uin = 281
+	classPrompt = MapObject
+	position = -19.67546 -8.181262 3.357363
+	scale = 0.4997326 0.4997326 0.4997326
+	name = FireLight_0
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 282
+	classPrompt = StaticMesh
+	position = 0 0 0
+	rotation = 0 -1 0 -4.371139E-08
+	scale = 65 65 1
+	name = Backside
+	meshName = "Base\\Simple Models\\Plane.mesh"
+	castDynamicShadows = True
+	allowStaticBatching = False
+	tags
+	{
+	}
+}
+entity
+{
+	type = Sun
+	uin = 283
+	classPrompt = Sun
+	billboardTexture = "Base\\Types\\Lighting\\Sun\\MoonDefault.png"
+	billboardColor = 1 1 1
+	billboardPower = 1
+	billboardSize = 0.25
+	billboardRenderQueueGroup = Main
+	billboardOverridePosition = 0 0 0
+	enabled = False
+	lightType = Directional
+	diffuseColor = 1 1 1
+	diffusePower = 0
+	specularColor = 1 1 1
+	specularPower = 0
+	attenuationNear = 0
+	attenuationFar = 10
+	attenuationPower = 2
+	ffpAttenuationConstant = 1
+	ffpAttenuationLinear = 0
+	ffpAttenuationQuadric = 0
+	spotlightInnerAngle = 30
+	spotlightOuterAngle = 40
+	spotlightFalloff = 1
+	castShadows = False
+	allowStaticLighting = False
+	allowDynamicLighting = False
+	customShaderParameter = 0 0 0 0
+	position = -10 3.5 0.5
+	rotation = 0.1227878 0.6963642 -0.1227878 -0.6963643
+	name = Moon
+	tags
+	{
+	}
+}

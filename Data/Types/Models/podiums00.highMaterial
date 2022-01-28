@@ -1,0 +1,9 @@
+highLevelMaterial podiums00
+{
+template = ShaderBaseMaterial
+alphaRejectFunction = GreaterEqual
+diffuse1Map
+{
+texture = ".\\podiums00.dds"
+}
+}

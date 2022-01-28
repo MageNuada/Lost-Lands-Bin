@@ -1,0 +1,9 @@
+highLevelMaterial dgungate00
+{
+template = ShaderBaseMaterial
+alphaRejectFunction = GreaterEqual
+diffuse1Map
+{
+texture = ".\\dgungate00.dds"
+}
+}

@@ -1,0 +1,17 @@
+highLevelMaterial FarmRock_14SG
+{
+	template = ShaderBaseMaterial
+	specularColor = 1 1 1
+	diffuse1Map
+	{
+		texture = ".\\rock_006_c.dds"
+	}
+	specularMap
+	{
+		texture = ".\\rock_006_S.dds"
+	}
+	normalMap
+	{
+		texture = ".\\rock_006_N.dds"
+	}
+}

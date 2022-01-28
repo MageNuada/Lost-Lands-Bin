@@ -1,0 +1,9 @@
+highLevelMaterial kanianhousedetails00
+{
+template = ShaderBaseMaterial
+alphaRejectFunction = GreaterEqual
+diffuse1Map
+{
+texture = ".\\kanianhousedetails00.dds"
+}
+}

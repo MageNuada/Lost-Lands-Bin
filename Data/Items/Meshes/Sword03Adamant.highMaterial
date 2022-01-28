@@ -1,0 +1,9 @@
+highLevelMaterial Sword03Adamant
+{
+	template = ShaderBaseMaterial
+	alphaRejectFunction = GreaterEqual
+	diffuse1Map
+	{
+		texture = ".\\unhufesw_03.ad.0.dds"
+	}
+}

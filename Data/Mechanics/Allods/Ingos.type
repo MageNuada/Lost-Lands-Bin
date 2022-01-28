@@ -1,0 +1,880 @@
+type Ingos
+{
+	class = AstralAllod
+	_sunTime = "0.2470588 0.3647059 0.6156863;0.2470588 0.3647059 0.6156863;0.3607843 0.4431373 0.6470588;0.6705883 0.5137255 0.4666667;1 0.5490196 0.4078432;1 0.7764707 0.5058824;1 0.9725491 0.8117648;1 1 1;1 1 1;1 1 1;1 1 1;1 1 1;1 1 1;1 1 1;1 1 1;1 1 1;1 1 1;1 1 1;1 0.9725491 0.8117648;1 0.7921569 0.5333334;1 0.482353 0.3215686;0.6509804 0.5019608 0.454902;0.3607843 0.4784314 0.6470588;0.2470588 0.3647059 0.6156863"
+	_ambientTime = "0.2117647 0.3254902 0.5764706;0.2117647 0.3254902 0.5764706;0.3019608 0.3411765 0.5294118;0.345098 0.3686275 0.5215687;0.3882353 0.4078432 0.5215687;0.4235294 0.4509804 0.5411765;0.4352942 0.4745098 0.5921569;0.4352942 0.4745098 0.5921569;0.4352942 0.4745098 0.5921569;0.4352942 0.4745098 0.5921569;0.4352942 0.4745098 0.5921569;0.4352942 0.4745098 0.5921569;0.4352942 0.4745098 0.5921569;0.4352942 0.4745098 0.5921569;0.4352942 0.4745098 0.5921569;0.4352942 0.4745098 0.5921569;0.4352942 0.4745098 0.5921569;0.4352942 0.4745098 0.5921569;0.4352942 0.4745098 0.5921569;0.4235294 0.4509804 0.5411765;0.3882353 0.4078432 0.5215687;0.345098 0.3686275 0.5215687;0.3019608 0.3411765 0.5294118;0.2117647 0.3254902 0.5764706"
+	_skyTime = "0 0 0.4627451;0 0 0.4627451;0.2941177 0.3254902 0.372549;0.5921569 0.3137255 0.227451;0.7686275 0.3490196 0.2196079;0.6862745 0.5882353 0.4941177;0.5411765 0.654902 0.6941177;0.2078432 0.6156863 0.7764707;0.1803922 0.5176471 0.8509805;0.1803922 0.5176471 0.8509805;0.1803922 0.5176471 0.8509805;0.1803922 0.5176471 0.8509805;0.1803922 0.5176471 0.8509805;0.1803922 0.5176471 0.8509805;0.1803922 0.5176471 0.8509805;0.1803922 0.5176471 0.8509805;0.2078432 0.6156863 0.7764707;0.4039216 0.6588235 0.7176471;0.682353 0.6588235 0.6156863;0.8235295 0.6039216 0.3960785;0.8235295 0.372549 0.1411765;0.5333334 0.3176471 0.3176471;0.2941177 0.3254902 0.372549;0 0 0.4627451"
+	_fogDistanceDay = 50 110
+	_fogDistanceNight = 20 60
+	_aName = "\x0418\x043d\x0433\x043e\x0441"
+	_weather = Winter
+	creatableInMapEditor = False
+	uniqueEntityInstance = True
+	_ambientInfo
+	{
+		item
+		{
+			_fpMaxPan = 30
+			_nPercentToPlay = 6
+			_circleSound = "Sounds\\General\\ambient\\Ingos\\Snow\\circle.ogg"
+			_groundType = Snow
+			_natureSoundsMorning
+			{
+				item
+				{
+					_sound = "Sounds\\General\\ambient\\Ingos\\Snow\\Morning\\1.ogg"
+				}
+				item
+				{
+					_sound = "Sounds\\General\\ambient\\Ingos\\Snow\\Morning\\10.ogg"
+				}
+				item
+				{
+					_sound = "Sounds\\General\\ambient\\Ingos\\Snow\\Morning\\11.ogg"
+				}
+				item
+				{
+					_sound = "Sounds\\General\\ambient\\Ingos\\Snow\\Morning\\12.ogg"
+				}
+				item
+				{
+					_sound = "Sounds\\General\\ambient\\Ingos\\Snow\\Morning\\13.ogg"
+				}
+				item
+				{
+					_sound = "Sounds\\General\\ambient\\Ingos\\Snow\\Morning\\14.ogg"
+				}
+				item
+				{
+					_sound = "Sounds\\General\\ambient\\Ingos\\Snow\\Morning\\15.ogg"
+				}
+				item
+				{
+					_sound = "Sounds\\General\\ambient\\Ingos\\Snow\\Morning\\2.ogg"
+				}
+				item
+				{
+					_sound = "Sounds\\General\\ambient\\Ingos\\Snow\\Morning\\3.ogg"
+				}
+				item
+				{
+					_sound = "Sounds\\General\\ambient\\Ingos\\Snow\\Morning\\4.ogg"
+				}
+				item
+				{
+					_sound = "Sounds\\General\\ambient\\Ingos\\Snow\\Morning\\5.ogg"
+				}
+				item
+				{
+					_sound = "Sounds\\General\\ambient\\Ingos\\Snow\\Morning\\6.ogg"
+				}
+				item
+				{
+					_sound = "Sounds\\General\\ambient\\Ingos\\Snow\\Morning\\7.ogg"
+				}
+				item
+				{
+					_sound = "Sounds\\General\\ambient\\Ingos\\Snow\\Morning\\8.ogg"
+				}
+				item
+				{
+					_sound = "Sounds\\General\\ambient\\Ingos\\Snow\\Morning\\9.ogg"
+				}
+			}
+			_natureSoundsDay
+			{
+				item
+				{
+					_sound = "Sounds\\General\\ambient\\Ingos\\Snow\\Day\\1.ogg"
+				}
+				item
+				{
+					_sound = "Sounds\\General\\ambient\\Ingos\\Snow\\Day\\10.ogg"
+				}
+				item
+				{
+					_sound = "Sounds\\General\\ambient\\Ingos\\Snow\\Day\\11.ogg"
+				}
+				item
+				{
+					_sound = "Sounds\\General\\ambient\\Ingos\\Snow\\Day\\12.ogg"
+				}
+				item
+				{
+					_sound = "Sounds\\General\\ambient\\Ingos\\Snow\\Day\\13.ogg"
+				}
+				item
+				{
+					_sound = "Sounds\\General\\ambient\\Ingos\\Snow\\Day\\14.ogg"
+				}
+				item
+				{
+					_sound = "Sounds\\General\\ambient\\Ingos\\Snow\\Day\\15.ogg"
+				}
+				item
+				{
+					_sound = "Sounds\\General\\ambient\\Ingos\\Snow\\Day\\2.ogg"
+				}
+				item
+				{
+					_sound = "Sounds\\General\\ambient\\Ingos\\Snow\\Day\\3.ogg"
+				}
+				item
+				{
+					_sound = "Sounds\\General\\ambient\\Ingos\\Snow\\Day\\4.ogg"
+				}
+				item
+				{
+					_sound = "Sounds\\General\\ambient\\Ingos\\Snow\\Day\\5.ogg"
+				}
+				item
+				{
+					_sound = "Sounds\\General\\ambient\\Ingos\\Snow\\Day\\6.ogg"
+				}
+				item
+				{
+					_sound = "Sounds\\General\\ambient\\Ingos\\Snow\\Day\\7.ogg"
+				}
+				item
+				{
+					_sound = "Sounds\\General\\ambient\\Ingos\\Snow\\Day\\8.ogg"
+				}
+				item
+				{
+					_sound = "Sounds\\General\\ambient\\Ingos\\Snow\\Day\\9.ogg"
+				}
+			}
+			_natureSoundsEvening
+			{
+				item
+				{
+					_sound = "Sounds\\General\\ambient\\Ingos\\Snow\\Evening\\1.ogg"
+				}
+				item
+				{
+					_sound = "Sounds\\General\\ambient\\Ingos\\Snow\\Evening\\10.ogg"
+				}
+				item
+				{
+					_sound = "Sounds\\General\\ambient\\Ingos\\Snow\\Evening\\11.ogg"
+				}
+				item
+				{
+					_sound = "Sounds\\General\\ambient\\Ingos\\Snow\\Evening\\12.ogg"
+				}
+				item
+				{
+					_sound = "Sounds\\General\\ambient\\Ingos\\Snow\\Evening\\13.ogg"
+				}
+				item
+				{
+					_sound = "Sounds\\General\\ambient\\Ingos\\Snow\\Evening\\14.ogg"
+				}
+				item
+				{
+					_sound = "Sounds\\General\\ambient\\Ingos\\Snow\\Evening\\15.ogg"
+				}
+				item
+				{
+					_sound = "Sounds\\General\\ambient\\Ingos\\Snow\\Evening\\2.ogg"
+				}
+				item
+				{
+					_sound = "Sounds\\General\\ambient\\Ingos\\Snow\\Evening\\3.ogg"
+				}
+				item
+				{
+					_sound = "Sounds\\General\\ambient\\Ingos\\Snow\\Evening\\4.ogg"
+				}
+				item
+				{
+					_sound = "Sounds\\General\\ambient\\Ingos\\Snow\\Evening\\5.ogg"
+				}
+				item
+				{
+					_sound = "Sounds\\General\\ambient\\Ingos\\Snow\\Evening\\6.ogg"
+				}
+				item
+				{
+					_sound = "Sounds\\General\\ambient\\Ingos\\Snow\\Evening\\7.ogg"
+				}
+				item
+				{
+					_sound = "Sounds\\General\\ambient\\Ingos\\Snow\\Evening\\8.ogg"
+				}
+				item
+				{
+					_sound = "Sounds\\General\\ambient\\Ingos\\Snow\\Evening\\9.ogg"
+				}
+			}
+			_natureSoundsNight
+			{
+				item
+				{
+					_sound = "Sounds\\General\\ambient\\Ingos\\Snow\\Night\\1.ogg"
+				}
+				item
+				{
+					_sound = "Sounds\\General\\ambient\\Ingos\\Snow\\Night\\2.ogg"
+				}
+				item
+				{
+					_sound = "Sounds\\General\\ambient\\Ingos\\Snow\\Night\\3.ogg"
+				}
+			}
+		}
+		item
+		{
+			_fpMaxPan = 0
+			_nPercentToPlay = 0
+			_circleSound = "Sounds\\General\\ambient\\Ingos\\Rock\\circle.ogg"
+			_groundType = Ground
+			_natureSoundsMorning
+			{
+				item
+				{
+					_sound = "Sounds\\General\\ambient\\Ingos\\Rock\\Morning\\1.ogg"
+				}
+				item
+				{
+					_sound = "Sounds\\General\\ambient\\Ingos\\Rock\\Morning\\2.ogg"
+				}
+				item
+				{
+					_sound = "Sounds\\General\\ambient\\Ingos\\Rock\\Morning\\3.ogg"
+				}
+			}
+			_natureSoundsDay
+			{
+				item
+				{
+					_sound = "Sounds\\General\\ambient\\Ingos\\Rock\\Day\\1.ogg"
+				}
+				item
+				{
+					_sound = "Sounds\\General\\ambient\\Ingos\\Rock\\Day\\2.ogg"
+				}
+				item
+				{
+					_sound = "Sounds\\General\\ambient\\Ingos\\Rock\\Day\\3.ogg"
+				}
+			}
+			_natureSoundsEvening
+			{
+				item
+				{
+					_sound = "Sounds\\General\\ambient\\Ingos\\Rock\\Evening\\1.ogg"
+				}
+				item
+				{
+					_sound = "Sounds\\General\\ambient\\Ingos\\Rock\\Evening\\2.ogg"
+				}
+				item
+				{
+					_sound = "Sounds\\General\\ambient\\Ingos\\Rock\\Evening\\3.ogg"
+				}
+			}
+			_natureSoundsNight
+			{
+				item
+				{
+					_sound = "Sounds\\General\\ambient\\Ingos\\Rock\\Night\\1.ogg"
+				}
+				item
+				{
+					_sound = "Sounds\\General\\ambient\\Ingos\\Rock\\Night\\2.ogg"
+				}
+				item
+				{
+					_sound = "Sounds\\General\\ambient\\Ingos\\Rock\\Night\\3.ogg"
+				}
+			}
+		}
+		item
+		{
+			_fpMaxPan = 100
+			_nPercentToPlay = 6
+			_circleSound = "Sounds\\General\\ambient\\Ingos\\Water\\circle.ogg"
+			_groundType = Water
+			_natureSoundsMorning
+			{
+			}
+			_natureSoundsDay
+			{
+			}
+			_natureSoundsEvening
+			{
+			}
+			_natureSoundsNight
+			{
+			}
+		}
+		item
+		{
+			_fpMaxPan = 0
+			_nPercentToPlay = 0
+			_circleSound = "Sounds\\General\\ambient\\Ingos\\Ice\\circle.ogg"
+			_groundType = Ice
+			_natureSoundsMorning
+			{
+				item
+				{
+					_sound = "Sounds\\General\\ambient\\Ingos\\Ice\\Morning\\1.ogg"
+				}
+				item
+				{
+					_sound = "Sounds\\General\\ambient\\Ingos\\Ice\\Morning\\10.ogg"
+				}
+				item
+				{
+					_sound = "Sounds\\General\\ambient\\Ingos\\Ice\\Morning\\11.ogg"
+				}
+				item
+				{
+					_sound = "Sounds\\General\\ambient\\Ingos\\Ice\\Morning\\12.ogg"
+				}
+				item
+				{
+					_sound = "Sounds\\General\\ambient\\Ingos\\Ice\\Morning\\13.ogg"
+				}
+				item
+				{
+					_sound = "Sounds\\General\\ambient\\Ingos\\Ice\\Morning\\14.ogg"
+				}
+				item
+				{
+					_sound = "Sounds\\General\\ambient\\Ingos\\Ice\\Morning\\15.ogg"
+				}
+				item
+				{
+					_sound = "Sounds\\General\\ambient\\Ingos\\Ice\\Morning\\2.ogg"
+				}
+				item
+				{
+					_sound = "Sounds\\General\\ambient\\Ingos\\Ice\\Morning\\3.ogg"
+				}
+				item
+				{
+					_sound = "Sounds\\General\\ambient\\Ingos\\Ice\\Morning\\4.ogg"
+				}
+				item
+				{
+					_sound = "Sounds\\General\\ambient\\Ingos\\Ice\\Morning\\5.ogg"
+				}
+				item
+				{
+					_sound = "Sounds\\General\\ambient\\Ingos\\Ice\\Morning\\6.ogg"
+				}
+				item
+				{
+					_sound = "Sounds\\General\\ambient\\Ingos\\Ice\\Morning\\7.ogg"
+				}
+				item
+				{
+					_sound = "Sounds\\General\\ambient\\Ingos\\Ice\\Morning\\8.ogg"
+				}
+				item
+				{
+					_sound = "Sounds\\General\\ambient\\Ingos\\Ice\\Morning\\9.ogg"
+				}
+			}
+			_natureSoundsDay
+			{
+				item
+				{
+					_sound = "Sounds\\General\\ambient\\Ingos\\Ice\\Day\\1.ogg"
+				}
+				item
+				{
+					_sound = "Sounds\\General\\ambient\\Ingos\\Ice\\Day\\10.ogg"
+				}
+				item
+				{
+					_sound = "Sounds\\General\\ambient\\Ingos\\Ice\\Day\\11.ogg"
+				}
+				item
+				{
+					_sound = "Sounds\\General\\ambient\\Ingos\\Ice\\Day\\12.ogg"
+				}
+				item
+				{
+					_sound = "Sounds\\General\\ambient\\Ingos\\Ice\\Day\\13.ogg"
+				}
+				item
+				{
+					_sound = "Sounds\\General\\ambient\\Ingos\\Ice\\Day\\14.ogg"
+				}
+				item
+				{
+					_sound = "Sounds\\General\\ambient\\Ingos\\Ice\\Day\\15.ogg"
+				}
+				item
+				{
+					_sound = "Sounds\\General\\ambient\\Ingos\\Ice\\Day\\2.ogg"
+				}
+				item
+				{
+					_sound = "Sounds\\General\\ambient\\Ingos\\Ice\\Day\\3.ogg"
+				}
+				item
+				{
+					_sound = "Sounds\\General\\ambient\\Ingos\\Ice\\Day\\4.ogg"
+				}
+				item
+				{
+					_sound = "Sounds\\General\\ambient\\Ingos\\Ice\\Day\\5.ogg"
+				}
+				item
+				{
+					_sound = "Sounds\\General\\ambient\\Ingos\\Ice\\Day\\6.ogg"
+				}
+				item
+				{
+					_sound = "Sounds\\General\\ambient\\Ingos\\Ice\\Day\\7.ogg"
+				}
+				item
+				{
+					_sound = "Sounds\\General\\ambient\\Ingos\\Ice\\Day\\8.ogg"
+				}
+				item
+				{
+					_sound = "Sounds\\General\\ambient\\Ingos\\Ice\\Day\\9.ogg"
+				}
+			}
+			_natureSoundsEvening
+			{
+				item
+				{
+					_sound = "Sounds\\General\\ambient\\Ingos\\Ice\\Evening\\1.ogg"
+				}
+				item
+				{
+					_sound = "Sounds\\General\\ambient\\Ingos\\Ice\\Evening\\10.ogg"
+				}
+				item
+				{
+					_sound = "Sounds\\General\\ambient\\Ingos\\Ice\\Evening\\11.ogg"
+				}
+				item
+				{
+					_sound = "Sounds\\General\\ambient\\Ingos\\Ice\\Evening\\12.ogg"
+				}
+				item
+				{
+					_sound = "Sounds\\General\\ambient\\Ingos\\Ice\\Evening\\13.ogg"
+				}
+				item
+				{
+					_sound = "Sounds\\General\\ambient\\Ingos\\Ice\\Evening\\14.ogg"
+				}
+				item
+				{
+					_sound = "Sounds\\General\\ambient\\Ingos\\Ice\\Evening\\15.ogg"
+				}
+				item
+				{
+					_sound = "Sounds\\General\\ambient\\Ingos\\Ice\\Evening\\2.ogg"
+				}
+				item
+				{
+					_sound = "Sounds\\General\\ambient\\Ingos\\Ice\\Evening\\3.ogg"
+				}
+				item
+				{
+					_sound = "Sounds\\General\\ambient\\Ingos\\Ice\\Evening\\4.ogg"
+				}
+				item
+				{
+					_sound = "Sounds\\General\\ambient\\Ingos\\Ice\\Evening\\5.ogg"
+				}
+				item
+				{
+					_sound = "Sounds\\General\\ambient\\Ingos\\Ice\\Evening\\6.ogg"
+				}
+				item
+				{
+					_sound = "Sounds\\General\\ambient\\Ingos\\Ice\\Evening\\7.ogg"
+				}
+				item
+				{
+					_sound = "Sounds\\General\\ambient\\Ingos\\Ice\\Evening\\8.ogg"
+				}
+				item
+				{
+					_sound = "Sounds\\General\\ambient\\Ingos\\Ice\\Evening\\9.ogg"
+				}
+			}
+			_natureSoundsNight
+			{
+				item
+				{
+					_sound = "Sounds\\General\\ambient\\Ingos\\Ice\\Night\\1.ogg"
+				}
+				item
+				{
+					_sound = "Sounds\\General\\ambient\\Ingos\\Ice\\Night\\2.ogg"
+				}
+				item
+				{
+					_sound = "Sounds\\General\\ambient\\Ingos\\Ice\\Night\\3.ogg"
+				}
+			}
+		}
+		item
+		{
+			_fpMaxPan = 0
+			_nPercentToPlay = 0
+			_circleSound = "Sounds\\General\\ambient\\Ingos\\Snowball\\circle.ogg"
+			_groundType = Road
+			_natureSoundsMorning
+			{
+				item
+				{
+					_sound = "Sounds\\General\\ambient\\Ingos\\Snowball\\Morning\\1.ogg"
+				}
+				item
+				{
+					_sound = "Sounds\\General\\ambient\\Ingos\\Snowball\\Morning\\10.ogg"
+				}
+				item
+				{
+					_sound = "Sounds\\General\\ambient\\Ingos\\Snowball\\Morning\\11.ogg"
+				}
+				item
+				{
+					_sound = "Sounds\\General\\ambient\\Ingos\\Snowball\\Morning\\12.ogg"
+				}
+				item
+				{
+					_sound = "Sounds\\General\\ambient\\Ingos\\Snowball\\Morning\\13.ogg"
+				}
+				item
+				{
+					_sound = "Sounds\\General\\ambient\\Ingos\\Snowball\\Morning\\14.ogg"
+				}
+				item
+				{
+					_sound = "Sounds\\General\\ambient\\Ingos\\Snowball\\Morning\\15.ogg"
+				}
+				item
+				{
+					_sound = "Sounds\\General\\ambient\\Ingos\\Snowball\\Morning\\2.ogg"
+				}
+				item
+				{
+					_sound = "Sounds\\General\\ambient\\Ingos\\Snowball\\Morning\\3.ogg"
+				}
+				item
+				{
+					_sound = "Sounds\\General\\ambient\\Ingos\\Snowball\\Morning\\4.ogg"
+				}
+				item
+				{
+					_sound = "Sounds\\General\\ambient\\Ingos\\Snowball\\Morning\\5.ogg"
+				}
+				item
+				{
+					_sound = "Sounds\\General\\ambient\\Ingos\\Snowball\\Morning\\6.ogg"
+				}
+				item
+				{
+					_sound = "Sounds\\General\\ambient\\Ingos\\Snowball\\Morning\\7.ogg"
+				}
+				item
+				{
+					_sound = "Sounds\\General\\ambient\\Ingos\\Snowball\\Morning\\8.ogg"
+				}
+				item
+				{
+					_sound = "Sounds\\General\\ambient\\Ingos\\Snowball\\Morning\\9.ogg"
+				}
+			}
+			_natureSoundsDay
+			{
+				item
+				{
+					_sound = "Sounds\\General\\ambient\\Ingos\\Snowball\\Day\\1.ogg"
+				}
+				item
+				{
+					_sound = "Sounds\\General\\ambient\\Ingos\\Snowball\\Day\\10.ogg"
+				}
+				item
+				{
+					_sound = "Sounds\\General\\ambient\\Ingos\\Snowball\\Day\\11.ogg"
+				}
+				item
+				{
+					_sound = "Sounds\\General\\ambient\\Ingos\\Snowball\\Day\\12.ogg"
+				}
+				item
+				{
+					_sound = "Sounds\\General\\ambient\\Ingos\\Snowball\\Day\\13.ogg"
+				}
+				item
+				{
+					_sound = "Sounds\\General\\ambient\\Ingos\\Snowball\\Day\\14.ogg"
+				}
+				item
+				{
+					_sound = "Sounds\\General\\ambient\\Ingos\\Snowball\\Day\\15.ogg"
+				}
+				item
+				{
+					_sound = "Sounds\\General\\ambient\\Ingos\\Snowball\\Day\\2.ogg"
+				}
+				item
+				{
+					_sound = "Sounds\\General\\ambient\\Ingos\\Snowball\\Day\\3.ogg"
+				}
+				item
+				{
+					_sound = "Sounds\\General\\ambient\\Ingos\\Snowball\\Day\\4.ogg"
+				}
+				item
+				{
+					_sound = "Sounds\\General\\ambient\\Ingos\\Snowball\\Day\\5.ogg"
+				}
+				item
+				{
+					_sound = "Sounds\\General\\ambient\\Ingos\\Snowball\\Day\\6.ogg"
+				}
+				item
+				{
+					_sound = "Sounds\\General\\ambient\\Ingos\\Snowball\\Day\\7.ogg"
+				}
+				item
+				{
+					_sound = "Sounds\\General\\ambient\\Ingos\\Snowball\\Day\\8.ogg"
+				}
+				item
+				{
+					_sound = "Sounds\\General\\ambient\\Ingos\\Snowball\\Day\\9.ogg"
+				}
+			}
+			_natureSoundsEvening
+			{
+				item
+				{
+					_sound = "Sounds\\General\\ambient\\Ingos\\Snowball\\Evening\\1.ogg"
+				}
+				item
+				{
+					_sound = "Sounds\\General\\ambient\\Ingos\\Snowball\\Evening\\10.ogg"
+				}
+				item
+				{
+					_sound = "Sounds\\General\\ambient\\Ingos\\Snowball\\Evening\\11.ogg"
+				}
+				item
+				{
+					_sound = "Sounds\\General\\ambient\\Ingos\\Snowball\\Evening\\12.ogg"
+				}
+				item
+				{
+					_sound = "Sounds\\General\\ambient\\Ingos\\Snowball\\Evening\\13.ogg"
+				}
+				item
+				{
+					_sound = "Sounds\\General\\ambient\\Ingos\\Snowball\\Evening\\14.ogg"
+				}
+				item
+				{
+					_sound = "Sounds\\General\\ambient\\Ingos\\Snowball\\Evening\\15.ogg"
+				}
+				item
+				{
+					_sound = "Sounds\\General\\ambient\\Ingos\\Snowball\\Evening\\2.ogg"
+				}
+				item
+				{
+					_sound = "Sounds\\General\\ambient\\Ingos\\Snowball\\Evening\\3.ogg"
+				}
+				item
+				{
+					_sound = "Sounds\\General\\ambient\\Ingos\\Snowball\\Evening\\4.ogg"
+				}
+				item
+				{
+					_sound = "Sounds\\General\\ambient\\Ingos\\Snowball\\Evening\\5.ogg"
+				}
+				item
+				{
+					_sound = "Sounds\\General\\ambient\\Ingos\\Snowball\\Evening\\6.ogg"
+				}
+				item
+				{
+					_sound = "Sounds\\General\\ambient\\Ingos\\Snowball\\Evening\\7.ogg"
+				}
+				item
+				{
+					_sound = "Sounds\\General\\ambient\\Ingos\\Snowball\\Evening\\8.ogg"
+				}
+				item
+				{
+					_sound = "Sounds\\General\\ambient\\Ingos\\Snowball\\Evening\\9.ogg"
+				}
+			}
+			_natureSoundsNight
+			{
+				item
+				{
+					_sound = "Sounds\\General\\ambient\\Ingos\\Snowball\\Night\\1.ogg"
+				}
+				item
+				{
+					_sound = "Sounds\\General\\ambient\\Ingos\\Snowball\\Night\\2.ogg"
+				}
+				item
+				{
+					_sound = "Sounds\\General\\ambient\\Ingos\\Snowball\\Night\\3.ogg"
+				}
+			}
+		}
+		item
+		{
+			_fpMaxPan = 0
+			_nPercentToPlay = 0
+			_circleSound = "Sounds\\General\\ambient\\Ingos\\Rock\\circle.ogg"
+			_groundType = Stone
+			_natureSoundsMorning
+			{
+				item
+				{
+					_sound = "Sounds\\General\\ambient\\Ingos\\Rock\\Morning\\1.ogg"
+				}
+				item
+				{
+					_sound = "Sounds\\General\\ambient\\Ingos\\Rock\\Morning\\2.ogg"
+				}
+				item
+				{
+					_sound = "Sounds\\General\\ambient\\Ingos\\Rock\\Morning\\3.ogg"
+				}
+			}
+			_natureSoundsDay
+			{
+				item
+				{
+					_sound = "Sounds\\General\\ambient\\Ingos\\Rock\\Day\\1.ogg"
+				}
+				item
+				{
+					_sound = "Sounds\\General\\ambient\\Ingos\\Rock\\Day\\2.ogg"
+				}
+				item
+				{
+					_sound = "Sounds\\General\\ambient\\Ingos\\Rock\\Day\\3.ogg"
+				}
+			}
+			_natureSoundsEvening
+			{
+				item
+				{
+					_sound = "Sounds\\General\\ambient\\Ingos\\Rock\\Evening\\1.ogg"
+				}
+				item
+				{
+					_sound = "Sounds\\General\\ambient\\Ingos\\Rock\\Evening\\2.ogg"
+				}
+				item
+				{
+					_sound = "Sounds\\General\\ambient\\Ingos\\Rock\\Evening\\3.ogg"
+				}
+			}
+			_natureSoundsNight
+			{
+				item
+				{
+					_sound = "Sounds\\General\\ambient\\Ingos\\Rock\\Night\\1.ogg"
+				}
+				item
+				{
+					_sound = "Sounds\\General\\ambient\\Ingos\\Rock\\Night\\2.ogg"
+				}
+				item
+				{
+					_sound = "Sounds\\General\\ambient\\Ingos\\Rock\\Night\\3.ogg"
+				}
+			}
+		}
+	}
+	TypedMusic
+	{
+		item
+		{
+			_soundType = CalmDungeon
+			MapMusic
+			{
+				item
+				{
+					_sound = "Sounds\\Music\\Allods\\horror.ogg"
+				}
+			}
+		}
+		item
+		{
+			_soundType = Briefing
+			MapMusic
+			{
+				item
+				{
+					_sound = "Sounds\\Music\\Allods\\Ingos\\haven.ogg"
+				}
+				item
+				{
+					_sound = "Sounds\\Music\\Allods\\Ingos\\kania.ogg"
+				}
+			}
+		}
+		item
+		{
+			_soundType = Constructor
+			MapMusic
+			{
+				item
+				{
+					_sound = "Sounds\\Music\\Allods\\Ingos\\rest.ogg"
+				}
+			}
+		}
+		item
+		{
+			_soundType = CalmOpen
+			MapMusic
+			{
+				item
+				{
+					_sound = "Sounds\\Music\\Allods\\Ingos\\cool.ogg"
+				}
+				item
+				{
+					_sound = "Sounds\\Music\\Allods\\Ingos\\ingos.ogg"
+				}
+			}
+		}
+		item
+		{
+			_soundType = CombatMusic
+			MapMusic
+			{
+				item
+				{
+					_sound = "Sounds\\Music\\Allods\\Ingos\\bravery.ogg"
+				}
+				item
+				{
+					_sound = "Sounds\\Music\\Allods\\Ingos\\attack.ogg"
+				}
+				item
+				{
+					_sound = "Sounds\\Music\\Allods\\Ingos\\warrior.ogg"
+				}
+				item
+				{
+					_sound = "Sounds\\Music\\Allods\\Ingos\\victory.ogg"
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,18 @@
+highLevelMaterial kuv_1v
+{
+	template = VegetationMaterial
+	doubleSided = True
+	alphaRejectFunction = GreaterEqual
+	alphaToCoverage = True
+	fadingByDistanceRange = 50 60
+	diffuseColor = 0.3647059 0.4666667 0.2745098
+	receiveObjectsPositionsFromVertices = True
+	windEffectFactor = 2
+	bendVariation = 0.005
+	detailBending = False
+	diffuse1Map
+	{
+		texture = ".\\kub2.dds"
+		clamp = True
+	}
+}

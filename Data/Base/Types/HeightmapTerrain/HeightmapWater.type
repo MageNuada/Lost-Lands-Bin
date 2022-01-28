@@ -1,0 +1,6 @@
+type HeightmapWater
+{
+	class = HeightmapWater
+	allowEditorCreate = True
+	allowEmptyName = True
+}

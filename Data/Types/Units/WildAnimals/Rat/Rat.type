@@ -1,0 +1,152 @@
+type Rat
+{
+	class = UCreature
+	_initialAI = BaseNPCIntellect
+	_viewDistance = 8.5
+	_walkVelocity = 1.33333 0.8
+	_runVelocity = 4.03333 0.8
+	_bloodDecal = DeathBlood
+	_soundSetMale = RatSoundSet
+	_faction = WildAgro
+	_regenerationHealth = 0.005
+	cname = "\x041a\x0440\x044b\x0441\x0430"
+	radius = 0.1
+	height = 0.2
+	_bodyParts
+	{
+		item
+		{
+			_mainHealthPercent = 1.01
+			_section = Head
+		}
+		item
+		{
+			_mainHealthPercent = 1.01
+		}
+		item
+		{
+			_mainHealthPercent = 1.01
+			_section = Leg
+		}
+		item
+		{
+			_mainHealthPercent = 1.01
+			_section = Leg
+		}
+		item
+		{
+			_mainHealthPercent = 1.01
+			_section = Leg
+		}
+		item
+		{
+			_mainHealthPercent = 1.01
+			_section = Leg
+		}
+	}
+	_unitAppearance
+	{
+		item
+		{
+			_gender = Male
+			_relativePath = ".\\"
+			_additionalMeshes
+			{
+			}
+			_textures
+			{
+				item
+				{
+					value = BlackRat.jpg
+				}
+				item
+				{
+					value = BrownRat.jpg
+				}
+				item
+				{
+					value = WhiteRat.jpg
+				}
+			}
+		}
+		item
+		{
+			_gender = Female
+			_relativePath = "Types\\Units\\WildAnimals\\"
+			_additionalMeshes
+			{
+			}
+			_textures
+			{
+			}
+		}
+	}
+	attachedObjects
+	{
+		mesh
+		{
+			meshName = ".\\BlackRat.mesh"
+			alias = Body
+			position = -0.06029774 0 -0.09855627
+			scale = 0.3095974 0.3095974 0.3095974
+		}
+	}
+	animationTypesNamesDict
+	{
+		MoveWalk
+		{
+			names = "Walk;"
+		}
+		MoveRun
+		{
+			names = "Walk Fast;"
+		}
+		IdleRest
+		{
+			names = "Stand;Stand 2;"
+		}
+		IdleStand
+		{
+			names = "Stand;Stand 2;"
+		}
+		IdleAgressive
+		{
+			names = "Stand;"
+		}
+		HitStand
+		{
+			names = "Stand Hit;"
+		}
+		HitRest
+		{
+			names = "Stand Hit;"
+		}
+		Death
+		{
+			names = "Death;"
+		}
+		CrossStandRest
+		{
+			names = "Stand;"
+		}
+		CrossRestStand
+		{
+			names = "Stand;"
+		}
+		AttackSlashAndPierce
+		{
+			names = "Attack;Attack 2;"
+		}
+		AttackSlash
+		{
+			names = "Attack;Attack 2;"
+		}
+		AttackPierce
+		{
+			names = "Attack;Attack 2;"
+		}
+	}
+	inventory
+	{
+	}
+}

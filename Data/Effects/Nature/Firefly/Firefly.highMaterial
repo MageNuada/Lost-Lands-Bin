@@ -1,0 +1,13 @@
+highLevelMaterial Firefly
+{
+	template = ShaderBaseMaterial
+	blending = AlphaAdd
+	softParticles = True
+	diffuseColor = 1 0.6980392 0
+	diffusePower = 1.5
+	diffuseVertexColor = True
+	diffuse1Map
+	{
+		texture = "Base\\Types\\Light\\LightFlare.png"
+	}
+}

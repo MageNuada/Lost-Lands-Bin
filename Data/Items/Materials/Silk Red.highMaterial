@@ -1,0 +1,8 @@
+highLevelMaterial "Silk Red"
+{
+	template = ShaderBaseMaterial
+	diffuse1Map
+	{
+		texture = ".\\material0030.dds"
+	}
+}

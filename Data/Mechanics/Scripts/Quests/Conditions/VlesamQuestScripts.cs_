@@ -1,0 +1,222 @@
+public static void VlesamDedGoAway()
+{
+    var h = Entities.Instance.GetByName("QuestHuman01") as UnitPrototype;
+    var p = Entities.Instance.GetByName("DedGoAway") as MapObject;
+    if (h == null || p == null || h.Intellect == null) return;
+    h.Intellect.DoTask(new BaseIntellect.Motivation(BaseIntellect.Motivation.Types.Move, p.Position, 100), BaseIntellect.TaskQueue.ClearAndNew);
+    h.MoveType = MoveTypes.Crawl;
+}
+
+public static void VlesamDedAgree()
+{
+    var h = Entities.Instance.GetByName("QuestHuman01") as UnitPrototype;
+    if (h == null) return;
+    h.Intellect = (BaseIntellect) Entities.Instance.Create(PlayerIntellect.Instance.Type, World.Instance);
+    Player.WriteToLog("You have been agreed to go to swamps with strange human. (need to use translate via subfiles - there is no russian fonts from scripts)", Constants.StageMessage);
+    var region = Entities.Instance.GetByName("SwampMushrooms") as Region;
+    if(region == null) return;
+    region.Enabled = true;
+    region.ObjectIn += VlesamMushroomRegion_Prishli;
+    QuestLight ql = (QuestLight)Entities.Instance.Create("QuestLight", Map.Instance);
+    ql.Init(region, Vec3.Zero);
+    ql.PostCreate();
+}
+
+private static void VlesamMushroomRegion_Prishli(Entity entity, MapObject obj)
+{
+    var h = Entities.Instance.GetByName("QuestHuman01") as UnitPrototype;
+    if(obj != h) return;
+    Player.Instance.StartDialog(h, 75);
+
+    var region = Entities.Instance.GetByName("SwampMushrooms") as Region;
+    region.Enabled = false;
+    region.ObjectIn -= VlesamMushroomRegion_Prishli;
+    QuestLight.Remove(region, Vec3.Zero);
+}
+
+public static void VlesamDedEstGrib()
+{
+    var mh = Entities.Instance.GetByName("VlesamMushroom") as Lever;
+    var h = Entities.Instance.GetByName("QuestHuman01") as UnitPrototype;
+    if (h == null || mh == null || h.Intellect == null) return;
+    //VlesamDedPoka();
+    h.Intellect.DoTask(new BaseIntellect.Motivation(BaseIntellect.Motivation.Types.InteractionUse, mh),
+        BaseIntellect.TaskQueue.ClearAndNew);
+    mh.OnStateChanged += VlesamGribSojran;
+}
+
+static void VlesamGribSojran(Entity agent, Entity usable, bool state)
+{
+    var h = Entities.Instance.GetByName("QuestHuman01") as UnitPrototype;
+    if(h == null) return;
+    Player.Instance.StartDialog(h, 76);
+    h.Intellect = (BaseIntellect)Entities.Instance.Create(PlayerIntellect.Instance.Type, World.Instance);
+
+    var mh = Entities.Instance.GetByName("VlesamMushroom") as Lever;
+    mh.OnStateChanged -= VlesamGribSojran;
+}
+
+public static void VlesamDedVrag()
+{
+    VlesamDedPoka();
+	var h = Entities.Instance.GetByName("QuestHuman01") as UnitPrototype;
+	if (h == null) return;
+    h.Intellect.DoTask(
+        new BaseIntellect.Motivation(BaseIntellect.Motivation.Types.BreakableAttack,
+            PlayerIntellect.Instance.ControlledObject),
+        BaseIntellect.TaskQueue.ClearAndNew);
+    h.AddPersonalEnemy(PlayerIntellect.Instance.ControlledObject);
+}
+
+public static void VlesamDedPoka()
+{
+    var h = Entities.Instance.GetByName("QuestHuman01") as UnitPrototype;
+    if (h == null) return;
+    h.Intellect = (BaseIntellect) Entities.Instance.Create(h.InitialAI, World.Instance);
+}
+
+public static void VlesamIdemKKabanam()
+{
+    var h = Entities.Instance.GetByName("QuestHuman01") as UnitPrototype;
+    if (h == null) return;
+    h.Intellect = (BaseIntellect)Entities.Instance.Create(PlayerIntellect.Instance.Type, World.Instance);
+    var region = Entities.Instance.GetByName("BoarYard") as Region;
+    if (region == null) return;
+    region.Enabled = true;
+    region.ObjectIn += VlesamPrishliKKabanam;
+    QuestLight ql = (QuestLight)Entities.Instance.Create("QuestLight", Map.Instance);
+    ql.Init(region, Vec3.Zero);
+    ql.PostCreate();
+}
+
+static void VlesamPrishliKKabanam(Entity entity, MapObject obj)
+{
+	var h = Entities.Instance.GetByName("QuestHuman01") as UnitPrototype;
+	if (h != obj) return;
+    var h2 = Entities.Instance.GetByName("QuestBoar00") as UnitPrototype;
+    if(h2 != null && !h2.Died)
+    {
+        h2.Intellect = (BaseIntellect)Entities.Instance.Create(PlayerIntellect.Instance.Type, World.Instance);
+    }
+    Player.Instance.StartDialog(h, 77);
+
+    var region = Entities.Instance.GetByName("BoarYard") as Region;
+    region.Enabled = false;
+    region.ObjectIn -= VlesamPrishliKKabanam;
+    QuestLight.Remove(region, Vec3.Zero);
+}
+
+public static void VlesamIdemVTravu()
+{
+    var region = Entities.Instance.GetByName("QuestGrass") as Region;
+    if (region == null) return;
+    region.Enabled = true;
+    region.ObjectIn += VlesamPrishliVTravu;
+    QuestLight ql = (QuestLight)Entities.Instance.Create("QuestLight", Map.Instance);
+    ql.Init(region, Vec3.Zero);
+    ql.PostCreate();
+}
+
+static void VlesamPrishliVTravu(Entity entity, MapObject obj)
+{
+    var h = Entities.Instance.GetByName("QuestHuman01") as UnitPrototype;
+    if (h == null) return;
+    Player.Instance.StartDialog(h, 78);
+
+    var region = Entities.Instance.GetByName("QuestGrass") as Region;
+    if (region == null) return;
+    region.Enabled = true;
+    region.ObjectIn -= VlesamPrishliVTravu;
+    QuestLight.Remove(region, Vec3.Zero);
+}
+
+public static void VlesamJdemDojdia()
+{
+    EnvironmentManager.Instance.Tick += VlesamOjidaemDojd;
+}
+
+private static void VlesamOjidaemDojd(Entity entity)
+{
+    if (EnvironmentManager.Instance.WeatherEvent != WeatherEventType.Nothing)
+    {
+        var h2 = Entities.Instance.GetByName("QuestBoar00") as UnitPrototype;
+        if (h2 != null && !h2.Died)
+        {
+            VlesamDedPoka();
+            h2.SetForDeletion(false);
+            var h3 = Entities.Instance.Create("Human", Map.Instance) as UnitPrototype;
+            if (h3 != null)
+            {
+                h3.Name = "Deva";
+                h3.GameName = "Young girl";
+                h3.Position = h2.Position;
+                h3.Sex = SexCategories.Female;
+                h3.Agility = 25;
+                h3.BaseDamage = new Vec2I(5, 5);
+                h3.PostCreate();
+	            var h = Entities.Instance.GetByName("QuestHuman01") as UnitPrototype;
+                if (h != null)
+                {
+                    Player.Instance.StartDialog(h, 79);
+                }
+            }
+        }
+    }
+}
+
+public static void VlesamBoinia()
+{
+    var h = Entities.Instance.GetByName("QuestHuman01") as UnitPrototype;
+    var h2 = Entities.Instance.GetByName("Deva") as UnitPrototype;
+    if (h != null && h2 != null)
+    {
+        h.AddPersonalEnemy(h2);
+        h2.AddPersonalEnemy(h);
+        UnitPrototype.CreatureDiedStatic += VlesamKtoToUmer;
+    }
+}
+
+private static void VlesamKtoToUmer(UnitPrototype sender, UnitPrototype killer)
+{
+    var h = Entities.Instance.GetByName("QuestHuman01") as UnitPrototype;
+    var h2 = Entities.Instance.GetByName("Deva") as UnitPrototype;
+    if (sender == h)
+        Player.Instance.StartDialog(h, 80);
+    else if (sender == h2)
+        Player.Instance.StartDialog(h, 81);
+}
+
+public static void VlesamDevaRunAway()
+{
+    var h2 = Entities.Instance.GetByName("Deva") as UnitPrototype;
+    var h3 = Entities.Instance.GetByName("QT") as UnitPrototype;
+    if (h2 != null && h3 != null)
+    {
+        h2.Intellect.DoTask(new BaseIntellect.Motivation(BaseIntellect.Motivation.Types.Move, h3.Position), BaseIntellect.TaskQueue.ClearAndNew);
+    }
+}
+
+public static void VlesamDedDalMeshok()
+{
+    PlayerIntellect.Instance.ControlledObject.AddToInventory(DBUtils.LoadItemFromDB(1000));
+    VlesamDedPoka();
+    var h = Entities.Instance.GetByName("QuestHuman01") as UnitPrototype;
+    var h3 = Entities.Instance.GetByName("QT") as UnitPrototype;
+    if (h != null && h3 != null)
+    {
+        h.Intellect.DoTask(new BaseIntellect.Motivation(BaseIntellect.Motivation.Types.Move, h3.Position), BaseIntellect.TaskQueue.ClearAndNew);
+    }
+}
+
+public static bool VlesamKabaniDohlie(Rpg.QuestStage data)
+{
+    var h1 = Entities.Instance.GetByName("QuestBoar01") as UnitPrototype;
+    var h2 = Entities.Instance.GetByName("QuestBoar02") as UnitPrototype;
+    var h3 = Entities.Instance.GetByName("QuestBoar03") as UnitPrototype;
+    if((h1 == null || (h1 != null && h1.Died)) && (h2 == null || (h2 != null && h2.Died)) && (h3 == null || (h3 != null && h3.Died)))
+    {
+        QuestsManager.Instance.GetDialog(50).Active = false;
+        return true;
+    }
+    return false;
+}

@@ -1,0 +1,9 @@
+highLevelMaterial Helm01Adamant
+{
+	template = ShaderBaseMaterial
+	alphaRejectFunction = GreaterEqual
+	diffuse1Map
+	{
+		texture = ".\\unhumahl_08.ad.0.dds"
+	}
+}
