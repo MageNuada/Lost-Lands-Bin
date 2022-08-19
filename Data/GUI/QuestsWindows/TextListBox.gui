@@ -5,13 +5,6 @@ control AdvancedListBox
 	clipRectangleBorders = ScaleByResolution 4 4
 	size = Parent 0.5078125 0.3125
 	backColor = 0.2901961 0.6039216 0.8666667 0
-	control Control
-	{
-		position = ScaleByResolution 0 0
-		horizontalAlign = Center
-		size = Parent 0.9026515 0.9833333
-		anchor = Top
-	}
 	itemButton Button
 	{
 		soundClick = "Sounds\\General\\buttons\\Objectives\\Select.ogg"
@@ -27,6 +20,7 @@ control AdvancedListBox
 			shadow = True
 			shadowOffset = Pixel 1 1
 			shadowColor = 0 0 0 0.5019608
+			wordWrap = True
 			copyTextFromParent = True
 		}
 		overControl TextBox
@@ -36,6 +30,7 @@ control AdvancedListBox
 			shadow = True
 			shadowOffset = Pixel 1 1
 			shadowColor = 0 0 0 0.5019608
+			wordWrap = True
 			copyTextFromParent = True
 			visible = False
 		}
@@ -47,6 +42,7 @@ control AdvancedListBox
 			shadow = True
 			shadowOffset = Pixel 1 1
 			shadowColor = 0 0 0 0.5019608
+			wordWrap = True
 			copyTextFromParent = True
 			visible = False
 		}
@@ -58,6 +54,7 @@ control AdvancedListBox
 			shadow = True
 			shadowOffset = Pixel 1 1
 			shadowColor = 0 0 0 0.5019608
+			wordWrap = True
 			copyTextFromParent = True
 			visible = False
 		}
@@ -68,6 +65,7 @@ control AdvancedListBox
 			shadow = True
 			shadowOffset = Pixel 1 1
 			shadowColor = 0 0 0 0.5019608
+			wordWrap = True
 			copyTextFromParent = True
 			visible = False
 			enable = False
