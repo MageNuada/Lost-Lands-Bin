@@ -28,22 +28,22 @@ type Hare
 		item
 		{
 			_mainHealthPercent = 0.51
-			_section = Leg
+			_section = RightLeg
 		}
 		item
 		{
 			_mainHealthPercent = 0.51
-			_section = Leg
+			_section = LeftLeg
 		}
 		item
 		{
 			_mainHealthPercent = 0.51
-			_section = Leg
+			_section = RightLeg
 		}
 		item
 		{
 			_mainHealthPercent = 0.51
-			_section = Leg
+			_section = LeftLeg
 		}
 	}
 	_unitAppearance

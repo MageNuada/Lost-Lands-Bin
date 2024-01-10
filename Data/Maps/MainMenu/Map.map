@@ -4096,22 +4096,22 @@ entity
 		item
 		{
 			_mainHealthPercent = 0.51
-			_section = Leg
+			_section = RightLeg
 		}
 		item
 		{
 			_mainHealthPercent = 0.51
-			_section = Leg
+			_section = LeftLeg
 		}
 		item
 		{
 			_mainHealthPercent = 0.51
-			_section = Leg
+			_section = RightLeg
 		}
 		item
 		{
 			_mainHealthPercent = 0.51
-			_section = Leg
+			_section = LeftLeg
 		}
 	}
 	_questSystemAlias
@@ -4173,22 +4173,22 @@ entity
 		item
 		{
 			_mainHealthPercent = 0.51
-			_section = Leg
+			_section = RightLeg
 		}
 		item
 		{
 			_mainHealthPercent = 0.51
-			_section = Leg
+			_section = LeftLeg
 		}
 		item
 		{
 			_mainHealthPercent = 0.51
-			_section = Leg
+			_section = RightLeg
 		}
 		item
 		{
 			_mainHealthPercent = 0.51
-			_section = Leg
+			_section = LeftLeg
 		}
 	}
 	_questSystemAlias
@@ -4330,22 +4330,22 @@ entity
 		item
 		{
 			_mainHealthPercent = 0.34
-			_section = Hand
+			_section = RightHand
 		}
 		item
 		{
 			_mainHealthPercent = 0.34
-			_section = Hand
+			_section = LeftHand
 		}
 		item
 		{
 			_mainHealthPercent = 0.67
-			_section = Leg
+			_section = RightLeg
 		}
 		item
 		{
 			_mainHealthPercent = 0.67
-			_section = Leg
+			_section = LeftLeg
 		}
 	}
 	_questSystemAlias

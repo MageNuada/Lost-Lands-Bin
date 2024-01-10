@@ -121,12 +121,12 @@ type Human
 		item
 		{
 			_mainHealthPercent = 0.34
-			_section = Hand
+			_section = RightHand
 		}
 		item
 		{
 			_mainHealthPercent = 0.34
-			_section = Hand
+			_section = LeftHand
 		}
 		item
 		{
@@ -135,12 +135,12 @@ type Human
 		item
 		{
 			_mainHealthPercent = 0.67
-			_section = Leg
+			_section = RightLeg
 		}
 		item
 		{
 			_mainHealthPercent = 0.67
-			_section = Leg
+			_section = LeftLeg
 		}
 	}
 	_unitAppearance

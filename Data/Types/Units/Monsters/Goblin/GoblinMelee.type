@@ -32,28 +32,28 @@ type GoblinMelee
 		}
 		item
 		{
-			_section = Hand
+			_section = RightHand
 			_lifePoints = 1
 			_sarmor = 0
 			_mainHealthPercent = 0.34
 		}
 		item
 		{
-			_section = Hand
+			_section = LeftHand
 			_lifePoints = 1
 			_sarmor = 0
 			_mainHealthPercent = 0.34
 		}
 		item
 		{
-			_section = Leg
+			_section = RightLeg
 			_lifePoints = 1
 			_sarmor = 0
 			_mainHealthPercent = 0.67
 		}
 		item
 		{
-			_section = Leg
+			_section = LeftLeg
 			_lifePoints = 1
 			_sarmor = 0
 			_mainHealthPercent = 0.67

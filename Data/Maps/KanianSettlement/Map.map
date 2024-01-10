@@ -10,8 +10,8 @@ ambientIntensity = 0.4
 ambientSkyColor = 0.4352942 0.4745098 0.5921569
 ambientEquatorColor = 0.4352942 0.4745098 0.5921569
 ambientGroundColor = 0.4352942 0.4745098 0.5921569
-editorCameraPosition = 32.65724 3.231176 17.48662
-editorCameraDirection = 2.866836 -0.58762
+editorCameraPosition = 23.82659 10.12223 16.96461
+editorCameraDirection = 3.594288 -0.9449068
 shadowColor = 1 1 1
 shadowPSSMSplitFactors = 0.1 0.4
 fov = 50
@@ -164,8 +164,8 @@ entity
 	mode = Linear
 	color = 0.1803922 0.5176471 0.8509805
 	expDensity = 0.004
-	linearStart = 48.58333
-	linearEnd = 107.6389
+	linearStart = 48.75
+	linearEnd = 107.9167
 	tags
 	{
 	}
@@ -178,11 +178,11 @@ entity
 	_sun = 8
 	_moon = 14
 	_sky = 9
-	_nextChangeWeather = 9453
+	_nextChangeWeather = 4518
 	_currentWeatherLength = 4842
 	_nextSpecialEvent = 1654
 	_windtransition = 360
-	_fogTransition = 17
+	_fogTransition = 15
 	time = 180
 	name = EnvironmentManager_0
 	_weather
@@ -6463,6 +6463,7 @@ entity
 	_gender = 1
 	position = -24.99309 36.44118 8.63168
 	name = Lieutenant
+	editorLayer = "Root Layer\\Units"
 	_tasks
 	{
 		item
@@ -6657,22 +6658,22 @@ entity
 		item
 		{
 			_mainHealthPercent = 0.51
-			_section = Leg
+			_section = RightLeg
 		}
 		item
 		{
 			_mainHealthPercent = 0.51
-			_section = Leg
+			_section = LeftLeg
 		}
 		item
 		{
 			_mainHealthPercent = 0.51
-			_section = Leg
+			_section = RightLeg
 		}
 		item
 		{
 			_mainHealthPercent = 0.51
-			_section = Leg
+			_section = LeftLeg
 		}
 	}
 	_questSystemAlias
@@ -6742,22 +6743,22 @@ entity
 		item
 		{
 			_mainHealthPercent = 0.51
-			_section = Leg
+			_section = RightLeg
 		}
 		item
 		{
 			_mainHealthPercent = 0.51
-			_section = Leg
+			_section = RightLeg
 		}
 		item
 		{
 			_mainHealthPercent = 0.51
-			_section = Leg
+			_section = LeftLeg
 		}
 		item
 		{
 			_mainHealthPercent = 0.51
-			_section = Leg
+			_section = LeftLeg
 		}
 	}
 	_questSystemAlias
@@ -6826,22 +6827,22 @@ entity
 		item
 		{
 			_mainHealthPercent = 0.51
-			_section = Leg
+			_section = RightLeg
 		}
 		item
 		{
 			_mainHealthPercent = 0.51
-			_section = Leg
+			_section = RightLeg
 		}
 		item
 		{
 			_mainHealthPercent = 0.51
-			_section = Leg
+			_section = LeftLeg
 		}
 		item
 		{
 			_mainHealthPercent = 0.51
-			_section = Leg
+			_section = LeftLeg
 		}
 	}
 	_questSystemAlias
@@ -6911,22 +6912,22 @@ entity
 		item
 		{
 			_mainHealthPercent = 0.51
-			_section = Leg
+			_section = RightLeg
 		}
 		item
 		{
 			_mainHealthPercent = 0.51
-			_section = Leg
+			_section = RightLeg
 		}
 		item
 		{
 			_mainHealthPercent = 0.51
-			_section = Leg
+			_section = LeftLeg
 		}
 		item
 		{
 			_mainHealthPercent = 0.51
-			_section = Leg
+			_section = LeftLeg
 		}
 	}
 	_questSystemAlias
@@ -6996,22 +6997,22 @@ entity
 		item
 		{
 			_mainHealthPercent = 0.51
-			_section = Leg
+			_section = RightLeg
 		}
 		item
 		{
 			_mainHealthPercent = 0.51
-			_section = Leg
+			_section = RightLeg
 		}
 		item
 		{
 			_mainHealthPercent = 0.51
-			_section = Leg
+			_section = LeftLeg
 		}
 		item
 		{
 			_mainHealthPercent = 0.51
-			_section = Leg
+			_section = LeftLeg
 		}
 	}
 	_questSystemAlias
@@ -7082,22 +7083,22 @@ entity
 		item
 		{
 			_mainHealthPercent = 0.51
-			_section = Leg
+			_section = RightLeg
 		}
 		item
 		{
 			_mainHealthPercent = 0.51
-			_section = Leg
+			_section = RightLeg
 		}
 		item
 		{
 			_mainHealthPercent = 0.51
-			_section = Leg
+			_section = LeftLeg
 		}
 		item
 		{
 			_mainHealthPercent = 0.51
-			_section = Leg
+			_section = LeftLeg
 		}
 	}
 	_questSystemAlias
@@ -7439,6 +7440,13 @@ entity
 		{
 			Section = Head
 			LootChance = 50
+			DataBaseID = 18
+			ItemType = AllodsArmor
+			_energy = 1
+			_solidity = 1
+			_itemSkills
+			{
+			}
 		}
 		item
 		{
@@ -7456,6 +7464,13 @@ entity
 		{
 			Section = BodyH
 			LootChance = 50
+			DataBaseID = 14
+			ItemType = AllodsArmor
+			_energy = 1
+			_solidity = 1
+			_itemSkills
+			{
+			}
 		}
 		item
 		{
@@ -7473,7 +7488,7 @@ entity
 		{
 			Section = LegH
 			LootChance = 50
-			DataBaseID = 80
+			DataBaseID = 16
 			ItemType = AllodsArmor
 			_energy = 1
 			_solidity = 1
@@ -7555,22 +7570,22 @@ entity
 		item
 		{
 			_mainHealthPercent = 0.34
-			_section = Hand
+			_section = RightHand
 		}
 		item
 		{
 			_mainHealthPercent = 0.34
-			_section = Hand
+			_section = LeftHand
 		}
 		item
 		{
 			_mainHealthPercent = 0.67
-			_section = Leg
+			_section = RightLeg
 		}
 		item
 		{
 			_mainHealthPercent = 0.67
-			_section = Leg
+			_section = LeftLeg
 		}
 	}
 	_questSystemAlias
@@ -7590,6 +7605,10 @@ entity
 			_solidity = 1
 			_itemSkills
 			{
+				Agility = 0.3
+				HealthRegeneration = 0.2
+				NightVision = 0.1
+				Bow = 0.5
 			}
 		}
 	}
@@ -7613,7 +7632,7 @@ entity
 	_deadAlly = 
 	_money = 1
 	_gameName = "\x041a\x0430\x0431\x0430\x043d"
-	position = -31.4875 16.64434 10.08585
+	position = -17.34495 -2.688692 9.703709
 	name = Boar_0
 	editorLayer = "Root Layer\\Units"
 	_tasks
@@ -7636,22 +7655,22 @@ entity
 		item
 		{
 			_mainHealthPercent = 0.51
-			_section = Leg
+			_section = RightLeg
 		}
 		item
 		{
 			_mainHealthPercent = 0.51
-			_section = Leg
+			_section = RightLeg
 		}
 		item
 		{
 			_mainHealthPercent = 0.51
-			_section = Leg
+			_section = LeftLeg
 		}
 		item
 		{
 			_mainHealthPercent = 0.51
-			_section = Leg
+			_section = LeftLeg
 		}
 	}
 	_questSystemAlias
@@ -7689,7 +7708,7 @@ entity
 	_deadAlly = 
 	_money = 1
 	_gameName = "\x041a\x0430\x0431\x0430\x043d"
-	position = -25.80735 21.77997 9.938313
+	position = -11.6648 2.446938 9.703709
 	name = Boar_1
 	editorLayer = "Root Layer\\Units"
 	_tasks
@@ -7712,22 +7731,22 @@ entity
 		item
 		{
 			_mainHealthPercent = 0.51
-			_section = Leg
+			_section = RightLeg
 		}
 		item
 		{
 			_mainHealthPercent = 0.51
-			_section = Leg
+			_section = RightLeg
 		}
 		item
 		{
 			_mainHealthPercent = 0.51
-			_section = Leg
+			_section = LeftLeg
 		}
 		item
 		{
 			_mainHealthPercent = 0.51
-			_section = Leg
+			_section = LeftLeg
 		}
 	}
 	_questSystemAlias
@@ -7765,7 +7784,7 @@ entity
 	_deadAlly = 
 	_money = 1
 	_gameName = "\x041a\x0430\x0431\x0430\x043d"
-	position = -27.86922 18.51054 10.34741
+	position = -13.72667 -0.8224926 9.703709
 	name = Boar_2
 	editorLayer = "Root Layer\\Units"
 	_tasks
@@ -7788,22 +7807,22 @@ entity
 		item
 		{
 			_mainHealthPercent = 0.51
-			_section = Leg
+			_section = RightLeg
 		}
 		item
 		{
 			_mainHealthPercent = 0.51
-			_section = Leg
+			_section = RightLeg
 		}
 		item
 		{
 			_mainHealthPercent = 0.51
-			_section = Leg
+			_section = LeftLeg
 		}
 		item
 		{
 			_mainHealthPercent = 0.51
-			_section = Leg
+			_section = LeftLeg
 		}
 	}
 	_questSystemAlias
@@ -7836,6 +7855,70 @@ entity
 		{
 			value = e0ca4d6e-e9b3-43ac-86b4-5668b3d22ae1
 		}
+	}
+	tags
+	{
+	}
+}
+entity
+{
+	type = Obelisk
+	uin = 397
+	classPrompt = Lever
+	_state = False
+	_disposable = False
+	_inTransition = False
+	_gameName = "\x041e\x0431\x0435\x043b\x0438\x0441\x043a"
+	position = 3.219444 8.966042 10.21817
+	name = Obelisk_0
+	_objectsList
+	{
+		item
+		{
+			_ticksCount = 60
+			_translation = 0 0 2.2
+			_aliasName = Stella
+			_rotationAngle
+			{
+			}
+		}
+	}
+	_questSystemAlias
+	{
+	}
+	tags
+	{
+	}
+}
+entity
+{
+	type = SmallTeleport
+	uin = 398
+	classPrompt = MapTeleporter
+	active = True
+	destination = 399
+	_teleportedUnits = 
+	position = -0.883436 26.54133 8.894453
+	name = SmallTeleport_0
+	_questSystemAlias
+	{
+	}
+	tags
+	{
+	}
+}
+entity
+{
+	type = SmallTeleport
+	uin = 399
+	classPrompt = MapTeleporter
+	active = True
+	destination = 398
+	_teleportedUnits = 
+	position = 4.637036 -20.83914 9.256685
+	name = SmallTeleport_1
+	_questSystemAlias
+	{
 	}
 	tags
 	{

@@ -26,22 +26,22 @@ type Rat
 		item
 		{
 			_mainHealthPercent = 1.01
-			_section = Leg
+			_section = RightLeg
 		}
 		item
 		{
 			_mainHealthPercent = 1.01
-			_section = Leg
+			_section = LeftLeg
 		}
 		item
 		{
 			_mainHealthPercent = 1.01
-			_section = Leg
+			_section = RightLeg
 		}
 		item
 		{
 			_mainHealthPercent = 1.01
-			_section = Leg
+			_section = LeftLeg
 		}
 	}
 	_unitAppearance

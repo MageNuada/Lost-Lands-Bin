@@ -11,8 +11,8 @@ ambientIntensity = 0.4
 ambientSkyColor = 0.5058824 0.5294118 0.4901961
 ambientEquatorColor = 0.5058824 0.5294118 0.4901961
 ambientGroundColor = 0.5058824 0.5294118 0.4901961
-editorCameraPosition = -0.01440406 -13.634 18.87236
-editorCameraDirection = 1.56267 -0.9899815
+editorCameraPosition = 4.516606 -21.06815 9.853391
+editorCameraDirection = 1.790188 -0.6069341
 shadowColor = 1 1 1
 shadowPSSMSplitFactors = 0.1 0.4
 logicSystemManager = 7
@@ -49,7 +49,7 @@ entity
 	_sun = 11
 	_moon = 15
 	_sky = 10
-	_nextChangeWeather = 6360
+	_nextChangeWeather = 3887
 	_windtransition = 180
 	_fogTransition = 90
 	time = 180
@@ -408,22 +408,22 @@ entity
 		item
 		{
 			_mainHealthPercent = 0.34
-			_section = Hand
+			_section = RightHand
 		}
 		item
 		{
 			_mainHealthPercent = 0.34
-			_section = Hand
+			_section = LeftHand
 		}
 		item
 		{
 			_mainHealthPercent = 0.67
-			_section = Leg
+			_section = RightLeg
 		}
 		item
 		{
 			_mainHealthPercent = 0.67
-			_section = Leg
+			_section = LeftLeg
 		}
 	}
 	_questSystemAlias
@@ -436,9 +436,10 @@ entity
 	{
 		item
 		{
+			Count = 1
 			LootChance = 50
-			DataBaseID = 14
 			ItemType = AllodsArmor
+			DataBaseID = 14
 			_energy = 1
 			_solidity = 1
 			_itemSkills
@@ -447,45 +448,52 @@ entity
 		}
 		item
 		{
+			Count = 1
 			LootChance = 50
+			ItemType = AllodsMaterial
 			DataBaseID = 170
-			ItemType = AllodsMaterial
 		}
 		item
 		{
+			Count = 1
 			LootChance = 50
+			ItemType = AllodsMaterial
 			DataBaseID = 162
-			ItemType = AllodsMaterial
 		}
 		item
 		{
+			Count = 1
 			LootChance = 50
+			ItemType = AllodsMaterial
 			DataBaseID = 180
-			ItemType = AllodsMaterial
 		}
 		item
 		{
+			Count = 1
 			LootChance = 50
+			ItemType = AllodsMaterial
 			DataBaseID = 175
-			ItemType = AllodsMaterial
 		}
 		item
 		{
+			Count = 1
 			LootChance = 50
+			ItemType = AllodsMaterial
 			DataBaseID = 184
-			ItemType = AllodsMaterial
 		}
 		item
 		{
+			Count = 1
 			LootChance = 50
+			ItemType = AllodsMaterial
 			DataBaseID = 187
-			ItemType = AllodsMaterial
 		}
 		item
 		{
+			Count = 1
 			LootChance = 50
+			ItemType = AllodsArmor
 			DataBaseID = 14
-			ItemType = AllodsArmor
 			_energy = 1
 			_solidity = 1
 			_itemSkills
@@ -494,9 +502,10 @@ entity
 		}
 		item
 		{
+			Count = 1
 			LootChance = 50
-			DataBaseID = 9
 			ItemType = AllodsWeapon
+			DataBaseID = 9
 			_energy = 1
 			_solidity = 1
 			_itemSkills
@@ -505,9 +514,10 @@ entity
 		}
 		item
 		{
+			Count = 1
 			LootChance = 50
-			DataBaseID = 18
 			ItemType = AllodsArmor
+			DataBaseID = 18
 			_energy = 1
 			_solidity = 1
 			_itemSkills
@@ -735,6 +745,172 @@ entity
 		item
 		{
 			name = minimap
+		}
+	}
+}
+entity
+{
+	type = HumanCreator
+	uin = 25
+	classPrompt = MapUnitCreator
+	_intellect = BaseNPCIntellect
+	_unitLevel = 0 1
+	position = -0.2269348 -12.0732 0.1062145
+	name = HumanCreator_0
+	_tasks
+	{
+	}
+	_questSystemAlias
+	{
+	}
+	tags
+	{
+	}
+	inventory
+	{
+		item
+		{
+			Count = 4
+			LootChance = 25
+			ItemType = AllodsMaterial
+			DataBaseID = 188
+		}
+		item
+		{
+			Count = 1
+			LootChance = 50
+			ItemType = AllodsArmor
+			DataBaseID = 14
+			_energy = 1
+			_solidity = 1
+			_itemSkills
+			{
+			}
+		}
+	}
+	equipment
+	{
+		item
+		{
+			Section = Head
+			LootChance = 50
+			DataBaseID = 18
+			ItemType = AllodsArmor
+			_energy = 1
+			_solidity = 1
+			_itemSkills
+			{
+			}
+		}
+		item
+		{
+			Section = Hand
+			LootChance = 50
+		}
+		item
+		{
+			Section = WHand
+			LootChance = 50
+		}
+		item
+		{
+			Section = WHand
+			LootChance = 50
+		}
+		item
+		{
+			Section = WHand
+			LootChance = 50
+		}
+		item
+		{
+			Section = WHand
+			LootChance = 50
+		}
+		item
+		{
+			Section = BodyL
+			LootChance = 50
+		}
+		item
+		{
+			Section = BodyH
+			LootChance = 50
+		}
+		item
+		{
+			Section = LegL
+			LootChance = 50
+		}
+		item
+		{
+			Section = LegH
+			LootChance = 50
+		}
+		item
+		{
+			Section = Foot
+			LootChance = 50
+		}
+		item
+		{
+			Section = SpecialSlot
+			LootChance = 50
+		}
+		item
+		{
+			Section = SpecialSlot
+			LootChance = 50
+		}
+		item
+		{
+			Section = SpecialSlot
+			LootChance = 50
+		}
+		item
+		{
+			Section = SpecialSlot
+			LootChance = 50
+		}
+		item
+		{
+			Section = SpellSlot
+			LootChance = 50
+		}
+		item
+		{
+			Section = SpellSlot
+			LootChance = 50
+		}
+		item
+		{
+			Section = SpellSlot
+			LootChance = 50
+		}
+		item
+		{
+			Section = SpellSlot
+			LootChance = 50
+		}
+		item
+		{
+			Section = SpellSlot
+			LootChance = 50
+		}
+		item
+		{
+			Section = SpellSlot
+			LootChance = 50
+		}
+		item
+		{
+			Section = SpellSlot
+			LootChance = 50
+		}
+		item
+		{
+			Section = SpellSlot
+			LootChance = 50
 		}
 	}
 }

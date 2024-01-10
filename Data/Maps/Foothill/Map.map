@@ -545,22 +545,22 @@ entity
 		item
 		{
 			_mainHealthPercent = 1.01
-			_section = Hand
+			_section = RightHand
 		}
 		item
 		{
 			_mainHealthPercent = 1.01
-			_section = Hand
+			_section = RightHand
 		}
 		item
 		{
 			_mainHealthPercent = 1.01
-			_section = Leg
+			_section = RightLeg
 		}
 		item
 		{
 			_mainHealthPercent = 1.01
-			_section = Leg
+			_section = RightLeg
 		}
 	}
 	_questSystemAlias
@@ -791,22 +791,22 @@ entity
 		item
 		{
 			_mainHealthPercent = 0.34
-			_section = Hand
+			_section = RightHand
 		}
 		item
 		{
 			_mainHealthPercent = 0.34
-			_section = Hand
+			_section = RightHand
 		}
 		item
 		{
 			_mainHealthPercent = 0.67
-			_section = Leg
+			_section = RightLeg
 		}
 		item
 		{
 			_mainHealthPercent = 0.67
-			_section = Leg
+			_section = RightLeg
 		}
 	}
 	_questSystemAlias
@@ -3796,22 +3796,22 @@ entity
 		item
 		{
 			_mainHealthPercent = 0.51
-			_section = Leg
+			_section = RightLeg
 		}
 		item
 		{
 			_mainHealthPercent = 0.51
-			_section = Leg
+			_section = RightLeg
 		}
 		item
 		{
 			_mainHealthPercent = 0.51
-			_section = Leg
+			_section = RightLeg
 		}
 		item
 		{
 			_mainHealthPercent = 0.51
-			_section = Leg
+			_section = RightLeg
 		}
 	}
 	_questSystemAlias
@@ -3878,22 +3878,22 @@ entity
 		item
 		{
 			_mainHealthPercent = 0.34
-			_section = Hand
+			_section = RightHand
 		}
 		item
 		{
 			_mainHealthPercent = 0.34
-			_section = Hand
+			_section = RightHand
 		}
 		item
 		{
 			_mainHealthPercent = 0.67
-			_section = Leg
+			_section = RightLeg
 		}
 		item
 		{
 			_mainHealthPercent = 0.67
-			_section = Leg
+			_section = RightLeg
 		}
 	}
 	_questSystemAlias
@@ -4033,25 +4033,25 @@ entity
 		{
 			_sarmor = 7
 			_mainHealthPercent = 0.51
-			_section = Leg
+			_section = RightLeg
 		}
 		item
 		{
 			_sarmor = 7
 			_mainHealthPercent = 0.51
-			_section = Leg
+			_section = RightLeg
 		}
 		item
 		{
 			_sarmor = 7
 			_mainHealthPercent = 0.51
-			_section = Leg
+			_section = RightLeg
 		}
 		item
 		{
 			_sarmor = 7
 			_mainHealthPercent = 0.51
-			_section = Leg
+			_section = RightLeg
 		}
 	}
 	_questSystemAlias
@@ -4113,22 +4113,22 @@ entity
 		item
 		{
 			_mainHealthPercent = 0.51
-			_section = Leg
+			_section = RightLeg
 		}
 		item
 		{
 			_mainHealthPercent = 0.51
-			_section = Leg
+			_section = RightLeg
 		}
 		item
 		{
 			_mainHealthPercent = 0.51
-			_section = Leg
+			_section = RightLeg
 		}
 		item
 		{
 			_mainHealthPercent = 0.51
-			_section = Leg
+			_section = RightLeg
 		}
 	}
 	_questSystemAlias
@@ -4190,22 +4190,22 @@ entity
 		item
 		{
 			_mainHealthPercent = 0.51
-			_section = Leg
+			_section = RightLeg
 		}
 		item
 		{
 			_mainHealthPercent = 0.51
-			_section = Leg
+			_section = RightLeg
 		}
 		item
 		{
 			_mainHealthPercent = 0.51
-			_section = Leg
+			_section = RightLeg
 		}
 		item
 		{
 			_mainHealthPercent = 0.51
-			_section = Leg
+			_section = RightLeg
 		}
 	}
 	_questSystemAlias
@@ -4272,22 +4272,22 @@ entity
 		item
 		{
 			_mainHealthPercent = 0.51
-			_section = Leg
+			_section = RightLeg
 		}
 		item
 		{
 			_mainHealthPercent = 0.51
-			_section = Leg
+			_section = RightLeg
 		}
 		item
 		{
 			_mainHealthPercent = 0.51
-			_section = Leg
+			_section = RightLeg
 		}
 		item
 		{
 			_mainHealthPercent = 0.51
-			_section = Leg
+			_section = RightLeg
 		}
 	}
 	_questSystemAlias
@@ -4354,22 +4354,22 @@ entity
 		item
 		{
 			_mainHealthPercent = 0.51
-			_section = Leg
+			_section = RightLeg
 		}
 		item
 		{
 			_mainHealthPercent = 0.51
-			_section = Leg
+			_section = RightLeg
 		}
 		item
 		{
 			_mainHealthPercent = 0.51
-			_section = Leg
+			_section = RightLeg
 		}
 		item
 		{
 			_mainHealthPercent = 0.51
-			_section = Leg
+			_section = RightLeg
 		}
 	}
 	_questSystemAlias
@@ -4645,22 +4645,22 @@ entity
 		item
 		{
 			_mainHealthPercent = 0.51
-			_section = Leg
+			_section = RightLeg
 		}
 		item
 		{
 			_mainHealthPercent = 0.51
-			_section = Leg
+			_section = RightLeg
 		}
 		item
 		{
 			_mainHealthPercent = 0.51
-			_section = Leg
+			_section = RightLeg
 		}
 		item
 		{
 			_mainHealthPercent = 0.51
-			_section = Leg
+			_section = RightLeg
 		}
 	}
 	_questSystemAlias
@@ -4722,22 +4722,22 @@ entity
 		item
 		{
 			_mainHealthPercent = 0.51
-			_section = Leg
+			_section = RightLeg
 		}
 		item
 		{
 			_mainHealthPercent = 0.51
-			_section = Leg
+			_section = RightLeg
 		}
 		item
 		{
 			_mainHealthPercent = 0.51
-			_section = Leg
+			_section = RightLeg
 		}
 		item
 		{
 			_mainHealthPercent = 0.51
-			_section = Leg
+			_section = RightLeg
 		}
 	}
 	_questSystemAlias
@@ -4799,22 +4799,22 @@ entity
 		item
 		{
 			_mainHealthPercent = 0.51
-			_section = Leg
+			_section = RightLeg
 		}
 		item
 		{
 			_mainHealthPercent = 0.51
-			_section = Leg
+			_section = RightLeg
 		}
 		item
 		{
 			_mainHealthPercent = 0.51
-			_section = Leg
+			_section = RightLeg
 		}
 		item
 		{
 			_mainHealthPercent = 0.51
-			_section = Leg
+			_section = RightLeg
 		}
 	}
 	_questSystemAlias
@@ -4883,25 +4883,25 @@ entity
 		{
 			_sarmor = 7
 			_mainHealthPercent = 0.34
-			_section = Hand
+			_section = RightHand
 		}
 		item
 		{
 			_sarmor = 7
 			_mainHealthPercent = 0.34
-			_section = Hand
+			_section = RightHand
 		}
 		item
 		{
 			_sarmor = 7
 			_mainHealthPercent = 0.67
-			_section = Leg
+			_section = RightLeg
 		}
 		item
 		{
 			_sarmor = 7
 			_mainHealthPercent = 0.67
-			_section = Leg
+			_section = RightLeg
 		}
 	}
 	_questSystemAlias
@@ -4967,25 +4967,25 @@ entity
 		{
 			_sarmor = 7
 			_mainHealthPercent = 0.34
-			_section = Hand
+			_section = RightHand
 		}
 		item
 		{
 			_sarmor = 7
 			_mainHealthPercent = 0.34
-			_section = Hand
+			_section = RightHand
 		}
 		item
 		{
 			_sarmor = 7
 			_mainHealthPercent = 0.67
-			_section = Leg
+			_section = RightLeg
 		}
 		item
 		{
 			_sarmor = 7
 			_mainHealthPercent = 0.67
-			_section = Leg
+			_section = RightLeg
 		}
 	}
 	_questSystemAlias
@@ -5051,25 +5051,25 @@ entity
 		{
 			_sarmor = 7
 			_mainHealthPercent = 0.34
-			_section = Hand
+			_section = RightHand
 		}
 		item
 		{
 			_sarmor = 7
 			_mainHealthPercent = 0.34
-			_section = Hand
+			_section = RightHand
 		}
 		item
 		{
 			_sarmor = 7
 			_mainHealthPercent = 0.67
-			_section = Leg
+			_section = RightLeg
 		}
 		item
 		{
 			_sarmor = 7
 			_mainHealthPercent = 0.67
-			_section = Leg
+			_section = RightLeg
 		}
 	}
 	_questSystemAlias
@@ -5135,25 +5135,25 @@ entity
 		{
 			_sarmor = 7
 			_mainHealthPercent = 0.34
-			_section = Hand
+			_section = RightHand
 		}
 		item
 		{
 			_sarmor = 7
 			_mainHealthPercent = 0.34
-			_section = Hand
+			_section = RightHand
 		}
 		item
 		{
 			_sarmor = 7
 			_mainHealthPercent = 0.67
-			_section = Leg
+			_section = RightLeg
 		}
 		item
 		{
 			_sarmor = 7
 			_mainHealthPercent = 0.67
-			_section = Leg
+			_section = RightLeg
 		}
 	}
 	_questSystemAlias
@@ -5218,25 +5218,25 @@ entity
 		{
 			_sarmor = 7
 			_mainHealthPercent = 0.34
-			_section = Hand
+			_section = RightHand
 		}
 		item
 		{
 			_sarmor = 7
 			_mainHealthPercent = 0.34
-			_section = Hand
+			_section = RightHand
 		}
 		item
 		{
 			_sarmor = 7
 			_mainHealthPercent = 0.67
-			_section = Leg
+			_section = RightLeg
 		}
 		item
 		{
 			_sarmor = 7
 			_mainHealthPercent = 0.67
-			_section = Leg
+			_section = RightLeg
 		}
 	}
 	_questSystemAlias
@@ -5307,25 +5307,25 @@ entity
 		{
 			_sarmor = 7
 			_mainHealthPercent = 0.34
-			_section = Hand
+			_section = RightHand
 		}
 		item
 		{
 			_sarmor = 7
 			_mainHealthPercent = 0.34
-			_section = Hand
+			_section = RightHand
 		}
 		item
 		{
 			_sarmor = 7
 			_mainHealthPercent = 0.67
-			_section = Leg
+			_section = RightLeg
 		}
 		item
 		{
 			_sarmor = 7
 			_mainHealthPercent = 0.67
-			_section = Leg
+			_section = RightLeg
 		}
 	}
 	_questSystemAlias
@@ -5439,22 +5439,22 @@ entity
 		item
 		{
 			_mainHealthPercent = 0.51
-			_section = Leg
+			_section = RightLeg
 		}
 		item
 		{
 			_mainHealthPercent = 0.51
-			_section = Leg
+			_section = RightLeg
 		}
 		item
 		{
 			_mainHealthPercent = 0.51
-			_section = Leg
+			_section = RightLeg
 		}
 		item
 		{
 			_mainHealthPercent = 0.51
-			_section = Leg
+			_section = RightLeg
 		}
 	}
 	_questSystemAlias
@@ -5521,22 +5521,22 @@ entity
 		item
 		{
 			_mainHealthPercent = 0.51
-			_section = Leg
+			_section = RightLeg
 		}
 		item
 		{
 			_mainHealthPercent = 0.51
-			_section = Leg
+			_section = RightLeg
 		}
 		item
 		{
 			_mainHealthPercent = 0.51
-			_section = Leg
+			_section = RightLeg
 		}
 		item
 		{
 			_mainHealthPercent = 0.51
-			_section = Leg
+			_section = RightLeg
 		}
 	}
 	_questSystemAlias
@@ -5603,22 +5603,22 @@ entity
 		item
 		{
 			_mainHealthPercent = 0.51
-			_section = Leg
+			_section = RightLeg
 		}
 		item
 		{
 			_mainHealthPercent = 0.51
-			_section = Leg
+			_section = RightLeg
 		}
 		item
 		{
 			_mainHealthPercent = 0.51
-			_section = Leg
+			_section = RightLeg
 		}
 		item
 		{
 			_mainHealthPercent = 0.51
-			_section = Leg
+			_section = RightLeg
 		}
 	}
 	_questSystemAlias
@@ -5684,22 +5684,22 @@ entity
 		item
 		{
 			_mainHealthPercent = 0.51
-			_section = Leg
+			_section = RightLeg
 		}
 		item
 		{
 			_mainHealthPercent = 0.51
-			_section = Leg
+			_section = RightLeg
 		}
 		item
 		{
 			_mainHealthPercent = 0.51
-			_section = Leg
+			_section = RightLeg
 		}
 		item
 		{
 			_mainHealthPercent = 0.51
-			_section = Leg
+			_section = RightLeg
 		}
 	}
 	_questSystemAlias
@@ -5766,22 +5766,22 @@ entity
 		item
 		{
 			_mainHealthPercent = 0.51
-			_section = Leg
+			_section = RightLeg
 		}
 		item
 		{
 			_mainHealthPercent = 0.51
-			_section = Leg
+			_section = RightLeg
 		}
 		item
 		{
 			_mainHealthPercent = 0.51
-			_section = Leg
+			_section = RightLeg
 		}
 		item
 		{
 			_mainHealthPercent = 0.51
-			_section = Leg
+			_section = RightLeg
 		}
 	}
 	_questSystemAlias
@@ -9002,22 +9002,22 @@ entity
 		item
 		{
 			_mainHealthPercent = 0.51
-			_section = Leg
+			_section = RightLeg
 		}
 		item
 		{
 			_mainHealthPercent = 0.51
-			_section = Leg
+			_section = RightLeg
 		}
 		item
 		{
 			_mainHealthPercent = 0.51
-			_section = Leg
+			_section = RightLeg
 		}
 		item
 		{
 			_mainHealthPercent = 0.51
-			_section = Leg
+			_section = RightLeg
 		}
 	}
 	_questSystemAlias
@@ -9073,22 +9073,22 @@ entity
 		item
 		{
 			_mainHealthPercent = 0.51
-			_section = Leg
+			_section = RightLeg
 		}
 		item
 		{
 			_mainHealthPercent = 0.51
-			_section = Leg
+			_section = RightLeg
 		}
 		item
 		{
 			_mainHealthPercent = 0.51
-			_section = Leg
+			_section = RightLeg
 		}
 		item
 		{
 			_mainHealthPercent = 0.51
-			_section = Leg
+			_section = RightLeg
 		}
 	}
 	_questSystemAlias
@@ -9144,22 +9144,22 @@ entity
 		item
 		{
 			_mainHealthPercent = 0.51
-			_section = Leg
+			_section = RightLeg
 		}
 		item
 		{
 			_mainHealthPercent = 0.51
-			_section = Leg
+			_section = RightLeg
 		}
 		item
 		{
 			_mainHealthPercent = 0.51
-			_section = Leg
+			_section = RightLeg
 		}
 		item
 		{
 			_mainHealthPercent = 0.51
-			_section = Leg
+			_section = RightLeg
 		}
 	}
 	_questSystemAlias
@@ -9215,22 +9215,22 @@ entity
 		item
 		{
 			_mainHealthPercent = 0.51
-			_section = Leg
+			_section = RightLeg
 		}
 		item
 		{
 			_mainHealthPercent = 0.51
-			_section = Leg
+			_section = RightLeg
 		}
 		item
 		{
 			_mainHealthPercent = 0.51
-			_section = Leg
+			_section = RightLeg
 		}
 		item
 		{
 			_mainHealthPercent = 0.51
-			_section = Leg
+			_section = RightLeg
 		}
 	}
 	_questSystemAlias
@@ -9286,22 +9286,22 @@ entity
 		item
 		{
 			_mainHealthPercent = 0.51
-			_section = Leg
+			_section = RightLeg
 		}
 		item
 		{
 			_mainHealthPercent = 0.51
-			_section = Leg
+			_section = RightLeg
 		}
 		item
 		{
 			_mainHealthPercent = 0.51
-			_section = Leg
+			_section = RightLeg
 		}
 		item
 		{
 			_mainHealthPercent = 0.51
-			_section = Leg
+			_section = RightLeg
 		}
 	}
 	_questSystemAlias
@@ -9357,22 +9357,22 @@ entity
 		item
 		{
 			_mainHealthPercent = 0.51
-			_section = Leg
+			_section = RightLeg
 		}
 		item
 		{
 			_mainHealthPercent = 0.51
-			_section = Leg
+			_section = RightLeg
 		}
 		item
 		{
 			_mainHealthPercent = 0.51
-			_section = Leg
+			_section = RightLeg
 		}
 		item
 		{
 			_mainHealthPercent = 0.51
-			_section = Leg
+			_section = RightLeg
 		}
 	}
 	_questSystemAlias
@@ -9434,22 +9434,22 @@ entity
 		item
 		{
 			_mainHealthPercent = 0.51
-			_section = Leg
+			_section = RightLeg
 		}
 		item
 		{
 			_mainHealthPercent = 0.51
-			_section = Leg
+			_section = RightLeg
 		}
 		item
 		{
 			_mainHealthPercent = 0.51
-			_section = Leg
+			_section = RightLeg
 		}
 		item
 		{
 			_mainHealthPercent = 0.51
-			_section = Leg
+			_section = RightLeg
 		}
 	}
 	_questSystemAlias
@@ -9525,22 +9525,22 @@ entity
 		item
 		{
 			_mainHealthPercent = 0.51
-			_section = Leg
+			_section = RightLeg
 		}
 		item
 		{
 			_mainHealthPercent = 0.51
-			_section = Leg
+			_section = RightLeg
 		}
 		item
 		{
 			_mainHealthPercent = 0.51
-			_section = Leg
+			_section = RightLeg
 		}
 		item
 		{
 			_mainHealthPercent = 0.51
-			_section = Leg
+			_section = RightLeg
 		}
 	}
 	_questSystemAlias
@@ -9604,22 +9604,22 @@ entity
 		item
 		{
 			_mainHealthPercent = 0.51
-			_section = Leg
+			_section = RightLeg
 		}
 		item
 		{
 			_mainHealthPercent = 0.51
-			_section = Leg
+			_section = RightLeg
 		}
 		item
 		{
 			_mainHealthPercent = 0.51
-			_section = Leg
+			_section = RightLeg
 		}
 		item
 		{
 			_mainHealthPercent = 0.51
-			_section = Leg
+			_section = RightLeg
 		}
 	}
 	_questSystemAlias
@@ -9682,22 +9682,22 @@ entity
 		item
 		{
 			_mainHealthPercent = 0.51
-			_section = Leg
+			_section = RightLeg
 		}
 		item
 		{
 			_mainHealthPercent = 0.51
-			_section = Leg
+			_section = RightLeg
 		}
 		item
 		{
 			_mainHealthPercent = 0.51
-			_section = Leg
+			_section = RightLeg
 		}
 		item
 		{
 			_mainHealthPercent = 0.51
-			_section = Leg
+			_section = RightLeg
 		}
 	}
 	_questSystemAlias
@@ -9764,22 +9764,22 @@ entity
 		item
 		{
 			_mainHealthPercent = 0.51
-			_section = Leg
+			_section = RightLeg
 		}
 		item
 		{
 			_mainHealthPercent = 0.51
-			_section = Leg
+			_section = RightLeg
 		}
 		item
 		{
 			_mainHealthPercent = 0.51
-			_section = Leg
+			_section = RightLeg
 		}
 		item
 		{
 			_mainHealthPercent = 0.51
-			_section = Leg
+			_section = RightLeg
 		}
 	}
 	_questSystemAlias
@@ -9846,22 +9846,22 @@ entity
 		item
 		{
 			_mainHealthPercent = 0.51
-			_section = Leg
+			_section = RightLeg
 		}
 		item
 		{
 			_mainHealthPercent = 0.51
-			_section = Leg
+			_section = RightLeg
 		}
 		item
 		{
 			_mainHealthPercent = 0.51
-			_section = Leg
+			_section = RightLeg
 		}
 		item
 		{
 			_mainHealthPercent = 0.51
-			_section = Leg
+			_section = RightLeg
 		}
 	}
 	_questSystemAlias
@@ -9928,22 +9928,22 @@ entity
 		item
 		{
 			_mainHealthPercent = 0.51
-			_section = Leg
+			_section = RightLeg
 		}
 		item
 		{
 			_mainHealthPercent = 0.51
-			_section = Leg
+			_section = RightLeg
 		}
 		item
 		{
 			_mainHealthPercent = 0.51
-			_section = Leg
+			_section = RightLeg
 		}
 		item
 		{
 			_mainHealthPercent = 0.51
-			_section = Leg
+			_section = RightLeg
 		}
 	}
 	_questSystemAlias
@@ -10032,22 +10032,22 @@ entity
 		item
 		{
 			_mainHealthPercent = 0.34
-			_section = Hand
+			_section = RightHand
 		}
 		item
 		{
 			_mainHealthPercent = 0.34
-			_section = Hand
+			_section = RightHand
 		}
 		item
 		{
 			_mainHealthPercent = 0.67
-			_section = Leg
+			_section = RightLeg
 		}
 		item
 		{
 			_mainHealthPercent = 0.67
-			_section = Leg
+			_section = RightLeg
 		}
 	}
 	_questSystemAlias
@@ -10110,22 +10110,22 @@ entity
 		item
 		{
 			_mainHealthPercent = 0.51
-			_section = Leg
+			_section = RightLeg
 		}
 		item
 		{
 			_mainHealthPercent = 0.51
-			_section = Leg
+			_section = RightLeg
 		}
 		item
 		{
 			_mainHealthPercent = 0.51
-			_section = Leg
+			_section = RightLeg
 		}
 		item
 		{
 			_mainHealthPercent = 0.51
-			_section = Leg
+			_section = RightLeg
 		}
 	}
 	_questSystemAlias
@@ -10191,22 +10191,22 @@ entity
 		item
 		{
 			_mainHealthPercent = 0.34
-			_section = Hand
+			_section = RightHand
 		}
 		item
 		{
 			_mainHealthPercent = 0.34
-			_section = Hand
+			_section = RightHand
 		}
 		item
 		{
 			_mainHealthPercent = 0.67
-			_section = Leg
+			_section = RightLeg
 		}
 		item
 		{
 			_mainHealthPercent = 0.67
-			_section = Leg
+			_section = RightLeg
 		}
 	}
 	_questSystemAlias
@@ -10272,22 +10272,22 @@ entity
 		item
 		{
 			_mainHealthPercent = 0.34
-			_section = Hand
+			_section = RightHand
 		}
 		item
 		{
 			_mainHealthPercent = 0.34
-			_section = Hand
+			_section = RightHand
 		}
 		item
 		{
 			_mainHealthPercent = 0.67
-			_section = Leg
+			_section = RightLeg
 		}
 		item
 		{
 			_mainHealthPercent = 0.67
-			_section = Leg
+			_section = RightLeg
 		}
 	}
 	_questSystemAlias

@@ -31,28 +31,28 @@ type Wolf
 		}
 		item
 		{
-			_section = Leg
+			_section = RightLeg
 			_lifePoints = 1
 			_sarmor = 0
 			_mainHealthPercent = 0.51
 		}
 		item
 		{
-			_section = Leg
+			_section = LeftLeg
 			_lifePoints = 1
 			_sarmor = 0
 			_mainHealthPercent = 0.51
 		}
 		item
 		{
-			_section = Leg
+			_section = RightLeg
 			_lifePoints = 1
 			_sarmor = 0
 			_mainHealthPercent = 0.51
 		}
 		item
 		{
-			_section = Leg
+			_section = LeftLeg
 			_lifePoints = 1
 			_sarmor = 0
 			_mainHealthPercent = 0.51
