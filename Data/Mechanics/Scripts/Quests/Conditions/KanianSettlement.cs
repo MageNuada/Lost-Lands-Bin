@@ -6,7 +6,7 @@ void IncreaseExp(string val)
 
 bool InitWalkIntoVillage(Rpg.QuestStage stage)
 {
-	var obj = stage.ConditionsObjects.FirstOrDefault(o => o is CharacterPrototype) as MapObject;
+	var obj = stage.ConditionsObjects.FirstOrDefault(o => o is UnitPrototype) as MapObject;
 	if(obj != null)
 		AddHighlight(obj, stage);
 	return true;
@@ -14,7 +14,7 @@ bool InitWalkIntoVillage(Rpg.QuestStage stage)
 
 bool FinalizeWalkIntoVillage(Rpg.QuestStage stage)
 {
-	var obj = stage.ConditionsObjects.FirstOrDefault(o => o is CharacterPrototype) as MapObject;
+	var obj = stage.ConditionsObjects.FirstOrDefault(o => o is UnitPrototype) as MapObject;
 	if(obj != null)
 		RemoveHighlight(obj);
 	return true;
